@@ -1,0 +1,33 @@
+---
+name: Update mappings
+
+"on":
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 * * *'
+  push:
+    branches:
+      - main
+
+jobs:
+  update-mappings:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Update mappings
+        uses: technote-space/create-pr-action@v2
+        with:
+          EXECUTE_COMMANDS: |
+            scripts/update-mappings.sh
+          COMMIT_EMAIL: 'bot@osism.tech'
+          COMMIT_MESSAGE: |
+            chore: update mappings
+
+            Signed-off-by: OSISM Bot <bot@osism.tech>
+          COMMIT_NAME: 'OSISM Bot'
+          ONLY_DEFAULT_BRANCH: true
+          PR_BRANCH_NAME: 'update-mappings'
+          PR_BRANCH_PREFIX: 'chore/'
+          PR_TITLE: 'chore: update mappings'

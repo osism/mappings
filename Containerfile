@@ -22,3 +22,5 @@ WORKDIR /src
 
 RUN python3 -m pip --no-cache-dir install -U 'pip==21.3.1' 'pipenv==2022.1.8' \
     && pipenv install
+
+CMD ["python3", "/src/generate.py"]

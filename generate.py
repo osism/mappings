@@ -83,8 +83,8 @@ for ansible_directory in ANSIBLE_DIRECTORIES:
                 except:  # noqa
                     pass
 
-with open("mapping1.yml", "w+") as fp:
+with open("/output/mapping1.yml", "w+") as fp:
     yaml.dump(mapping1, fp)
 
-with open("mapping2.yml", "w+") as fp:
+with open("/output/mapping2.yml", "w+") as fp:
     yaml.dump(mapping2, fp)
