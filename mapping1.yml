@@ -10901,6 +10901,7 @@ kolla.common:
 - syslog_haproxy_facility
 - syslog_glance_tls_proxy_facility
 - syslog_neutron_tls_proxy_facility
+- syslog_facilities
 - kolla_toolbox_default_volumes
 - cron_default_volumes
 - fluentd_default_volumes

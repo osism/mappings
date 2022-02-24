@@ -20903,6 +20903,8 @@ fluentd_tag:
 - kolla.common
 fluentd_image_full:
 - kolla.common
+syslog_facilities:
+- kolla.common
 kolla_toolbox_default_volumes:
 - kolla.common
 cron_default_volumes:
