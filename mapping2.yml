@@ -16305,6 +16305,8 @@ keystone_should_remove_attribute_mappings:
 - kolla.keystone
 keystone_should_remove_identity_providers:
 - kolla.keystone
+keystone_federation_oidc_response_type:
+- kolla.keystone
 keystone_federation_oidc_scopes:
 - kolla.keystone
 gnocchi_services:

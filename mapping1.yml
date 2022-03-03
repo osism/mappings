@@ -8519,6 +8519,7 @@ kolla.keystone:
 - keystone_enable_federation_openid
 - keystone_should_remove_attribute_mappings
 - keystone_should_remove_identity_providers
+- keystone_federation_oidc_response_type
 - keystone_federation_oidc_scopes
 kolla.gnocchi:
 - gnocchi_services
