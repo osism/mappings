@@ -24,6 +24,38 @@ libvirt_host_install_daemon:
 - stackhpc.libvirt_host
 libvirt_host_install_client:
 - stackhpc.libvirt_host
+libvirt_host_extra_daemon_packages:
+- stackhpc.libvirt_host
+libvirt_host_extra_client_packages:
+- stackhpc.libvirt_host
+libvirt_host_libvirtd_conf_enabled:
+- stackhpc.libvirt_host
+libvirt_host_libvirtd_conf:
+- stackhpc.libvirt_host
+libvirt_host_qemu_conf_enabled:
+- stackhpc.libvirt_host
+libvirt_host_qemu_conf:
+- stackhpc.libvirt_host
+libvirt_host_tcp_listen:
+- stackhpc.libvirt_host
+libvirt_host_tcp_listen_address:
+- stackhpc.libvirt_host
+libvirt_host_tls_listen:
+- stackhpc.libvirt_host
+libvirt_host_tls_listen_address:
+- stackhpc.libvirt_host
+libvirt_host_tls_server_cert:
+- stackhpc.libvirt_host
+libvirt_host_tls_server_key:
+- stackhpc.libvirt_host
+libvirt_host_tls_client_cert:
+- stackhpc.libvirt_host
+libvirt_host_tls_client_key:
+- stackhpc.libvirt_host
+libvirt_host_tls_cacert:
+- stackhpc.libvirt_host
+libvirt_host_configure_apparmor:
+- stackhpc.libvirt_host
 dotfiles_repo:
 - geerlingguy.dotfiles
 dotfiles_repo_version:
@@ -678,6 +710,8 @@ rgwloadbalancer_group_name:
 - ceph.ceph-defaults
 monitoring_group_name:
 - ceph.ceph-defaults
+adopt_label_group_names:
+- ceph.ceph-defaults
 configure_firewall:
 - ceph.ceph-defaults
 ceph_mon_firewall_zone:
@@ -699,6 +733,15 @@ ceph_iscsi_firewall_zone:
 ceph_dashboard_firewall_zone:
 - ceph.ceph-defaults
 ceph_rgwloadbalancer_firewall_zone:
+- ceph.ceph-defaults
+cephadm_ssh_user:
+- ceph.ceph-defaults
+- stackhpc.cephadm.cephadm
+cephadm_ssh_priv_key_path:
+- ceph.ceph-defaults
+cephadm_ssh_pub_key_path:
+- ceph.ceph-defaults
+cephadm_mgmt_network:
 - ceph.ceph-defaults
 debian_package_dependencies:
 - ceph.ceph-defaults
@@ -1224,8 +1267,6 @@ cephadm_ssh_public_key:
 - stackhpc.cephadm.cephadm
 cephadm_ssh_private_key:
 - stackhpc.cephadm.cephadm
-cephadm_ssh_user:
-- stackhpc.cephadm.cephadm
 cephadm_mon_count:
 - stackhpc.cephadm.cephadm
 cephadm_mgr_count:
@@ -1320,7 +1361,6 @@ docker_registry_postgres:
 - osism.services.netbox
 - osism.services.keycloak
 - osism.services.patchman
-- osism.services.manager
 rundeck_configuration_directory:
 - osism.services.rundeck
 rundeck_secrets_directory:
@@ -1476,12 +1516,10 @@ postgres_tag:
 - osism.services.netbox
 - osism.services.keycloak
 - osism.services.patchman
-- osism.services.manager
 postgres_image:
 - osism.services.netbox
 - osism.services.keycloak
 - osism.services.patchman
-- osism.services.manager
 netbox_postgres_password:
 - osism.services.netbox
 netbox_postgres_username:
@@ -2119,10 +2157,6 @@ docker_registry_service:
 - osism.services.manager
 docker_registry_ara_server:
 - osism.services.manager
-docker_registry_awx:
-- osism.services.manager
-docker_registry_awxclient:
-- osism.services.manager
 docker_registry_inventory_reconciler:
 - osism.services.manager
 docker_registry_mariadb:
@@ -2253,12 +2287,6 @@ mariadb_tag:
 mariadb_image:
 - osism.services.manager
 - kolla.mariadb
-enable_postgres:
-- osism.services.manager
-postgres_enable:
-- osism.services.manager
-postgres_password:
-- osism.services.manager
 enable_celery:
 - osism.services.manager
 celery_enable:
@@ -2279,62 +2307,10 @@ osism_api_host:
 - osism.services.manager
 osism_api_port:
 - osism.services.manager
-enable_awx:
-- osism.services.manager
-awx_enable:
-- osism.services.manager
-awx_mailaddress:
-- osism.services.manager
-awx_password:
-- osism.services.manager
-awx_username:
-- osism.services.manager
-awx_broadcast_websocket_secret:
-- osism.services.manager
-awx_secret_key:
-- osism.services.manager
-awx_server_host:
-- osism.services.manager
-awx_server_port:
-- osism.services.manager
-awx_broadcast_websocket_port:
-- osism.services.manager
-awx_tag:
-- osism.services.manager
-awx_image:
-- osism.services.manager
-receptor_tag:
-- osism.services.manager
-receptor_image:
-- osism.services.manager
-awxclient_container_name:
-- osism.services.manager
-awxclient_host:
-- osism.services.manager
-awxclient_tag:
-- osism.services.manager
-awxclient_image:
-- osism.services.manager
-awx_group_queues:
-- osism.services.manager
-awx_configuration_defaults:
-- osism.services.manager
-awx_configuration_extra:
-- osism.services.manager
-awx_configuration:
-- osism.services.manager
-awx_postgres_username:
-- osism.services.manager
-awx_postgres_password:
-- osism.services.manager
-awx_postgres_databasename:
-- osism.services.manager
 vault_container_name:
 - osism.services.manager
 - osism.commons.vault_unseal
 - osism.commons.vault_seal
-awx_vault_type:
-- osism.services.manager
 enable_vault:
 - osism.services.manager
 vault_enable:
@@ -3067,6 +3043,8 @@ network_lldpd:
 network_lldpd_package_name:
 - osism.commons.network
 network_lldpd_service_name:
+- osism.commons.network
+network_dummy_interfaces:
 - osism.commons.network
 sysctl_defaults:
 - osism.commons.sysctl
