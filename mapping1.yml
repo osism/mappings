@@ -1113,6 +1113,9 @@ osism.services.homer:
 - homer_url_prometheus
 - homer_url_rabbitmq
 - homer_url_vault
+- homer_traefik
+- traefik_external_network_name
+- traefik_external_network_cidr
 osism.services.lldpd:
 - lldpd_package_name
 - lldpd_service_name
@@ -1233,7 +1236,6 @@ osism.services.manager:
 - osism_api_port
 - vault_container_name
 - enable_vault
-- vault_enable
 - vault_host
 - vault_port
 - vault_tag

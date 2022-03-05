@@ -1547,6 +1547,7 @@ traefik_external_network_name:
 - osism.services.cgit
 - osism.services.phpmyadmin
 - osism.services.nexus
+- osism.services.homer
 - osism.services.manager
 traefik_external_network_cidr:
 - osism.services.netbox
@@ -1555,6 +1556,7 @@ traefik_external_network_cidr:
 - osism.services.cgit
 - osism.services.phpmyadmin
 - osism.services.nexus
+- osism.services.homer
 - osism.services.manager
 netbox_init_object_permissions:
 - osism.services.netbox
@@ -2095,6 +2097,8 @@ homer_url_rabbitmq:
 - osism.services.homer
 homer_url_vault:
 - osism.services.homer
+homer_traefik:
+- osism.services.homer
 lldpd_package_name:
 - osism.services.lldpd
 lldpd_service_name:
@@ -2312,8 +2316,6 @@ vault_container_name:
 - osism.commons.vault_unseal
 - osism.commons.vault_seal
 enable_vault:
-- osism.services.manager
-vault_enable:
 - osism.services.manager
 vault_host:
 - osism.services.manager
