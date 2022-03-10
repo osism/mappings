@@ -940,15 +940,6 @@ osism.services.journald:
 - journald_RuntimeKeepFree
 - journald_RuntimeMaxFileSize
 - journald_service_name
-osism.services.tailscale:
-- tailscale_package_name
-- tailscaled_service_name
-- tailscale_configure_repository
-- tailscale_debian_repository_arch
-- tailscale_debian_repository_key
-- tailscale_debian_repository
-- tailscale_authkey
-- tailscale_advertise_routes
 osism.services.minikube:
 - minikube_service_user
 - minikube_service_group
