@@ -1223,6 +1223,7 @@ osism.services.manager:
 - osism_netbox_image
 - flower_host
 - flower_port
+- flower_traefik
 - osism_api_host
 - osism_api_port
 - vault_container_name
@@ -9686,6 +9687,7 @@ kolla.neutron:
 - max_l3_agents_per_router
 - neutron_logging_debug
 - openstack_neutron_auth
+- neutron_l3_agent_host_ipv4_ip_forward
 - neutron_l3_agent_host_rp_filter_mode
 - neutron_l3_agent_host_ipv4_neigh_gc_thresh1
 - neutron_l3_agent_host_ipv4_neigh_gc_thresh2

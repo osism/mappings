@@ -2291,6 +2291,8 @@ flower_host:
 - osism.services.manager
 flower_port:
 - osism.services.manager
+flower_traefik:
+- osism.services.manager
 osism_api_host:
 - osism.services.manager
 osism_api_port:
@@ -18594,6 +18596,8 @@ max_l3_agents_per_router:
 neutron_logging_debug:
 - kolla.neutron
 openstack_neutron_auth:
+- kolla.neutron
+neutron_l3_agent_host_ipv4_ip_forward:
 - kolla.neutron
 neutron_l3_agent_host_rp_filter_mode:
 - kolla.neutron
