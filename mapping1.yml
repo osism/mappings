@@ -810,7 +810,6 @@ osism.services.keycloak:
 - keycloak_port
 - keycloak_tag
 - keycloak_image
-- keycloak_for_traefik_image
 - keycloak_username
 - keycloak_password
 - postgres_tag

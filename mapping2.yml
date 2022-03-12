@@ -1614,8 +1614,6 @@ keycloak_tag:
 - osism.services.keycloak
 keycloak_image:
 - osism.services.keycloak
-keycloak_for_traefik_image:
-- osism.services.keycloak
 keycloak_username:
 - osism.services.keycloak
 keycloak_password:
