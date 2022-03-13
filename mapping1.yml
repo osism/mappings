@@ -759,6 +759,7 @@ osism.services.netbox:
 - netbox_ldap_cache_timeout
 - netbox_metrics
 - netbox_initializers
+- netbox_extra
 - netbox_plugins_defaults
 - netbox_plugins_extra
 - netbox_plugins

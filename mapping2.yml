@@ -1502,6 +1502,8 @@ netbox_metrics:
 - osism.services.netbox
 netbox_initializers:
 - osism.services.netbox
+netbox_extra:
+- osism.services.netbox
 netbox_plugins_defaults:
 - osism.services.netbox
 netbox_plugins_extra:
