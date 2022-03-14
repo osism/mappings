@@ -1502,6 +1502,8 @@ netbox_metrics:
 - osism.services.netbox
 netbox_initializers:
 - osism.services.netbox
+netbox_extra:
+- osism.services.netbox
 netbox_plugins_defaults:
 - osism.services.netbox
 netbox_plugins_extra:
@@ -1613,8 +1615,6 @@ keycloak_port:
 keycloak_tag:
 - osism.services.keycloak
 keycloak_image:
-- osism.services.keycloak
-keycloak_for_traefik_image:
 - osism.services.keycloak
 keycloak_username:
 - osism.services.keycloak
@@ -1815,22 +1815,6 @@ journald_RuntimeMaxFileSize:
 - osism.services.journald
 journald_service_name:
 - osism.services.journald
-tailscale_package_name:
-- osism.services.tailscale
-tailscaled_service_name:
-- osism.services.tailscale
-tailscale_configure_repository:
-- osism.services.tailscale
-tailscale_debian_repository_arch:
-- osism.services.tailscale
-tailscale_debian_repository_key:
-- osism.services.tailscale
-tailscale_debian_repository:
-- osism.services.tailscale
-tailscale_authkey:
-- osism.services.tailscale
-tailscale_advertise_routes:
-- osism.services.tailscale
 minikube_service_user:
 - osism.services.minikube
 minikube_service_group:
@@ -2306,6 +2290,8 @@ osism_netbox_image:
 flower_host:
 - osism.services.manager
 flower_port:
+- osism.services.manager
+flower_traefik:
 - osism.services.manager
 osism_api_host:
 - osism.services.manager
@@ -18610,6 +18596,8 @@ max_l3_agents_per_router:
 neutron_logging_debug:
 - kolla.neutron
 openstack_neutron_auth:
+- kolla.neutron
+neutron_l3_agent_host_ipv4_ip_forward:
 - kolla.neutron
 neutron_l3_agent_host_rp_filter_mode:
 - kolla.neutron
