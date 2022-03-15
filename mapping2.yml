@@ -1549,6 +1549,7 @@ traefik_external_network_name:
 - osism.services.cgit
 - osism.services.phpmyadmin
 - osism.services.nexus
+- osism.services.patchman
 - osism.services.homer
 - osism.services.manager
 traefik_external_network_cidr:
@@ -1558,6 +1559,7 @@ traefik_external_network_cidr:
 - osism.services.cgit
 - osism.services.phpmyadmin
 - osism.services.nexus
+- osism.services.patchman
 - osism.services.homer
 - osism.services.manager
 netbox_init_object_permissions:
@@ -2012,6 +2014,10 @@ patchman_postgres_databasename:
 patchman_memcached_tag:
 - osism.services.patchman
 patchman_memcached_image:
+- osism.services.patchman
+patchman_traefik:
+- osism.services.patchman
+patchman_traefik_host:
 - osism.services.patchman
 auditd_backup:
 - osism.services.auditd
@@ -3158,6 +3164,8 @@ elasticsearch__user:
 - debops.roles02.elasticsearch
 elasticsearch__group:
 - debops.roles02.elasticsearch
+elasticsearch__additional_groups:
+- debops.roles02.elasticsearch
 elasticsearch__inventory_group_all:
 - debops.roles02.elasticsearch
 elasticsearch__inventory_group_master:
@@ -3175,6 +3183,48 @@ elasticsearch__initial_master_nodes:
 elasticsearch__allow_http:
 - debops.roles02.elasticsearch
 elasticsearch__allow_tcp:
+- debops.roles02.elasticsearch
+elasticsearch__pki_enabled:
+- debops.roles02.elasticsearch
+elasticsearch__pki_base_path:
+- debops.roles02.elasticsearch
+elasticsearch__pki_realm:
+- debops.roles02.elasticsearch
+elasticsearch__pki_ca_file:
+- debops.roles02.elasticsearch
+elasticsearch__pki_key_file:
+- debops.roles02.elasticsearch
+elasticsearch__pki_crt_file:
+- debops.roles02.elasticsearch
+elasticsearch__tls_ca_certificate:
+- debops.roles02.elasticsearch
+elasticsearch__tls_private_key:
+- debops.roles02.elasticsearch
+elasticsearch__tls_certificate:
+- debops.roles02.elasticsearch
+elasticsearch__xpack_enabled:
+- debops.roles02.elasticsearch
+elasticsearch__api_base_url:
+- debops.roles02.elasticsearch
+elasticsearch__api_username:
+- debops.roles02.elasticsearch
+elasticsearch__api_password:
+- debops.roles02.elasticsearch
+elasticsearch__native_roles:
+- debops.roles02.elasticsearch
+elasticsearch__group_native_roles:
+- debops.roles02.elasticsearch
+elasticsearch__host_native_roles:
+- debops.roles02.elasticsearch
+elasticsearch__combined_native_roles:
+- debops.roles02.elasticsearch
+elasticsearch__native_users:
+- debops.roles02.elasticsearch
+elasticsearch__group_native_users:
+- debops.roles02.elasticsearch
+elasticsearch__host_native_users:
+- debops.roles02.elasticsearch
+elasticsearch__combined_native_users:
 - debops.roles02.elasticsearch
 elasticsearch__network_host:
 - debops.roles02.elasticsearch
@@ -3211,6 +3261,8 @@ elasticsearch__jvm_memory_min_heap_size:
 elasticsearch__jvm_memory_max_heap_size:
 - debops.roles02.elasticsearch
 elasticsearch__path_data:
+- debops.roles02.elasticsearch
+elasticsearch__original_configuration:
 - debops.roles02.elasticsearch
 elasticsearch__default_configuration:
 - debops.roles02.elasticsearch
@@ -3257,6 +3309,8 @@ elasticsearch__group_plugins:
 elasticsearch__host_plugins:
 - debops.roles02.elasticsearch
 elasticsearch__combined_plugins:
+- debops.roles02.elasticsearch
+elasticsearch__java_policy:
 - debops.roles02.elasticsearch
 elasticsearch__etc_services__dependent_list:
 - debops.roles02.elasticsearch
@@ -3308,210 +3362,6 @@ lxd__logrotate__dependent_config:
 - debops.roles02.lxd
 lxd__sysctl__dependent_parameters:
 - debops.roles02.lxd
-dovecot_protocols:
-- debops.roles02.dovecot
-dovecot_auth_mechanisms:
-- debops.roles02.dovecot
-dovecot_dependencies:
-- debops.roles02.dovecot
-dovecot__version:
-- debops.roles02.dovecot
-dovecot_user_accounts:
-- debops.roles02.dovecot
-dovecot_deny_users:
-- debops.roles02.dovecot
-dovecot_vmail_base:
-- debops.roles02.dovecot
-dovecot_vmail_home:
-- debops.roles02.dovecot
-dovecot_mail_location:
-- debops.roles02.dovecot
-dovecot__auth_default_realm:
-- debops.roles02.dovecot
-dovecot_mail_dotlock:
-- debops.roles02.dovecot
-dovecot_sql_driver:
-- debops.roles02.dovecot
-dovecot_sql_host:
-- debops.roles02.dovecot
-dovecot_sql_dbname:
-- debops.roles02.dovecot
-dovecot_sql_user:
-- debops.roles02.dovecot
-dovecot_sql_password:
-- debops.roles02.dovecot
-dovecot_sql_default_pass_scheme:
-- debops.roles02.dovecot
-dovecot_sql_password_query:
-- debops.roles02.dovecot
-dovecot_sql_user_query:
-- debops.roles02.dovecot
-dovecot_sql_iterate_query:
-- debops.roles02.dovecot
-dovecot_passwdfile_scheme:
-- debops.roles02.dovecot
-dovecot_passwdfile_path:
-- debops.roles02.dovecot
-dovecot_passwdfile_name:
-- debops.roles02.dovecot
-dovecot_passwdfile_uid:
-- debops.roles02.dovecot
-dovecot_passwdfile_gid:
-- debops.roles02.dovecot
-dovecot_passwdfile_home:
-- debops.roles02.dovecot
-dovecot_passwdfile_mailbox_path:
-- debops.roles02.dovecot
-dovecot_checkpassword_passdb_command:
-- debops.roles02.dovecot
-dovecot_checkpassword_userdb_command:
-- debops.roles02.dovecot
-dovecot_pki:
-- debops.roles02.dovecot
-dovecot_pki_path:
-- debops.roles02.dovecot
-dovecot_pki_realm:
-- debops.roles02.dovecot
-dovecot__pki_ca:
-- debops.roles02.dovecot
-dovecot_pki_crt:
-- debops.roles02.dovecot
-dovecot_pki_key:
-- debops.roles02.dovecot
-dovecot__tls_ca_cert_dir:
-- debops.roles02.dovecot
-dovecot_ssl_required:
-- debops.roles02.dovecot
-dovecot_ssl_min_protocol:
-- debops.roles02.dovecot
-dovecot_ssl_dh_parameters_length:
-- debops.roles02.dovecot
-dovecot_ssl_cipher_list:
-- debops.roles02.dovecot
-dovecot_ssl_cipher_list_default:
-- debops.roles02.dovecot
-dovecot_ssl_cipher_list_better_cypto:
-- debops.roles02.dovecot
-dovecot_ssl_cipher_list_ncsc_nl:
-- debops.roles02.dovecot
-dovecot_pki_hook_name:
-- debops.roles02.dovecot
-dovecot_pki_hook_path:
-- debops.roles02.dovecot
-dovecot_pki_hook_action:
-- debops.roles02.dovecot
-dovecot__dhparam:
-- debops.roles02.dovecot
-dovecot__dhparam_set:
-- debops.roles02.dovecot
-dovecot__ssl_dh_file:
-- debops.roles02.dovecot
-dovecot_imap_listeners:
-- debops.roles02.dovecot
-dovecot_imap_default_config_map:
-- debops.roles02.dovecot
-dovecot_mail_plugins:
-- debops.roles02.dovecot
-dovecot_imap_config_map:
-- debops.roles02.dovecot
-dovecot_imap_combined_config_map:
-- debops.roles02.dovecot
-dovecot_pop3_listeners:
-- debops.roles02.dovecot
-dovecot_pop3_config_map:
-- debops.roles02.dovecot
-dovecot_sieve_enabled:
-- debops.roles02.dovecot
-dovecot_sieve_port:
-- debops.roles02.dovecot
-dovecot_sieve_active_script:
-- debops.roles02.dovecot
-dovecot_sieve_dir:
-- debops.roles02.dovecot
-dovecot_managesieve_listeners:
-- debops.roles02.dovecot
-dovecot_managesieve_config_map:
-- debops.roles02.dovecot
-dovecot_lda_config_map:
-- debops.roles02.dovecot
-dovecot_lmtp_listeners:
-- debops.roles02.dovecot
-dovecot_lmtp_config_map:
-- debops.roles02.dovecot
-dovecot_postfix_transport:
-- debops.roles02.dovecot
-dovecot_auth_listeners:
-- debops.roles02.dovecot
-dovecot_auth_config_map:
-- debops.roles02.dovecot
-dovecot_custom_localconf:
-- debops.roles02.dovecot
-dovecot__accept_any:
-- debops.roles02.dovecot
-dovecot__allow_imap:
-- debops.roles02.dovecot
-dovecot__allow_imaps:
-- debops.roles02.dovecot
-dovecot__allow_pop3:
-- debops.roles02.dovecot
-dovecot__allow_pop3s:
-- debops.roles02.dovecot
-dovecot__allow_sieve:
-- debops.roles02.dovecot
-dovecot__vmail_posix_user:
-- debops.roles02.dovecot
-dovecot__vmail_posix_group:
-- debops.roles02.dovecot
-dovecot__ldap_enabled:
-- debops.roles02.dovecot
-dovecot__ldap_base_dn:
-- debops.roles02.dovecot
-dovecot__ldap_device_dn:
-- debops.roles02.dovecot
-dovecot__ldap_self_rdn:
-- debops.roles02.dovecot
-dovecot__ldap_self_object_classes:
-- debops.roles02.dovecot
-dovecot__ldap_self_attributes:
-- debops.roles02.dovecot
-dovecot__ldap_binddn:
-- debops.roles02.dovecot
-dovecot__ldap_bindpw:
-- debops.roles02.dovecot
-dovecot__ldap_people_rdn:
-- debops.roles02.dovecot
-dovecot__ldap_people_dn:
-- debops.roles02.dovecot
-dovecot__ldap_uri:
-- debops.roles02.dovecot
-dovecot__ldap_server_port:
-- debops.roles02.dovecot
-dovecot__ldap_start_tls:
-- debops.roles02.dovecot
-dovecot__ldap_user_filter:
-- debops.roles02.dovecot
-dovecot__ldap_quota_attribute:
-- debops.roles02.dovecot
-dovecot__ldap_quota_default:
-- debops.roles02.dovecot
-dovecot__ldap_default_config:
-- debops.roles02.dovecot
-dovecot__ldap_config:
-- debops.roles02.dovecot
-dovecot__group_ldap_config:
-- debops.roles02.dovecot
-dovecot__host_ldap_config:
-- debops.roles02.dovecot
-dovecot__ldap_combined_config:
-- debops.roles02.dovecot
-dovecot__ldap__dependent_tasks:
-- debops.roles02.dovecot
-dovecot__postfix__dependent_maincf:
-- debops.roles02.dovecot
-dovecot__postfix__dependent_mastercf:
-- debops.roles02.dovecot
-dovecot__ferm__dependent_rules:
-- debops.roles02.dovecot
 postldap__postfix__dependent_packages:
 - debops.roles02.postldap
 postldap__domain:
@@ -3519,8 +3369,6 @@ postldap__domain:
 postldap__domain_rev_pattern:
 - debops.roles02.postldap
 postldap__tls_ca_cert_dir:
-- debops.roles02.postldap
-postldap__no_log:
 - debops.roles02.postldap
 postldap__vmail_posix_user:
 - debops.roles02.postldap
@@ -4664,6 +4512,8 @@ kibana__user:
 - debops.roles02.kibana
 kibana__group:
 - debops.roles02.kibana
+kibana__additional_groups:
+- debops.roles02.kibana
 kibana__fqdn:
 - debops.roles02.kibana
 kibana__domain:
@@ -4693,6 +4543,26 @@ kibana__elasticsearch_password:
 kibana__index:
 - debops.roles02.kibana
 kibana__default_app_id:
+- debops.roles02.kibana
+kibana__secure_connection:
+- debops.roles02.kibana
+kibana__pki_enabled:
+- debops.roles02.kibana
+kibana__pki_base_path:
+- debops.roles02.kibana
+kibana__pki_realm:
+- debops.roles02.kibana
+kibana__pki_ca_file:
+- debops.roles02.kibana
+kibana__pki_key_file:
+- debops.roles02.kibana
+kibana__pki_crt_file:
+- debops.roles02.kibana
+kibana__tls_ca_certificate:
+- debops.roles02.kibana
+kibana__tls_private_key:
+- debops.roles02.kibana
+kibana__tls_certificate:
 - debops.roles02.kibana
 kibana__default_configuration:
 - debops.roles02.kibana
@@ -4938,98 +4808,6 @@ roundcube__php__dependent_pools:
 - debops.roles02.roundcube
 roundcube__nodejs__npm_dependent_packages:
 - debops.roles02.roundcube
-snmpd_packages:
-- debops.roles02.snmpd
-snmpd_user:
-- debops.roles02.snmpd
-snmpd_group:
-- debops.roles02.snmpd
-snmpd_logging_options:
-- debops.roles02.snmpd
-snmpd_custom_options:
-- debops.roles02.snmpd
-snmpd_group_custom_options:
-- debops.roles02.snmpd
-snmpd_host_custom_options:
-- debops.roles02.snmpd
-snmpd_combined_custom_options:
-- debops.roles02.snmpd
-snmpd_download_mibs:
-- debops.roles02.snmpd
-snmpd_extension_scripts:
-- debops.roles02.snmpd
-snmpd_lldpd:
-- debops.roles02.snmpd
-snmpd_lldpd_options:
-- debops.roles02.snmpd
-snmpd_allow:
-- debops.roles02.snmpd
-snmpd_group_allow:
-- debops.roles02.snmpd
-snmpd_host_allow:
-- debops.roles02.snmpd
-snmpd_local_allow:
-- debops.roles02.snmpd
-snmpd_agent_address:
-- debops.roles02.snmpd
-snmpd_organization:
-- debops.roles02.snmpd
-snmpd_sys_location:
-- debops.roles02.snmpd
-snmpd_sys_location_name:
-- debops.roles02.snmpd
-snmpd_sys_contact:
-- debops.roles02.snmpd
-snmpd_sys_contact_name:
-- debops.roles02.snmpd
-snmpd_sys_contact_email:
-- debops.roles02.snmpd
-snmpd_sys_name:
-- debops.roles02.snmpd
-snmpd_load:
-- debops.roles02.snmpd
-snmpd_load_profile:
-- debops.roles02.snmpd
-snmpd_load_percent:
-- debops.roles02.snmpd
-snmpd_load_weight:
-- debops.roles02.snmpd
-snmpd_load_base:
-- debops.roles02.snmpd
-snmpd_load_percent_map:
-- debops.roles02.snmpd
-snmpd_load_weight_map:
-- debops.roles02.snmpd
-snmpd_load_1min:
-- debops.roles02.snmpd
-snmpd_load_5min:
-- debops.roles02.snmpd
-snmpd_load_15min:
-- debops.roles02.snmpd
-snmpd_proc_hidepid:
-- debops.roles02.snmpd
-snmpd_proc_hidepid_group:
-- debops.roles02.snmpd
-snmpd_account:
-- debops.roles02.snmpd
-snmpd_account_username_length:
-- debops.roles02.snmpd
-snmpd_account_password_length:
-- debops.roles02.snmpd
-snmpd_account_admin_username:
-- debops.roles02.snmpd
-snmpd_account_admin_password:
-- debops.roles02.snmpd
-snmpd_account_agent_username:
-- debops.roles02.snmpd
-snmpd_account_agent_password:
-- debops.roles02.snmpd
-snmpd_apt_preferences_dependent_list:
-- debops.roles02.snmpd
-snmpd_ferm_dependent_rules:
-- debops.roles02.snmpd
-snmpd_tcpwrappers_dependent_allow:
-- debops.roles02.snmpd
 mcli__upstream_gpg_key:
 - debops.roles02.mcli
 mcli__upstream_type:
@@ -5380,8 +5158,6 @@ redis_sentinel__auth_password:
 - debops.roles02.redis_sentinel
 redis_sentinel__password_length:
 - debops.roles02.redis_sentinel
-redis_sentinel__no_log:
-- debops.roles02.redis_sentinel
 redis_sentinel__bind:
 - debops.roles02.redis_sentinel
 redis_sentinel__allow:
@@ -5710,6 +5486,78 @@ opendkim__combined_config:
 - debops.roles02.opendkim
 opendkim__postfix__dependent_maincf:
 - debops.roles02.opendkim
+pdns__base_packages:
+- debops.roles02.pdns
+pdns__packages:
+- debops.roles02.pdns
+pdns__allow:
+- debops.roles02.pdns
+pdns__local_address:
+- debops.roles02.pdns
+pdns__local_port:
+- debops.roles02.pdns
+pdns__primary:
+- debops.roles02.pdns
+pdns__secondary:
+- debops.roles02.pdns
+pdns__autosecondary:
+- debops.roles02.pdns
+pdns__resolver:
+- debops.roles02.pdns
+pdns__backends:
+- debops.roles02.pdns
+pdns__api:
+- debops.roles02.pdns
+pdns__api_key:
+- debops.roles02.pdns
+pdns__metrics:
+- debops.roles02.pdns
+pdns__http_port:
+- debops.roles02.pdns
+pdns__nginx_fqdn:
+- debops.roles02.pdns
+pdns__nginx_allow:
+- debops.roles02.pdns
+pdns__dnsupdate:
+- debops.roles02.pdns
+pdns__allow_dnsupdate_from:
+- debops.roles02.pdns
+pdns__postgresql_delegate_to:
+- debops.roles02.pdns
+pdns__postgresql_server:
+- debops.roles02.pdns
+pdns__postgresql_port:
+- debops.roles02.pdns
+pdns__postgresql_database:
+- debops.roles02.pdns
+pdns__postgresql_role:
+- debops.roles02.pdns
+pdns__postgresql_password:
+- debops.roles02.pdns
+pdns__postgresql_schema:
+- debops.roles02.pdns
+pdns__postgresql_dnssec:
+- debops.roles02.pdns
+pdns__original_configuration:
+- debops.roles02.pdns
+pdns__default_configuration:
+- debops.roles02.pdns
+pdns__configuration:
+- debops.roles02.pdns
+pdns__group_configuration:
+- debops.roles02.pdns
+pdns__host_configuration:
+- debops.roles02.pdns
+pdns__combined_configuration:
+- debops.roles02.pdns
+pdns__etc_services__dependent_list:
+- debops.roles02.pdns
+pdns__ferm__dependent_rules:
+- debops.roles02.pdns
+pdns__nginx__dependent_servers:
+- debops.roles02.pdns
+pdns__postgresql__dependent_roles:
+- debops.roles02.pdns
 persistent_paths__paths:
 - debops.roles03.persistent_paths
 persistent_paths__group_paths:
@@ -5730,6 +5578,42 @@ persistent_paths__qubes_os_handler:
 - debops.roles03.persistent_paths
 persistent_paths__qubes_os_default_persistent_paths:
 - debops.roles03.persistent_paths
+keepalived__base_packages:
+- debops.roles03.keepalived
+keepalived__packages:
+- debops.roles03.keepalived
+keepalived__host_group:
+- debops.roles03.keepalived
+keepalived__host_count:
+- debops.roles03.keepalived
+keepalived__host_index:
+- debops.roles03.keepalived
+keepalived__allow:
+- debops.roles03.keepalived
+keepalived__group_allow:
+- debops.roles03.keepalived
+keepalived__host_allow:
+- debops.roles03.keepalived
+keepalived__default_configuration:
+- debops.roles03.keepalived
+keepalived__configuration:
+- debops.roles03.keepalived
+keepalived__group_configuration:
+- debops.roles03.keepalived
+keepalived__host_configuration:
+- debops.roles03.keepalived
+keepalived__combined_configuration:
+- debops.roles03.keepalived
+keepalived__scripts:
+- debops.roles03.keepalived
+keepalived__group_scripts:
+- debops.roles03.keepalived
+keepalived__host_scripts:
+- debops.roles03.keepalived
+keepalived__sysctl__dependent_parameters:
+- debops.roles03.keepalived
+keepalived__ferm__dependent_rules:
+- debops.roles03.keepalived
 neurodebian__deploy_state:
 - debops.roles03.neurodebian
 neurodebian__upstream:
@@ -5860,119 +5744,75 @@ sks__nginx__dependent_servers:
 - debops.roles03.sks
 sks__nginx__dependent_upstreams:
 - debops.roles03.sks
-reprepro_distribution:
+reprepro__base_packages:
 - debops.roles03.reprepro
-reprepro_distribution_release:
+reprepro__packages:
 - debops.roles03.reprepro
-reprepro_codenames:
+reprepro__user:
 - debops.roles03.reprepro
-reprepro_architectures:
+reprepro__group:
 - debops.roles03.reprepro
-reprepro_components:
+reprepro__additional_groups:
 - debops.roles03.reprepro
-reprepro_fqdn:
+reprepro__home:
 - debops.roles03.reprepro
-reprepro_domain:
+reprepro__comment:
 - debops.roles03.reprepro
-reprepro_origin:
+reprepro__data_root:
 - debops.roles03.reprepro
-reprepro_admin_email:
+reprepro__public_root:
 - debops.roles03.reprepro
-reprepro_domains:
+reprepro__spool_root:
 - debops.roles03.reprepro
-reprepro_allow:
+reprepro__admin_sshkeys:
 - debops.roles03.reprepro
-reprepro_allow_upload:
+reprepro__fqdn:
 - debops.roles03.reprepro
-reprepro_max_body_size:
+reprepro__domain:
 - debops.roles03.reprepro
-reprepro_nginx_auth_realm:
+reprepro__origin:
 - debops.roles03.reprepro
-reprepro_nginx_access_policy:
+reprepro__mail_from:
 - debops.roles03.reprepro
-reprepro_home:
+reprepro__mail_to:
 - debops.roles03.reprepro
-reprepro_user:
+reprepro__max_body_size:
 - debops.roles03.reprepro
-reprepro_group:
+reprepro__auth_realm:
 - debops.roles03.reprepro
-reprepro_spool:
+reprepro__gpg_snapshot_name:
 - debops.roles03.reprepro
-reprepro_upload:
+reprepro__gpg_snapshot_path:
 - debops.roles03.reprepro
-reprepro_enable_inoticoming:
+reprepro__gpg_key_type:
 - debops.roles03.reprepro
-reprepro_repository_path:
+reprepro__gpg_key_length:
 - debops.roles03.reprepro
-reprepro_repository_components:
+reprepro__gpg_name:
 - debops.roles03.reprepro
-reprepro_gpg_key_type:
+reprepro__gpg_email:
 - debops.roles03.reprepro
-reprepro_gpg_key_length:
+reprepro__gpg_expire_days:
 - debops.roles03.reprepro
-reprepro_gpg_name:
+reprepro__gpg_public_filename:
 - debops.roles03.reprepro
-reprepro_gpg_email:
+reprepro__gpg_uploaders_keys:
 - debops.roles03.reprepro
-reprepro_gpg_expire_days:
+reprepro__installer_jessie_compatibility:
 - debops.roles03.reprepro
-reprepro_installer_jessie_compatibility:
+reprepro__default_instances:
 - debops.roles03.reprepro
-reprepro_gpg_snapshot_name:
+reprepro__instances:
 - debops.roles03.reprepro
-reprepro_gpg_snapshot_path:
+reprepro__group_instances:
 - debops.roles03.reprepro
-reprepro_signwith:
+reprepro__host_instances:
 - debops.roles03.reprepro
-reprepro_distributions:
+reprepro__combined_instances:
 - debops.roles03.reprepro
-reprepro_distributions_local:
+reprepro__keyring__dependent_gpg_user:
 - debops.roles03.reprepro
-reprepro_distributions_local_backports:
-- debops.roles03.reprepro
-reprepro_distributions_mirror_debian:
-- debops.roles03.reprepro
-reprepro_distributions_mirror_ubuntu:
-- debops.roles03.reprepro
-reprepro_incoming:
-- debops.roles03.reprepro
-reprepro_incoming_allow:
-- debops.roles03.reprepro
-reprepro_incoming_allow_local:
-- debops.roles03.reprepro
-reprepro_incoming_allow_distribution:
-- debops.roles03.reprepro
-reprepro_uploaders:
-- debops.roles03.reprepro
-reprepro_uploaders_local:
-- debops.roles03.reprepro
-reprepro_uploaders_distribution:
-- debops.roles03.reprepro
-reprepro_uploaders_default_rules:
-- debops.roles03.reprepro
-reprepro_pulls:
-- debops.roles03.reprepro
-reprepro_pulls_local:
-- debops.roles03.reprepro
-reprepro_updates:
-- debops.roles03.reprepro
-reprepro_updates_debian:
-- debops.roles03.reprepro
-reprepro_updates_ubuntu:
-- debops.roles03.reprepro
-reprepro_nginx_server_http:
-- debops.roles03.reprepro
-reprepro_nginx_server_https:
-- debops.roles03.reprepro
-reprepro_debian_previous:
-- debops.roles03.reprepro
-reprepro_debian_next:
-- debops.roles03.reprepro
-reprepro_debian_releases:
-- debops.roles03.reprepro
-reprepro_debian_suites:
-- debops.roles03.reprepro
-reprepro_debian_architectures:
+reprepro__keyring__dependent_gpg_keys:
 - debops.roles03.reprepro
 reprepro__nginx__dependent_servers:
 - debops.roles03.reprepro
@@ -6238,102 +6078,84 @@ preseed__domains:
 - debops.roles03.preseed
 preseed__www:
 - debops.roles03.preseed
-preseed__www_webserver:
-- debops.roles03.preseed
-preseed__nginx_auth_realm:
-- debops.roles03.preseed
-preseed__nginx_access_policy:
-- debops.roles03.preseed
-preseed__user:
-- debops.roles03.preseed
-preseed__group:
-- debops.roles03.preseed
-preseed__home:
-- debops.roles03.preseed
-preseed__distribution:
-- debops.roles03.preseed
-preseed__release:
-- debops.roles03.preseed
-preseed__configs:
-- debops.roles03.preseed
-preseed__admin:
-- debops.roles03.preseed
-preseed__admin_system:
+preseed__root_sshkeys:
 - debops.roles03.preseed
 preseed__admin_name:
 - debops.roles03.preseed
-preseed__admin_groups:
-- debops.roles03.preseed
-preseed__admin_home:
-- debops.roles03.preseed
-preseed__admin_system_home:
-- debops.roles03.preseed
-preseed__admin_home_group:
-- debops.roles03.preseed
-preseed__admin_home_mode:
-- debops.roles03.preseed
-preseed__admin_comment:
-- debops.roles03.preseed
-preseed__admin_shell:
-- debops.roles03.preseed
-preseed__sudo:
-- debops.roles03.preseed
-preseed__sudo_group:
+preseed__admin_fullname:
 - debops.roles03.preseed
 preseed__admin_sshkeys:
 - debops.roles03.preseed
-preseed__debian_locale:
-- debops.roles03.preseed
-preseed__debian_keyboard_keymap:
-- debops.roles03.preseed
-preseed__debian_language:
-- debops.roles03.preseed
-preseed__debian_timezone:
-- debops.roles03.preseed
-preseed__debian_ntp_server:
-- debops.roles03.preseed
-preseed__debian_mirror_hostname:
-- debops.roles03.preseed
-preseed__debian_mirror_directory:
-- debops.roles03.preseed
-preseed__debian_mirror_proxy:
+preseed__debian_postinst_commands:
 - debops.roles03.preseed
 preseed__debian_packages:
 - debops.roles03.preseed
-preseed__debian_root_password_length:
+preseed__debian_kernel_arguments:
+- debops.roles03.preseed
+preseed__debian_password_length:
 - debops.roles03.preseed
 preseed__debian_root_password:
 - debops.roles03.preseed
-preseed__debian_ask_for_additional_install_media:
+preseed__debian_admin_password:
 - debops.roles03.preseed
-preseed__grub_preseed:
+preseed__default_definitions:
 - debops.roles03.preseed
-preseed__grub_timeout:
+preseed__definitions:
 - debops.roles03.preseed
-preseed__grub_kernel_options:
+preseed__group_definitions:
 - debops.roles03.preseed
-preseed__salt:
+preseed__host_definitions:
 - debops.roles03.preseed
-preseed__salt_packages:
+preseed__combined_definitions:
 - debops.roles03.preseed
-preseed__salt_apt_key_url:
+preseed__original_configuration:
 - debops.roles03.preseed
-preseed__salt_upstream_repository:
+preseed__default_configuration:
 - debops.roles03.preseed
-preseed__salt_options:
+preseed__configuration:
 - debops.roles03.preseed
-preseed__nginx__server_location:
+preseed__group_configuration:
 - debops.roles03.preseed
-preseed__nginx__server_http:
+preseed__host_configuration:
 - debops.roles03.preseed
-preseed__nginx__server_https:
+preseed__combined_configuration:
 - debops.roles03.preseed
-preseed__nginx__servers:
+preseed__options_interactive_partman:
 - debops.roles03.preseed
-preseed__python__dependent_packages3:
+preseed__options_ansible_user:
 - debops.roles03.preseed
-preseed__python__dependent_packages2:
+preseed__options_enable_nonfree:
 - debops.roles03.preseed
+preseed__nginx__dependent_servers:
+- debops.roles03.preseed
+telegraf__base_packages:
+- debops.roles03.telegraf
+telegraf__packages:
+- debops.roles03.telegraf
+telegraf__additional_groups:
+- debops.roles03.telegraf
+telegraf__default_configuration:
+- debops.roles03.telegraf
+telegraf__configuration:
+- debops.roles03.telegraf
+telegraf__group_configuration:
+- debops.roles03.telegraf
+telegraf__host_configuration:
+- debops.roles03.telegraf
+telegraf__combined_configuration:
+- debops.roles03.telegraf
+telegraf__default_plugins:
+- debops.roles03.telegraf
+telegraf__plugins:
+- debops.roles03.telegraf
+telegraf__group_plugins:
+- debops.roles03.telegraf
+telegraf__host_plugins:
+- debops.roles03.telegraf
+telegraf__combined_plugins:
+- debops.roles03.telegraf
+telegraf__influxdata__dependent_packages:
+- debops.roles03.telegraf
 radvd__base_packages:
 - debops.roles03.radvd
 radvd__packages:
@@ -6594,8 +6416,6 @@ netbox__config_secret_key:
 - debops.roles03.netbox
 netbox__config_admins:
 - debops.roles03.netbox
-netbox__config_cache_timeout:
-- debops.roles03.netbox
 netbox__config_changelog_retention:
 - debops.roles03.netbox
 netbox__config_cors_origin_allow_all:
@@ -6631,6 +6451,10 @@ netbox__config_maintenance_mode:
 netbox__config_napalm_username:
 - debops.roles03.netbox
 netbox__config_napalm_password:
+- debops.roles03.netbox
+netbox__napalm_ssh_generate:
+- debops.roles03.netbox
+netbox__napalm_ssh_generate_bits:
 - debops.roles03.netbox
 netbox__config_napalm_timeout:
 - debops.roles03.netbox
@@ -6681,6 +6505,8 @@ netbox__config_scripts_root:
 netbox__config_plugins:
 - debops.roles03.netbox
 netbox__config_plugins_config:
+- debops.roles03.netbox
+netbox__config_custom:
 - debops.roles03.netbox
 netbox__superuser_name:
 - debops.roles03.netbox
@@ -7166,6 +6992,72 @@ phpipam__nginx__dependent_servers:
 - debops.roles03.phpipam
 phpipam__mariadb__dependent_users:
 - debops.roles03.phpipam
+imapproxy__packages:
+- debops.roles03.imapproxy
+imapproxy__base_packages:
+- debops.roles03.imapproxy
+imapproxy__domain:
+- debops.roles03.imapproxy
+imapproxy__imap_srv_rr:
+- debops.roles03.imapproxy
+imapproxy__imaps_srv_rr:
+- debops.roles03.imapproxy
+imapproxy__imap_fqdn:
+- debops.roles03.imapproxy
+imapproxy__imap_port:
+- debops.roles03.imapproxy
+imapproxy__listen_address:
+- debops.roles03.imapproxy
+imapproxy__listen_port:
+- debops.roles03.imapproxy
+imapproxy__allow:
+- debops.roles03.imapproxy
+imapproxy__group_allow:
+- debops.roles03.imapproxy
+imapproxy__host_allow:
+- debops.roles03.imapproxy
+imapproxy__pki:
+- debops.roles03.imapproxy
+imapproxy__pki_path:
+- debops.roles03.imapproxy
+imapproxy__pki_realm:
+- debops.roles03.imapproxy
+imapproxy__pki_ca:
+- debops.roles03.imapproxy
+imapproxy__pki_crt:
+- debops.roles03.imapproxy
+imapproxy__pki_key:
+- debops.roles03.imapproxy
+imapproxy__tls_ca_path:
+- debops.roles03.imapproxy
+imapproxy__tls_ca_file:
+- debops.roles03.imapproxy
+imapproxy__tls_cert_file:
+- debops.roles03.imapproxy
+imapproxy__tls_key_file:
+- debops.roles03.imapproxy
+imapproxy__tls_force:
+- debops.roles03.imapproxy
+imapproxy__pki_hook_name:
+- debops.roles03.imapproxy
+imapproxy__pki_hook_path:
+- debops.roles03.imapproxy
+imapproxy__pki_hook_action:
+- debops.roles03.imapproxy
+imapproxy__default_configuration:
+- debops.roles03.imapproxy
+imapproxy__configuration:
+- debops.roles03.imapproxy
+imapproxy__group_configuration:
+- debops.roles03.imapproxy
+imapproxy__host_configuration:
+- debops.roles03.imapproxy
+imapproxy__combined_configuration:
+- debops.roles03.imapproxy
+imapproxy__etc_services__dependent_list:
+- debops.roles03.imapproxy
+imapproxy__ferm__dependent_rules:
+- debops.roles03.imapproxy
 stunnel_services:
 - debops.roles03.stunnel
 stunnel_server:
@@ -7340,6 +7232,96 @@ dhcpd__etc_services__dependent_list:
 - debops.roles03.dhcpd
 dhcpd__ferm__dependent_rules:
 - debops.roles03.dhcpd
+rspamd__packages:
+- debops.roles03.rspamd
+rspamd__base_packages:
+- debops.roles03.rspamd
+rspamd__dkim_enabled:
+- debops.roles03.rspamd
+rspamd__dkim_domains:
+- debops.roles03.rspamd
+rspamd__dkim_log_dir:
+- debops.roles03.rspamd
+rspamd__dkim_keygen_default_configuration:
+- debops.roles03.rspamd
+rspamd__dkim_keygen_configuration:
+- debops.roles03.rspamd
+rspamd__dkim_keygen_group_configuration:
+- debops.roles03.rspamd
+rspamd__dkim_keygen_host_configuration:
+- debops.roles03.rspamd
+rspamd__dkim_keygen_combined_configuration:
+- debops.roles03.rspamd
+rspamd__dkim_update_method:
+- debops.roles03.rspamd
+rspamd__dkim_update_default_configuration:
+- debops.roles03.rspamd
+rspamd__dkim_update_configuration:
+- debops.roles03.rspamd
+rspamd__dkim_update_group_configuration:
+- debops.roles03.rspamd
+rspamd__dkim_update_host_configuration:
+- debops.roles03.rspamd
+rspamd__dkim_update_combined_configuration:
+- debops.roles03.rspamd
+rspamd__redis_host:
+- debops.roles03.rspamd
+rspamd__redis_port:
+- debops.roles03.rspamd
+rspamd__redis_password:
+- debops.roles03.rspamd
+rspamd__redis_db:
+- debops.roles03.rspamd
+rspamd__default_local_configuration:
+- debops.roles03.rspamd
+rspamd__local_configuration:
+- debops.roles03.rspamd
+rspamd__group_local_configuration:
+- debops.roles03.rspamd
+rspamd__host_local_configuration:
+- debops.roles03.rspamd
+rspamd__combined_local_configuration:
+- debops.roles03.rspamd
+rspamd__default_override_configuration:
+- debops.roles03.rspamd
+rspamd__override_configuration:
+- debops.roles03.rspamd
+rspamd__group_override_configuration:
+- debops.roles03.rspamd
+rspamd__host_override_configuration:
+- debops.roles03.rspamd
+rspamd__combined_override_configuration:
+- debops.roles03.rspamd
+rspamd__controller_password:
+- debops.roles03.rspamd
+rspamd__controller_password_salt:
+- debops.roles03.rspamd
+rspamd__controller_password_hash:
+- debops.roles03.rspamd
+rspamd__nginx_enabled:
+- debops.roles03.rspamd
+rspamd__nginx_fqdns:
+- debops.roles03.rspamd
+rspamd__nginx_access_policy:
+- debops.roles03.rspamd
+rspamd__proxy_allow:
+- debops.roles03.rspamd
+rspamd__normal_allow:
+- debops.roles03.rspamd
+rspamd__controller_allow:
+- debops.roles03.rspamd
+rspamd__fuzzy_allow:
+- debops.roles03.rspamd
+rspamd__logrotate__dependent_config:
+- debops.roles03.rspamd
+rspamd__etc_services__dependent_list:
+- debops.roles03.rspamd
+rspamd__nginx__dependent_servers:
+- debops.roles03.rspamd
+rspamd__ferm__dependent_rules:
+- debops.roles03.rspamd
+rspamd__postfix__dependent_maincf:
+- debops.roles03.rspamd
 etesync__domain:
 - debops.roles03.etesync
 etesync__fqdn:
@@ -7756,6 +7738,38 @@ rstudio_server__cran__dependent_packages:
 - debops.roles03.rstudio_server
 rstudio_server__nginx__dependent_servers:
 - debops.roles03.rstudio_server
+minidlna__base_packages:
+- debops.roles03.minidlna
+minidlna__packages:
+- debops.roles03.minidlna
+minidlna__allow:
+- debops.roles03.minidlna
+minidlna__group_allow:
+- debops.roles03.minidlna
+minidlna__host_allow:
+- debops.roles03.minidlna
+minidlna__ssdp_allow:
+- debops.roles03.minidlna
+minidlna__ssdp_group_allow:
+- debops.roles03.minidlna
+minidlna__ssdp_host_allow:
+- debops.roles03.minidlna
+minidlna__original_configuration:
+- debops.roles03.minidlna
+minidlna__default_configuration:
+- debops.roles03.minidlna
+minidlna__configuration:
+- debops.roles03.minidlna
+minidlna__group_configuration:
+- debops.roles03.minidlna
+minidlna__host_configuration:
+- debops.roles03.minidlna
+minidlna__combined_configuration:
+- debops.roles03.minidlna
+minidlna__ferm__dependent_rules:
+- debops.roles03.minidlna
+minidlna_server__etc_services__dependent_list:
+- debops.roles03.minidlna
 fcgiwrap__packages:
 - debops.roles03.fcgiwrap
 fcgiwrap__instances:
@@ -7870,6 +7884,42 @@ debops_api__cron_entries:
 - debops.roles03.debops_api
 debops_api__nginx__servers:
 - debops.roles03.debops_api
+zabbix_agent__base_packages:
+- debops.roles03.zabbix_agent
+zabbix_agent__packages:
+- debops.roles03.zabbix_agent
+zabbix_agent__allow:
+- debops.roles03.zabbix_agent
+zabbix_agent__group_allow:
+- debops.roles03.zabbix_agent
+zabbix_agent__host_allow:
+- debops.roles03.zabbix_agent
+zabbix_agent__user:
+- debops.roles03.zabbix_agent
+zabbix_agent__group:
+- debops.roles03.zabbix_agent
+zabbix_agent__additional_groups:
+- debops.roles03.zabbix_agent
+zabbix_agent__tls_psk_identity:
+- debops.roles03.zabbix_agent
+zabbix_agent__tls_psk_secret:
+- debops.roles03.zabbix_agent
+zabbix_agent__original_configuration:
+- debops.roles03.zabbix_agent
+zabbix_agent__default_configuration:
+- debops.roles03.zabbix_agent
+zabbix_agent__configuration:
+- debops.roles03.zabbix_agent
+zabbix_agent__group_configuration:
+- debops.roles03.zabbix_agent
+zabbix_agent__host_configuration:
+- debops.roles03.zabbix_agent
+zabbix_agent__combined_configuration:
+- debops.roles03.zabbix_agent
+zabbix_agent__ferm__dependent_rules:
+- debops.roles03.zabbix_agent
+zabbix_agent__etc_services__dependent_list:
+- debops.roles03.zabbix_agent
 prosody__base_packages:
 - debops.roles03.prosody
 prosody__packages:
@@ -8232,6 +8282,8 @@ etckeeper__email_on_commit_state:
 - debops.debops.etckeeper
 etckeeper__email_on_commit_email:
 - debops.debops.etckeeper
+etckeeper__gitattributes:
+- debops.debops.etckeeper
 etckeeper__apt_preferences__dependent_list:
 - debops.debops.etckeeper
 core__facts:
@@ -8550,6 +8602,8 @@ sshd__authorized_keys_lookup_user:
 - debops.debops.sshd
 sshd__authorized_keys_lookup_type:
 - debops.debops.sshd
+sshd__ldap_enabled:
+- debops.debops.sshd
 sshd__ldap_base_dn:
 - debops.debops.sshd
 sshd__ldap_device_dn:
@@ -8567,8 +8621,6 @@ sshd__ldap_self_attributes:
 sshd__ldap_binddn:
 - debops.debops.sshd
 sshd__ldap_bindpw:
-- debops.debops.sshd
-sshd__ldap_bind_pw_file:
 - debops.debops.sshd
 sshd__ldap_filter:
 - debops.debops.sshd
@@ -8594,11 +8646,15 @@ sshd__ldap__dependent_tasks:
 - debops.debops.sshd
 sshd__pam_access__dependent_rules:
 - debops.debops.sshd
+sshd__sudo__dependent_sudoers:
+- debops.debops.sshd
 sssd__base_packages:
 - debops.debops.sssd
 sssd__packages:
 - debops.debops.sssd
 sssd__mkhomedir_umask:
+- debops.debops.sssd
+sssd__ldap_enabled:
 - debops.debops.sssd
 sssd__ldap_base_dn:
 - debops.debops.sssd
@@ -8965,8 +9021,6 @@ secret__name:
 secret__levels:
 - debops.debops.secret
 secret__directories:
-- debops.debops.secret
-secret__no_log:
 - debops.debops.secret
 secret__ldap_domain:
 - debops.debops.secret
@@ -9400,6 +9454,8 @@ system_groups__admins_sudo_nopasswd:
 - debops.debops.system_groups
 system_groups__prefix:
 - debops.debops.system_groups
+system_groups__throttle:
+- debops.debops.system_groups
 system_groups__default_list:
 - debops.debops.system_groups
 system_groups__list:
@@ -9504,6 +9560,28 @@ proc_hidepid__secure_scheduler_enabled:
 - debops.debops.proc_hidepid
 proc_hidepid__secure_scheduler_group:
 - debops.debops.proc_hidepid
+lldpd__enabled:
+- debops.debops.lldpd
+lldpd__base_packages:
+- debops.debops.lldpd
+lldpd__packages:
+- debops.debops.lldpd
+lldpd__version:
+- debops.debops.lldpd
+lldpd__default_daemon_arguments:
+- debops.debops.lldpd
+lldpd__daemon_arguments:
+- debops.debops.lldpd
+lldpd__default_configuration:
+- debops.debops.lldpd
+lldpd__configuration:
+- debops.debops.lldpd
+lldpd__group_configuration:
+- debops.debops.lldpd
+lldpd__host_configuration:
+- debops.debops.lldpd
+lldpd__combined_configuration:
+- debops.debops.lldpd
 libuser__enabled:
 - debops.debops.libuser
 libuser__base_packages:
@@ -9580,6 +9658,8 @@ logrotate__host_config:
 - debops.debops.logrotate
 logrotate__dependent_config:
 - debops.debops.logrotate
+logrotate__combined_config:
+- debops.debops.logrotate
 fhs__enabled:
 - debops.debops.fhs
 fhs__default_directories:
@@ -9597,6 +9677,8 @@ nslcd__user:
 nslcd__group:
 - debops.debops.nslcd
 nslcd__mkhomedir_umask:
+- debops.debops.nslcd
+nslcd__ldap_enabled:
 - debops.debops.nslcd
 nslcd__ldap_base_dn:
 - debops.debops.nslcd
@@ -10002,6 +10084,12 @@ apt__group_repositories:
 - debops.debops.apt
 apt__host_repositories:
 - debops.debops.apt
+apt__auth_files:
+- debops.debops.apt
+apt__group_auth_files:
+- debops.debops.apt
+apt__host_auth_files:
+- debops.debops.apt
 apt__conf:
 - debops.debops.apt
 apt__group_conf:
@@ -10078,7 +10166,7 @@ ferm__flush:
 - debops.debops.ferm
 ferm__iptables_backend_enabled:
 - debops.debops.ferm
-ferm__iptables_backend_path:
+ferm__iptables_backend_type:
 - debops.debops.ferm
 ferm__base_packages:
 - debops.debops.ferm
@@ -10301,6 +10389,8 @@ keyring__base_packages:
 keyring__packages:
 - debops.debops.keyring
 keyring__dependent_gpg_user:
+- debops.debops.keyring
+keyring__dependent_apt_auth_files:
 - debops.debops.keyring
 keyring__dependent_apt_keys:
 - debops.debops.keyring
@@ -10558,6 +10648,182 @@ nodejs__apt_preferences__dependent_list:
 - debops.roles01.nodejs
 nodejs__keyring__dependent_apt_keys:
 - debops.roles01.nodejs
+dovecot__features:
+- debops.roles01.dovecot
+dovecot__auth_mechanisms:
+- debops.roles01.dovecot
+dovecot__version:
+- debops.roles01.dovecot
+dovecot__user_accounts:
+- debops.roles01.dovecot
+dovecot__deny_users:
+- debops.roles01.dovecot
+dovecot__mail_location:
+- debops.roles01.dovecot
+dovecot__auth_default_realm:
+- debops.roles01.dovecot
+dovecot__vmail_enabled:
+- debops.roles01.dovecot
+dovecot__vmail_posix_user:
+- debops.roles01.dovecot
+dovecot__vmail_posix_group:
+- debops.roles01.dovecot
+dovecot__vmail_base:
+- debops.roles01.dovecot
+dovecot__vmail_home:
+- debops.roles01.dovecot
+dovecot__dsync_port:
+- debops.roles01.dovecot
+dovecot__dsync_host:
+- debops.roles01.dovecot
+dovecot__dsync_replica:
+- debops.roles01.dovecot
+dovecot__dsync_password_path:
+- debops.roles01.dovecot
+dovecot__dsync_password:
+- debops.roles01.dovecot
+dovecot__sql_connect:
+- debops.roles01.dovecot
+dovecot__sql_default_pass_scheme:
+- debops.roles01.dovecot
+dovecot__sql_password_query:
+- debops.roles01.dovecot
+dovecot__sql_user_query:
+- debops.roles01.dovecot
+dovecot__sql_iterate_query:
+- debops.roles01.dovecot
+dovecot__passwdfile_scheme:
+- debops.roles01.dovecot
+dovecot__passwdfile_path:
+- debops.roles01.dovecot
+dovecot__passwdfile_name:
+- debops.roles01.dovecot
+dovecot__checkpassword_passdb_command:
+- debops.roles01.dovecot
+dovecot__checkpassword_userdb_command:
+- debops.roles01.dovecot
+dovecot__pki:
+- debops.roles01.dovecot
+dovecot__pki_path:
+- debops.roles01.dovecot
+dovecot__pki_realm:
+- debops.roles01.dovecot
+dovecot__pki_ca:
+- debops.roles01.dovecot
+dovecot__pki_crt:
+- debops.roles01.dovecot
+dovecot__pki_key:
+- debops.roles01.dovecot
+dovecot__tls_ca_cert_dir:
+- debops.roles01.dovecot
+dovecot__ssl_required:
+- debops.roles01.dovecot
+dovecot__ssl_min_protocol:
+- debops.roles01.dovecot
+dovecot__ssl_dh_parameters_length:
+- debops.roles01.dovecot
+dovecot__ssl_cipher_list:
+- debops.roles01.dovecot
+dovecot__ssl_cipher_list_default:
+- debops.roles01.dovecot
+dovecot__ssl_cipher_list_better_crypto:
+- debops.roles01.dovecot
+dovecot__ssl_cipher_list_ncsc_nl:
+- debops.roles01.dovecot
+dovecot__pki_hook_name:
+- debops.roles01.dovecot
+dovecot__pki_hook_path:
+- debops.roles01.dovecot
+dovecot__pki_hook_action:
+- debops.roles01.dovecot
+dovecot__dhparam:
+- debops.roles01.dovecot
+dovecot__dhparam_set:
+- debops.roles01.dovecot
+dovecot__ssl_dh_file:
+- debops.roles01.dovecot
+dovecot__default_configuration:
+- debops.roles01.dovecot
+dovecot__configuration:
+- debops.roles01.dovecot
+dovecot__group_configuration:
+- debops.roles01.dovecot
+dovecot__host_configuration:
+- debops.roles01.dovecot
+dovecot__combined_configuration:
+- debops.roles01.dovecot
+dovecot__mail_plugins:
+- debops.roles01.dovecot
+dovecot__mail_plugins_imap:
+- debops.roles01.dovecot
+dovecot__mail_plugins_pop3:
+- debops.roles01.dovecot
+dovecot__mail_plugins_lda:
+- debops.roles01.dovecot
+dovecot__mail_plugins_lmtp:
+- debops.roles01.dovecot
+dovecot__sieve_dir:
+- debops.roles01.dovecot
+dovecot__accept_any:
+- debops.roles01.dovecot
+dovecot__allow_imap:
+- debops.roles01.dovecot
+dovecot__allow_imaps:
+- debops.roles01.dovecot
+dovecot__allow_pop3:
+- debops.roles01.dovecot
+dovecot__allow_pop3s:
+- debops.roles01.dovecot
+dovecot__allow_doveadm:
+- debops.roles01.dovecot
+dovecot__allow_sieve:
+- debops.roles01.dovecot
+dovecot__ldap_enabled:
+- debops.roles01.dovecot
+dovecot__ldap_base_dn:
+- debops.roles01.dovecot
+dovecot__ldap_device_dn:
+- debops.roles01.dovecot
+dovecot__ldap_self_rdn:
+- debops.roles01.dovecot
+dovecot__ldap_self_object_classes:
+- debops.roles01.dovecot
+dovecot__ldap_self_attributes:
+- debops.roles01.dovecot
+dovecot__ldap_binddn:
+- debops.roles01.dovecot
+dovecot__ldap_bindpw:
+- debops.roles01.dovecot
+dovecot__ldap_people_rdn:
+- debops.roles01.dovecot
+dovecot__ldap_people_dn:
+- debops.roles01.dovecot
+dovecot__ldap_uri:
+- debops.roles01.dovecot
+dovecot__ldap_server_port:
+- debops.roles01.dovecot
+dovecot__ldap_start_tls:
+- debops.roles01.dovecot
+dovecot__ldap_user_filter:
+- debops.roles01.dovecot
+dovecot__ldap_quota_attribute:
+- debops.roles01.dovecot
+dovecot__ldap_quota_default:
+- debops.roles01.dovecot
+dovecot__ldap_trash_field:
+- debops.roles01.dovecot
+dovecot__postfix_lmtp_transport:
+- debops.roles01.dovecot
+dovecot__ldap__dependent_tasks:
+- debops.roles01.dovecot
+dovecot__postfix__dependent_maincf:
+- debops.roles01.dovecot
+dovecot__postfix__dependent_mastercf:
+- debops.roles01.dovecot
+dovecot__etc_services__dependent_list:
+- debops.roles01.dovecot
+dovecot__ferm__dependent_rules:
+- debops.roles01.dovecot
 saslauthd__default_mechanism:
 - debops.roles01.saslauthd
 saslauthd__base_packages:
@@ -10575,6 +10841,8 @@ saslauthd__host_instances:
 saslauthd__dependent_instances:
 - debops.roles01.saslauthd
 saslauthd__combined_instances:
+- debops.roles01.saslauthd
+saslauthd__ldap_enabled:
 - debops.roles01.saslauthd
 saslauthd__ldap_base_dn:
 - debops.roles01.saslauthd
@@ -12318,12 +12586,6 @@ cran__apt_preferences__dependent_list:
 - debops.roles01.cran
 cran__keyring__dependent_apt_keys:
 - debops.roles01.cran
-nginx_allow:
-- debops.roles01.nginx
-nginx_group_allow:
-- debops.roles01.nginx
-nginx_host_allow:
-- debops.roles01.nginx
 nginx__deploy_state:
 - debops.roles01.nginx
 nginx_base_packages:
@@ -12357,6 +12619,10 @@ nginx_private_path:
 nginx_run_path:
 - debops.roles01.nginx
 nginx_log_path:
+- debops.roles01.nginx
+nginx_log_to_syslog:
+- debops.roles01.nginx
+nginx_syslog_config:
 - debops.roles01.nginx
 nginx_passenger_root:
 - debops.roles01.nginx
@@ -12460,8 +12726,6 @@ nginx_hsts_preload:
 - debops.roles01.nginx
 nginx_enable_http2:
 - debops.roles01.nginx
-nginx_enable_sdpy:
-- debops.roles01.nginx
 nginx__http_csp_append:
 - debops.roles01.nginx
 nginx_default_name:
@@ -12507,6 +12771,10 @@ nginx_default_auth_basic_realm:
 nginx_htpasswd_secret_path:
 - debops.roles01.nginx
 nginx__htpasswd_crypt_scheme:
+- debops.roles01.nginx
+nginx__htpasswd_password_length:
+- debops.roles01.nginx
+nginx__htpasswd_password_characters:
 - debops.roles01.nginx
 nginx__htpasswd:
 - debops.roles01.nginx
@@ -12568,10 +12836,6 @@ nginx_apt_preferences_dependent_list:
 - debops.roles01.nginx
 nginx__apt_preferences__dependent_list:
 - debops.roles01.nginx
-nginx_ferm_dependent_rules:
-- debops.roles01.nginx
-nginx__ferm__dependent_rules:
-- debops.roles01.nginx
 nginx_php5_status:
 - debops.roles01.nginx
 nginx_php5_status_name:
@@ -12581,6 +12845,16 @@ nginx_php5_ping_name:
 nginx_privileged_group:
 - debops.roles01.nginx
 nginx_ssl_ciphers:
+- debops.roles01.nginx
+nginx_allow:
+- debops.roles01.nginx
+nginx_group_allow:
+- debops.roles01.nginx
+nginx_host_allow:
+- debops.roles01.nginx
+nginx_ferm_dependent_rules:
+- debops.roles01.nginx
+nginx__ferm__dependent_rules:
 - debops.roles01.nginx
 nginx__keyring__dependent_apt_keys:
 - debops.roles01.nginx
@@ -12751,8 +13025,6 @@ redis_server__domain:
 redis_server__auth_password:
 - debops.roles01.redis_server
 redis_server__password_length:
-- debops.roles01.redis_server
-redis_server__no_log:
 - debops.roles01.redis_server
 redis_server__maxmemory_multiplier:
 - debops.roles01.redis_server
@@ -13146,9 +13418,9 @@ apache__pki_ca_filename:
 - debops.roles01.apache
 apache__pki_trusted_filename:
 - debops.roles01.apache
-apache__tls_protocols:
-- debops.roles01.apache
 apache__tls_cipher_suite_set_name:
+- debops.roles01.apache
+apache__tls_protocols:
 - debops.roles01.apache
 apache__tls_cipher_suite_sets:
 - debops.roles01.apache
@@ -13340,6 +13612,94 @@ grub__salt_length:
 - debops.roles01.grub
 grub__hash_length:
 - debops.roles01.grub
+snmpd_packages:
+- debops.roles01.snmpd
+snmpd_user:
+- debops.roles01.snmpd
+snmpd_group:
+- debops.roles01.snmpd
+snmpd_logging_options:
+- debops.roles01.snmpd
+snmpd_custom_options:
+- debops.roles01.snmpd
+snmpd_group_custom_options:
+- debops.roles01.snmpd
+snmpd_host_custom_options:
+- debops.roles01.snmpd
+snmpd_combined_custom_options:
+- debops.roles01.snmpd
+snmpd_download_mibs:
+- debops.roles01.snmpd
+snmpd_extension_scripts:
+- debops.roles01.snmpd
+snmpd_allow:
+- debops.roles01.snmpd
+snmpd_group_allow:
+- debops.roles01.snmpd
+snmpd_host_allow:
+- debops.roles01.snmpd
+snmpd_local_allow:
+- debops.roles01.snmpd
+snmpd_agent_address:
+- debops.roles01.snmpd
+snmpd_organization:
+- debops.roles01.snmpd
+snmpd_sys_location:
+- debops.roles01.snmpd
+snmpd_sys_location_name:
+- debops.roles01.snmpd
+snmpd_sys_contact:
+- debops.roles01.snmpd
+snmpd_sys_contact_name:
+- debops.roles01.snmpd
+snmpd_sys_contact_email:
+- debops.roles01.snmpd
+snmpd_sys_name:
+- debops.roles01.snmpd
+snmpd_load:
+- debops.roles01.snmpd
+snmpd_load_profile:
+- debops.roles01.snmpd
+snmpd_load_percent:
+- debops.roles01.snmpd
+snmpd_load_weight:
+- debops.roles01.snmpd
+snmpd_load_base:
+- debops.roles01.snmpd
+snmpd_load_percent_map:
+- debops.roles01.snmpd
+snmpd_load_weight_map:
+- debops.roles01.snmpd
+snmpd_load_1min:
+- debops.roles01.snmpd
+snmpd_load_5min:
+- debops.roles01.snmpd
+snmpd_load_15min:
+- debops.roles01.snmpd
+snmpd_proc_hidepid:
+- debops.roles01.snmpd
+snmpd_proc_hidepid_group:
+- debops.roles01.snmpd
+snmpd_account:
+- debops.roles01.snmpd
+snmpd_account_username_length:
+- debops.roles01.snmpd
+snmpd_account_password_length:
+- debops.roles01.snmpd
+snmpd_account_admin_username:
+- debops.roles01.snmpd
+snmpd_account_admin_password:
+- debops.roles01.snmpd
+snmpd_account_agent_username:
+- debops.roles01.snmpd
+snmpd_account_agent_password:
+- debops.roles01.snmpd
+snmpd_apt_preferences_dependent_list:
+- debops.roles01.snmpd
+snmpd_ferm_dependent_rules:
+- debops.roles01.snmpd
+snmpd_tcpwrappers_dependent_allow:
+- debops.roles01.snmpd
 ifupdown__base_packages:
 - debops.roles01.ifupdown
 ifupdown__dynamic_packages:
@@ -13638,8 +13998,6 @@ postfix__ferm__dependent_rules:
 - debops.roles01.postfix
 zabbix_proxy_version:
 - community.zabbix.zabbix_proxy
-zabbix_proxy_version_minor:
-- community.zabbix.zabbix_proxy
 zabbix_version:
 - community.zabbix.zabbix_proxy
 - community.zabbix.zabbix_web
@@ -13729,8 +14087,6 @@ zabbix_proxy_dbtlscipher:
 - community.zabbix.zabbix_proxy
 zabbix_proxy_dbtlscipher13:
 - community.zabbix.zabbix_proxy
-zabbix_proxy_allowunsupporteddbversions:
-- community.zabbix.zabbix_proxy
 zabbix_proxy_database:
 - community.zabbix.zabbix_proxy
 zabbix_proxy_database_long:
@@ -13742,8 +14098,6 @@ zabbix_proxy_hostname:
 zabbix_proxy_listenport:
 - community.zabbix.zabbix_proxy
 zabbix_proxy_sourceip:
-- community.zabbix.zabbix_proxy
-zabbix_proxy_logtype:
 - community.zabbix.zabbix_proxy
 zabbix_proxy_logfile:
 - community.zabbix.zabbix_proxy
@@ -13875,14 +14229,6 @@ zabbix_proxy_manage_service:
 - community.zabbix.zabbix_proxy
 zabbix_proxy_statsallowedip:
 - community.zabbix.zabbix_proxy
-zabbix_proxy_vaulttoken:
-- community.zabbix.zabbix_proxy
-zabbix_proxy_vaulturl:
-- community.zabbix.zabbix_proxy
-zabbix_proxy_vaultdbpath:
-- community.zabbix.zabbix_proxy
-zabbix_proxy_listenbacklog:
-- community.zabbix.zabbix_proxy
 zabbix_proxy_tlsconnect:
 - community.zabbix.zabbix_proxy
 zabbix_proxy_tlsaccept:
@@ -13950,8 +14296,6 @@ zabbix_proxy_become_on_localhost:
 zabbix_proxy_interface:
 - community.zabbix.zabbix_proxy
 zabbix_web_version:
-- community.zabbix.zabbix_web
-zabbix_web_version_minor:
 - community.zabbix.zabbix_web
 zabbix_web_package_state:
 - community.zabbix.zabbix_web
@@ -14103,15 +14447,7 @@ selinux_allow_zabbix_can_network:
 - community.zabbix.zabbix_server
 _zabbix_web_apache_php_addition:
 - community.zabbix.zabbix_web
-apache_ssl_cipher_suite:
-- community.zabbix.zabbix_web
-apache_ssl_protocol:
-- community.zabbix.zabbix_web
-apache_vhosts_version:
-- community.zabbix.zabbix_web
 zabbix_server_version:
-- community.zabbix.zabbix_server
-zabbix_server_version_minor:
 - community.zabbix.zabbix_server
 zabbix_server_apt_priority:
 - community.zabbix.zabbix_server
@@ -14168,8 +14504,6 @@ zabbix_server_dbcollation:
 zabbix_server_dbsocket:
 - community.zabbix.zabbix_server
 zabbix_server_dbhost_run_install:
-- community.zabbix.zabbix_server
-zabbix_server_allowunsupporteddbversions:
 - community.zabbix.zabbix_server
 zabbix_server_privileged_host:
 - community.zabbix.zabbix_server
@@ -14238,8 +14572,6 @@ zabbix_server_historycachesize:
 zabbix_server_historyindexcachesize:
 - community.zabbix.zabbix_server
 zabbix_server_trendcachesize:
-- community.zabbix.zabbix_server
-zabbix_server_trendfunctioncachesize:
 - community.zabbix.zabbix_server
 zabbix_server_historytextcachesize:
 - community.zabbix.zabbix_server
@@ -14313,26 +14645,6 @@ zabbix_server_vmwaretimeout:
 - community.zabbix.zabbix_server
 zabbix_server_manage_service:
 - community.zabbix.zabbix_server
-zabbix_server_vaulttoken:
-- community.zabbix.zabbix_server
-zabbix_server_vaulturl:
-- community.zabbix.zabbix_server
-zabbix_server_vaultdbpath:
-- community.zabbix.zabbix_server
-zabbix_server_startreportwriters:
-- community.zabbix.zabbix_server
-zabbix_server_webserviceurl:
-- community.zabbix.zabbix_server
-zabbix_server_servicemanagersyncfrequency:
-- community.zabbix.zabbix_server
-zabbix_server_problemhousekeepingfrequency:
-- community.zabbix.zabbix_server
-zabbix_server_listenbacklog:
-- community.zabbix.zabbix_server
-zabbix_server_hanodename:
-- community.zabbix.zabbix_server
-zabbix_server_nodeaddress:
-- community.zabbix.zabbix_server
 selinux_allow_zabbix_can_http:
 - community.zabbix.zabbix_server
 zabbix_javagateway_version:
@@ -14352,8 +14664,6 @@ zabbix_javagateway_startpollers:
 zabbix_agent2:
 - community.zabbix.zabbix_agent
 zabbix_agent_version:
-- community.zabbix.zabbix_agent
-zabbix_agent_version_minor:
 - community.zabbix.zabbix_agent
 zabbix_version_patch:
 - community.zabbix.zabbix_agent
