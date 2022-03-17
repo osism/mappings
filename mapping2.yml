@@ -15651,6 +15651,12 @@ migration_hostname:
 - kolla.nova-cell
 qemu_user_gid:
 - kolla.nova-cell
+libvirt_enable_sasl:
+- kolla.nova-cell
+libvirt_sasl_authname:
+- kolla.nova-cell
+libvirt_sasl_mech_list:
+- kolla.nova-cell
 nova_git_repository:
 - kolla.nova-cell
 - kolla.nova

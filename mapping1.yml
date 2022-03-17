@@ -8191,6 +8191,9 @@ kolla.nova-cell:
 - libvirt_tls_manage_certs
 - migration_hostname
 - qemu_user_gid
+- libvirt_enable_sasl
+- libvirt_sasl_authname
+- libvirt_sasl_mech_list
 - nova_git_repository
 - nova_dev_repos_pull
 - nova_dev_mode
