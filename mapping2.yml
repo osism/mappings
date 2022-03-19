@@ -68,6 +68,350 @@ dotfiles_home:
 - geerlingguy.dotfiles
 dotfiles_files:
 - geerlingguy.dotfiles
+stig_version:
+- hardening
+cache_timeout:
+- hardening
+security_package_state:
+- hardening
+security_epel_install_repository:
+- hardening
+security_epel_release_package:
+- hardening
+security_set_minimum_password_lifetime:
+- hardening
+security_set_maximum_password_lifetime:
+- hardening
+security_rhel7_initialize_aide:
+- hardening
+security_rhel7_enable_aide:
+- hardening
+security_aide_exclude_dirs:
+- hardening
+security_rhel7_audit_failure_flag:
+- hardening
+security_rhel7_auditd_disk_full_action:
+- hardening
+security_rhel7_auditd_network_failure_action:
+- hardening
+security_rhel7_auditd_space_left:
+- hardening
+security_rhel7_auditd_space_left_action:
+- hardening
+security_rhel7_auditd_action_mail_acct:
+- hardening
+security_rhel7_audit_chsh:
+- hardening
+security_rhel7_audit_chage:
+- hardening
+security_rhel7_audit_chcon:
+- hardening
+security_rhel7_audit_chmod:
+- hardening
+security_rhel7_audit_chown:
+- hardening
+security_rhel7_audit_creat:
+- hardening
+security_rhel7_audit_crontab:
+- hardening
+security_rhel7_audit_delete_module:
+- hardening
+security_rhel7_audit_fchmod:
+- hardening
+security_rhel7_audit_fchmodat:
+- hardening
+security_rhel7_audit_fchown:
+- hardening
+security_rhel7_audit_fchownat:
+- hardening
+security_rhel7_audit_fremovexattr:
+- hardening
+security_rhel7_audit_fsetxattr:
+- hardening
+security_rhel7_audit_ftruncate:
+- hardening
+security_rhel7_audit_init_module:
+- hardening
+security_rhel7_audit_gpasswd:
+- hardening
+security_rhel7_audit_lchown:
+- hardening
+security_rhel7_audit_lremovexattr:
+- hardening
+security_rhel7_audit_lsetxattr:
+- hardening
+security_rhel7_audit_mount:
+- hardening
+security_rhel7_audit_newgrp:
+- hardening
+security_rhel7_audit_open:
+- hardening
+security_rhel7_audit_openat:
+- hardening
+security_rhel7_audit_open_by_handle_at:
+- hardening
+security_rhel7_audit_pam_timestamp_check:
+- hardening
+security_rhel7_audit_passwd:
+- hardening
+security_rhel7_audit_postdrop:
+- hardening
+security_rhel7_audit_postqueue:
+- hardening
+security_rhel7_audit_removexattr:
+- hardening
+security_rhel7_audit_rename:
+- hardening
+security_rhel7_audit_renameat:
+- hardening
+security_rhel7_audit_restorecon:
+- hardening
+security_rhel7_audit_rmdir:
+- hardening
+security_rhel7_audit_semanage:
+- hardening
+security_rhel7_audit_setsebool:
+- hardening
+security_rhel7_audit_setxattr:
+- hardening
+security_rhel7_audit_ssh_keysign:
+- hardening
+security_rhel7_audit_su:
+- hardening
+security_rhel7_audit_sudo:
+- hardening
+security_rhel7_audit_sudoedit:
+- hardening
+security_rhel7_audit_truncate:
+- hardening
+security_rhel7_audit_umount:
+- hardening
+security_rhel7_audit_unix_chkpwd:
+- hardening
+security_rhel7_audit_unlink:
+- hardening
+security_rhel7_audit_unlinkat:
+- hardening
+security_rhel7_audit_userhelper:
+- hardening
+security_rhel7_audit_account_access:
+- hardening
+security_rhel7_audit_sudo_config_changes:
+- hardening
+security_rhel7_audit_insmod:
+- hardening
+security_rhel7_audit_rmmod:
+- hardening
+security_rhel7_audit_modprobe:
+- hardening
+security_rhel7_audit_account_actions:
+- hardening
+security_sudoers_nopasswd_check_enable:
+- hardening
+security_disallow_blank_password_login:
+- hardening
+security_pwquality_apply_rules:
+- hardening
+security_pwquality_require_uppercase:
+- hardening
+security_pwquality_require_lowercase:
+- hardening
+security_pwquality_require_numeric:
+- hardening
+security_pwquality_require_special:
+- hardening
+security_pwquality_require_characters_changed:
+- hardening
+security_pwquality_require_character_classes_changed:
+- hardening
+security_pwquality_limit_repeated_characters:
+- hardening
+security_pwquality_limit_repeated_character_classes:
+- hardening
+security_pwquality_require_minimum_password_length:
+- hardening
+security_enable_pwquality_password_set:
+- hardening
+security_password_encrypt_method:
+- hardening
+security_libuser_crypt_style_sha512:
+- hardening
+security_shadow_utils_fail_delay:
+- hardening
+security_shadow_utils_create_home:
+- hardening
+security_disable_account_if_password_expires:
+- hardening
+security_pam_faillock_enable:
+- hardening
+security_pam_faillock_interval:
+- hardening
+security_pam_faillock_attempts:
+- hardening
+security_pam_faillock_deny_root:
+- hardening
+security_pam_faillock_unlock_time:
+- hardening
+security_rhel7_remove_shosts_files:
+- hardening
+security_rhel7_remove_shosts_exclude_dirs:
+- hardening
+security_reset_perm_ownership:
+- hardening
+security_search_for_invalid_owner:
+- hardening
+security_search_for_invalid_group_owner:
+- hardening
+security_set_home_directory_permissions_and_owners:
+- hardening
+security_find_world_writable_dirs:
+- hardening
+security_disable_gdm_automatic_login:
+- hardening
+security_disable_gdm_timed_login:
+- hardening
+security_lock_session:
+- hardening
+security_lock_session_inactive_delay:
+- hardening
+security_lock_session_override_user:
+- hardening
+security_lock_session_when_inactive:
+- hardening
+security_lock_session_screensaver_lock_delay:
+- hardening
+security_enable_graphical_login_message:
+- hardening
+security_enable_graphical_login_message_text:
+- hardening
+security_rhel7_enable_linux_security_module:
+- hardening
+security_rhel7_disable_autofs:
+- hardening
+security_enable_virus_scanner:
+- hardening
+security_run_virus_scanner_update:
+- hardening
+security_rhel7_disable_ctrl_alt_delete:
+- hardening
+security_enable_firewalld:
+- hardening
+security_enable_firewalld_rate_limit:
+- hardening
+security_enable_firewalld_rate_limit_per_minute:
+- hardening
+security_enable_firewalld_rate_limit_burst:
+- hardening
+security_enable_grub_update:
+- hardening
+security_require_grub_authentication:
+- hardening
+security_grub_password_hash:
+- hardening
+security_rhel7_session_timeout:
+- hardening
+security_rhel7_enable_chrony:
+- hardening
+security_ntp_servers:
+- hardening
+security_ntp_server_options:
+- hardening
+security_ntp_sync_rtc:
+- hardening
+security_allowed_ntp_subnets:
+- hardening
+security_ntp_bind_local_interfaces_only:
+- hardening
+security_rhel7_restrict_mail_relaying:
+- hardening
+security_login_banner_text:
+- hardening
+security_rhel7_remove_rsh_server:
+- hardening
+security_rhel7_remove_telnet_server:
+- hardening
+security_rhel7_remove_tftp_server:
+- hardening
+security_rhel7_remove_xorg:
+- hardening
+security_rhel7_remove_ypserv:
+- hardening
+security_package_clean_on_remove:
+- hardening
+security_rhel7_automatic_package_updates:
+- hardening
+security_install_multifactor_auth_packages:
+- hardening
+security_check_package_checksums:
+- hardening
+security_enable_gpgcheck_packages:
+- hardening
+security_enable_gpgcheck_packages_local:
+- hardening
+security_enable_gpgcheck_repo:
+- hardening
+security_enable_sshd:
+- hardening
+security_sshd_disallow_empty_password:
+- hardening
+security_sshd_disallow_environment_override:
+- hardening
+security_sshd_disallow_host_based_auth:
+- hardening
+security_sshd_cipher_list:
+- hardening
+security_sshd_banner_file:
+- hardening
+security_sshd_client_alive_interval:
+- hardening
+security_sshd_client_alive_count_max:
+- hardening
+security_sshd_print_last_log:
+- hardening
+security_sshd_permit_root_login:
+- hardening
+security_sshd_disallow_known_hosts_auth:
+- hardening
+security_sshd_disallow_rhosts_auth:
+- hardening
+security_sshd_enable_x11_forwarding:
+- hardening
+security_sshd_protocol:
+- hardening
+security_sshd_allowed_macs:
+- hardening
+security_sshd_disallow_gssapi:
+- hardening
+security_sshd_compression:
+- hardening
+security_sshd_enable_privilege_separation:
+- hardening
+security_sshd_enable_strict_modes:
+- hardening
+security_sshd_disable_kerberos_auth:
+- hardening
+security_disallow_source_routed_packet_forward_ipv4:
+- hardening
+security_disallow_source_routed_packet_forward_ipv6:
+- hardening
+security_disallow_echoes_broadcast_address:
+- hardening
+security_disallow_icmp_redirects:
+- hardening
+security_disallow_ip_forwarding:
+- hardening
+security_rhel7_disable_usb_storage:
+- hardening
+security_disable_kdump:
+- hardening
+security_rhel7_disable_dccp:
+- hardening
+security_enable_aslr:
+- hardening
+security_contrib_enabled:
+- hardening
+security_contrib_disable_ipv6:
+- hardening
 libvirt_vm_default_console_log_dir:
 - stackhpc.libvirt_vm
 libvirt_vm_default_uuid_deterministic:
@@ -1633,6 +1977,8 @@ patchman_docker_compose_directory:
 patchman_host:
 - osism.services.patchman
 patchman_port:
+- osism.services.patchman
+patchman_server_url:
 - osism.services.patchman
 patchman_tag:
 - osism.services.patchman
