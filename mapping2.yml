@@ -36,6 +36,32 @@ libvirt_host_qemu_conf_enabled:
 - stackhpc.libvirt_host
 libvirt_host_qemu_conf:
 - stackhpc.libvirt_host
+libvirt_host_enable_sasl_support:
+- stackhpc.libvirt_host
+libvirt_host_sasl_conf_enabled:
+- stackhpc.libvirt_host
+libvirt_host_sasl_conf:
+- stackhpc.libvirt_host
+libvirt_host_sasl_mech_list:
+- stackhpc.libvirt_host
+libvirt_host_sasl_credentials:
+- stackhpc.libvirt_host
+libvirt_host_sasl_authname:
+- stackhpc.libvirt_host
+libvirt_host_sasl_password:
+- stackhpc.libvirt_host
+libvirt_host_sasl_auth_conf_enabled:
+- stackhpc.libvirt_host
+libvirt_host_sasl_auth_conf:
+- stackhpc.libvirt_host
+libvirt_host_sasl_auth_conf_filename:
+- stackhpc.libvirt_host
+libvirt_host_sasl_auth_conf_owner:
+- stackhpc.libvirt_host
+libvirt_host_sasl_auth_conf_group:
+- stackhpc.libvirt_host
+libvirt_host_sasl_auth_conf_mode:
+- stackhpc.libvirt_host
 libvirt_host_tcp_listen:
 - stackhpc.libvirt_host
 libvirt_host_tcp_listen_address:
@@ -17189,6 +17215,8 @@ cinder_v3_public_endpoint:
 cinder_logging_debug:
 - kolla.cinder
 openstack_cinder_auth:
+- kolla.cinder
+cinder_rpc_version_startup_delay:
 - kolla.cinder
 cinder_backends:
 - kolla.cinder
