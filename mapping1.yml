@@ -1555,7 +1555,6 @@ osism.commons.motd:
 - motd_content
 osism.commons.hosts:
 - hosts_enable
-- hosts_interface
 - hosts_group_name
 - hosts_use_dns_as_single_source_of_truth
 - hosts_type

@@ -2876,8 +2876,6 @@ motd_content:
 - osism.commons.motd
 hosts_enable:
 - osism.commons.hosts
-hosts_interface:
-- osism.commons.hosts
 hosts_group_name:
 - osism.commons.hosts
 hosts_use_dns_as_single_source_of_truth:
