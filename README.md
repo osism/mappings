@@ -26,4 +26,31 @@ zabbix_version:
 - community.zabbix.zabbix_javagateway
 ```
 
-## mapping3: role -> environment (1:1)
+## mapping3: playbook -> environment (1:1)
+
+```
+auditd: generic
+backup-mariadb: generic
+bootstrap: generic
+check-reboot: generic
+chrony: generic
+chrony-force-sync: generic
+clamav: generic
+cleanup: generic
+[...]
+```
+
+## mapping4: environment -> playbook (1:n)
+
+```
+generic:
+- auditd
+- backup-mariadb
+- bootstrap
+- check-reboot
+- chrony
+- chrony-force-sync
+- clamav
+- cleanup
+[...]
+```
