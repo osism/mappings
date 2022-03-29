@@ -4547,6 +4547,8 @@ kibana__group:
 - debops.roles02.kibana
 kibana__additional_groups:
 - debops.roles02.kibana
+kibana__keystore_path:
+- debops.roles02.kibana
 kibana__fqdn:
 - debops.roles02.kibana
 kibana__domain:
@@ -4576,6 +4578,10 @@ kibana__elasticsearch_password:
 kibana__index:
 - debops.roles02.kibana
 kibana__default_app_id:
+- debops.roles02.kibana
+kibana__security_encryption_key:
+- debops.roles02.kibana
+kibana__reporting_encryption_key:
 - debops.roles02.kibana
 kibana__secure_connection:
 - debops.roles02.kibana
@@ -4626,6 +4632,14 @@ kibana__group_plugins:
 kibana__host_plugins:
 - debops.roles02.kibana
 kibana__combined_plugins:
+- debops.roles02.kibana
+kibana__keys:
+- debops.roles02.kibana
+kibana__group_keys:
+- debops.roles02.kibana
+kibana__host_keys:
+- debops.roles02.kibana
+kibana__combined_keys:
 - debops.roles02.kibana
 kibana__etc_services__dependent_list:
 - debops.roles02.kibana
@@ -10365,8 +10379,6 @@ root_account__group:
 - debops.debops.root_account
 root_account__shell:
 - debops.debops.root_account
-root_account__fix_no_tty:
-- debops.debops.root_account
 root_account__dotfiles_enabled:
 - debops.debops.root_account
 root_account__dotfiles_repo:
@@ -13809,7 +13821,15 @@ java__host_packages:
 - debops.roles01.java
 java__dependent_packages:
 - debops.roles01.java
+java__version:
+- debops.roles01.java
+java__major_version:
+- debops.roles01.java
 java__alternatives:
+- debops.roles01.java
+java__security_policy_path:
+- debops.roles01.java
+java__default_security_policy:
 - debops.roles01.java
 java__apt_preferences__dependent_list:
 - debops.roles01.java

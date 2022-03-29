@@ -2447,6 +2447,7 @@ debops.roles02.kibana:
 - kibana__user
 - kibana__group
 - kibana__additional_groups
+- kibana__keystore_path
 - kibana__fqdn
 - kibana__domain
 - kibana__webserver_access_policy
@@ -2462,6 +2463,8 @@ debops.roles02.kibana:
 - kibana__elasticsearch_password
 - kibana__index
 - kibana__default_app_id
+- kibana__security_encryption_key
+- kibana__reporting_encryption_key
 - kibana__secure_connection
 - kibana__pki_enabled
 - kibana__pki_base_path
@@ -2487,6 +2490,10 @@ debops.roles02.kibana:
 - kibana__group_plugins
 - kibana__host_plugins
 - kibana__combined_plugins
+- kibana__keys
+- kibana__group_keys
+- kibana__host_keys
+- kibana__combined_keys
 - kibana__etc_services__dependent_list
 - kibana__extrepo__dependent_sources
 - kibana__nginx__dependent_servers
@@ -5472,7 +5479,6 @@ debops.debops.root_account:
 - root_account__ssh_key_bits
 - root_account__group
 - root_account__shell
-- root_account__fix_no_tty
 - root_account__dotfiles_enabled
 - root_account__dotfiles_repo
 - root_account__authorized_keys
@@ -7234,7 +7240,11 @@ debops.roles01.java:
 - java__group_packages
 - java__host_packages
 - java__dependent_packages
+- java__version
+- java__major_version
 - java__alternatives
+- java__security_policy_path
+- java__default_security_policy
 - java__apt_preferences__dependent_list
 debops.roles01.icinga_db:
 - icinga_db__icinga_installed
