@@ -888,7 +888,6 @@ osism.services.traefik:
 - traefik_pilot_dashboard
 osism.services.cgit:
 - docker_network_mtu
-- docker_registry
 - docker_registry_cgit
 - operator_user
 - operator_group
@@ -1428,8 +1427,8 @@ osism.services.docker:
 - docker_kata_debian_repository
 - docker_dragonfly
 - docker_policies
-- docker_open_policy_agent_tag
-- docker_open_policy_agent_image
+- docker_openpolicyagent_tag
+- docker_openpolicyagent_image
 - docker_authorization_plugins_defaults
 - docker_authorization_plugins_extra
 - docker_authorization_plugins
@@ -1447,6 +1446,7 @@ osism.services.docker:
 - docker_cni_bin_dir
 - containerd_grpc_gid
 - docker_opts
+- docker_fact_files
 osism.services.clamav:
 - clamav_configuration_defaults
 - clamav_configuration_extra
