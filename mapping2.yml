@@ -2614,7 +2614,7 @@ docker_compose_version:
 - osism.commons.docker_compose
 docker_compose_plugin:
 - osism.services.docker
-docker_registry_openpolicyagent:
+docker_registry_docker_openpolicyagent:
 - osism.services.docker
 docker_insecure_registries:
 - osism.services.docker

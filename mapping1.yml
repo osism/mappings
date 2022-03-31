@@ -1401,7 +1401,7 @@ osism.services.docker:
 - docker_compose_version
 - docker_compose_plugin
 - docker_registry
-- docker_registry_openpolicyagent
+- docker_registry_docker_openpolicyagent
 - docker_insecure_registries
 - docker_registry_mirrors
 - docker_storage_driver
