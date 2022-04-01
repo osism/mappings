@@ -19959,6 +19959,8 @@ rabbitmq_tls_options:
 - kolla.rabbitmq
 rabbitmq_cluster_partition_handling:
 - kolla.rabbitmq
+rabbitmq_remove_ha_all_policy:
+- kolla.rabbitmq
 rabbitmq_enable_prometheus_plugin:
 - kolla.rabbitmq
 rabbitmq_plugins:

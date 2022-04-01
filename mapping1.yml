@@ -10404,6 +10404,7 @@ kolla.rabbitmq:
 - rabbitmq_server_additional_erl_args
 - rabbitmq_tls_options
 - rabbitmq_cluster_partition_handling
+- rabbitmq_remove_ha_all_policy
 - rabbitmq_enable_prometheus_plugin
 - rabbitmq_plugins
 - rabbitmq_enabled_plugins
