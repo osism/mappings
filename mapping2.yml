@@ -1667,7 +1667,6 @@ keycloak_traefik_host:
 docker_registry:
 - osism.services.adminer
 - osism.services.traefik
-- osism.services.cgit
 - osism.services.phpmyadmin
 - osism.services.zuul
 - osism.services.nexus
@@ -2615,7 +2614,7 @@ docker_compose_version:
 - osism.commons.docker_compose
 docker_compose_plugin:
 - osism.services.docker
-docker_registry_openpolicyagent:
+docker_registry_docker_openpolicyagent:
 - osism.services.docker
 docker_insecure_registries:
 - osism.services.docker
@@ -2668,9 +2667,9 @@ docker_dragonfly:
 - osism.services.docker
 docker_policies:
 - osism.services.docker
-docker_open_policy_agent_tag:
+docker_openpolicyagent_tag:
 - osism.services.docker
-docker_open_policy_agent_image:
+docker_openpolicyagent_image:
 - osism.services.docker
 docker_authorization_plugins_defaults:
 - osism.services.docker
@@ -2705,6 +2704,8 @@ docker_cni_bin_dir:
 containerd_grpc_gid:
 - osism.services.docker
 docker_opts:
+- osism.services.docker
+docker_fact_files:
 - osism.services.docker
 clamav_configuration_defaults:
 - osism.services.clamav
@@ -19957,6 +19958,8 @@ rabbitmq_server_additional_erl_args:
 rabbitmq_tls_options:
 - kolla.rabbitmq
 rabbitmq_cluster_partition_handling:
+- kolla.rabbitmq
+rabbitmq_remove_ha_all_policy:
 - kolla.rabbitmq
 rabbitmq_enable_prometheus_plugin:
 - kolla.rabbitmq
