@@ -1,5 +1,6 @@
 ceph:
 - ceph-add-mon
+- ceph-bootstrap-dashboard
 - ceph-ceph-keys
 - ceph-cephadm-adopt
 - ceph-cephadm
