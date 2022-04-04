@@ -3082,6 +3082,8 @@ configuration_type:
 - osism.commons.configuration
 configuration_git_package_name:
 - osism.commons.configuration
+configuration_git_proxy:
+- osism.commons.configuration
 configuration_git_public_key:
 - osism.commons.configuration
 configuration_git_private_key:
@@ -3090,8 +3092,6 @@ configuration_git_private_key_file:
 - osism.commons.configuration
 configuration_git_version:
 - osism.commons.configuration
-configuration_git_username:
-- osism.commons.configuration
 configuration_git_host:
 - osism.commons.configuration
 configuration_git_port:
@@ -3099,6 +3099,8 @@ configuration_git_port:
 configuration_git_repository:
 - osism.commons.configuration
 configuration_git_protocol:
+- osism.commons.configuration
+configuration_git_username:
 - osism.commons.configuration
 state_name:
 - osism.commons.state

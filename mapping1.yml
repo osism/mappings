@@ -1687,15 +1687,16 @@ osism.commons.configuration:
 - configuration_type
 - configuration_directory
 - configuration_git_package_name
+- configuration_git_proxy
 - configuration_git_public_key
 - configuration_git_private_key
 - configuration_git_private_key_file
 - configuration_git_version
-- configuration_git_username
 - configuration_git_host
 - configuration_git_port
 - configuration_git_repository
 - configuration_git_protocol
+- configuration_git_username
 osism.commons.state:
 - state_name
 - state_section
