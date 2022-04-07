@@ -1988,6 +1988,12 @@ cephclient_debian_packages:
 - osism.services.cephclient
 zuul_host:
 - osism.services.zuul
+zuul_logserver_fqdn:
+- osism.services.zuul
+zuul_webserver_fqdn:
+- osism.services.zuul
+zuul_webserver_admin:
+- osism.services.zuul
 zookeeper_fqdn:
 - osism.services.zuul
 base_conf_dir:
@@ -1997,8 +2003,6 @@ component_conf_dirs:
 connections:
 - osism.services.zuul
 tenants:
-- osism.services.zuul
-port_list:
 - osism.services.zuul
 nodepool_tag:
 - osism.services.zuul

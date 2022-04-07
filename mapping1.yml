@@ -1031,13 +1031,15 @@ osism.services.zuul:
 - operator_user
 - operator_group
 - zuul_host
+- zuul_logserver_fqdn
+- zuul_webserver_fqdn
+- zuul_webserver_admin
 - zookeeper_fqdn
 - base_conf_dir
 - component_conf_dirs
 - connections
 - tenants
 - docker_registry
-- port_list
 - nodepool_tag
 - zookeeper_tag
 - zuul_tag
