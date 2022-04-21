@@ -376,6 +376,7 @@ ceph.ceph-defaults:
 ceph.ceph-container-common: []
 community.zabbix.zabbix_server:
 - zabbix_server_version
+- zabbix_server_version_minor
 - zabbix_version
 - zabbix_repo
 - zabbix_server_apt_priority
@@ -422,6 +423,7 @@ community.zabbix.zabbix_server:
 - zabbix_server_dbsocket
 - zabbix_server_dbport
 - zabbix_server_dbhost_run_install
+- zabbix_server_allowunsupporteddbversions
 - zabbix_server_privileged_host
 - zabbix_server_historystorageurl
 - zabbix_server_historystoragetypes
@@ -456,6 +458,7 @@ community.zabbix.zabbix_server:
 - zabbix_server_historycachesize
 - zabbix_server_historyindexcachesize
 - zabbix_server_trendcachesize
+- zabbix_server_trendfunctioncachesize
 - zabbix_server_historytextcachesize
 - zabbix_server_valuecachesize
 - zabbix_server_nodenoevents
@@ -492,11 +495,22 @@ community.zabbix.zabbix_server:
 - zabbix_server_vmwareperffrequency
 - zabbix_server_vmwaretimeout
 - zabbix_server_manage_service
+- zabbix_server_vaulttoken
+- zabbix_server_vaulturl
+- zabbix_server_vaultdbpath
+- zabbix_server_startreportwriters
+- zabbix_server_webserviceurl
+- zabbix_server_servicemanagersyncfrequency
+- zabbix_server_problemhousekeepingfrequency
+- zabbix_server_listenbacklog
+- zabbix_server_hanodename
+- zabbix_server_nodeaddress
 - zabbix_selinux
 - selinux_allow_zabbix_can_network
 - selinux_allow_zabbix_can_http
 community.zabbix.zabbix_proxy:
 - zabbix_proxy_version
+- zabbix_proxy_version_minor
 - zabbix_version
 - zabbix_selinux
 - zabbix_repo
@@ -524,12 +538,14 @@ community.zabbix.zabbix_proxy:
 - zabbix_proxy_dbtlskeyfile
 - zabbix_proxy_dbtlscipher
 - zabbix_proxy_dbtlscipher13
+- zabbix_proxy_allowunsupporteddbversions
 - zabbix_proxy_database
 - zabbix_proxy_database_long
 - zabbix_proxy_mode
 - zabbix_proxy_hostname
 - zabbix_proxy_listenport
 - zabbix_proxy_sourceip
+- zabbix_proxy_logtype
 - zabbix_proxy_logfile
 - zabbix_proxy_logfilesize
 - zabbix_proxy_enableremotecommands
@@ -595,6 +611,10 @@ community.zabbix.zabbix_proxy:
 - zabbix_proxy_loadmodulepath
 - zabbix_proxy_manage_service
 - zabbix_proxy_statsallowedip
+- zabbix_proxy_vaulttoken
+- zabbix_proxy_vaulturl
+- zabbix_proxy_vaultdbpath
+- zabbix_proxy_listenbacklog
 - zabbix_proxy_tlsconnect
 - zabbix_proxy_tlsaccept
 - zabbix_proxy_tlscafile
@@ -625,6 +645,7 @@ community.zabbix.zabbix_proxy:
 community.zabbix.zabbix_agent:
 - zabbix_agent2
 - zabbix_agent_version
+- zabbix_agent_version_minor
 - zabbix_version
 - zabbix_version_patch
 - zabbix_repo
@@ -818,6 +839,7 @@ community.zabbix.zabbix_agent:
 - zabbix_agent_docker_env
 community.zabbix.zabbix_web:
 - zabbix_web_version
+- zabbix_web_version_minor
 - zabbix_version
 - zabbix_repo
 - zabbix_web_package_state
@@ -898,6 +920,9 @@ community.zabbix.zabbix_web:
 - zabbix_server_history_types
 - selinux_allow_zabbix_can_network
 - _zabbix_web_apache_php_addition
+- apache_ssl_cipher_suite
+- apache_ssl_protocol
+- apache_vhosts_version
 community.zabbix.zabbix_javagateway:
 - zabbix_javagateway_version
 - zabbix_version

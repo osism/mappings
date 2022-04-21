@@ -709,6 +709,8 @@ ceph_volume_debug:
 - ceph.ceph-defaults
 zabbix_server_version:
 - community.zabbix.zabbix_server
+zabbix_server_version_minor:
+- community.zabbix.zabbix_server
 zabbix_version:
 - community.zabbix.zabbix_server
 - community.zabbix.zabbix_proxy
@@ -840,6 +842,8 @@ zabbix_server_dbport:
 - community.zabbix.zabbix_web
 zabbix_server_dbhost_run_install:
 - community.zabbix.zabbix_server
+zabbix_server_allowunsupporteddbversions:
+- community.zabbix.zabbix_server
 zabbix_server_privileged_host:
 - community.zabbix.zabbix_server
 zabbix_server_historystorageurl:
@@ -907,6 +911,8 @@ zabbix_server_historycachesize:
 zabbix_server_historyindexcachesize:
 - community.zabbix.zabbix_server
 zabbix_server_trendcachesize:
+- community.zabbix.zabbix_server
+zabbix_server_trendfunctioncachesize:
 - community.zabbix.zabbix_server
 zabbix_server_historytextcachesize:
 - community.zabbix.zabbix_server
@@ -980,6 +986,26 @@ zabbix_server_vmwaretimeout:
 - community.zabbix.zabbix_server
 zabbix_server_manage_service:
 - community.zabbix.zabbix_server
+zabbix_server_vaulttoken:
+- community.zabbix.zabbix_server
+zabbix_server_vaulturl:
+- community.zabbix.zabbix_server
+zabbix_server_vaultdbpath:
+- community.zabbix.zabbix_server
+zabbix_server_startreportwriters:
+- community.zabbix.zabbix_server
+zabbix_server_webserviceurl:
+- community.zabbix.zabbix_server
+zabbix_server_servicemanagersyncfrequency:
+- community.zabbix.zabbix_server
+zabbix_server_problemhousekeepingfrequency:
+- community.zabbix.zabbix_server
+zabbix_server_listenbacklog:
+- community.zabbix.zabbix_server
+zabbix_server_hanodename:
+- community.zabbix.zabbix_server
+zabbix_server_nodeaddress:
+- community.zabbix.zabbix_server
 zabbix_selinux:
 - community.zabbix.zabbix_server
 - community.zabbix.zabbix_proxy
@@ -992,6 +1018,8 @@ selinux_allow_zabbix_can_network:
 selinux_allow_zabbix_can_http:
 - community.zabbix.zabbix_server
 zabbix_proxy_version:
+- community.zabbix.zabbix_proxy
+zabbix_proxy_version_minor:
 - community.zabbix.zabbix_proxy
 zabbix_proxy_apt_priority:
 - community.zabbix.zabbix_proxy
@@ -1028,6 +1056,8 @@ zabbix_proxy_dbtlscipher:
 - community.zabbix.zabbix_proxy
 zabbix_proxy_dbtlscipher13:
 - community.zabbix.zabbix_proxy
+zabbix_proxy_allowunsupporteddbversions:
+- community.zabbix.zabbix_proxy
 zabbix_proxy_database:
 - community.zabbix.zabbix_proxy
 zabbix_proxy_database_long:
@@ -1039,6 +1069,8 @@ zabbix_proxy_hostname:
 zabbix_proxy_listenport:
 - community.zabbix.zabbix_proxy
 zabbix_proxy_sourceip:
+- community.zabbix.zabbix_proxy
+zabbix_proxy_logtype:
 - community.zabbix.zabbix_proxy
 zabbix_proxy_logfile:
 - community.zabbix.zabbix_proxy
@@ -1170,6 +1202,14 @@ zabbix_proxy_manage_service:
 - community.zabbix.zabbix_proxy
 zabbix_proxy_statsallowedip:
 - community.zabbix.zabbix_proxy
+zabbix_proxy_vaulttoken:
+- community.zabbix.zabbix_proxy
+zabbix_proxy_vaulturl:
+- community.zabbix.zabbix_proxy
+zabbix_proxy_vaultdbpath:
+- community.zabbix.zabbix_proxy
+zabbix_proxy_listenbacklog:
+- community.zabbix.zabbix_proxy
 zabbix_proxy_tlsconnect:
 - community.zabbix.zabbix_proxy
 zabbix_proxy_tlsaccept:
@@ -1239,6 +1279,8 @@ zabbix_proxy_interface:
 zabbix_agent2:
 - community.zabbix.zabbix_agent
 zabbix_agent_version:
+- community.zabbix.zabbix_agent
+zabbix_agent_version_minor:
 - community.zabbix.zabbix_agent
 zabbix_version_patch:
 - community.zabbix.zabbix_agent
@@ -1586,6 +1628,8 @@ zabbix_agent_docker_env:
 - community.zabbix.zabbix_agent
 zabbix_web_version:
 - community.zabbix.zabbix_web
+zabbix_web_version_minor:
+- community.zabbix.zabbix_web
 zabbix_web_package_state:
 - community.zabbix.zabbix_web
 zabbix_web_centos_release:
@@ -1705,6 +1749,12 @@ zabbix_server_dbverifyhost:
 zabbix_server_history_types:
 - community.zabbix.zabbix_web
 _zabbix_web_apache_php_addition:
+- community.zabbix.zabbix_web
+apache_ssl_cipher_suite:
+- community.zabbix.zabbix_web
+apache_ssl_protocol:
+- community.zabbix.zabbix_web
+apache_vhosts_version:
 - community.zabbix.zabbix_web
 zabbix_javagateway_version:
 - community.zabbix.zabbix_javagateway
