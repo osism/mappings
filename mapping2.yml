@@ -13379,14 +13379,10 @@ netbox_postgres_username:
 - osism.services.netbox
 netbox_postgres_databasename:
 - osism.services.netbox
-redis_tag:
+netbox_redis_tag:
 - osism.services.netbox
-- osism.services.manager
-- kolla.redis
-redis_image:
+netbox_redis_image:
 - osism.services.netbox
-- osism.services.manager
-- kolla.redis
 netbox_traefik:
 - osism.services.netbox
 netbox_traefik_path_prefix:
@@ -14291,6 +14287,10 @@ kolla_ansible_tag:
 - osism.services.manager
 kolla_ansible_image:
 - osism.services.manager
+manager_redis_tag:
+- osism.services.manager
+manager_redis_image:
+- osism.services.manager
 enable_ara:
 - osism.services.manager
 ara_enable:
@@ -14329,12 +14329,10 @@ ara_server_mariadb_password:
 - osism.services.manager
 ara_server_mariadb_databasename:
 - osism.services.manager
-mariadb_tag:
+ara_server_mariadb_tag:
 - osism.services.manager
-- kolla.mariadb
-mariadb_image:
+ara_server_mariadb_image:
 - osism.services.manager
-- kolla.mariadb
 enable_celery:
 - osism.services.manager
 celery_enable:
@@ -16890,6 +16888,10 @@ external_haproxy_members:
 - kolla.mariadb
 mariadb_install_type:
 - kolla.mariadb
+mariadb_image:
+- kolla.mariadb
+mariadb_tag:
+- kolla.mariadb
 mariadb_image_full:
 - kolla.mariadb
 mariadb_clustercheck_install_type:
@@ -17017,6 +17019,10 @@ rally_database_address:
 redis_services:
 - kolla.redis
 redis_install_type:
+- kolla.redis
+redis_image:
+- kolla.redis
+redis_tag:
 - kolla.redis
 redis_image_full:
 - kolla.redis

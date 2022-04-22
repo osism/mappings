@@ -6930,8 +6930,8 @@ osism.services.netbox:
 - netbox_postgres_password
 - netbox_postgres_username
 - netbox_postgres_databasename
-- redis_tag
-- redis_image
+- netbox_redis_tag
+- netbox_redis_image
 - netbox_traefik
 - netbox_traefik_path_prefix
 - netbox_traefik_host
@@ -7478,8 +7478,8 @@ osism.services.manager:
 - kolla_ansible_container_name
 - kolla_ansible_tag
 - kolla_ansible_image
-- redis_tag
-- redis_image
+- manager_redis_tag
+- manager_redis_image
 - enable_ara
 - ara_enable
 - ara_username
@@ -7499,8 +7499,8 @@ osism.services.manager:
 - ara_server_mariadb_username
 - ara_server_mariadb_password
 - ara_server_mariadb_databasename
-- mariadb_tag
-- mariadb_image
+- ara_server_mariadb_tag
+- ara_server_mariadb_image
 - enable_celery
 - celery_enable
 - osism_tag
