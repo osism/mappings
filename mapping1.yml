@@ -7257,17 +7257,6 @@ osism.services.cgit:
 - cgit_traefik_host
 - traefik_external_network_name
 - traefik_external_network_cidr
-osism.services.cockpit:
-- configure_cockpit
-- cockpit_groupname
-- cockpit_system_color
-- cockpit_system_visible
-- configure_cockpit_server
-- cockpit_groupname_server
-- cockpit_host
-- cockpit_port
-- cockpit_ssh_port
-- cockpit_ssh_interface
 osism.services.openstack_health_monitor:
 - docker_network_mtu
 - docker_registry_openstack_health_monitor

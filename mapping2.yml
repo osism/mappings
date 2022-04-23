@@ -13928,26 +13928,6 @@ cgit_traefik_path_prefix:
 - osism.services.cgit
 cgit_traefik_host:
 - osism.services.cgit
-configure_cockpit:
-- osism.services.cockpit
-cockpit_groupname:
-- osism.services.cockpit
-cockpit_system_color:
-- osism.services.cockpit
-cockpit_system_visible:
-- osism.services.cockpit
-configure_cockpit_server:
-- osism.services.cockpit
-cockpit_groupname_server:
-- osism.services.cockpit
-cockpit_host:
-- osism.services.cockpit
-cockpit_port:
-- osism.services.cockpit
-cockpit_ssh_port:
-- osism.services.cockpit
-cockpit_ssh_interface:
-- osism.services.cockpit
 docker_registry_openstack_health_monitor:
 - osism.services.openstack_health_monitor
 openstack_health_monitor_install_type:
