@@ -6778,15 +6778,10 @@ osism.commons.systohc:
 - systohc_common
 osism.commons.docker_compose:
 - docker_compose_install_type
-- docker_compose_version
-- docker_compose_checksum
-- docker_compose_url
 - docker_compose_package_name
+- docker_compose_plugin_package_name
 - docker_compose_service_user
 - docker_compose_service_group
-- docker_registry_docker_compose
-- docker_compose_tag
-- docker_compose_image
 osism.commons.known_hosts:
 - operator_user
 - operator_group

@@ -13064,24 +13064,13 @@ systohc_common:
 - osism.commons.systohc
 docker_compose_install_type:
 - osism.commons.docker_compose
-docker_compose_version:
-- osism.commons.docker_compose
-- osism.services.docker
-docker_compose_checksum:
-- osism.commons.docker_compose
-docker_compose_url:
-- osism.commons.docker_compose
 docker_compose_package_name:
+- osism.commons.docker_compose
+docker_compose_plugin_package_name:
 - osism.commons.docker_compose
 docker_compose_service_user:
 - osism.commons.docker_compose
 docker_compose_service_group:
-- osism.commons.docker_compose
-docker_registry_docker_compose:
-- osism.commons.docker_compose
-docker_compose_tag:
-- osism.commons.docker_compose
-docker_compose_image:
 - osism.commons.docker_compose
 known_hosts_group_name:
 - osism.commons.known_hosts
@@ -13662,6 +13651,8 @@ docker_pip_package_name:
 docker_pip_extra_args:
 - osism.services.docker
 docker_version:
+- osism.services.docker
+docker_compose_version:
 - osism.services.docker
 docker_compose_plugin:
 - osism.services.docker
