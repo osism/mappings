@@ -6778,15 +6778,10 @@ osism.commons.systohc:
 - systohc_common
 osism.commons.docker_compose:
 - docker_compose_install_type
-- docker_compose_version
-- docker_compose_checksum
-- docker_compose_url
 - docker_compose_package_name
+- docker_compose_plugin_package_name
 - docker_compose_service_user
 - docker_compose_service_group
-- docker_registry_docker_compose
-- docker_compose_tag
-- docker_compose_image
 osism.commons.known_hosts:
 - operator_user
 - operator_group
@@ -6930,8 +6925,8 @@ osism.services.netbox:
 - netbox_postgres_password
 - netbox_postgres_username
 - netbox_postgres_databasename
-- redis_tag
-- redis_image
+- netbox_redis_tag
+- netbox_redis_image
 - netbox_traefik
 - netbox_traefik_path_prefix
 - netbox_traefik_host
@@ -7257,17 +7252,6 @@ osism.services.cgit:
 - cgit_traefik_host
 - traefik_external_network_name
 - traefik_external_network_cidr
-osism.services.cockpit:
-- configure_cockpit
-- cockpit_groupname
-- cockpit_system_color
-- cockpit_system_visible
-- configure_cockpit_server
-- cockpit_groupname_server
-- cockpit_host
-- cockpit_port
-- cockpit_ssh_port
-- cockpit_ssh_interface
 osism.services.openstack_health_monitor:
 - docker_network_mtu
 - docker_registry_openstack_health_monitor
@@ -7478,8 +7462,8 @@ osism.services.manager:
 - kolla_ansible_container_name
 - kolla_ansible_tag
 - kolla_ansible_image
-- redis_tag
-- redis_image
+- manager_redis_tag
+- manager_redis_image
 - enable_ara
 - ara_enable
 - ara_username
@@ -7499,8 +7483,8 @@ osism.services.manager:
 - ara_server_mariadb_username
 - ara_server_mariadb_password
 - ara_server_mariadb_databasename
-- mariadb_tag
-- mariadb_image
+- ara_server_mariadb_tag
+- ara_server_mariadb_image
 - enable_celery
 - celery_enable
 - osism_tag

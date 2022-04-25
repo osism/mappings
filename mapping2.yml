@@ -13064,24 +13064,13 @@ systohc_common:
 - osism.commons.systohc
 docker_compose_install_type:
 - osism.commons.docker_compose
-docker_compose_version:
-- osism.commons.docker_compose
-- osism.services.docker
-docker_compose_checksum:
-- osism.commons.docker_compose
-docker_compose_url:
-- osism.commons.docker_compose
 docker_compose_package_name:
+- osism.commons.docker_compose
+docker_compose_plugin_package_name:
 - osism.commons.docker_compose
 docker_compose_service_user:
 - osism.commons.docker_compose
 docker_compose_service_group:
-- osism.commons.docker_compose
-docker_registry_docker_compose:
-- osism.commons.docker_compose
-docker_compose_tag:
-- osism.commons.docker_compose
-docker_compose_image:
 - osism.commons.docker_compose
 known_hosts_group_name:
 - osism.commons.known_hosts
@@ -13379,14 +13368,10 @@ netbox_postgres_username:
 - osism.services.netbox
 netbox_postgres_databasename:
 - osism.services.netbox
-redis_tag:
+netbox_redis_tag:
 - osism.services.netbox
-- osism.services.manager
-- kolla.redis
-redis_image:
+netbox_redis_image:
 - osism.services.netbox
-- osism.services.manager
-- kolla.redis
 netbox_traefik:
 - osism.services.netbox
 netbox_traefik_path_prefix:
@@ -13667,6 +13652,8 @@ docker_pip_extra_args:
 - osism.services.docker
 docker_version:
 - osism.services.docker
+docker_compose_version:
+- osism.services.docker
 docker_compose_plugin:
 - osism.services.docker
 docker_registry_docker_openpolicyagent:
@@ -13932,26 +13919,6 @@ cgit_traefik_path_prefix:
 - osism.services.cgit
 cgit_traefik_host:
 - osism.services.cgit
-configure_cockpit:
-- osism.services.cockpit
-cockpit_groupname:
-- osism.services.cockpit
-cockpit_system_color:
-- osism.services.cockpit
-cockpit_system_visible:
-- osism.services.cockpit
-configure_cockpit_server:
-- osism.services.cockpit
-cockpit_groupname_server:
-- osism.services.cockpit
-cockpit_host:
-- osism.services.cockpit
-cockpit_port:
-- osism.services.cockpit
-cockpit_ssh_port:
-- osism.services.cockpit
-cockpit_ssh_interface:
-- osism.services.cockpit
 docker_registry_openstack_health_monitor:
 - osism.services.openstack_health_monitor
 openstack_health_monitor_install_type:
@@ -14291,6 +14258,10 @@ kolla_ansible_tag:
 - osism.services.manager
 kolla_ansible_image:
 - osism.services.manager
+manager_redis_tag:
+- osism.services.manager
+manager_redis_image:
+- osism.services.manager
 enable_ara:
 - osism.services.manager
 ara_enable:
@@ -14329,12 +14300,10 @@ ara_server_mariadb_password:
 - osism.services.manager
 ara_server_mariadb_databasename:
 - osism.services.manager
-mariadb_tag:
+ara_server_mariadb_tag:
 - osism.services.manager
-- kolla.mariadb
-mariadb_image:
+ara_server_mariadb_image:
 - osism.services.manager
-- kolla.mariadb
 enable_celery:
 - osism.services.manager
 celery_enable:
@@ -16890,6 +16859,10 @@ external_haproxy_members:
 - kolla.mariadb
 mariadb_install_type:
 - kolla.mariadb
+mariadb_image:
+- kolla.mariadb
+mariadb_tag:
+- kolla.mariadb
 mariadb_image_full:
 - kolla.mariadb
 mariadb_clustercheck_install_type:
@@ -17017,6 +16990,10 @@ rally_database_address:
 redis_services:
 - kolla.redis
 redis_install_type:
+- kolla.redis
+redis_image:
+- kolla.redis
+redis_tag:
 - kolla.redis
 redis_image_full:
 - kolla.redis
