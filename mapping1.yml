@@ -7516,6 +7516,7 @@ osism.services.manager:
 - manager_openstack_os_auth_url
 - traefik_external_network_name
 - traefik_external_network_cidr
+- manager_netbox_replicas
 osism.services.falco:
 - falco_configuration_files
 - falco_service_name

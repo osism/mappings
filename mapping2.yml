@@ -14356,6 +14356,8 @@ manager_openstack_os_password:
 - osism.services.manager
 manager_openstack_os_auth_url:
 - osism.services.manager
+manager_netbox_replicas:
+- osism.services.manager
 falco_configuration_files:
 - osism.services.falco
 falco_service_name:
