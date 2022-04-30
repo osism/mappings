@@ -1555,10 +1555,6 @@ docker_pip_extra_args:
 - osism.services.docker
 docker_version:
 - osism.services.docker
-docker_compose_version:
-- osism.services.docker
-docker_compose_plugin:
-- osism.services.docker
 docker_registry_docker_openpolicyagent:
 - osism.services.docker
 docker_insecure_registries:
