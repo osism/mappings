@@ -1501,6 +1501,17 @@ osism.commons.lynis:
 - lynis_debian_repository_arch
 - lynis_debian_repository_key
 - lynis_debian_repository
+osism.commons.sosreport:
+- sosreport_unarchive
+- sosreport_tmpdir
+- sosreport_cmd
+- sosreport_required_packages
+- sosreport_name
+- sosreport_archive_filename
+- sosreport_archive_directory
+- sosreport_plugins
+- operator_user
+- operator_group
 osism.commons.cleanup:
 - cleanup_packages_default
 - cleanup_packages_extra
@@ -9488,6 +9499,7 @@ kolla.nova-cell:
 - nova_cell_services_require_policy_json
 - nova_compute_startup_delay
 - nova_cell_conductor_has_api_database
+- nova_compute_registration_fatal
 - nova_notification_topics
 - nova_enabled_notification_topics
 - vmware_vcenter_datastore_regex

@@ -1127,6 +1127,7 @@ operator_user:
 - osism.services.rundeck
 - osism.commons.sshconfig
 - osism.commons.known_hosts
+- osism.commons.sosreport
 - osism.commons.operator
 - osism.commons.configuration
 operator_group:
@@ -1151,6 +1152,7 @@ operator_group:
 - osism.services.rundeck
 - osism.commons.sshconfig
 - osism.commons.known_hosts
+- osism.commons.sosreport
 - osism.commons.operator
 - osism.commons.configuration
 docker_network_mtu:
@@ -2736,6 +2738,22 @@ lynis_debian_repository_key:
 - osism.commons.lynis
 lynis_debian_repository:
 - osism.commons.lynis
+sosreport_unarchive:
+- osism.commons.sosreport
+sosreport_tmpdir:
+- osism.commons.sosreport
+sosreport_cmd:
+- osism.commons.sosreport
+sosreport_required_packages:
+- osism.commons.sosreport
+sosreport_name:
+- osism.commons.sosreport
+sosreport_archive_filename:
+- osism.commons.sosreport
+sosreport_archive_directory:
+- osism.commons.sosreport
+sosreport_plugins:
+- osism.commons.sosreport
 cleanup_packages_default:
 - osism.commons.cleanup
 cleanup_packages_extra:
@@ -18171,6 +18189,8 @@ nova_cell_services_require_policy_json:
 nova_compute_startup_delay:
 - kolla.nova-cell
 nova_cell_conductor_has_api_database:
+- kolla.nova-cell
+nova_compute_registration_fatal:
 - kolla.nova-cell
 vmware_vcenter_datastore_regex:
 - kolla.nova-cell
