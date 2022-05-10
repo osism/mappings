@@ -7245,6 +7245,8 @@ debops.roles02.avahi:
 - avahi__python__dependent_packages3
 - avahi__python__dependent_packages2
 - avahi__ferm__dependent_rules
+stackhpc.cephadm.ec_profiles:
+- cephadm_ec_profiles
 stackhpc.cephadm.cephadm:
 - cephadm_ceph_release
 - cephadm_skip_prechecks
@@ -7273,6 +7275,12 @@ stackhpc.cephadm.cephadm:
 - cephadm_osd_devices
 - cephadm_osd_spec
 - cephadm_radosgw_services
+stackhpc.cephadm.crush_rules:
+- cephadm_crush_rules
+stackhpc.cephadm.keys:
+- cephadm_keys
+stackhpc.cephadm.pools:
+- cephadm_pools
 stackhpc.systemd_networkd:
 - systemd_networkd_link
 - systemd_networkd_netdev
