@@ -7160,6 +7160,7 @@ osism.commons.cleanup:
 - cleanup_services_default
 - cleanup_services_extra
 - cleanup_services
+- cleanup_cloudinit
 osism.commons.configuration:
 - operator_user
 - operator_group
