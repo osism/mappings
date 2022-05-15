@@ -13681,6 +13681,8 @@ cleanup_services_extra:
 - osism.commons.cleanup
 cleanup_services:
 - osism.commons.cleanup
+cleanup_cloudinit:
+- osism.commons.cleanup
 configuration_type:
 - osism.commons.configuration
 configuration_git_package_name:
