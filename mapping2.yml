@@ -13656,6 +13656,8 @@ jenkins_service_name:
 - osism.services.jenkins
 docker_registry_virtualbmc:
 - osism.services.virtualbmc
+virtualbmc_container_name:
+- osism.services.virtualbmc
 virtualbmc_configuration_directory:
 - osism.services.virtualbmc
 virtualbmc_docker_compose_directory:

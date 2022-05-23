@@ -7149,6 +7149,7 @@ osism.services.virtualbmc:
 - operator_group
 - docker_network_mtu
 - docker_registry_virtualbmc
+- virtualbmc_container_name
 - virtualbmc_configuration_directory
 - virtualbmc_docker_compose_directory
 - virtualbmc_network
