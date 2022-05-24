@@ -13628,6 +13628,12 @@ fluentd_port:
 - osism.services.rsyslog
 fluentd_host:
 - osism.services.rsyslog
+tang_service_name:
+- osism.services.tang
+systemd_destination:
+- osism.services.tang
+tang_server_port:
+- osism.services.tang
 docker_registry_jenkins:
 - osism.services.jenkins
 jenkins_configuration_directory:
