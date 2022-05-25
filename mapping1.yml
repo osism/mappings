@@ -7127,6 +7127,10 @@ osism.services.rsyslog:
 - rsyslog_fluentd_host
 - fluentd_port
 - fluentd_host
+osism.services.tang:
+- tang_service_name
+- systemd_destination
+- tang_server_port
 osism.services.jenkins:
 - docker_network_mtu
 - docker_registry_jenkins
@@ -7149,6 +7153,7 @@ osism.services.virtualbmc:
 - operator_group
 - docker_network_mtu
 - docker_registry_virtualbmc
+- virtualbmc_container_name
 - virtualbmc_configuration_directory
 - virtualbmc_docker_compose_directory
 - virtualbmc_network

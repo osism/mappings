@@ -13628,6 +13628,12 @@ fluentd_port:
 - osism.services.rsyslog
 fluentd_host:
 - osism.services.rsyslog
+tang_service_name:
+- osism.services.tang
+systemd_destination:
+- osism.services.tang
+tang_server_port:
+- osism.services.tang
 docker_registry_jenkins:
 - osism.services.jenkins
 jenkins_configuration_directory:
@@ -13655,6 +13661,8 @@ jenkins_java_opts:
 jenkins_service_name:
 - osism.services.jenkins
 docker_registry_virtualbmc:
+- osism.services.virtualbmc
+virtualbmc_container_name:
 - osism.services.virtualbmc
 virtualbmc_configuration_directory:
 - osism.services.virtualbmc
