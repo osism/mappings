@@ -5683,6 +5683,7 @@ community.zabbix.zabbix_web:
 - zabbix_selinux
 - zabbix_web_doubleprecision
 - zabbix_web_conf_mode
+- zabbix_web_connect_ha_backend
 - zabbix_url
 - zabbix_api_server_url
 - zabbix_websrv
@@ -5727,6 +5728,7 @@ community.zabbix.zabbix_web:
 - zabbix_nginx_tls_ciphers
 - zabbix_letsencrypt
 - zabbix_letsencrypt_webroot_path
+- zabbix_letsencrypt_webroot_mode
 - zabbix_repo_yum_gpgcheck
 - zabbix_repo_yum_schema
 - zabbix_repo_yum_disabled
@@ -7264,6 +7266,18 @@ osism.services.homer:
 osism.services.smartd:
 - smartd_package_name
 - smartd_service_name
+osism.services.wireguard:
+- operator_user
+- operator_group
+- wireguard_mtu
+- wireguard_client_address
+- wireguard_allowed_client_ips
+- wireguard_server_address
+- wireguard_listen_port
+- wireguard_allowed_server_ips
+- wireguard_service_name
+- wireguard_server_public_address
+- wireguard_endpoint
 osism.validations.kernel_version:
 - kernel_version_fact
 - kernel_version_expected
@@ -9144,6 +9158,9 @@ kolla.masakari:
 - masakari_monitors_source_version
 - masakari_ks_services
 - masakari_ks_users
+- libvirt_enable_sasl
+- libvirt_sasl_authname
+- libvirt_sasl_mech_list
 kolla.kafka:
 - kafka_services
 - kafka_cluster_name
@@ -10188,6 +10205,7 @@ kolla.cloudkitty:
 - cloudkitty_source_version
 - cloudkitty_custom_metrics_yaml_file
 - cloudkitty_storage_backend
+- cloudkitty_influxdb_use_ssl
 - cloudkitty_influxdb_name
 - cloudkitty_elasticsearch_index_name
 - cloudkitty_elasticsearch_url
