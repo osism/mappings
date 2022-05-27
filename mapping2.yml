@@ -11029,6 +11029,8 @@ zabbix_web_doubleprecision:
 - community.zabbix.zabbix_web
 zabbix_web_conf_mode:
 - community.zabbix.zabbix_web
+zabbix_web_connect_ha_backend:
+- community.zabbix.zabbix_web
 zabbix_url:
 - community.zabbix.zabbix_web
 - community.zabbix.zabbix_proxy
@@ -11120,6 +11122,8 @@ zabbix_nginx_tls_ciphers:
 zabbix_letsencrypt:
 - community.zabbix.zabbix_web
 zabbix_letsencrypt_webroot_path:
+- community.zabbix.zabbix_web
+zabbix_letsencrypt_webroot_mode:
 - community.zabbix.zabbix_web
 zabbix_5_repo_yum:
 - community.zabbix.zabbix_web
@@ -12063,6 +12067,7 @@ operator_user:
 - osism.services.virtualbmc
 - osism.services.netbox
 - osism.services.homer
+- osism.services.wireguard
 operator_group:
 - osism.commons.known_hosts
 - osism.commons.operator
@@ -12088,6 +12093,7 @@ operator_group:
 - osism.services.virtualbmc
 - osism.services.netbox
 - osism.services.homer
+- osism.services.wireguard
 known_hosts_group_name:
 - osism.commons.known_hosts
 known_hosts_destination:
@@ -13850,6 +13856,24 @@ smartd_package_name:
 - osism.services.smartd
 smartd_service_name:
 - osism.services.smartd
+wireguard_mtu:
+- osism.services.wireguard
+wireguard_client_address:
+- osism.services.wireguard
+wireguard_allowed_client_ips:
+- osism.services.wireguard
+wireguard_server_address:
+- osism.services.wireguard
+wireguard_listen_port:
+- osism.services.wireguard
+wireguard_allowed_server_ips:
+- osism.services.wireguard
+wireguard_service_name:
+- osism.services.wireguard
+wireguard_server_public_address:
+- osism.services.wireguard
+wireguard_endpoint:
+- osism.services.wireguard
 kernel_version_fact:
 - osism.validations.kernel_version
 kernel_version_expected:
@@ -17474,6 +17498,15 @@ masakari_ks_services:
 - kolla.masakari
 masakari_ks_users:
 - kolla.masakari
+libvirt_enable_sasl:
+- kolla.masakari
+- kolla.nova-cell
+libvirt_sasl_authname:
+- kolla.masakari
+- kolla.nova-cell
+libvirt_sasl_mech_list:
+- kolla.masakari
+- kolla.nova-cell
 kafka_services:
 - kolla.kafka
 kafka_cluster_name:
@@ -19526,6 +19559,8 @@ cloudkitty_custom_metrics_yaml_file:
 - kolla.cloudkitty
 cloudkitty_storage_backend:
 - kolla.cloudkitty
+cloudkitty_influxdb_use_ssl:
+- kolla.cloudkitty
 cloudkitty_influxdb_name:
 - kolla.cloudkitty
 cloudkitty_elasticsearch_index_name:
@@ -20857,12 +20892,6 @@ libvirt_tls_manage_certs:
 migration_hostname:
 - kolla.nova-cell
 qemu_user_gid:
-- kolla.nova-cell
-libvirt_enable_sasl:
-- kolla.nova-cell
-libvirt_sasl_authname:
-- kolla.nova-cell
-libvirt_sasl_mech_list:
 - kolla.nova-cell
 enable_shared_var_lib_nova_mnt:
 - kolla.nova-cell
