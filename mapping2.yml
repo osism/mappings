@@ -12123,6 +12123,18 @@ systohc:
 - osism.commons.systohc
 systohc_common:
 - osism.commons.systohc
+clevis_service_name:
+- osism.commons.clevis
+clevis_tang_server:
+- osism.commons.clevis
+clevis_tang_server_protocol:
+- osism.commons.clevis
+clevis_tang_url:
+- osism.commons.clevis
+clevis_initial_luks_password:
+- osism.commons.clevis
+clevis_root_disk:
+- osism.commons.clevis
 docker_compose_install_type:
 - osism.commons.docker_compose
 docker_compose_package_name:

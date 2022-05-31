@@ -6252,6 +6252,13 @@ osism.commons.vault_init:
 osism.commons.systohc:
 - systohc
 - systohc_common
+osism.commons.clevis:
+- clevis_service_name
+- clevis_tang_server
+- clevis_tang_server_protocol
+- clevis_tang_url
+- clevis_initial_luks_password
+- clevis_root_disk
 osism.commons.docker_compose:
 - docker_compose_install_type
 - docker_compose_package_name
