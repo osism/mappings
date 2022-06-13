@@ -1713,7 +1713,12 @@ osism.commons.ipmitool:
 osism.commons.timezone:
 - timezone_hwclock
 - timezone_name
-osism.commons.repository: []
+osism.commons.repository:
+- repositories
+- repository_cache_valid_time
+- repository_key_files_directory
+- repository_keys
+- repository_key_ids
 osism.commons.clevis:
 - clevis_service_name
 - clevis_tang_server

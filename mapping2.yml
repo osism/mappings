@@ -3117,6 +3117,16 @@ timezone_hwclock:
 - osism.commons.timezone
 timezone_name:
 - osism.commons.timezone
+repositories:
+- osism.commons.repository
+repository_cache_valid_time:
+- osism.commons.repository
+repository_key_files_directory:
+- osism.commons.repository
+repository_keys:
+- osism.commons.repository
+repository_key_ids:
+- osism.commons.repository
 clevis_service_name:
 - osism.commons.clevis
 clevis_tang_server:
