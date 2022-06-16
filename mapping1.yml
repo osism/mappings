@@ -1581,7 +1581,6 @@ osism.commons.vault_init:
 osism.commons.sshconfig:
 - operator_user
 - operator_group
-- sshconfig_destination
 - sshconfig_groupname
 - sshconfig_order
 - sshconfig_port

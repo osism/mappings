@@ -2917,8 +2917,6 @@ vault_rules_read:
 - osism.commons.vault_init
 vault_rules_write:
 - osism.commons.vault_init
-sshconfig_destination:
-- osism.commons.sshconfig
 sshconfig_groupname:
 - osism.commons.sshconfig
 sshconfig_order:
