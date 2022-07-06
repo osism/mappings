@@ -12915,14 +12915,31 @@ connections:
 - osism.services.zuul
 tenants:
 - osism.services.zuul
-nodepool_tag:
+zuul_nodepool_tag:
 - osism.services.zuul
-zookeeper_tag:
+zuul_zookeeper_tag:
 - osism.services.zuul
-- kolla.zookeeper
 zuul_tag:
 - osism.services.zuul
-image_list:
+zuul_mariadb_tag:
+- osism.services.zuul
+zuul_log_server_tag:
+- osism.services.zuul
+zuul_nodepool_builder_image:
+- osism.services.zuul
+zuul_nodepool_launcher_image:
+- osism.services.zuul
+zuul_executor_image:
+- osism.services.zuul
+zuul_web_image:
+- osism.services.zuul
+zuul_scheduler_image:
+- osism.services.zuul
+zuul_zookeeper_image:
+- osism.services.zuul
+zuul_mariadb_image:
+- osism.services.zuul
+zuul_log_server_image:
 - osism.services.zuul
 database:
 - osism.services.zuul
@@ -20296,6 +20313,8 @@ zookeeper_log_settings:
 zookeeper_install_type:
 - kolla.zookeeper
 zookeeper_image:
+- kolla.zookeeper
+zookeeper_tag:
 - kolla.zookeeper
 zookeeper_image_full:
 - kolla.zookeeper
