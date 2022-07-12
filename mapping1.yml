@@ -7729,6 +7729,7 @@ ceph.ceph-defaults:
 - is_hci
 - hci_safety_factor
 - non_hci_safety_factor
+- safety_factor
 - osd_memory_target
 - journal_size
 - block_db_size

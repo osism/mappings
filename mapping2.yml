@@ -14749,6 +14749,8 @@ hci_safety_factor:
 - ceph.ceph-defaults
 non_hci_safety_factor:
 - ceph.ceph-defaults
+safety_factor:
+- ceph.ceph-defaults
 osd_memory_target:
 - ceph.ceph-defaults
 journal_size:
