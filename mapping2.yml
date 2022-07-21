@@ -11611,6 +11611,7 @@ operator_user:
 - osism.commons.sosreport
 - osism.commons.operator
 - osism.services.nexus
+- osism.services.squid
 - osism.services.phpmyadmin
 - osism.services.rundeck
 - osism.services.patchman
@@ -11637,6 +11638,7 @@ operator_group:
 - osism.commons.sosreport
 - osism.commons.operator
 - osism.services.nexus
+- osism.services.squid
 - osism.services.phpmyadmin
 - osism.services.rundeck
 - osism.services.patchman
@@ -11999,6 +12001,7 @@ falco_debian_repository:
 - osism.services.falco
 docker_network_mtu:
 - osism.services.nexus
+- osism.services.squid
 - osism.services.phpmyadmin
 - osism.services.rundeck
 - osism.services.patchman
@@ -12125,6 +12128,28 @@ systemd_destination:
 - osism.services.tang
 tang_server_port:
 - osism.services.tang
+docker_registry_squid:
+- osism.services.squid
+squid_configuration_directory:
+- osism.services.squid
+squid_docker_compose_directory:
+- osism.services.squid
+squid_network:
+- osism.services.squid
+squid_service_name:
+- osism.services.squid
+squid_host:
+- osism.services.squid
+squid_port:
+- osism.services.squid
+squid_tag:
+- osism.services.squid
+squid_image:
+- osism.services.squid
+squid_container_name:
+- osism.services.squid
+squid_allowed_addresses:
+- osism.services.squid
 docker_registry_phpmyadmin:
 - osism.services.phpmyadmin
 phpmyadmin_docker_compose_directory:

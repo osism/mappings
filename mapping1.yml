@@ -6259,6 +6259,21 @@ osism.services.tang:
 - tang_service_name
 - systemd_destination
 - tang_server_port
+osism.services.squid:
+- operator_user
+- operator_group
+- docker_network_mtu
+- docker_registry_squid
+- squid_configuration_directory
+- squid_docker_compose_directory
+- squid_network
+- squid_service_name
+- squid_host
+- squid_port
+- squid_tag
+- squid_image
+- squid_container_name
+- squid_allowed_addresses
 osism.services.phpmyadmin:
 - docker_network_mtu
 - docker_registry
