@@ -12536,6 +12536,8 @@ manager_environment_extra:
 - osism.services.manager
 manager_listener_broker_uri:
 - osism.services.manager
+manager_enable_bifrost:
+- osism.services.manager
 manager_openstack_os_project_domain_name:
 - osism.services.manager
 manager_openstack_os_user_domain_name:
