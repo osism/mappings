@@ -6502,6 +6502,7 @@ osism.services.manager:
 - manager_environment_extra
 - manager_listener_broker_uri
 - manager_enable_bifrost
+- manager_enable_ironic
 - manager_openstack_os_project_domain_name
 - manager_openstack_os_user_domain_name
 - manager_openstack_os_project_name
