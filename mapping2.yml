@@ -619,6 +619,10 @@ cephadm_ssh_private_key:
 cephadm_ssh_user:
 - stackhpc.cephadm.cephadm
 - ceph.ceph-defaults
+cephadm_bootstrap_additional_parameters:
+- stackhpc.cephadm.cephadm
+cephadm_apt_repo_dist:
+- stackhpc.cephadm.cephadm
 cephadm_mon_count:
 - stackhpc.cephadm.cephadm
 cephadm_mgr_count:
@@ -639,6 +643,8 @@ cephadm_osd_spec:
 - stackhpc.cephadm.cephadm
 cephadm_radosgw_services:
 - stackhpc.cephadm.cephadm
+cephadm_commands:
+- stackhpc.cephadm.commands
 cephadm_keys:
 - stackhpc.cephadm.keys
 cephadm_ec_profiles:
@@ -13052,6 +13058,8 @@ minikube_package_url:
 wireguard_mtu:
 - osism.services.wireguard
 wireguard_client_address:
+- osism.services.wireguard
+wireguard_client_configuration_file:
 - osism.services.wireguard
 wireguard_allowed_client_ips:
 - osism.services.wireguard
