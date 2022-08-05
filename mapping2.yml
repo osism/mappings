@@ -14799,6 +14799,8 @@ health_osd_check_retries:
 - ceph.ceph-defaults
 health_osd_check_delay:
 - ceph.ceph-defaults
+ceph_rbd_mirror_pool:
+- ceph.ceph-defaults
 nfs_file_gw:
 - ceph.ceph-defaults
 nfs_obj_gw:
@@ -15078,13 +15080,9 @@ ceph_rbd_mirror_local_user:
 - ceph.ceph-rbd-mirror
 ceph_rbd_mirror_configure:
 - ceph.ceph-rbd-mirror
-ceph_rbd_mirror_pool:
-- ceph.ceph-rbd-mirror
 ceph_rbd_mirror_mode:
 - ceph.ceph-rbd-mirror
 ceph_rbd_mirror_remote_cluster:
-- ceph.ceph-rbd-mirror
-ceph_rbd_mirror_remote_user:
 - ceph.ceph-rbd-mirror
 ceph_rbd_mirror_docker_memory_limit:
 - ceph.ceph-rbd-mirror
