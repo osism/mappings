@@ -12025,14 +12025,6 @@ docker_network_mtu:
 - osism.services.openldap
 - osism.services.openstackclient
 - osism.services.adminer
-docker_registry:
-- osism.services.nexus
-- osism.services.phpmyadmin
-- osism.services.manager
-- osism.services.zuul
-- osism.services.docker
-- osism.services.traefik
-- osism.services.adminer
 docker_registry_nexus:
 - osism.services.nexus
 nexus_docker_compose_directory:
@@ -12156,6 +12148,13 @@ squid_container_name:
 - osism.services.squid
 squid_allowed_addresses:
 - osism.services.squid
+docker_registry:
+- osism.services.phpmyadmin
+- osism.services.manager
+- osism.services.zuul
+- osism.services.docker
+- osism.services.traefik
+- osism.services.adminer
 docker_registry_phpmyadmin:
 - osism.services.phpmyadmin
 phpmyadmin_docker_compose_directory:

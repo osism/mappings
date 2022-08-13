@@ -6218,7 +6218,6 @@ osism.services.falco:
 - falco_debian_repository
 osism.services.nexus:
 - docker_network_mtu
-- docker_registry
 - docker_registry_nexus
 - operator_user
 - operator_group
