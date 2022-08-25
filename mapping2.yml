@@ -13499,6 +13499,8 @@ auditd_backup:
 - osism.services.auditd
 auditd_syslog:
 - osism.services.auditd
+auditd_plugin_path:
+- osism.services.auditd
 auditd_config:
 - osism.services.auditd
 auditd_rules_path:

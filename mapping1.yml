@@ -7043,6 +7043,7 @@ osism.services.netdata:
 osism.services.auditd:
 - auditd_backup
 - auditd_syslog
+- auditd_plugin_path
 - auditd_config
 - auditd_rules_path
 - auditd_rules_files_defaults
