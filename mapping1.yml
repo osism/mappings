@@ -87,7 +87,7 @@ debops.roles03.prosody:
 - prosody__base_packages
 - prosody__packages
 - prosody__pki
-- prosdoy__pki_realm_path
+- prosody__pki_realm_path
 - prosody__pki_realm
 - prosody__pki_crt_filename
 - prosody__pki_key_filename
@@ -1086,6 +1086,34 @@ debops.roles03.netbox:
 - netbox__redis_database
 - netbox__redis_cache_database
 - netbox__redis_ssl
+- netbox__ldap_enabled
+- netbox__ldap_base_dn
+- netbox__ldap_device_dn
+- netbox__ldap_self_rdn
+- netbox__ldap_self_object_classes
+- netbox__ldap_self_attributes
+- netbox__ldap_binddn
+- netbox__ldap_bindpw
+- netbox__ldap_people_rdn
+- netbox__ldap_people_dn
+- netbox__ldap_group_authentication_enabled
+- netbox__ldap_private_groups
+- netbox__ldap_groups_rdn
+- netbox__ldap_groups_dn
+- netbox__ldap_user_group_rdn
+- netbox__ldap_user_group_dn
+- netbox__ldap_user_active_group_rdn
+- netbox__ldap_user_active_group_dn
+- netbox__ldap_user_staff_group_rdn
+- netbox__ldap_user_staff_group_dn
+- netbox__ldap_user_admin_group_rdn
+- netbox__ldap_user_admin_group_dn
+- netbox__ldap_object_owner_rdn
+- netbox__ldap_object_ownerdn
+- netbox__ldap_server_uri
+- netbox__ldap_server_port
+- netbox__ldap_start_tls
+- netbox__ldap_user_filter
 - netbox__config_allowed_hosts
 - netbox__config_secret_key
 - netbox__config_admins
@@ -1148,6 +1176,7 @@ debops.roles03.netbox:
 - netbox__keyring__dependent_gpg_keys
 - netbox__python__dependent_packages3
 - netbox__python__dependent_packages2
+- netbox__ldap__dependent_tasks
 - netbox__gunicorn__dependent_applications
 - netbox__postgresql__dependent_roles
 - netbox__postgresql__dependent_groups
@@ -1202,6 +1231,7 @@ debops.roles03.dokuwiki:
 - dokuwiki__user
 - dokuwiki__group
 - dokuwiki__home
+- dokuwiki__shell
 - dokuwiki__src
 - dokuwiki__www
 - dokuwiki__webserver_user
@@ -1679,6 +1709,10 @@ debops.debops.resources:
 - resources__group_commands
 - resources__host_commands
 - resources__combined_commands
+- resources__replacements
+- resources__group_replacements
+- resources__host_replacements
+- resources__combined_replacements
 debops.debops.apt_preferences:
 - apt_preferences__list
 - apt_preferences__group_list
@@ -2327,6 +2361,8 @@ debops.debops.fhs:
 - fhs__enabled
 - fhs__default_directories
 - fhs__directories
+- fhs__group_directories
+- fhs__host_directories
 - fhs__combined_directories
 debops.debops.nsswitch:
 - nsswitch__enabled
@@ -2364,6 +2400,9 @@ debops.debops.ferm:
 - ferm__ansible_controllers
 - ferm__ansible_controllers_ports
 - ferm__ansible_controllers_interfaces
+- ferm__fast_mode
+- ferm__use_cache
+- ferm__extra_options
 - ferm__default_policy_input
 - ferm__default_policy_output
 - ferm__default_policy_forward
@@ -3443,6 +3482,9 @@ debops.roles01.icinga:
 - icinga__group
 - icinga__additional_groups
 - icinga__fqdn
+- icinga__display_name
+- icinga__ipv4_address
+- icinga__ipv6_address
 - icinga__domain
 - icinga__master_nodes
 - icinga__master_delegate_to
@@ -3750,6 +3792,8 @@ debops.roles01.postfix:
 - postfix__base_packages
 - postfix__dependent_packages
 - postfix__packages
+- postfix__group_packages
+- postfix__host_packages
 - postfix__purge_packages
 - postfix__version
 - postfix__doc_installed
@@ -4081,7 +4125,6 @@ debops.roles01.dovecot:
 - dovecot__ldap_people_rdn
 - dovecot__ldap_people_dn
 - dovecot__ldap_uri
-- dovecot__ldap_server_port
 - dovecot__ldap_start_tls
 - dovecot__ldap_user_filter
 - dovecot__ldap_quota_attribute
@@ -4323,6 +4366,7 @@ debops.roles01.icinga_web:
 - icinga_web__director_home_mode
 - icinga_web__director_shell
 - icinga_web__director_api_fqdn
+- icinga_web__director_api_url
 - icinga_web__director_api_user
 - icinga_web__director_api_password
 - icinga_web__director_database_type
@@ -4335,6 +4379,11 @@ debops.roles01.icinga_web:
 - icinga_web__director_database_delegate_to
 - icinga_web__director_database_init
 - icinga_web__director_kickstart_enabled
+- icinga_web__director_default_templates
+- icinga_web__director_templates
+- icinga_web__director_group_templates
+- icinga_web__director_host_templates
+- icinga_web__director_combined_templates
 - icinga_web__x509_enabled
 - icinga_web__x509_database_name
 - icinga_web__x509_database_user
@@ -4837,6 +4886,7 @@ debops.roles02.slapd:
 - slapd__groupid_min
 - slapd__groupid_max
 - slapd__uid_gid_max
+- slapd__saslauthd_enabled
 - slapd__data_max_size
 - slapd__pki
 - slapd__pki_path
@@ -5652,7 +5702,6 @@ debops.roles02.postldap:
 - postldap__ldap_default_virtual_domain_rdn
 - postldap__ldap_default_virtual_domain_dn
 - postldap__ldap_server_uri
-- postldap__ldap_server_port
 - postldap__ldap_start_tls
 - postldap__ldap_default_config
 - postldap__ldap_config

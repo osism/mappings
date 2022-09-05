@@ -157,7 +157,7 @@ prosody__packages:
 - debops.roles03.prosody
 prosody__pki:
 - debops.roles03.prosody
-prosdoy__pki_realm_path:
+prosody__pki_realm_path:
 - debops.roles03.prosody
 prosody__pki_realm:
 - debops.roles03.prosody
@@ -2075,6 +2075,62 @@ netbox__redis_cache_database:
 - debops.roles03.netbox
 netbox__redis_ssl:
 - debops.roles03.netbox
+netbox__ldap_enabled:
+- debops.roles03.netbox
+netbox__ldap_base_dn:
+- debops.roles03.netbox
+netbox__ldap_device_dn:
+- debops.roles03.netbox
+netbox__ldap_self_rdn:
+- debops.roles03.netbox
+netbox__ldap_self_object_classes:
+- debops.roles03.netbox
+netbox__ldap_self_attributes:
+- debops.roles03.netbox
+netbox__ldap_binddn:
+- debops.roles03.netbox
+netbox__ldap_bindpw:
+- debops.roles03.netbox
+netbox__ldap_people_rdn:
+- debops.roles03.netbox
+netbox__ldap_people_dn:
+- debops.roles03.netbox
+netbox__ldap_group_authentication_enabled:
+- debops.roles03.netbox
+netbox__ldap_private_groups:
+- debops.roles03.netbox
+netbox__ldap_groups_rdn:
+- debops.roles03.netbox
+netbox__ldap_groups_dn:
+- debops.roles03.netbox
+netbox__ldap_user_group_rdn:
+- debops.roles03.netbox
+netbox__ldap_user_group_dn:
+- debops.roles03.netbox
+netbox__ldap_user_active_group_rdn:
+- debops.roles03.netbox
+netbox__ldap_user_active_group_dn:
+- debops.roles03.netbox
+netbox__ldap_user_staff_group_rdn:
+- debops.roles03.netbox
+netbox__ldap_user_staff_group_dn:
+- debops.roles03.netbox
+netbox__ldap_user_admin_group_rdn:
+- debops.roles03.netbox
+netbox__ldap_user_admin_group_dn:
+- debops.roles03.netbox
+netbox__ldap_object_owner_rdn:
+- debops.roles03.netbox
+netbox__ldap_object_ownerdn:
+- debops.roles03.netbox
+netbox__ldap_server_uri:
+- debops.roles03.netbox
+netbox__ldap_server_port:
+- debops.roles03.netbox
+netbox__ldap_start_tls:
+- debops.roles03.netbox
+netbox__ldap_user_filter:
+- debops.roles03.netbox
 netbox__config_allowed_hosts:
 - debops.roles03.netbox
 netbox__config_secret_key:
@@ -2199,6 +2255,8 @@ netbox__python__dependent_packages3:
 - debops.roles03.netbox
 netbox__python__dependent_packages2:
 - debops.roles03.netbox
+netbox__ldap__dependent_tasks:
+- debops.roles03.netbox
 netbox__gunicorn__dependent_applications:
 - debops.roles03.netbox
 netbox__postgresql__dependent_roles:
@@ -2300,6 +2358,8 @@ dokuwiki__user:
 dokuwiki__group:
 - debops.roles03.dokuwiki
 dokuwiki__home:
+- debops.roles03.dokuwiki
+dokuwiki__shell:
 - debops.roles03.dokuwiki
 dokuwiki__src:
 - debops.roles03.dokuwiki
@@ -3214,6 +3274,14 @@ resources__group_commands:
 resources__host_commands:
 - debops.debops.resources
 resources__combined_commands:
+- debops.debops.resources
+resources__replacements:
+- debops.debops.resources
+resources__group_replacements:
+- debops.debops.resources
+resources__host_replacements:
+- debops.debops.resources
+resources__combined_replacements:
 - debops.debops.resources
 apt_preferences__list:
 - debops.debops.apt_preferences
@@ -4453,6 +4521,10 @@ fhs__default_directories:
 - debops.debops.fhs
 fhs__directories:
 - debops.debops.fhs
+fhs__group_directories:
+- debops.debops.fhs
+fhs__host_directories:
+- debops.debops.fhs
 fhs__combined_directories:
 - debops.debops.fhs
 nsswitch__enabled:
@@ -4520,6 +4592,12 @@ ferm__ansible_controllers:
 ferm__ansible_controllers_ports:
 - debops.debops.ferm
 ferm__ansible_controllers_interfaces:
+- debops.debops.ferm
+ferm__fast_mode:
+- debops.debops.ferm
+ferm__use_cache:
+- debops.debops.ferm
+ferm__extra_options:
 - debops.debops.ferm
 ferm__default_policy_input:
 - debops.debops.ferm
@@ -6629,6 +6707,12 @@ icinga__additional_groups:
 - debops.roles01.icinga
 icinga__fqdn:
 - debops.roles01.icinga
+icinga__display_name:
+- debops.roles01.icinga
+icinga__ipv4_address:
+- debops.roles01.icinga
+icinga__ipv6_address:
+- debops.roles01.icinga
 icinga__domain:
 - debops.roles01.icinga
 icinga__master_nodes:
@@ -7226,6 +7310,10 @@ postfix__base_packages:
 postfix__dependent_packages:
 - debops.roles01.postfix
 postfix__packages:
+- debops.roles01.postfix
+postfix__group_packages:
+- debops.roles01.postfix
+postfix__host_packages:
 - debops.roles01.postfix
 postfix__purge_packages:
 - debops.roles01.postfix
@@ -7863,8 +7951,6 @@ dovecot__ldap_people_dn:
 - debops.roles01.dovecot
 dovecot__ldap_uri:
 - debops.roles01.dovecot
-dovecot__ldap_server_port:
-- debops.roles01.dovecot
 dovecot__ldap_start_tls:
 - debops.roles01.dovecot
 dovecot__ldap_user_filter:
@@ -8341,6 +8427,8 @@ icinga_web__director_shell:
 - debops.roles01.icinga_web
 icinga_web__director_api_fqdn:
 - debops.roles01.icinga_web
+icinga_web__director_api_url:
+- debops.roles01.icinga_web
 icinga_web__director_api_user:
 - debops.roles01.icinga_web
 icinga_web__director_api_password:
@@ -8364,6 +8452,16 @@ icinga_web__director_database_delegate_to:
 icinga_web__director_database_init:
 - debops.roles01.icinga_web
 icinga_web__director_kickstart_enabled:
+- debops.roles01.icinga_web
+icinga_web__director_default_templates:
+- debops.roles01.icinga_web
+icinga_web__director_templates:
+- debops.roles01.icinga_web
+icinga_web__director_group_templates:
+- debops.roles01.icinga_web
+icinga_web__director_host_templates:
+- debops.roles01.icinga_web
+icinga_web__director_combined_templates:
 - debops.roles01.icinga_web
 icinga_web__x509_enabled:
 - debops.roles01.icinga_web
@@ -9352,6 +9450,8 @@ slapd__groupid_min:
 slapd__groupid_max:
 - debops.roles02.slapd
 slapd__uid_gid_max:
+- debops.roles02.slapd
+slapd__saslauthd_enabled:
 - debops.roles02.slapd
 slapd__data_max_size:
 - debops.roles02.slapd
@@ -10942,8 +11042,6 @@ postldap__ldap_default_virtual_domain_rdn:
 postldap__ldap_default_virtual_domain_dn:
 - debops.roles02.postldap
 postldap__ldap_server_uri:
-- debops.roles02.postldap
-postldap__ldap_server_port:
 - debops.roles02.postldap
 postldap__ldap_start_tls:
 - debops.roles02.postldap
