@@ -8110,6 +8110,7 @@ kolla.common:
 - fluentd_elasticsearch_ssl_version
 - fluentd_elasticsearch_ssl_verify
 - fluentd_elasticsearch_cacert
+- fluentd_elasticsearch_request_timeout
 - common_install_type
 - common_tag
 - cron_dimensions
