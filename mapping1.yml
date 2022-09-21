@@ -33,6 +33,7 @@ stackhpc.cephadm.cephadm:
 - cephadm_registry_url
 - cephadm_registry_username
 - cephadm_registry_password
+- cephadm_bootstrap_host
 - cephadm_enable_dashboard
 - cephadm_enable_firewalld
 - cephadm_enable_monitoring
