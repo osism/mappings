@@ -13357,20 +13357,6 @@ docker_debian_repository:
 - osism.services.docker
 docker_default_runtime:
 - osism.services.docker
-docker_kata_install:
-- osism.services.docker
-docker_kata_version:
-- osism.services.docker
-docker_kata_packages:
-- osism.services.docker
-docker_kata_configure_repository:
-- osism.services.docker
-docker_kata_debian_repository_arch:
-- osism.services.docker
-docker_kata_debian_repository_key:
-- osism.services.docker
-docker_kata_debian_repository:
-- osism.services.docker
 docker_dragonfly:
 - osism.services.docker
 docker_policies:
