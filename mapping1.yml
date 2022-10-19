@@ -6546,6 +6546,7 @@ stackhpc.cephadm.cephadm:
 - cephadm_enable_dashboard
 - cephadm_enable_firewalld
 - cephadm_enable_monitoring
+- cephadm_host_labels
 - cephadm_install_ceph_cli
 - cephadm_ssh_public_key
 - cephadm_ssh_private_key

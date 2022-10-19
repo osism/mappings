@@ -12655,6 +12655,8 @@ cephadm_enable_firewalld:
 - stackhpc.cephadm.cephadm
 cephadm_enable_monitoring:
 - stackhpc.cephadm.cephadm
+cephadm_host_labels:
+- stackhpc.cephadm.cephadm
 cephadm_install_ceph_cli:
 - stackhpc.cephadm.cephadm
 cephadm_ssh_public_key:
