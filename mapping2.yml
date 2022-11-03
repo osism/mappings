@@ -15223,38 +15223,6 @@ systemd_destination:
 - osism.services.tang
 tang_server_port:
 - osism.services.tang
-ansible_connection:
-- arista.cvp.dhcp_configuration
-ansible_become_method:
-- arista.cvp.dhcp_configuration
-mode:
-- arista.cvp.dhcp_configuration
-output_dir:
-- arista.cvp.dhcp_configuration
-dhcp_packages:
-- arista.cvp.dhcp_configuration
-dhcp_packages_state:
-- arista.cvp.dhcp_configuration
-dhcp_config_dir:
-- arista.cvp.dhcp_configuration
-dhcp_config:
-- arista.cvp.dhcp_configuration
-dhcp_service:
-- arista.cvp.dhcp_configuration
-dhcp_apparmor_fix:
-- arista.cvp.dhcp_configuration
-cvpsync_data:
-- arista.cvp.configlets_sync
-common_configlets_dir:
-- arista.cvp.configlets_sync
-cvp_servers_dir:
-- arista.cvp.configlets_sync
-devices_dir:
-- arista.cvp.configlets_sync
-configlet_filter:
-- arista.cvp.configlets_sync
-ansible_runner:
-- arista.cvp.configlets_sync
 cephadm_crush_rules:
 - stackhpc.cephadm.crush_rules
 cephadm_pools:
