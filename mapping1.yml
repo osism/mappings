@@ -7982,24 +7982,6 @@ osism.services.tang:
 - tang_service_name
 - systemd_destination
 - tang_server_port
-arista.cvp.dhcp_configuration:
-- ansible_connection
-- ansible_become_method
-- mode
-- output_dir
-- dhcp_packages
-- dhcp_packages_state
-- dhcp_config_dir
-- dhcp_config
-- dhcp_service
-- dhcp_apparmor_fix
-arista.cvp.configlets_sync:
-- cvpsync_data
-- common_configlets_dir
-- cvp_servers_dir
-- devices_dir
-- configlet_filter
-- ansible_runner
 stackhpc.cephadm.crush_rules:
 - cephadm_crush_rules
 stackhpc.cephadm.pools:
