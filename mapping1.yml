@@ -6885,6 +6885,261 @@ debops.roles02.memcached:
 - memcached__options
 - memcached__etc_services__dependent_list
 - memcached__ferm__dependent_rules
+osism/sonic/tests.regression.test_reports: []
+osism/sonic/tests.regression.sonic_users:
+- ansible_connection
+- module_name
+- tests_cli
+- tests_single_run
+- tests
+osism/sonic/tests.regression.sonic_mclag:
+- ansible_connection
+- module_name
+- preparations_tests
+- merged_tests
+- delete_all
+- updated_tests
+osism/sonic/tests.regression.sonic_bgp_af:
+- ansible_connection
+- module_name
+- bgp_as_1
+- bgp_as_2
+- vrf_1
+- vrf_2
+- preparations_tests
+- tests
+osism/sonic/tests.regression.sonic_l2_interfaces:
+- ansible_connection
+- module_name
+- preparations_tests
+- tests
+osism/sonic/tests.regression.sonic_bgp_neighbors_af:
+- ansible_connection
+- module_name
+- bgp_as_1
+- bgp_as_2
+- vrf_1
+- vrf_2
+- preparations_tests
+- negative_tests
+- tests1
+- tests
+osism/sonic/tests.regression.sonic_config:
+- module_name
+- ansible_connection
+- idempotent_condition
+- action_condition
+- prompt_tc_condition
+- backup_condition
+- replace_or_exact_condition
+- empty
+- bgp_as_1
+- bgp_as_2
+- vrf_1
+- vrf_2
+- snmp_location
+- snmp_contact
+- preparations_tests
+- tests
+osism/sonic/tests.regression.sonic_l3_interfaces:
+- ansible_connection
+- module_name
+- preparations_tests
+- tests
+osism/sonic/tests.regression.sonic_lag_interfaces:
+- ansible_connection
+- module_name
+- preparations_tests
+- tests
+osism/sonic/tests.regression.sonic_logging:
+- ansible_connection
+- module_name
+- po1
+- vlan1
+- lo1
+- mgmt
+- logging_ip_server_1
+- logging_ip_server_2
+- logging_ip_server_3
+- logging_ip_server_4
+- logging_host_server
+- preparations_tests
+- tests
+osism/sonic/tests.regression.sonic_interfaces:
+- ansible_connection
+- module_name
+- po1
+- po2
+- lo1
+- lo2
+- vlan1
+- vlan2
+- preparations_tests
+- tests
+osism/sonic/tests.regression.sonic_bgp_neighbors:
+- ansible_connection
+- module_name
+- bgp_as_1
+- bgp_as_2
+- vrf_1
+- vrf_2
+- preparations_tests
+- tests
+- action_tests
+- deleted_tests
+- merged_tests
+osism/sonic/tests.regression.sonic_aaa:
+- ansible_connection
+- module_name
+- tests
+- test_delete_all
+osism/sonic/tests.regression.sonic_radius_server:
+- ansible_connection
+- module_name
+- preparations_tests
+- tests
+- test_delete_all
+osism/sonic/tests.regression.sonic_tacacs_server:
+- ansible_connection
+- module_name
+- preparations_tests
+- tests
+- test_delete_all
+osism/sonic/tests.regression.sonic_vrfs:
+- ansible_connection
+- module_name
+- vrf_1
+- vrf_2
+- po1
+- vlan1
+- looopback1
+- po2
+- vlan2
+- looopback2
+- preparations_tests
+- tests_cli
+- tests
+osism/sonic/tests.regression.sonic_bgp_as_paths:
+- ansible_connection
+- module_name
+- bgp_as_1
+- bgp_as_2
+- vrf_1
+- vrf_2
+- tests
+osism/sonic/tests.regression.sonic_bgp_ext_communities:
+- ansible_connection
+- module_name
+- tests
+- merged_tests
+- deleted_tests
+osism/sonic/tests.regression.sonic_vlans:
+- ansible_connection
+- module_name
+- preparations_tests
+- tests
+osism/sonic/tests.regression.sonic_ntp:
+- ansible_connection
+- module_name
+- po1
+- vlan1
+- lo1
+- mgmt_vrf
+- ntp_ip_server_1
+- ntp_ip_server_2
+- ntp_ip_server_3
+- ntp_host_server
+- preparations_tests
+- tests
+osism/sonic/tests.regression.sonic_system:
+- ansible_connection
+- module_name
+- tests
+- test_delete_all
+osism/sonic/tests.regression.sonic_prefix_lists:
+- ansible_connection
+- module_name
+- tests
+osism/sonic/tests.regression.sonic_static_routes:
+- ansible_connection
+- module_name
+- vrf_1
+- vrf_2
+- preparations_tests
+- tests
+osism/sonic/tests.regression.sonic_bgp:
+- ansible_connection
+- module_name
+- vrf_1
+- vrf_2
+- bgp_as_1
+- bgp_as_2
+- bgp_as_3
+- preparations_tests
+- tests_cli
+- tests
+osism/sonic/tests.regression.common:
+- idempotnet_condition
+- action_condition
+- cli_test_condition
+- single_run_condition
+- single_run_idem_condition
+- REPORT_DIR
+- empty
+- module_name1
+- std_name
+- native_name
+- interface_mode
+- default_interface_cli_std
+- default_interface_cli_native
+- default_interface_cli
+- native_eth1
+- native_eth2
+- native_eth3
+- native_eth4
+- native_eth5
+- native_eth6
+- std_eth1
+- std_eth2
+- std_eth3
+- std_eth4
+- std_eth5
+- std_eth6
+- interface1
+- interface2
+- interface3
+- interface4
+- interface5
+- interface6
+osism/sonic/tests.regression.sonic_port_breakout:
+- ansible_connection
+- module_name
+- preparations_tests
+- tests_cli
+- tests
+osism/sonic/tests.regression.sonic_command:
+- ansible_connection
+osism/sonic/tests.regression.sonic_bgp_communities:
+- ansible_connection
+- module_name
+- tests
+osism/sonic/tests.regression.sonic_api:
+- ansible_connection
+- preparations_tests
+osism/sonic/tests.regression.sonic_vxlan:
+- ansible_connection
+- module_name
+- vrf1
+- vrf2
+- po1
+- vlan1
+- looopback1
+- po2
+- vlan2
+- looopback2
+- preparations_tests
+- tests_cli
+- tests
 osism.validations.ulimits:
 - ulimits_nofiles_min
 - ulimits_nproc_min

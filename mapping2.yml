@@ -13300,6 +13300,309 @@ memcached__etc_services__dependent_list:
 - debops.roles02.memcached
 memcached__ferm__dependent_rules:
 - debops.roles02.memcached
+ansible_connection:
+- osism/sonic/tests.regression.sonic_users
+- osism/sonic/tests.regression.sonic_mclag
+- osism/sonic/tests.regression.sonic_bgp_af
+- osism/sonic/tests.regression.sonic_l2_interfaces
+- osism/sonic/tests.regression.sonic_bgp_neighbors_af
+- osism/sonic/tests.regression.sonic_config
+- osism/sonic/tests.regression.sonic_l3_interfaces
+- osism/sonic/tests.regression.sonic_lag_interfaces
+- osism/sonic/tests.regression.sonic_logging
+- osism/sonic/tests.regression.sonic_interfaces
+- osism/sonic/tests.regression.sonic_bgp_neighbors
+- osism/sonic/tests.regression.sonic_aaa
+- osism/sonic/tests.regression.sonic_radius_server
+- osism/sonic/tests.regression.sonic_tacacs_server
+- osism/sonic/tests.regression.sonic_vrfs
+- osism/sonic/tests.regression.sonic_bgp_as_paths
+- osism/sonic/tests.regression.sonic_bgp_ext_communities
+- osism/sonic/tests.regression.sonic_vlans
+- osism/sonic/tests.regression.sonic_ntp
+- osism/sonic/tests.regression.sonic_system
+- osism/sonic/tests.regression.sonic_prefix_lists
+- osism/sonic/tests.regression.sonic_static_routes
+- osism/sonic/tests.regression.sonic_bgp
+- osism/sonic/tests.regression.sonic_port_breakout
+- osism/sonic/tests.regression.sonic_command
+- osism/sonic/tests.regression.sonic_bgp_communities
+- osism/sonic/tests.regression.sonic_api
+- osism/sonic/tests.regression.sonic_vxlan
+module_name:
+- osism/sonic/tests.regression.sonic_users
+- osism/sonic/tests.regression.sonic_mclag
+- osism/sonic/tests.regression.sonic_bgp_af
+- osism/sonic/tests.regression.sonic_l2_interfaces
+- osism/sonic/tests.regression.sonic_bgp_neighbors_af
+- osism/sonic/tests.regression.sonic_config
+- osism/sonic/tests.regression.sonic_l3_interfaces
+- osism/sonic/tests.regression.sonic_lag_interfaces
+- osism/sonic/tests.regression.sonic_logging
+- osism/sonic/tests.regression.sonic_interfaces
+- osism/sonic/tests.regression.sonic_bgp_neighbors
+- osism/sonic/tests.regression.sonic_aaa
+- osism/sonic/tests.regression.sonic_radius_server
+- osism/sonic/tests.regression.sonic_tacacs_server
+- osism/sonic/tests.regression.sonic_vrfs
+- osism/sonic/tests.regression.sonic_bgp_as_paths
+- osism/sonic/tests.regression.sonic_bgp_ext_communities
+- osism/sonic/tests.regression.sonic_vlans
+- osism/sonic/tests.regression.sonic_ntp
+- osism/sonic/tests.regression.sonic_system
+- osism/sonic/tests.regression.sonic_prefix_lists
+- osism/sonic/tests.regression.sonic_static_routes
+- osism/sonic/tests.regression.sonic_bgp
+- osism/sonic/tests.regression.sonic_port_breakout
+- osism/sonic/tests.regression.sonic_bgp_communities
+- osism/sonic/tests.regression.sonic_vxlan
+tests_cli:
+- osism/sonic/tests.regression.sonic_users
+- osism/sonic/tests.regression.sonic_vrfs
+- osism/sonic/tests.regression.sonic_bgp
+- osism/sonic/tests.regression.sonic_port_breakout
+- osism/sonic/tests.regression.sonic_vxlan
+tests_single_run:
+- osism/sonic/tests.regression.sonic_users
+tests:
+- osism/sonic/tests.regression.sonic_users
+- osism/sonic/tests.regression.sonic_bgp_af
+- osism/sonic/tests.regression.sonic_l2_interfaces
+- osism/sonic/tests.regression.sonic_bgp_neighbors_af
+- osism/sonic/tests.regression.sonic_config
+- osism/sonic/tests.regression.sonic_l3_interfaces
+- osism/sonic/tests.regression.sonic_lag_interfaces
+- osism/sonic/tests.regression.sonic_logging
+- osism/sonic/tests.regression.sonic_interfaces
+- osism/sonic/tests.regression.sonic_bgp_neighbors
+- osism/sonic/tests.regression.sonic_aaa
+- osism/sonic/tests.regression.sonic_radius_server
+- osism/sonic/tests.regression.sonic_tacacs_server
+- osism/sonic/tests.regression.sonic_vrfs
+- osism/sonic/tests.regression.sonic_bgp_as_paths
+- osism/sonic/tests.regression.sonic_bgp_ext_communities
+- osism/sonic/tests.regression.sonic_vlans
+- osism/sonic/tests.regression.sonic_ntp
+- osism/sonic/tests.regression.sonic_system
+- osism/sonic/tests.regression.sonic_prefix_lists
+- osism/sonic/tests.regression.sonic_static_routes
+- osism/sonic/tests.regression.sonic_bgp
+- osism/sonic/tests.regression.sonic_port_breakout
+- osism/sonic/tests.regression.sonic_bgp_communities
+- osism/sonic/tests.regression.sonic_vxlan
+preparations_tests:
+- osism/sonic/tests.regression.sonic_mclag
+- osism/sonic/tests.regression.sonic_bgp_af
+- osism/sonic/tests.regression.sonic_l2_interfaces
+- osism/sonic/tests.regression.sonic_bgp_neighbors_af
+- osism/sonic/tests.regression.sonic_config
+- osism/sonic/tests.regression.sonic_l3_interfaces
+- osism/sonic/tests.regression.sonic_lag_interfaces
+- osism/sonic/tests.regression.sonic_logging
+- osism/sonic/tests.regression.sonic_interfaces
+- osism/sonic/tests.regression.sonic_bgp_neighbors
+- osism/sonic/tests.regression.sonic_radius_server
+- osism/sonic/tests.regression.sonic_tacacs_server
+- osism/sonic/tests.regression.sonic_vrfs
+- osism/sonic/tests.regression.sonic_vlans
+- osism/sonic/tests.regression.sonic_ntp
+- osism/sonic/tests.regression.sonic_static_routes
+- osism/sonic/tests.regression.sonic_bgp
+- osism/sonic/tests.regression.sonic_port_breakout
+- osism/sonic/tests.regression.sonic_api
+- osism/sonic/tests.regression.sonic_vxlan
+merged_tests:
+- osism/sonic/tests.regression.sonic_mclag
+- osism/sonic/tests.regression.sonic_bgp_neighbors
+- osism/sonic/tests.regression.sonic_bgp_ext_communities
+delete_all:
+- osism/sonic/tests.regression.sonic_mclag
+updated_tests:
+- osism/sonic/tests.regression.sonic_mclag
+bgp_as_1:
+- osism/sonic/tests.regression.sonic_bgp_af
+- osism/sonic/tests.regression.sonic_bgp_neighbors_af
+- osism/sonic/tests.regression.sonic_config
+- osism/sonic/tests.regression.sonic_bgp_neighbors
+- osism/sonic/tests.regression.sonic_bgp_as_paths
+- osism/sonic/tests.regression.sonic_bgp
+bgp_as_2:
+- osism/sonic/tests.regression.sonic_bgp_af
+- osism/sonic/tests.regression.sonic_bgp_neighbors_af
+- osism/sonic/tests.regression.sonic_config
+- osism/sonic/tests.regression.sonic_bgp_neighbors
+- osism/sonic/tests.regression.sonic_bgp_as_paths
+- osism/sonic/tests.regression.sonic_bgp
+vrf_1:
+- osism/sonic/tests.regression.sonic_bgp_af
+- osism/sonic/tests.regression.sonic_bgp_neighbors_af
+- osism/sonic/tests.regression.sonic_config
+- osism/sonic/tests.regression.sonic_bgp_neighbors
+- osism/sonic/tests.regression.sonic_vrfs
+- osism/sonic/tests.regression.sonic_bgp_as_paths
+- osism/sonic/tests.regression.sonic_static_routes
+- osism/sonic/tests.regression.sonic_bgp
+vrf_2:
+- osism/sonic/tests.regression.sonic_bgp_af
+- osism/sonic/tests.regression.sonic_bgp_neighbors_af
+- osism/sonic/tests.regression.sonic_config
+- osism/sonic/tests.regression.sonic_bgp_neighbors
+- osism/sonic/tests.regression.sonic_vrfs
+- osism/sonic/tests.regression.sonic_bgp_as_paths
+- osism/sonic/tests.regression.sonic_static_routes
+- osism/sonic/tests.regression.sonic_bgp
+negative_tests:
+- osism/sonic/tests.regression.sonic_bgp_neighbors_af
+tests1:
+- osism/sonic/tests.regression.sonic_bgp_neighbors_af
+idempotent_condition:
+- osism/sonic/tests.regression.sonic_config
+action_condition:
+- osism/sonic/tests.regression.sonic_config
+- osism/sonic/tests.regression.common
+prompt_tc_condition:
+- osism/sonic/tests.regression.sonic_config
+backup_condition:
+- osism/sonic/tests.regression.sonic_config
+replace_or_exact_condition:
+- osism/sonic/tests.regression.sonic_config
+empty:
+- osism/sonic/tests.regression.sonic_config
+- osism/sonic/tests.regression.common
+snmp_location:
+- osism/sonic/tests.regression.sonic_config
+snmp_contact:
+- osism/sonic/tests.regression.sonic_config
+po1:
+- osism/sonic/tests.regression.sonic_logging
+- osism/sonic/tests.regression.sonic_interfaces
+- osism/sonic/tests.regression.sonic_vrfs
+- osism/sonic/tests.regression.sonic_ntp
+- osism/sonic/tests.regression.sonic_vxlan
+vlan1:
+- osism/sonic/tests.regression.sonic_logging
+- osism/sonic/tests.regression.sonic_interfaces
+- osism/sonic/tests.regression.sonic_vrfs
+- osism/sonic/tests.regression.sonic_ntp
+- osism/sonic/tests.regression.sonic_vxlan
+lo1:
+- osism/sonic/tests.regression.sonic_logging
+- osism/sonic/tests.regression.sonic_interfaces
+- osism/sonic/tests.regression.sonic_ntp
+mgmt:
+- osism/sonic/tests.regression.sonic_logging
+logging_ip_server_1:
+- osism/sonic/tests.regression.sonic_logging
+logging_ip_server_2:
+- osism/sonic/tests.regression.sonic_logging
+logging_ip_server_3:
+- osism/sonic/tests.regression.sonic_logging
+logging_ip_server_4:
+- osism/sonic/tests.regression.sonic_logging
+logging_host_server:
+- osism/sonic/tests.regression.sonic_logging
+po2:
+- osism/sonic/tests.regression.sonic_interfaces
+- osism/sonic/tests.regression.sonic_vrfs
+- osism/sonic/tests.regression.sonic_vxlan
+lo2:
+- osism/sonic/tests.regression.sonic_interfaces
+vlan2:
+- osism/sonic/tests.regression.sonic_interfaces
+- osism/sonic/tests.regression.sonic_vrfs
+- osism/sonic/tests.regression.sonic_vxlan
+action_tests:
+- osism/sonic/tests.regression.sonic_bgp_neighbors
+deleted_tests:
+- osism/sonic/tests.regression.sonic_bgp_neighbors
+- osism/sonic/tests.regression.sonic_bgp_ext_communities
+test_delete_all:
+- osism/sonic/tests.regression.sonic_aaa
+- osism/sonic/tests.regression.sonic_radius_server
+- osism/sonic/tests.regression.sonic_tacacs_server
+- osism/sonic/tests.regression.sonic_system
+looopback1:
+- osism/sonic/tests.regression.sonic_vrfs
+- osism/sonic/tests.regression.sonic_vxlan
+looopback2:
+- osism/sonic/tests.regression.sonic_vrfs
+- osism/sonic/tests.regression.sonic_vxlan
+mgmt_vrf:
+- osism/sonic/tests.regression.sonic_ntp
+ntp_ip_server_1:
+- osism/sonic/tests.regression.sonic_ntp
+ntp_ip_server_2:
+- osism/sonic/tests.regression.sonic_ntp
+ntp_ip_server_3:
+- osism/sonic/tests.regression.sonic_ntp
+ntp_host_server:
+- osism/sonic/tests.regression.sonic_ntp
+bgp_as_3:
+- osism/sonic/tests.regression.sonic_bgp
+idempotnet_condition:
+- osism/sonic/tests.regression.common
+cli_test_condition:
+- osism/sonic/tests.regression.common
+single_run_condition:
+- osism/sonic/tests.regression.common
+single_run_idem_condition:
+- osism/sonic/tests.regression.common
+REPORT_DIR:
+- osism/sonic/tests.regression.common
+module_name1:
+- osism/sonic/tests.regression.common
+std_name:
+- osism/sonic/tests.regression.common
+native_name:
+- osism/sonic/tests.regression.common
+interface_mode:
+- osism/sonic/tests.regression.common
+default_interface_cli_std:
+- osism/sonic/tests.regression.common
+default_interface_cli_native:
+- osism/sonic/tests.regression.common
+default_interface_cli:
+- osism/sonic/tests.regression.common
+native_eth1:
+- osism/sonic/tests.regression.common
+native_eth2:
+- osism/sonic/tests.regression.common
+native_eth3:
+- osism/sonic/tests.regression.common
+native_eth4:
+- osism/sonic/tests.regression.common
+native_eth5:
+- osism/sonic/tests.regression.common
+native_eth6:
+- osism/sonic/tests.regression.common
+std_eth1:
+- osism/sonic/tests.regression.common
+std_eth2:
+- osism/sonic/tests.regression.common
+std_eth3:
+- osism/sonic/tests.regression.common
+std_eth4:
+- osism/sonic/tests.regression.common
+std_eth5:
+- osism/sonic/tests.regression.common
+std_eth6:
+- osism/sonic/tests.regression.common
+interface1:
+- osism/sonic/tests.regression.common
+interface2:
+- osism/sonic/tests.regression.common
+interface3:
+- osism/sonic/tests.regression.common
+interface4:
+- osism/sonic/tests.regression.common
+interface5:
+- osism/sonic/tests.regression.common
+interface6:
+- osism/sonic/tests.regression.common
+vrf1:
+- osism/sonic/tests.regression.sonic_vxlan
+vrf2:
+- osism/sonic/tests.regression.sonic_vxlan
 ulimits_nofiles_min:
 - osism.validations.ulimits
 ulimits_nproc_min:
