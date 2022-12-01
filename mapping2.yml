@@ -3157,10 +3157,6 @@ zabbix_server_alertscriptspath:
 - community.zabbix.zabbix_server
 zabbix_server_externalscriptspath:
 - community.zabbix.zabbix_server
-zabbix_server_fpinglocation:
-- community.zabbix.zabbix_server
-zabbix_server_fping6location:
-- community.zabbix.zabbix_server
 zabbix_server_sshkeylocation:
 - community.zabbix.zabbix_server
 zabbix_server_logslowqueries:
@@ -3310,6 +3306,18 @@ zabbix_api_validate_certs:
 - community.zabbix.zabbix_proxy
 zabbix_agent_server_url:
 - community.zabbix.zabbix_agent
+zabbix_api_server_host:
+- community.zabbix.zabbix_agent
+- community.zabbix.zabbix_proxy
+zabbix_api_port_from_url:
+- community.zabbix.zabbix_agent
+- community.zabbix.zabbix_proxy
+zabbix_api_scheme_from_url:
+- community.zabbix.zabbix_agent
+- community.zabbix.zabbix_proxy
+zabbix_api_port_from_shema:
+- community.zabbix.zabbix_agent
+- community.zabbix.zabbix_proxy
 zabbix_api_user:
 - community.zabbix.zabbix_agent
 - community.zabbix.zabbix_proxy
@@ -3320,6 +3328,21 @@ zabbix_api_login_user:
 - community.zabbix.zabbix_agent
 - community.zabbix.zabbix_proxy
 zabbix_api_login_pass:
+- community.zabbix.zabbix_agent
+- community.zabbix.zabbix_proxy
+ansible_httpapi_pass:
+- community.zabbix.zabbix_agent
+- community.zabbix.zabbix_proxy
+ansible_network_os:
+- community.zabbix.zabbix_agent
+- community.zabbix.zabbix_proxy
+ansible_httpapi_port:
+- community.zabbix.zabbix_agent
+- community.zabbix.zabbix_proxy
+ansible_httpapi_use_ssl:
+- community.zabbix.zabbix_agent
+- community.zabbix.zabbix_proxy
+ansible_httpapi_validate_certs:
 - community.zabbix.zabbix_agent
 - community.zabbix.zabbix_proxy
 zabbix_api_create_hostgroup:
@@ -3459,6 +3482,8 @@ zabbix_macros:
 zabbix_agent_macros:
 - community.zabbix.zabbix_agent
 zabbix_agent_tags:
+- community.zabbix.zabbix_agent
+zabbix_agent_chassis:
 - community.zabbix.zabbix_agent
 zabbix_agent_tlsconnect:
 - community.zabbix.zabbix_agent
@@ -3639,6 +3664,8 @@ zabbix_proxy_version_minor:
 zabbix_proxy_apt_priority:
 - community.zabbix.zabbix_proxy
 zabbix_proxy_package_state:
+- community.zabbix.zabbix_proxy
+zabbix_proxy_install_recommends:
 - community.zabbix.zabbix_proxy
 zabbix_proxy_install_database_client:
 - community.zabbix.zabbix_proxy
