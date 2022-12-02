@@ -3948,6 +3948,8 @@ cephadm_osd_spec:
 - stackhpc.cephadm.cephadm
 cephadm_radosgw_services:
 - stackhpc.cephadm.cephadm
+cephadm_ingress_services:
+- stackhpc.cephadm.cephadm
 cephadm_keys:
 - stackhpc.cephadm.keys
 cephadm_commands:
