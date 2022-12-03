@@ -1467,6 +1467,8 @@ openstack_health_monitor_container_name:
 - osism.services.openstack_health_monitor
 openstack_health_monitor_network:
 - osism.services.openstack_health_monitor
+openstack_health_monitor_service_name:
+- osism.services.openstack_health_monitor
 auditd_backup:
 - osism.services.auditd
 auditd_syslog:
@@ -2041,6 +2043,18 @@ fluentd_port:
 - osism.services.rsyslog
 fluentd_host:
 - osism.services.rsyslog
+osquery_service_name:
+- osism.services.osquery
+osquery_package_name:
+- osism.services.osquery
+osquery_configure_repository:
+- osism.services.osquery
+osquery_debian_repository_arch:
+- osism.services.osquery
+osquery_debian_repository_key:
+- osism.services.osquery
+osquery_debian_repository:
+- osism.services.osquery
 docker_registry_nexus:
 - osism.services.nexus
 nexus_docker_compose_directory:
