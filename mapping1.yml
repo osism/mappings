@@ -769,6 +769,7 @@ osism.services.openstack_health_monitor:
 - openstack_health_monitor_image
 - openstack_health_monitor_container_name
 - openstack_health_monitor_network
+- openstack_health_monitor_service_name
 osism.services.auditd:
 - auditd_backup
 - auditd_syslog
@@ -1110,6 +1111,13 @@ osism.services.rsyslog:
 - rsyslog_fluentd_host
 - fluentd_port
 - fluentd_host
+osism.services.osquery:
+- osquery_service_name
+- osquery_package_name
+- osquery_configure_repository
+- osquery_debian_repository_arch
+- osquery_debian_repository_key
+- osquery_debian_repository
 osism.services.nexus:
 - docker_network_mtu
 - docker_registry_nexus
@@ -2258,6 +2266,7 @@ stackhpc.cephadm.cephadm:
 - cephadm_osd_devices
 - cephadm_osd_spec
 - cephadm_radosgw_services
+- cephadm_ingress_services
 stackhpc.cephadm.keys:
 - cephadm_keys
 stackhpc.cephadm.commands:
