@@ -11781,12 +11781,6 @@ network_dispatcher_service_name:
 - osism.commons.network
 network_dispatcher_scripts:
 - osism.commons.network
-network_lldpd:
-- osism.commons.network
-network_lldpd_package_name:
-- osism.commons.network
-network_lldpd_service_name:
-- osism.commons.network
 network_dummy_interfaces:
 - osism.commons.network
 network_dummy_interface_mtu:
