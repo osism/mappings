@@ -6060,9 +6060,6 @@ osism.commons.network:
 - network_dispatcher_package_name
 - network_dispatcher_service_name
 - network_dispatcher_scripts
-- network_lldpd
-- network_lldpd_package_name
-- network_lldpd_service_name
 - network_dummy_interfaces
 - network_dummy_interface_mtu
 osism.commons.facts:
