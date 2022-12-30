@@ -13740,7 +13740,7 @@ ntp_ip_server_3:
 - osism/sonic/tests.regression.sonic_ntp
 ntp_host_server:
 - osism/sonic/tests.regression.sonic_ntp
-system_encoding_wanted:
+system_encoding_expected:
 - osism.validations.system_encoding
 mysql_open_files_limit_min:
 - osism.validations.mysql_open_files_limit
@@ -13748,8 +13748,6 @@ ulimits_nofiles_min:
 - osism.validations.ulimits
 ulimits_nproc_min:
 - osism.validations.ulimits
-kernel_version_fact:
-- osism.validations.kernel_version
 kernel_version_expected:
 - osism.validations.kernel_version
 zabbix_agent2:
