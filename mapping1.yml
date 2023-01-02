@@ -7287,14 +7287,13 @@ osism/sonic/tests.regression.sonic_ntp:
 - preparations_tests
 - tests
 osism.validations.system_encoding:
-- system_encoding_wanted
+- system_encoding_expected
 osism.validations.mysql_open_files_limit:
 - mysql_open_files_limit_min
 osism.validations.ulimits:
 - ulimits_nofiles_min
 - ulimits_nproc_min
 osism.validations.kernel_version:
-- kernel_version_fact
 - kernel_version_expected
 community.zabbix.zabbix_agent:
 - zabbix_agent2
