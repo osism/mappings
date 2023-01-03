@@ -194,6 +194,8 @@ kolla:
 - octavia
 - openvswitch
 - ovn
+- ovn-controller
+- ovn-db
 - ovs-dpdk
 - panko
 - placement
