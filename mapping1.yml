@@ -11647,3 +11647,10 @@ kolla.etcd:
 - etcd_extra_volumes
 - etcd_client_internal_endpoint
 - etcd_peer_internal_endpoint
+k3s/master:
+- ansible_user
+- server_init_args
+k3s/post:
+- metal_lb_available_timeout
+k3s/raspberrypi:
+- state

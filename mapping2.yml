@@ -22126,3 +22126,11 @@ etcd_client_internal_endpoint:
 - kolla.etcd
 etcd_peer_internal_endpoint:
 - kolla.etcd
+ansible_user:
+- k3s/master
+server_init_args:
+- k3s/master
+metal_lb_available_timeout:
+- k3s/post
+state:
+- k3s/raspberrypi
