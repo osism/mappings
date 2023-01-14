@@ -1203,6 +1203,10 @@ netdata_hostname:
 - osism.services.netdata
 netdata_update_every:
 - osism.services.netdata
+netdata_page_cache_size:
+- osism.services.netdata
+netdata_accept_a_streaming_request_every_seconds:
+- osism.services.netdata
 netdata_default_history:
 - osism.services.netdata
 netdata_enable_cloud:
@@ -2344,6 +2348,8 @@ vault_url:
 - osism.commons.vault_init
 vault_secrets_path:
 - osism.commons.vault_import
+issue_path:
+- osism.commons.motd
 motd_path:
 - osism.commons.motd
 motd_content:

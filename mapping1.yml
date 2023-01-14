@@ -608,6 +608,8 @@ osism.services.netdata:
 - netdata_api_port
 - netdata_hostname
 - netdata_update_every
+- netdata_page_cache_size
+- netdata_accept_a_streaming_request_every_seconds
 - netdata_default_history
 - netdata_enable_cloud
 - netdata_memory_mode
@@ -1288,6 +1290,7 @@ osism.commons.vault_import:
 - vault_url
 - vault_secrets_path
 osism.commons.motd:
+- issue_path
 - motd_path
 - motd_content
 osism.commons.sysdig:
