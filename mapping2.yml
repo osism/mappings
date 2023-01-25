@@ -249,6 +249,12 @@ network_dummy_interface_mtu:
 - osism.commons.network
 vault_secrets_path:
 - osism.commons.vault_import
+docker_login_registry:
+- osism.commons.docker_login
+docker_login_username:
+- osism.commons.docker_login
+docker_login_password:
+- osism.commons.docker_login
 clevis_service_name:
 - osism.commons.clevis
 clevis_tang_server:

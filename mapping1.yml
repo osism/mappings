@@ -116,6 +116,10 @@ osism.commons.vault_import:
 - vault_port
 - vault_url
 - vault_secrets_path
+osism.commons.docker_login:
+- docker_login_registry
+- docker_login_username
+- docker_login_password
 osism.commons.clevis:
 - clevis_service_name
 - clevis_tang_server
