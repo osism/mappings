@@ -1077,6 +1077,18 @@ frr_sysctl_extra:
 - osism.services.frr
 frr_sysctl:
 - osism.services.frr
+frr_dummy_interface:
+- osism.services.frr
+frr_uplinks:
+- osism.services.frr
+frr_local_as:
+- osism.services.frr
+frr_type:
+- osism.services.frr
+frr_loopback_v4:
+- osism.services.frr
+frr_loopback_v6:
+- osism.services.frr
 minikube_service_user:
 - osism.services.minikube
 minikube_service_group:
