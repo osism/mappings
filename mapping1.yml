@@ -231,12 +231,15 @@ osism.commons.microcode:
 - microcode_packages_default
 - microcode_packages_extra
 - microcode_packages
+osism.commons.runc:
+- runc_package_name
 osism.commons.repository:
 - repositories
 - repository_cache_valid_time
 - repository_key_files_directory
 - repository_keys
 - repository_key_ids
+- enable_phased_updates
 osism.commons.packages:
 - upgrade_packages
 - required_packages_default

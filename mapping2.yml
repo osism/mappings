@@ -428,6 +428,8 @@ microcode_packages_extra:
 - osism.commons.microcode
 microcode_packages:
 - osism.commons.microcode
+runc_package_name:
+- osism.commons.runc
 repositories:
 - osism.commons.repository
 repository_cache_valid_time:
@@ -437,6 +439,8 @@ repository_key_files_directory:
 repository_keys:
 - osism.commons.repository
 repository_key_ids:
+- osism.commons.repository
+enable_phased_updates:
 - osism.commons.repository
 upgrade_packages:
 - osism.commons.packages
