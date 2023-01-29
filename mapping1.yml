@@ -565,8 +565,6 @@ osism.services.netbox:
 - netbox_redis_tag
 - netbox_redis_image
 - netbox_traefik
-- netbox_traefik_path_prefix
-- netbox_traefik_host
 - traefik_external_network_name
 - traefik_external_network_cidr
 - netbox_init_object_permissions
@@ -740,7 +738,6 @@ osism.services.patchman:
 - patchman_memcached_tag
 - patchman_memcached_image
 - patchman_traefik
-- patchman_traefik_host
 - traefik_external_network_name
 - traefik_external_network_cidr
 osism.services.homer:
@@ -926,8 +923,6 @@ osism.services.manager:
 - ara_username
 - ara_password
 - ara_server_traefik
-- ara_server_traefik_path_prefix
-- ara_server_traefik_host
 - ara_server_host
 - ara_server_port
 - ara_workers
@@ -976,6 +971,8 @@ osism.services.manager:
 - traefik_external_network_name
 - traefik_external_network_cidr
 - manager_netbox_replicas
+- beat_enable
+- flower_enable
 osism.services.netdata:
 - netdata_configuration_files
 - netdata_service_name
@@ -1059,8 +1056,6 @@ osism.services.cgit:
 - cgit_repositories_extra
 - cgit_repositories
 - cgit_traefik
-- cgit_traefik_path_prefix
-- cgit_traefik_host
 - traefik_external_network_name
 - traefik_external_network_cidr
 osism.services.wireguard:
@@ -1118,8 +1113,6 @@ osism.services.keycloak:
 - keycloak_galera_backend_enable
 - keycloak_use_preconfigured_databases
 - keycloak_traefik
-- keycloak_traefik_path_prefix
-- keycloak_traefik_host
 - traefik_external_network_name
 - traefik_external_network_cidr
 osism.services.clamav:
@@ -1167,8 +1160,6 @@ osism.services.phpmyadmin:
 - phpmyadmin_network
 - phpmyadmin_service_name
 - phpmyadmin_traefik
-- phpmyadmin_traefik_path_prefix
-- phpmyadmin_traefik_host
 - traefik_external_network_name
 - traefik_external_network_cidr
 osism.services.openstackclient:
@@ -1206,6 +1197,15 @@ osism.services.dnsdist:
 - dnsdist_tag
 - dnsdist_image
 - dnsdist_servers
+osism.services.containerd:
+- containerd_package_name
+- containerd_service_name
+- containerd_grpc_gid
+- containerd_packages_fail
+- docker_configure_repository
+- docker_debian_repository_arch
+- docker_debian_repository_key
+- docker_debian_repository
 osism.services.rundeck:
 - operator_user
 - operator_group
@@ -1301,10 +1301,8 @@ osism.services.docker:
 - docker_hosts_extra
 - docker_hosts
 - docker_service_name
-- containerd_service_name
 - docker_package_name
 - docker_cli_package_name
-- containerd_package_name
 - docker_packages_fail
 - docker_python3_package_name
 - docker_python_package_name
@@ -1352,7 +1350,10 @@ osism.services.docker:
 - docker_zun_cni_version
 - docker_cni_config_dir
 - docker_cni_bin_dir
+- docker_manage_containerd
 - containerd_grpc_gid
+- containerd_service_name
+- containerd_package_name
 - docker_opts
 - docker_fact_files
 osism.services.rng:
