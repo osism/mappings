@@ -428,6 +428,8 @@ microcode_packages_extra:
 - osism.commons.microcode
 microcode_packages:
 - osism.commons.microcode
+runc_package_name:
+- osism.commons.runc
 repositories:
 - osism.commons.repository
 repository_cache_valid_time:
@@ -437,6 +439,8 @@ repository_key_files_directory:
 repository_keys:
 - osism.commons.repository
 repository_key_ids:
+- osism.commons.repository
+enable_phased_updates:
 - osism.commons.repository
 upgrade_packages:
 - osism.commons.packages
@@ -896,10 +900,6 @@ netbox_redis_image:
 - osism.services.netbox
 netbox_traefik:
 - osism.services.netbox
-netbox_traefik_path_prefix:
-- osism.services.netbox
-netbox_traefik_host:
-- osism.services.netbox
 traefik_external_network_name:
 - osism.services.netbox
 - osism.services.patchman
@@ -1213,8 +1213,6 @@ patchman_memcached_image:
 - osism.services.patchman
 patchman_traefik:
 - osism.services.patchman
-patchman_traefik_host:
-- osism.services.patchman
 docker_registry_homer:
 - osism.services.homer
 homer_configuration_directory:
@@ -1522,10 +1520,6 @@ ara_password:
 - osism.services.manager
 ara_server_traefik:
 - osism.services.manager
-ara_server_traefik_path_prefix:
-- osism.services.manager
-ara_server_traefik_host:
-- osism.services.manager
 ara_server_host:
 - osism.services.manager
 ara_server_port:
@@ -1611,6 +1605,10 @@ manager_openstack_os_password:
 manager_openstack_os_auth_url:
 - osism.services.manager
 manager_netbox_replicas:
+- osism.services.manager
+beat_enable:
+- osism.services.manager
+flower_enable:
 - osism.services.manager
 netdata_configuration_files:
 - osism.services.netdata
@@ -1742,10 +1740,6 @@ cgit_repositories:
 - osism.services.cgit
 cgit_traefik:
 - osism.services.cgit
-cgit_traefik_path_prefix:
-- osism.services.cgit
-cgit_traefik_host:
-- osism.services.cgit
 wireguard_mtu:
 - osism.services.wireguard
 wireguard_client_address:
@@ -1832,10 +1826,6 @@ keycloak_use_preconfigured_databases:
 - osism.services.keycloak
 keycloak_traefik:
 - osism.services.keycloak
-keycloak_traefik_path_prefix:
-- osism.services.keycloak
-keycloak_traefik_host:
-- osism.services.keycloak
 clamav_configuration_defaults:
 - osism.services.clamav
 clamav_configuration_extra:
@@ -1904,10 +1894,6 @@ phpmyadmin_service_name:
 - osism.services.phpmyadmin
 phpmyadmin_traefik:
 - osism.services.phpmyadmin
-phpmyadmin_traefik_path_prefix:
-- osism.services.phpmyadmin
-phpmyadmin_traefik_host:
-- osism.services.phpmyadmin
 docker_registry_openstackclient:
 - osism.services.openstackclient
 openstackclient_install_type:
@@ -1962,6 +1948,29 @@ dnsdist_image:
 - osism.services.dnsdist
 dnsdist_servers:
 - osism.services.dnsdist
+containerd_package_name:
+- osism.services.containerd
+- osism.services.docker
+containerd_service_name:
+- osism.services.containerd
+- osism.services.docker
+containerd_grpc_gid:
+- osism.services.containerd
+- osism.services.docker
+containerd_packages_fail:
+- osism.services.containerd
+docker_configure_repository:
+- osism.services.containerd
+- osism.services.docker
+docker_debian_repository_arch:
+- osism.services.containerd
+- osism.services.docker
+docker_debian_repository_key:
+- osism.services.containerd
+- osism.services.docker
+docker_debian_repository:
+- osism.services.containerd
+- osism.services.docker
 docker_registry_rundeck:
 - osism.services.rundeck
 rundeck_configuration_directory:
@@ -2128,13 +2137,9 @@ docker_hosts:
 - osism.services.docker
 docker_service_name:
 - osism.services.docker
-containerd_service_name:
-- osism.services.docker
 docker_package_name:
 - osism.services.docker
 docker_cli_package_name:
-- osism.services.docker
-containerd_package_name:
 - osism.services.docker
 docker_packages_fail:
 - osism.services.docker
@@ -2181,14 +2186,6 @@ docker_proxy_no_proxy_extra:
 - osism.services.docker
 docker_proxy_no_proxy:
 - osism.services.docker
-docker_configure_repository:
-- osism.services.docker
-docker_debian_repository_arch:
-- osism.services.docker
-docker_debian_repository_key:
-- osism.services.docker
-docker_debian_repository:
-- osism.services.docker
 docker_default_runtime:
 - osism.services.docker
 docker_dragonfly:
@@ -2229,7 +2226,7 @@ docker_cni_config_dir:
 - osism.services.docker
 docker_cni_bin_dir:
 - osism.services.docker
-containerd_grpc_gid:
+docker_manage_containerd:
 - osism.services.docker
 docker_opts:
 - osism.services.docker
