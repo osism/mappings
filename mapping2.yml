@@ -235,8 +235,6 @@ network_tunnels:
 - osism.commons.network
 network_vlans:
 - osism.commons.network
-network_vrfs:
-- osism.commons.network
 network_dispatcher_package_name:
 - osism.commons.network
 network_dispatcher_service_name:
@@ -21036,8 +21034,6 @@ nova_pci_passthrough_whitelist:
 - kolla.nova-cell
 metal_lb_available_timeout:
 - k3s/post
-ansible_user:
-- k3s/master
 server_init_args:
 - k3s/master
 state:

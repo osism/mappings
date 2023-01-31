@@ -103,7 +103,6 @@ osism.commons.network:
 - network_ethernets
 - network_tunnels
 - network_vlans
-- network_vrfs
 - network_dispatcher_package_name
 - network_dispatcher_service_name
 - network_dispatcher_scripts
@@ -11073,7 +11072,6 @@ kolla.nova-cell:
 k3s/post:
 - metal_lb_available_timeout
 k3s/master:
-- ansible_user
 - server_init_args
 k3s/raspberrypi:
 - state
