@@ -1938,6 +1938,8 @@ dnsdist_container_name:
 - osism.services.dnsdist
 dnsdist_host:
 - osism.services.dnsdist
+dnsdist_hosts:
+- osism.services.dnsdist
 dnsdist_port:
 - osism.services.dnsdist
 dnsdist_tag:
