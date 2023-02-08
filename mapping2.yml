@@ -2230,6 +2230,8 @@ docker_manage_containerd:
 - osism.services.docker
 docker_opts:
 - osism.services.docker
+docker_facts:
+- osism.services.docker
 docker_fact_files:
 - osism.services.docker
 rng_service_name:

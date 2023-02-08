@@ -1355,6 +1355,7 @@ osism.services.docker:
 - containerd_service_name
 - containerd_package_name
 - docker_opts
+- docker_facts
 - docker_fact_files
 osism.services.rng:
 - rng_service_name
