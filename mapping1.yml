@@ -1192,6 +1192,7 @@ osism.services.dnsdist:
 - dnsdist_service_name
 - dnsdist_container_name
 - dnsdist_host
+- dnsdist_hosts
 - dnsdist_port
 - dnsdist_tag
 - dnsdist_image
@@ -1354,6 +1355,7 @@ osism.services.docker:
 - containerd_service_name
 - containerd_package_name
 - docker_opts
+- docker_facts
 - docker_fact_files
 osism.services.rng:
 - rng_service_name

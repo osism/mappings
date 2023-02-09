@@ -1938,6 +1938,8 @@ dnsdist_container_name:
 - osism.services.dnsdist
 dnsdist_host:
 - osism.services.dnsdist
+dnsdist_hosts:
+- osism.services.dnsdist
 dnsdist_port:
 - osism.services.dnsdist
 dnsdist_tag:
@@ -2227,6 +2229,8 @@ docker_cni_bin_dir:
 docker_manage_containerd:
 - osism.services.docker
 docker_opts:
+- osism.services.docker
+docker_facts:
 - osism.services.docker
 docker_fact_files:
 - osism.services.docker
