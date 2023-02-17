@@ -926,6 +926,8 @@ netbox_init_users_template:
 - osism.services.netbox
 netbox_init_users:
 - osism.services.netbox
+zuul_user:
+- osism.services.zuul
 zuul_host:
 - osism.services.zuul
 zuul_logserver_fqdn:
@@ -951,31 +953,31 @@ docker_registry:
 - osism.services.traefik
 - osism.services.phpmyadmin
 - osism.services.docker
+zuul_log_server_tag:
+- osism.services.zuul
+zuul_mariadb_tag:
+- osism.services.zuul
 zuul_nodepool_tag:
 - osism.services.zuul
 zuul_zookeeper_tag:
 - osism.services.zuul
-zuul_tag:
+zuul_zuul_tag:
 - osism.services.zuul
-zuul_mariadb_tag:
+zuul_executor_image:
 - osism.services.zuul
-zuul_log_server_tag:
+zuul_log_server_image:
+- osism.services.zuul
+zuul_mariadb_image:
 - osism.services.zuul
 zuul_nodepool_builder_image:
 - osism.services.zuul
 zuul_nodepool_launcher_image:
 - osism.services.zuul
-zuul_executor_image:
+zuul_scheduler_image:
 - osism.services.zuul
 zuul_web_image:
 - osism.services.zuul
-zuul_scheduler_image:
-- osism.services.zuul
 zuul_zookeeper_image:
-- osism.services.zuul
-zuul_mariadb_image:
-- osism.services.zuul
-zuul_log_server_image:
 - osism.services.zuul
 database:
 - osism.services.zuul

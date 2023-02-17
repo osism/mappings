@@ -571,6 +571,7 @@ osism.services.netbox:
 - netbox_init_users_template
 - netbox_init_users
 osism.services.zuul:
+- zuul_user
 - operator_user
 - operator_group
 - zuul_host
@@ -583,19 +584,19 @@ osism.services.zuul:
 - connections
 - tenants
 - docker_registry
+- zuul_log_server_tag
+- zuul_mariadb_tag
 - zuul_nodepool_tag
 - zuul_zookeeper_tag
-- zuul_tag
-- zuul_mariadb_tag
-- zuul_log_server_tag
+- zuul_zuul_tag
+- zuul_executor_image
+- zuul_log_server_image
+- zuul_mariadb_image
 - zuul_nodepool_builder_image
 - zuul_nodepool_launcher_image
-- zuul_executor_image
-- zuul_web_image
 - zuul_scheduler_image
+- zuul_web_image
 - zuul_zookeeper_image
-- zuul_mariadb_image
-- zuul_log_server_image
 - database
 - container_name
 - nodepool_labels
