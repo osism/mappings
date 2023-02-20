@@ -1567,6 +1567,72 @@ system_encoding_expected:
 - osism.validations.system_encoding
 kernel_version_expected:
 - osism.validations.kernel_version
+refstack_bootstrap:
+- osism.validations.refstack
+refstack_install:
+- osism.validations.refstack
+refstack_tempest_version:
+- osism.validations.refstack
+refstack_target:
+- osism.validations.refstack
+refstack_guideline:
+- osism.validations.refstack
+refstack_keystone_endpoint:
+- osism.validations.refstack
+refstack_workdir:
+- osism.validations.refstack
+refstack_cloud:
+- osism.validations.refstack
+refstack_admin_users:
+- osism.validations.refstack
+refstack_users:
+- osism.validations.refstack
+refstack_image_url:
+- osism.validations.refstack
+refstack_superadmin_password:
+- osism.validations.refstack
+refstack_admin_password:
+- osism.validations.refstack
+refstack_user_password:
+- osism.validations.refstack
+refstack_region:
+- osism.validations.refstack
+refstack_public_network:
+- osism.validations.refstack
+refstack_network_name:
+- osism.validations.refstack
+refstack_manager:
+- osism.validations.refstack
+refstack_keypair:
+- osism.validations.refstack
+refstack_project:
+- osism.validations.refstack
+refstack_enable_cinder:
+- osism.validations.refstack
+refstack_enable_glance:
+- osism.validations.refstack
+refstack_enable_heat:
+- osism.validations.refstack
+refstack_enable_neutron:
+- osism.validations.refstack
+refstack_enable_nova:
+- osism.validations.refstack
+refstack_enable_swift:
+- osism.validations.refstack
+refstack_volume_device_name:
+- osism.validations.refstack
+refstack_image_ssh_user:
+- osism.validations.refstack
+refstack_scripts:
+- osism.validations.refstack
+refstack_domain:
+- osism.validations.refstack
+refstack_domain_id:
+- osism.validations.refstack
+refstack_admin:
+- osism.validations.refstack
+refstack_admin_project:
+- osism.validations.refstack
 ulimits_nofiles_min:
 - osism.validations.ulimits
 ulimits_nproc_min:

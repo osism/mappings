@@ -917,6 +917,40 @@ osism.validations.system_encoding:
 - system_encoding_expected
 osism.validations.kernel_version:
 - kernel_version_expected
+osism.validations.refstack:
+- refstack_bootstrap
+- refstack_install
+- refstack_tempest_version
+- refstack_target
+- refstack_guideline
+- refstack_keystone_endpoint
+- refstack_workdir
+- refstack_cloud
+- refstack_admin_users
+- refstack_users
+- refstack_image_url
+- refstack_superadmin_password
+- refstack_admin_password
+- refstack_user_password
+- refstack_region
+- refstack_public_network
+- refstack_network_name
+- refstack_manager
+- refstack_keypair
+- refstack_project
+- refstack_enable_cinder
+- refstack_enable_glance
+- refstack_enable_heat
+- refstack_enable_neutron
+- refstack_enable_nova
+- refstack_enable_swift
+- refstack_volume_device_name
+- refstack_image_ssh_user
+- refstack_scripts
+- refstack_domain
+- refstack_domain_id
+- refstack_admin
+- refstack_admin_project
 osism.validations.ulimits:
 - ulimits_nofiles_min
 - ulimits_nproc_min
