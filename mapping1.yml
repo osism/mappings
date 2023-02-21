@@ -11118,6 +11118,7 @@ kolla.kafka:
 k3s/raspberrypi:
 - state
 k3s/master:
+- kube_vip_iface
 - server_init_args
 k3s/post:
 - metal_lb_available_timeout

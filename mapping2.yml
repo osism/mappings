@@ -21124,6 +21124,8 @@ kafka_extra_volumes:
 - kolla.kafka
 state:
 - k3s/raspberrypi
+kube_vip_iface:
+- k3s/master
 server_init_args:
 - k3s/master
 metal_lb_available_timeout:
