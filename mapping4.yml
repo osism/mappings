@@ -1,241 +1,242 @@
+---
 ceph:
-- ceph-add-mon
-- ceph-bootstrap-dashboard
-- ceph-ceph-keys
-- ceph-cephadm-adopt
-- ceph-cephadm
-- ceph-clients
-- ceph-config
-- ceph-crash
-- ceph-docker-to-podman
-- ceph-facts
-- ceph-fetch-keys
-- ceph-filestore-to-bluestore
-- ceph-gather-ceph-logs
-- ceph-iscsigws
-- ceph-lv-create
-- ceph-lv-teardown
-- ceph-mdss
-- ceph-mgrs
-- ceph-mons
-- ceph-nfss
-- ceph-osds
-- ceph-purge-cluster
-- ceph-purge-container-cluster
-- ceph-purge-dashboard
-- ceph-purge-iscsi-gateways
-- ceph-purge-storage-node
-- ceph-rbd-mirrors
-- ceph-restapis
-- ceph-rgw-add-users-buckets
-- ceph-rgws
-- ceph-rolling_update
-- ceph-shrink-mds
-- ceph-shrink-mgr
-- ceph-shrink-mon
-- ceph-shrink-osd
-- ceph-shrink-rbdmirror
-- ceph-shrink-rgw
-- ceph-site
-- ceph-storage-inventory
-- ceph-switch-from-non-containerized-to-containerized-ceph-daemons
-- ceph-take-over-existing-cluster
-- ceph-testbed
+  - ceph-add-mon
+  - ceph-bootstrap-dashboard
+  - ceph-ceph-keys
+  - ceph-cephadm-adopt
+  - ceph-cephadm
+  - ceph-clients
+  - ceph-config
+  - ceph-crash
+  - ceph-docker-to-podman
+  - ceph-facts
+  - ceph-fetch-keys
+  - ceph-filestore-to-bluestore
+  - ceph-gather-ceph-logs
+  - ceph-iscsigws
+  - ceph-lv-create
+  - ceph-lv-teardown
+  - ceph-mdss
+  - ceph-mgrs
+  - ceph-mons
+  - ceph-nfss
+  - ceph-osds
+  - ceph-purge-cluster
+  - ceph-purge-container-cluster
+  - ceph-purge-dashboard
+  - ceph-purge-iscsi-gateways
+  - ceph-purge-storage-node
+  - ceph-rbd-mirrors
+  - ceph-restapis
+  - ceph-rgw-add-users-buckets
+  - ceph-rgws
+  - ceph-rolling_update
+  - ceph-shrink-mds
+  - ceph-shrink-mgr
+  - ceph-shrink-mon
+  - ceph-shrink-osd
+  - ceph-shrink-rbdmirror
+  - ceph-shrink-rgw
+  - ceph-site
+  - ceph-storage-inventory
+  - ceph-switch-from-non-containerized-to-containerized-ceph-daemons
+  - ceph-take-over-existing-cluster
+  - ceph-testbed
 generic:
-- auditd
-- backup-mariadb
-- bootstrap
-- check-reboot
-- chrony
-- chrony-force-sync
-- clamav
-- cleanup
-- cleanup-backup-mariadb
-- cleanup-databases
-- cleanup-docker
-- cleanup-docker-images
-- cleanup-elasticsearch
-- cleanup-queues
-- cleanup-sosreport
-- cockpit
-- configfs
-- docker
-- docker-compose
-- dotfiles
-- dump-facts
-- facts
-- fail2ban
-- falco
-- firewall
-- grub
-- halt
-- hardening
-- hddtemp
-- hostname
-- hosts
-- ipmitool
-- journald
-- kernel-modules
-- known-hosts
-- kompose
-- lldpd
-- lynis
-- maintenance
-- manage-container
-- manage-service
-- microcode
-- motd
-- network
-- operator
-- packages
-- patchman-client
-- ping
-- podman
-- proxy
-- python
-- python3
-- reboot
-- remove-deploy-user
-- repository
-- resolvconf
-- rng
-- rsyslog
-- services
-- smartd
-- sosreport
-- state
-- sysctl
-- sysdig
-- systohc
-- timezone
-- trivy
-- upgrade-packages
-- utilities
-- wait-for-connection
-- write-facts
+  - auditd
+  - backup-mariadb
+  - bootstrap
+  - check-reboot
+  - chrony
+  - chrony-force-sync
+  - clamav
+  - cleanup
+  - cleanup-backup-mariadb
+  - cleanup-databases
+  - cleanup-docker
+  - cleanup-docker-images
+  - cleanup-elasticsearch
+  - cleanup-queues
+  - cleanup-sosreport
+  - cockpit
+  - configfs
+  - docker
+  - docker-compose
+  - dotfiles
+  - dump-facts
+  - facts
+  - fail2ban
+  - falco
+  - firewall
+  - grub
+  - halt
+  - hardening
+  - hddtemp
+  - hostname
+  - hosts
+  - ipmitool
+  - journald
+  - kernel-modules
+  - known-hosts
+  - kompose
+  - lldpd
+  - lynis
+  - maintenance
+  - manage-container
+  - manage-service
+  - microcode
+  - motd
+  - network
+  - operator
+  - packages
+  - patchman-client
+  - ping
+  - podman
+  - proxy
+  - python
+  - python3
+  - reboot
+  - remove-deploy-user
+  - repository
+  - resolvconf
+  - rng
+  - rsyslog
+  - services
+  - smartd
+  - sosreport
+  - state
+  - sysctl
+  - sysdig
+  - systohc
+  - timezone
+  - trivy
+  - upgrade-packages
+  - utilities
+  - wait-for-connection
+  - write-facts
 infrastructure:
-- adminer
-- cephclient
-- cgit
-- dnsdist
-- helper
-- homer
-- jenkins
-- keycloak
-- kubectl
-- minikube
-- mirror
-- mirror-images
-- netbox
-- nexus
-- openldap
-- openstackclient
-- patchman
-- phpmyadmin
-- rundeck
-- sshconfig
-- tailscale
-- traefik
-- virtualbmc
-- zuul
+  - adminer
+  - cephclient
+  - cgit
+  - dnsdist
+  - helper
+  - homer
+  - jenkins
+  - keycloak
+  - kubectl
+  - minikube
+  - mirror
+  - mirror-images
+  - netbox
+  - nexus
+  - openldap
+  - openstackclient
+  - patchman
+  - phpmyadmin
+  - rundeck
+  - sshconfig
+  - tailscale
+  - traefik
+  - virtualbmc
+  - zuul
 kolla:
-- aodh
-- barbican
-- bifrost-keypair
-- bifrost
-- blazar
-- ceilometer
-- certificates
-- chrony-cleanup
-- cinder
-- cloudkitty
-- collectd
-- common
-- cyborg
-- designate
-- kolla-destroy
-- elasticsearch
-- etcd
-- kolla-facts
-- freezer
-- kolla-gather-facts
-- glance
-- gnocchi
-- grafana
-- hacluster
-- haproxy
-- heat
-- horizon
-- influxdb
-- ironic
-- iscsi
-- kafka
-- keystone
-- kibana
-- kuryr
-- loadbalancer
-- magnum
-- manila
-- mariadb-dynamic-rows
-- mariadb
-- mariadb_backup
-- mariadb_recovery
-- masakari
-- memcached
-- mistral
-- monasca
-- monasca_cleanup
-- multipathd
-- murano
-- neutron
-- nova-compute
-- nova
-- octavia-certificates
-- octavia
-- openvswitch
-- ovn
-- ovn-controller
-- ovn-db
-- ovs-dpdk
-- panko
-- placement
-- prechecks
-- prometheus
-- kolla-prune-images
-- kolla-purge
-- qdrouterd
-- rabbitmq-outward
-- rabbitmq
-- rally
-- redis
-- kolla-rgw-endpoint
-- sahara
-- senlin
-- kolla-site
-- skydive
-- solum
-- storm
-- swift
-- tacker
-- telegraf
-- tempest
-- kolla-testbed-identity
-- kolla-testbed
-- trove
-- vitrage
-- vmtp
-- watcher
-- zookeeper
-- zun
+  - aodh
+  - barbican
+  - bifrost-keypair
+  - bifrost
+  - blazar
+  - ceilometer
+  - certificates
+  - chrony-cleanup
+  - cinder
+  - cloudkitty
+  - collectd
+  - common
+  - cyborg
+  - designate
+  - kolla-destroy
+  - elasticsearch
+  - etcd
+  - kolla-facts
+  - freezer
+  - kolla-gather-facts
+  - glance
+  - gnocchi
+  - grafana
+  - hacluster
+  - haproxy
+  - heat
+  - horizon
+  - influxdb
+  - ironic
+  - iscsi
+  - kafka
+  - keystone
+  - kibana
+  - kuryr
+  - loadbalancer
+  - magnum
+  - manila
+  - mariadb-dynamic-rows
+  - mariadb
+  - mariadb_backup
+  - mariadb_recovery
+  - masakari
+  - memcached
+  - mistral
+  - monasca
+  - monasca_cleanup
+  - multipathd
+  - murano
+  - neutron
+  - nova-compute
+  - nova
+  - octavia-certificates
+  - octavia
+  - openvswitch
+  - ovn
+  - ovn-controller
+  - ovn-db
+  - ovs-dpdk
+  - panko
+  - placement
+  - prechecks
+  - prometheus
+  - kolla-prune-images
+  - kolla-purge
+  - qdrouterd
+  - rabbitmq-outward
+  - rabbitmq
+  - rally
+  - redis
+  - kolla-rgw-endpoint
+  - sahara
+  - senlin
+  - kolla-site
+  - skydive
+  - solum
+  - storm
+  - swift
+  - tacker
+  - telegraf
+  - tempest
+  - kolla-testbed-identity
+  - kolla-testbed
+  - trove
+  - vitrage
+  - vmtp
+  - watcher
+  - zookeeper
+  - zun
 manager:
-- configuration
-- copy-ceph-keys
-- manager-network
-- manager-operator
-- vault-import
-- vault-init
-- vault-seal
-- vault-unseal
+  - configuration
+  - copy-ceph-keys
+  - manager-network
+  - manager-operator
+  - vault-import
+  - vault-init
+  - vault-seal
+  - vault-unseal
 monitoring:
-- netdata
-- openstack-health-monitor
+  - netdata
+  - openstack-health-monitor

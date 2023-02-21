@@ -1,11 +1,6 @@
 ---
-# MONITORING
-
 netdata: monitoring
 openstack-health-monitor: monitoring
-
-# GENERIC
-
 auditd: generic
 backup-mariadb: generic
 bootstrap: generic
@@ -77,9 +72,6 @@ upgrade-packages: generic
 utilities: generic
 wait-for-connection: generic
 write-facts: generic
-
-# INFRASTRUCTURE
-
 adminer: infrastructure
 cephclient: infrastructure
 cgit: infrastructure
@@ -104,9 +96,6 @@ tailscale: infrastructure
 traefik: infrastructure
 virtualbmc: infrastructure
 zuul: infrastructure
-
-# MANAGER
-
 configuration: manager
 copy-ceph-keys: manager
 manager-network: manager
@@ -115,9 +104,6 @@ vault-import: manager
 vault-init: manager
 vault-seal: manager
 vault-unseal: manager
-
-# CEPH
-
 ceph-add-mon: ceph
 ceph-bootstrap-dashboard: ceph
 ceph-ceph-keys: ceph
@@ -160,8 +146,6 @@ ceph-storage-inventory: ceph
 ceph-switch-from-non-containerized-to-containerized-ceph-daemons: ceph
 ceph-take-over-existing-cluster: ceph
 ceph-testbed: ceph
-
-# KOLLA
 aodh: kolla
 barbican: kolla
 bifrost-keypair: kolla
