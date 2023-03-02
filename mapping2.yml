@@ -3585,6 +3585,8 @@ repository_key_ids:
 - osism.commons.repository
 enable_phased_updates:
 - osism.commons.repository
+repository_apt_acquire_forceipv4:
+- osism.commons.repository
 influxdb__server:
 - debops.roles02.influxdb
 influxdb__port:
