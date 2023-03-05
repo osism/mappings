@@ -928,7 +928,8 @@ osism.validations.refstack:
 - refstack_cloud
 - refstack_admin_users
 - refstack_users
-- refstack_image_url
+- refstack_flavors
+- refstack_images
 - refstack_superadmin_password
 - refstack_admin_password
 - refstack_user_password

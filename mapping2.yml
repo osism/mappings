@@ -1587,7 +1587,9 @@ refstack_admin_users:
 - osism.validations.refstack
 refstack_users:
 - osism.validations.refstack
-refstack_image_url:
+refstack_flavors:
+- osism.validations.refstack
+refstack_images:
 - osism.validations.refstack
 refstack_superadmin_password:
 - osism.validations.refstack
