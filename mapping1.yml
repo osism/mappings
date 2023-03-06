@@ -1679,9 +1679,7 @@ osism.services.virtualbmc:
 - virtualbmc_port
 - virtualbmc_tag
 - virtualbmc_image
-osism.services.hddtemp:
-- hddtemp_package_name
-- hddtemp_service_name
+osism.services.hddtemp: []
 osism.services.rundeck:
 - operator_user
 - operator_group

@@ -2988,10 +2988,6 @@ virtualbmc_tag:
 - osism.services.virtualbmc
 virtualbmc_image:
 - osism.services.virtualbmc
-hddtemp_package_name:
-- osism.services.hddtemp
-hddtemp_service_name:
-- osism.services.hddtemp
 docker_registry_rundeck:
 - osism.services.rundeck
 rundeck_configuration_directory:
