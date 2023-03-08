@@ -1591,10 +1591,6 @@ refstack_flavors:
 - osism.validations.refstack
 refstack_images:
 - osism.validations.refstack
-refstack_superadmin_password:
-- osism.validations.refstack
-refstack_admin_password:
-- osism.validations.refstack
 refstack_user_password:
 - osism.validations.refstack
 refstack_region:
@@ -1634,6 +1630,8 @@ refstack_domain_id:
 refstack_admin:
 - osism.validations.refstack
 refstack_admin_project:
+- osism.validations.refstack
+refstack_admin_password:
 - osism.validations.refstack
 ulimits_nofiles_min:
 - osism.validations.ulimits

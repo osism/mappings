@@ -930,8 +930,6 @@ osism.validations.refstack:
 - refstack_users
 - refstack_flavors
 - refstack_images
-- refstack_superadmin_password
-- refstack_admin_password
 - refstack_user_password
 - refstack_region
 - refstack_public_network
@@ -952,6 +950,7 @@ osism.validations.refstack:
 - refstack_domain_id
 - refstack_admin
 - refstack_admin_project
+- refstack_admin_password
 osism.validations.ulimits:
 - ulimits_nofiles_min
 - ulimits_nproc_min
