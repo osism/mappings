@@ -12088,7 +12088,6 @@ operator_user:
 - osism.services.manager
 - osism.services.nexus
 - osism.services.jenkins
-- osism.services.wireguard
 - osism.services.cephclient
 - osism.services.keycloak
 - osism.services.phpmyadmin
@@ -12096,7 +12095,6 @@ operator_user:
 - osism.services.dnsdist
 - osism.services.adminer
 - osism.services.traefik
-- osism.services.zuul
 - osism.services.openldap
 - osism.services.squid
 - osism.services.openstackclient
@@ -12115,7 +12113,6 @@ operator_group:
 - osism.services.manager
 - osism.services.nexus
 - osism.services.jenkins
-- osism.services.wireguard
 - osism.services.cephclient
 - osism.services.keycloak
 - osism.services.phpmyadmin
@@ -12123,7 +12120,6 @@ operator_group:
 - osism.services.dnsdist
 - osism.services.adminer
 - osism.services.traefik
-- osism.services.zuul
 - osism.services.openldap
 - osism.services.squid
 - osism.services.openstackclient
@@ -13257,25 +13253,21 @@ jenkins_java_opts:
 - osism.services.jenkins
 jenkins_service_name:
 - osism.services.jenkins
+wireguard_users:
+- osism.services.wireguard
 wireguard_mtu:
-- osism.services.wireguard
-wireguard_client_address:
-- osism.services.wireguard
-wireguard_client_configuration_file:
-- osism.services.wireguard
-wireguard_allowed_client_ips:
 - osism.services.wireguard
 wireguard_server_address:
 - osism.services.wireguard
 wireguard_listen_port:
 - osism.services.wireguard
-wireguard_allowed_server_ips:
-- osism.services.wireguard
-wireguard_service_name:
-- osism.services.wireguard
 wireguard_server_public_address:
 - osism.services.wireguard
 wireguard_endpoint:
+- osism.services.wireguard
+wireguard_create_client_config:
+- osism.services.wireguard
+wireguard_client_allowed_ips:
 - osism.services.wireguard
 docker_registry_cephclient:
 - osism.services.cephclient
@@ -13573,7 +13565,7 @@ patchman_client_update_valid_time:
 - osism.services.patchman_client
 zuul_user:
 - osism.services.zuul
-zuul_host:
+zuul_group:
 - osism.services.zuul
 zuul_logserver_fqdn:
 - osism.services.zuul
@@ -13581,15 +13573,15 @@ zuul_webserver_fqdn:
 - osism.services.zuul
 zuul_webserver_admin:
 - osism.services.zuul
-zookeeper_fqdn:
+zuul_zookeeper_fqdn:
 - osism.services.zuul
-base_conf_dir:
+zuul_base_conf_dir:
 - osism.services.zuul
-component_conf_dirs:
+zuul_component_conf_dirs:
 - osism.services.zuul
-connections:
+zuul_connections:
 - osism.services.zuul
-tenants:
+zuul_tenants:
 - osism.services.zuul
 zuul_log_server_tag:
 - osism.services.zuul
@@ -13617,13 +13609,13 @@ zuul_web_image:
 - osism.services.zuul
 zuul_zookeeper_image:
 - osism.services.zuul
-database:
+zuul_database:
 - osism.services.zuul
 container_name:
 - osism.services.zuul
-nodepool_labels:
+zuul_nodepool_labels:
 - osism.services.zuul
-nodepool_providers:
+zuul_nodepool_providers:
 - osism.services.zuul
 docker_registry_openldap:
 - osism.services.openldap

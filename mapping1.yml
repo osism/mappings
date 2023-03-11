@@ -6966,18 +6966,14 @@ osism.services.jenkins:
 - jenkins_java_opts
 - jenkins_service_name
 osism.services.wireguard:
-- operator_user
-- operator_group
+- wireguard_users
 - wireguard_mtu
-- wireguard_client_address
-- wireguard_client_configuration_file
-- wireguard_allowed_client_ips
 - wireguard_server_address
 - wireguard_listen_port
-- wireguard_allowed_server_ips
-- wireguard_service_name
 - wireguard_server_public_address
 - wireguard_endpoint
+- wireguard_create_client_config
+- wireguard_client_allowed_ips
 osism.services.cephclient:
 - docker_network_mtu
 - docker_registry_cephclient
@@ -7176,17 +7172,15 @@ osism.services.patchman_client:
 - patchman_client_update_valid_time
 osism.services.zuul:
 - zuul_user
-- operator_user
-- operator_group
-- zuul_host
+- zuul_group
 - zuul_logserver_fqdn
 - zuul_webserver_fqdn
 - zuul_webserver_admin
-- zookeeper_fqdn
-- base_conf_dir
-- component_conf_dirs
-- connections
-- tenants
+- zuul_zookeeper_fqdn
+- zuul_base_conf_dir
+- zuul_component_conf_dirs
+- zuul_connections
+- zuul_tenants
 - docker_registry
 - zuul_log_server_tag
 - zuul_mariadb_tag
@@ -7201,10 +7195,10 @@ osism.services.zuul:
 - zuul_scheduler_image
 - zuul_web_image
 - zuul_zookeeper_image
-- database
+- zuul_database
 - container_name
-- nodepool_labels
-- nodepool_providers
+- zuul_nodepool_labels
+- zuul_nodepool_providers
 osism.services.openldap:
 - operator_user
 - operator_group
