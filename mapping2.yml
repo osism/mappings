@@ -13128,6 +13128,8 @@ manager_wrapper_scripts:
 - osism.services.manager
 manager_environment_extra:
 - osism.services.manager
+enable_listener:
+- osism.services.manager
 manager_listener_broker_uri:
 - osism.services.manager
 manager_enable_bifrost:
