@@ -8,15 +8,14 @@ import re
 from ruamel.yaml import YAML
 
 yaml = YAML()
+yaml.indent(sequence=4, offset=2)
 
 level = logging.INFO
-logging.basicConfig(format='%(asctime)s - %(message)s', level=level, datefmt='%Y-%m-%d %H:%M:%S')
+logging.basicConfig(
+    format="%(asctime)s - %(message)s", level=level, datefmt="%Y-%m-%d %H:%M:%S"
+)
 
-ANSIBLE_DIRECTORIES = [
-    '/ceph-ansible',
-    '/kolla-ansible',
-    '/osism-ansible'
-]
+ANSIBLE_DIRECTORIES = ["/ceph-ansible", "/kolla-ansible", "/osism-ansible"]
 
 mapping1 = {}
 mapping2 = {}
@@ -32,7 +31,9 @@ for ansible_directory in ANSIBLE_DIRECTORIES:
 
             logging.info(f"Found {b} in {p}")
 
-            for f in [x for x in glob.iglob(p + '**/**', recursive=True) if os.path.isfile(x)]:
+            for f in [
+                x for x in glob.iglob(p + "**/**", recursive=True) if os.path.isfile(x)
+            ]:
 
                 # skip integration tests of the ansible community collections
                 if "tests/integration" in f:
@@ -68,7 +69,7 @@ for ansible_directory in ANSIBLE_DIRECTORIES:
 
                 mapping1[rolename] = []
 
-                with open(f, 'r') as fp:
+                with open(f, "r") as fp:
                     d = yaml.load(fp)
 
                 try:
