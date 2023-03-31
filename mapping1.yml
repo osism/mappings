@@ -7657,6 +7657,33 @@ hardening:
   - security_enable_aslr
   - security_contrib_enabled
   - security_contrib_disable_ipv6
+pdns_recursor:
+  - pdns_rec_install_repo
+  - pdns_rec_install_epel
+  - pdns_rec_package_name
+  - pdns_rec_package_version
+  - pdns_rec_install_debug_symbols_package
+  - pdns_rec_debug_symbols_package_name
+  - pdns_rec_user
+  - pdns_rec_group
+  - pdns_rec_file_owner
+  - pdns_rec_file_group
+  - pdns_rec_service_name
+  - pdns_rec_bin_name
+  - pdns_rec_service_state
+  - pdns_rec_service_enabled
+  - pdns_rec_disable_handlers
+  - pdns_rec_config_dir
+  - pdns_rec_config_file
+  - pdns_rec_config_lua
+  - pdns_rec_config_lua_file_content
+  - pdns_rec_config_dns_script
+  - pdns_rec_config_dns_script_file_content
+  - pdns_rec_config_include_dir_mode
+  - pdns_rec_config_from_files_dir_mode
+  - pdns_rec_config_from_files
+  - pdns_rec_config
+  - pdns_rec_service_overrides
 stackhpc.libvirt_vm:
   - libvirt_vm_default_console_log_dir
   - libvirt_vm_default_uuid_deterministic
