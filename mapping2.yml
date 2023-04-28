@@ -69,6 +69,8 @@ cephadm_pools:
   - stackhpc.cephadm.pools
 cephadm_keys:
   - stackhpc.cephadm.keys
+cephadm_command:
+  - stackhpc.cephadm.commands
 cephadm_commands:
   - stackhpc.cephadm.commands
 cephadm_ec_profiles:
