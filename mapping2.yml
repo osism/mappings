@@ -666,8 +666,6 @@ homer_url_vault:
   - osism.services.homer
 homer_traefik:
   - osism.services.homer
-rng_service_name:
-  - osism.services.rng
 rng_package_name:
   - osism.services.rng
 docker_registry_rundeck:

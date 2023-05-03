@@ -329,7 +329,6 @@ osism.services.homer:
   - traefik_external_network_name
   - traefik_external_network_cidr
 osism.services.rng:
-  - rng_service_name
   - rng_package_name
 osism.services.rundeck:
   - operator_user
