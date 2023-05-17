@@ -390,6 +390,7 @@ docker_network_mtu:
   - osism.services.homer
   - osism.services.phpmyadmin
   - osism.services.openstack_health_monitor
+  - osism.services.scaphandre
   - osism.services.openldap
   - osism.services.patchman
   - osism.services.virtualbmc
@@ -412,6 +413,7 @@ operator_user:
   - osism.services.homer
   - osism.services.phpmyadmin
   - osism.services.openstack_health_monitor
+  - osism.services.scaphandre
   - osism.services.openldap
   - osism.services.patchman
   - osism.services.virtualbmc
@@ -437,6 +439,7 @@ operator_group:
   - osism.services.homer
   - osism.services.phpmyadmin
   - osism.services.openstack_health_monitor
+  - osism.services.scaphandre
   - osism.services.openldap
   - osism.services.patchman
   - osism.services.virtualbmc
@@ -524,6 +527,8 @@ docker_registry_vault:
 manager_network:
   - osism.services.manager
 manager_service_name:
+  - osism.services.manager
+manager_service_restart:
   - osism.services.manager
 ansible_directory:
   - osism.services.manager
@@ -1403,6 +1408,26 @@ openstack_health_monitor_network:
   - osism.services.openstack_health_monitor
 openstack_health_monitor_service_name:
   - osism.services.openstack_health_monitor
+docker_registry_scaphandre:
+  - osism.services.scaphandre
+scaphandre_container_name:
+  - osism.services.scaphandre
+scaphandre_configuration_directory:
+  - osism.services.scaphandre
+scaphandre_docker_compose_directory:
+  - osism.services.scaphandre
+scaphandre_network:
+  - osism.services.scaphandre
+scaphandre_service_name:
+  - osism.services.scaphandre
+scaphandre_host:
+  - osism.services.scaphandre
+scaphandre_port:
+  - osism.services.scaphandre
+scaphandre_tag:
+  - osism.services.scaphandre
+scaphandre_image:
+  - osism.services.scaphandre
 auditd_backup:
   - osism.services.auditd
 auditd_syslog:

@@ -341,6 +341,7 @@ osism.services.manager:
   - docker_network_mtu
   - manager_network
   - manager_service_name
+  - manager_service_restart
   - ansible_directory
   - archive_directory
   - cache_directory
@@ -837,6 +838,20 @@ osism.services.openstack_health_monitor:
   - openstack_health_monitor_container_name
   - openstack_health_monitor_network
   - openstack_health_monitor_service_name
+osism.services.scaphandre:
+  - operator_user
+  - operator_group
+  - docker_network_mtu
+  - docker_registry_scaphandre
+  - scaphandre_container_name
+  - scaphandre_configuration_directory
+  - scaphandre_docker_compose_directory
+  - scaphandre_network
+  - scaphandre_service_name
+  - scaphandre_host
+  - scaphandre_port
+  - scaphandre_tag
+  - scaphandre_image
 osism.services.auditd:
   - auditd_backup
   - auditd_syslog
