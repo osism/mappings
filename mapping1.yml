@@ -850,6 +850,10 @@ osism.services.scaphandre:
   - scaphandre_service_name
   - scaphandre_host
   - scaphandre_port
+  - scaphandre_exporter
+  - scaphandre_flags_defaults
+  - scaphandre_flags_extra
+  - scaphandre_flags
   - scaphandre_tag
   - scaphandre_image
 osism.services.auditd:

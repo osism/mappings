@@ -1424,6 +1424,14 @@ scaphandre_host:
   - osism.services.scaphandre
 scaphandre_port:
   - osism.services.scaphandre
+scaphandre_exporter:
+  - osism.services.scaphandre
+scaphandre_flags_defaults:
+  - osism.services.scaphandre
+scaphandre_flags_extra:
+  - osism.services.scaphandre
+scaphandre_flags:
+  - osism.services.scaphandre
 scaphandre_tag:
   - osism.services.scaphandre
 scaphandre_image:
