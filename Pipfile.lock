@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8b8f2df16405bea9739ea0949389ba2112dd9d959e37cb5a1deeb9f62bb74edf"
+            "sha256": "4dfa7e8729256a9dbcc54e2e31076eacbaab0f81a3f4eb59144d2e30362a3dd0"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -260,11 +260,11 @@
         },
         "ruamel.yaml": {
             "hashes": [
-                "sha256:c4ffffc972d35927e715683fe1e2e47fa2aebb26ce67fe75e599fb84f115f20b",
-                "sha256:cad7e3917da5c321658479f417320443b073e7b272033c799ba52e441d561ae5"
+                "sha256:3bf6df1c481d2463a633be6ee86e8aece941bb3298a9a0cd6d0865f47b1ddce6",
+                "sha256:823aff68f88260805049d6a4825e36cb7f1e273a7dd8f391e7b35a16a67a30ea"
             ],
             "index": "pypi",
-            "version": "==0.17.27"
+            "version": "==0.17.28"
         },
         "ruamel.yaml.clib": {
             "hashes": [
