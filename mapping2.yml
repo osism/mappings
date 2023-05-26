@@ -8834,6 +8834,12 @@ resources__group_files:
   - debops.debops.resources
 resources__host_files:
   - debops.debops.resources
+resources__pip:
+  - debops.debops.resources
+resources__group_pip:
+  - debops.debops.resources
+resources__host_pip:
+  - debops.debops.resources
 resources__file_capabilities:
   - debops.debops.resources
 resources__group_file_capabilities:
@@ -10512,48 +10518,6 @@ apt_install__host_alternatives:
   - debops.debops.apt_install
 apt_install__apt_preferences__dependent_list:
   - debops.debops.apt_install
-debops_api__python_version:
-  - debops.debops.debops_api
-debops_api__python3_packages:
-  - debops.debops.debops_api
-debops_api__python2_packages:
-  - debops.debops.debops_api
-debops_api__deploy_state:
-  - debops.debops.debops_api
-debops_api__user:
-  - debops.debops.debops_api
-debops_api__group:
-  - debops.debops.debops_api
-debops_api__home:
-  - debops.debops.debops_api
-debops_api__public_api_dir:
-  - debops.debops.debops_api
-debops_api__app_repo_url:
-  - debops.debops.debops_api
-debops_api__app_repo_dest:
-  - debops.debops.debops_api
-debops_api__input_data_repo_update:
-  - debops.debops.debops_api
-debops_api__input_data_repo_url:
-  - debops.debops.debops_api
-debops_api__input_data_dir:
-  - debops.debops.debops_api
-debops_api__input_data_repo_dest:
-  - debops.debops.debops_api
-debops_api__input_data_role_path:
-  - debops.debops.debops_api
-debops_api__app_parameters:
-  - debops.debops.debops_api
-debops_api__domain:
-  - debops.debops.debops_api
-debops_api__app_update:
-  - debops.debops.debops_api
-debops_api__cron_script:
-  - debops.debops.debops_api
-debops_api__cron_entries:
-  - debops.debops.debops_api
-debops_api__nginx__servers:
-  - debops.debops.debops_api
 sks_autoinit:
   - debops.debops.sks
 sks_contact:
@@ -11493,6 +11457,8 @@ proc_hidepid__enabled:
 proc_hidepid__base_packages:
   - debops.debops.proc_hidepid
 proc_hidepid__packages:
+  - debops.debops.proc_hidepid
+proc_hidepid__skip_packages:
   - debops.debops.proc_hidepid
 proc_hidepid__remount:
   - debops.debops.proc_hidepid
