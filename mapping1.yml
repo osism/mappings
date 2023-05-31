@@ -4774,6 +4774,9 @@ debops.debops.resources:
   - resources__files
   - resources__group_files
   - resources__host_files
+  - resources__pip
+  - resources__group_pip
+  - resources__host_pip
   - resources__file_capabilities
   - resources__group_file_capabilities
   - resources__host_file_capabilities
@@ -5634,28 +5637,6 @@ debops.debops.apt_install:
   - apt_install__group_alternatives
   - apt_install__host_alternatives
   - apt_install__apt_preferences__dependent_list
-debops.debops.debops_api:
-  - debops_api__python_version
-  - debops_api__python3_packages
-  - debops_api__python2_packages
-  - debops_api__deploy_state
-  - debops_api__user
-  - debops_api__group
-  - debops_api__home
-  - debops_api__public_api_dir
-  - debops_api__app_repo_url
-  - debops_api__app_repo_dest
-  - debops_api__input_data_repo_update
-  - debops_api__input_data_repo_url
-  - debops_api__input_data_dir
-  - debops_api__input_data_repo_dest
-  - debops_api__input_data_role_path
-  - debops_api__app_parameters
-  - debops_api__domain
-  - debops_api__app_update
-  - debops_api__cron_script
-  - debops_api__cron_entries
-  - debops_api__nginx__servers
 debops.debops.sks:
   - sks_autoinit
   - sks_contact
@@ -6145,6 +6126,7 @@ debops.debops.proc_hidepid:
   - proc_hidepid__enabled
   - proc_hidepid__base_packages
   - proc_hidepid__packages
+  - proc_hidepid__skip_packages
   - proc_hidepid__remount
   - proc_hidepid__level
   - proc_hidepid__group
