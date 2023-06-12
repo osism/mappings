@@ -13080,6 +13080,14 @@ frr_loopback_v4:
   - osism.services.frr
 frr_loopback_v6:
   - osism.services.frr
+frr_externalbackup_v4:
+  - osism.services.frr
+frr_externalbackup_v6:
+  - osism.services.frr
+frr_internalbackup_v4:
+  - osism.services.frr
+frr_internalbackup_v6:
+  - osism.services.frr
 chrony_package_name:
   - osism.services.chrony
 chrony_local_conf_template:
@@ -13370,6 +13378,8 @@ netbox_userid:
 netbox_tag:
   - osism.services.netbox
 netbox_image:
+  - osism.services.netbox
+netbox_service_restart:
   - osism.services.netbox
 netbox_secret_key:
   - osism.services.netbox

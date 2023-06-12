@@ -6863,6 +6863,10 @@ osism.services.frr:
   - frr_type
   - frr_loopback_v4
   - frr_loopback_v6
+  - frr_externalbackup_v4
+  - frr_externalbackup_v6
+  - frr_internalbackup_v4
+  - frr_internalbackup_v6
 osism.services.chrony:
   - chrony_package_name
   - configuration_directory
@@ -7026,6 +7030,7 @@ osism.services.netbox:
   - netbox_userid
   - netbox_tag
   - netbox_image
+  - netbox_service_restart
   - netbox_secret_key
   - netbox_superuser_name
   - netbox_superuser_email
