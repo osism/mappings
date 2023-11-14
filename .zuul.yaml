@@ -7,13 +7,16 @@
         - flake8
         - hadolint
         - yamllint
+        - python-black
     gate:
       jobs:
         - flake8
         - hadolint
         - yamllint
+        - python-black
     periodic-daily:
       jobs:
         - flake8
         - hadolint
         - yamllint
+        - python-black

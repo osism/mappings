@@ -34,7 +34,6 @@ for ansible_directory in ANSIBLE_DIRECTORIES:
             for f in [
                 x for x in glob.iglob(p + "**/**", recursive=True) if os.path.isfile(x)
             ]:
-
                 # skip integration tests of the ansible community collections
                 if "tests/integration" in f:
                     continue
