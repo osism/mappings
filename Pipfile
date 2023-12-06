@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 Jinja2 = "==3.1.2"
-ansible = "==8.6.1"
+ansible = "==8.7.0"
 "ruamel.yaml" = "==0.18.5"
 
 [dev-packages]
