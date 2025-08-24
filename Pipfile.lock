@@ -1,11 +1,11 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "ae0a502e70b8a1c3852a9363d407cf843e15b0300241467a4dfe8c1a363c75e0"
+            "sha256": "28332199a4468705993924f46a2dcad2cb9a88a2b34973bc14937b7a9f7706d4"
         },
         "pipfile-spec": 6,
         "requires": {
-            "python_version": "3.9"
+            "python_version": "3.13"
         },
         "sources": [
             {
@@ -18,20 +18,20 @@
     "default": {
         "ansible": {
             "hashes": [
-                "sha256:3a5ca5152e4547d590e40b542d76b18dbbe2b36da4edd00a13a7c51a374ff737",
-                "sha256:fa7d3bc2dfdb0ab031df645814ff86b15cb5ec041bfbee4041f795abfa5646ca"
+                "sha256:528ca5a408f11cf1fea00daea7570e68d40e167be38b90c119a7cb45729e4921",
+                "sha256:79b087ef38105b93e0e092e7013a0f840e154a6a8ce9b5fddd1b47593adc542a"
             ],
             "index": "pypi",
-            "markers": "python_version >= '3.9'",
-            "version": "==8.7.0"
+            "markers": "python_version >= '3.11'",
+            "version": "==11.9.0"
         },
         "ansible-core": {
             "hashes": [
-                "sha256:e7f50bbb61beae792f5ecb86eff82149d3948d078361d70aedb01d76bc483c30",
-                "sha256:f542e702ee31fb049732143aeee6b36311ca48b7d13960a0685afffa0d742d7f"
+                "sha256:b0766215a96a47ce39933d27e1e996ca2beb54cf1b3907c742d35c913b1f78cd",
+                "sha256:b60bc23b2f11fd0559a79d10ac152b52f58a18ca1b7be0a620dfe87f34ced689"
             ],
-            "markers": "python_version >= '3.9'",
-            "version": "==2.15.13"
+            "markers": "python_version >= '3.11'",
+            "version": "==2.18.8"
         },
         "cffi": {
             "hashes": [
@@ -148,14 +148,6 @@
             ],
             "markers": "python_version >= '3.7' and python_full_version not in '3.9.0, 3.9.1'",
             "version": "==45.0.6"
-        },
-        "importlib-resources": {
-            "hashes": [
-                "sha256:2238159eb743bd85304a16e0536048b3e991c531d1cd51c4a834d1ccf2829057",
-                "sha256:4df460394562b4581bb4e4087ad9447bd433148fba44241754ec3152499f1d1b"
-            ],
-            "markers": "python_version >= '3.6'",
-            "version": "==5.0.7"
         },
         "jinja2": {
             "hashes": [
