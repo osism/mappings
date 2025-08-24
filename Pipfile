@@ -11,7 +11,7 @@ ansible = "==11.9.0"
 [dev-packages]
 
 [requires]
-python_version = "3.9"
+python_version = "3.13"
 
 [scripts]
 generate = "python3 /src/generate.py"
