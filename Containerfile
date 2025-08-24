@@ -1,12 +1,12 @@
 ARG PYTHON_VERSION=3.13
 
-ARG CEPH_ANSIBLE_VERSION=pacific
-ARG KOLLA_ANSIBLE_VERSION=wallaby
+ARG CEPH_ANSIBLE_VERSION=reef
+ARG KOLLA_ANSIBLE_VERSION=2024.2
 ARG OSISM_ANSIBLE_VERSION=latest
 
-FROM quay.io/osism/ceph-ansible:${CEPH_ANSIBLE_VERSION} as ceph-ansible
-FROM quay.io/osism/kolla-ansible:${KOLLA_ANSIBLE_VERSION} as kolla-ansible
-FROM quay.io/osism/osism-ansible:${OSISM_ANSIBLE_VERSION} as osism-ansible
+FROM registry.osism.tech/osism/ceph-ansible:${CEPH_ANSIBLE_VERSION} as ceph-ansible
+FROM registry.osism.tech/osism/kolla-ansible:${KOLLA_ANSIBLE_VERSION} as kolla-ansible
+FROM registry.osism.tech/osism/osism-ansible:${OSISM_ANSIBLE_VERSION} as osism-ansible
 
 
 FROM python:${PYTHON_VERSION} as builder
@@ -20,7 +20,7 @@ COPY --from=osism-ansible /usr/share/ansible/roles /usr/share/ansible/roles
 COPY . /src
 WORKDIR /src
 
-RUN python3 -m pip --no-cache-dir install -U 'pip==21.3.1' 'pipenv==2022.1.8' \
+RUN python3 -m pip --no-cache-dir install -U pip pipenv \
     && pipenv install
 
 CMD ["pipenv", "run", "generate"]
