@@ -22,7 +22,7 @@ mapping2 = {}
 
 for ansible_directory in ANSIBLE_DIRECTORIES:
     logging.info(f"Analyzing {ansible_directory}")
-    for p in [x[0] for x in os.walk(ansible_directory, followlinks=True)]:
+    for p in sorted([x[0] for x in os.walk(ansible_directory, followlinks=True)]):
         b = os.path.basename(p)
         if b in ["defaults"]:
             # skip integration tests of the ansible community collections
@@ -31,9 +31,13 @@ for ansible_directory in ANSIBLE_DIRECTORIES:
 
             logging.info(f"Found {b} in {p}")
 
-            for f in [
-                x for x in glob.iglob(p + "**/**", recursive=True) if os.path.isfile(x)
-            ]:
+            for f in sorted(
+                [
+                    x
+                    for x in glob.iglob(p + "**/**", recursive=True)
+                    if os.path.isfile(x)
+                ]
+            ):
                 # skip integration tests of the ansible community collections
                 if "tests/integration" in f:
                     continue
@@ -72,7 +76,7 @@ for ansible_directory in ANSIBLE_DIRECTORIES:
                     d = yaml.load(fp)
 
                 try:
-                    for parameter in d.keys():
+                    for parameter in sorted(d.keys()):
                         logging.info(f"Found parameter {parameter} in {rolename}")
                         mapping1[rolename].append(parameter)
 
@@ -83,8 +87,19 @@ for ansible_directory in ANSIBLE_DIRECTORIES:
                 except:  # noqa
                     pass
 
+# Sort all lists in mapping1 and mapping2 for stable output
+for rolename in mapping1:
+    mapping1[rolename].sort()
+
+for parameter in mapping2:
+    mapping2[parameter].sort()
+
+# Create sorted dictionaries for stable key ordering
+sorted_mapping1 = {k: mapping1[k] for k in sorted(mapping1.keys())}
+sorted_mapping2 = {k: mapping2[k] for k in sorted(mapping2.keys())}
+
 with open("/output/mapping1.yml", "w+") as fp:
-    yaml.dump(mapping1, fp)
+    yaml.dump(sorted_mapping1, fp)
 
 with open("/output/mapping2.yml", "w+") as fp:
-    yaml.dump(mapping2, fp)
+    yaml.dump(sorted_mapping2, fp)
