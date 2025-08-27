@@ -10936,6 +10936,8 @@ netbird_debian_repository:
   - osism.services.netbird
 netbird_debian_repository_key:
   - osism.services.netbird
+netbird_disable_dns:
+  - osism.services.netbird
 netbird_hostname:
   - osism.services.netbird
 netbird_interface_name:
