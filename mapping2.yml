@@ -9601,6 +9601,8 @@ manager_gather_facts_schedule:
   - osism.services.manager
 manager_inventory_from_netbox:
   - osism.services.manager
+manager_inventory_ignore_maintenance_state:
+  - osism.services.manager
 manager_inventory_ignore_provision_state:
   - osism.services.manager
 manager_inventory_reconciler_mode:

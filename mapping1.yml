@@ -10730,6 +10730,7 @@ osism.services.manager:
   - manager_environment_extra
   - manager_gather_facts_schedule
   - manager_inventory_from_netbox
+  - manager_inventory_ignore_maintenance_state
   - manager_inventory_ignore_provision_state
   - manager_inventory_reconciler_mode
   - manager_inventory_reconciler_schedule
