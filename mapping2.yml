@@ -22340,7 +22340,11 @@ zabbix_repo_deb_gpg_key_url:
 zabbix_repo_deb_include_deb_src:
   - community.zabbix.zabbix_repo
   - community.zabbix.zabbix_web
+zabbix_repo_deb_schema:
+  - community.zabbix.zabbix_repo
 zabbix_repo_deb_url:
+  - community.zabbix.zabbix_repo
+zabbix_repo_rpm_gpg_key_non_supported_url:
   - community.zabbix.zabbix_repo
 zabbix_repo_rpm_gpg_key_url:
   - community.zabbix.zabbix_repo
@@ -22588,10 +22592,6 @@ zabbix_url_aliases:
 zabbix_useuip:
   - community.zabbix.zabbix_agent
   - community.zabbix.zabbix_proxy
-zabbix_version_long:
-  - community.zabbix.zabbix_agent
-zabbix_version_patch:
-  - community.zabbix.zabbix_agent
 zabbix_web_conf_mode:
   - community.zabbix.zabbix_web
 zabbix_web_connect_ha_backend:
