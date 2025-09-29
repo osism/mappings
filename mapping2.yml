@@ -5487,15 +5487,9 @@ frontend_enable:
   - osism.services.manager
 frontend_host:
   - osism.services.manager
-frontend_image:
-  - osism.services.manager
-frontend_image_namespace:
-  - osism.services.manager
 frontend_osism_api_url:
   - osism.services.manager
 frontend_port:
-  - osism.services.manager
-frontend_tag:
   - osism.services.manager
 frontend_traefik:
   - osism.services.manager
@@ -13936,6 +13930,12 @@ osism_ansible_tag:
 osism_api_host:
   - osism.services.manager
 osism_api_port:
+  - osism.services.manager
+osism_frontend_image:
+  - osism.services.manager
+osism_frontend_image_namespace:
+  - osism.services.manager
+osism_frontend_tag:
   - osism.services.manager
 osism_image:
   - osism.services.manager

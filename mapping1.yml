@@ -10703,11 +10703,8 @@ osism.services.manager:
   - frontend_container_name
   - frontend_enable
   - frontend_host
-  - frontend_image
-  - frontend_image_namespace
   - frontend_osism_api_url
   - frontend_port
-  - frontend_tag
   - frontend_traefik
   - httpd_data_directory
   - httpd_sonic_ztp_directory
@@ -10780,6 +10777,9 @@ osism.services.manager:
   - osism_ansible_tag
   - osism_api_host
   - osism_api_port
+  - osism_frontend_image
+  - osism_frontend_image_namespace
+  - osism_frontend_tag
   - osism_image
   - osism_image_namespace
   - osism_kubernetes_container_name
