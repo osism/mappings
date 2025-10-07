@@ -11062,6 +11062,21 @@ osism.services.squid:
   - squid_service_restart
   - squid_tag
 osism.services.sshd: []
+osism.services.substation:
+  - docker_network_mtu
+  - docker_registry_substation
+  - operator_group
+  - operator_user
+  - substation_configuration_directory
+  - substation_container_name
+  - substation_data_directory
+  - substation_docker_compose_directory
+  - substation_host_networking
+  - substation_image
+  - substation_network
+  - substation_service_name
+  - substation_tag
+  - substation_version
 osism.services.teleport:
   - teleport_ca_pin
   - teleport_configure_repository

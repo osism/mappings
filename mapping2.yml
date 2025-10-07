@@ -3783,6 +3783,7 @@ docker_network_mtu:
   - osism.services.phpmyadmin
   - osism.services.scaphandre
   - osism.services.squid
+  - osism.services.substation
   - osism.services.thanos_sidecar
 docker_opts:
   - osism.services.docker
@@ -4003,6 +4004,8 @@ docker_registry_service:
   - osism.services.manager
 docker_registry_squid:
   - osism.services.squid
+docker_registry_substation:
+  - osism.services.substation
 docker_registry_tempest:
   - osism.validations.tempest
 docker_registry_thanos_sidecar:
@@ -13860,6 +13863,7 @@ operator_group:
   - osism.services.phpmyadmin
   - osism.services.scaphandre
   - osism.services.squid
+  - osism.services.substation
   - osism.services.thanos_sidecar
   - osism.services.traefik
   - osism.validations.tempest
@@ -13894,6 +13898,7 @@ operator_user:
   - osism.services.phpmyadmin
   - osism.services.scaphandre
   - osism.services.squid
+  - osism.services.substation
   - osism.services.thanos_sidecar
   - osism.services.traefik
   - osism.validations.tempest
@@ -19089,6 +19094,26 @@ stunnel_ssl_opts:
   - debops.debops.stunnel
 stunnel_ssl_verify:
   - debops.debops.stunnel
+substation_configuration_directory:
+  - osism.services.substation
+substation_container_name:
+  - osism.services.substation
+substation_data_directory:
+  - osism.services.substation
+substation_docker_compose_directory:
+  - osism.services.substation
+substation_host_networking:
+  - osism.services.substation
+substation_image:
+  - osism.services.substation
+substation_network:
+  - osism.services.substation
+substation_service_name:
+  - osism.services.substation
+substation_tag:
+  - osism.services.substation
+substation_version:
+  - osism.services.substation
 sudo__base_packages:
   - debops.debops.sudo
 sudo__combined_sudoers:
