@@ -6922,6 +6922,7 @@ kolla.barbican:
   - barbican_api_workers
   - barbican_audit_role
   - barbican_config_validation
+  - barbican_copy_certs
   - barbican_creator_role
   - barbican_database_address
   - barbican_database_name
@@ -7145,6 +7146,7 @@ kolla.cinder:
   - cinder_api_tag
   - cinder_api_workers
   - cinder_backend_ceph_name
+  - cinder_backend_lightbits_name
   - cinder_backend_lvm_name
   - cinder_backend_nfs_name
   - cinder_backend_pure_fc_name
@@ -7178,6 +7180,7 @@ kolla.cinder:
   - cinder_cluster_name
   - cinder_cluster_skip_precheck
   - cinder_config_validation
+  - cinder_copy_certs
   - cinder_database_address
   - cinder_database_name
   - cinder_database_shard
@@ -7192,11 +7195,13 @@ kolla.cinder:
   - cinder_enabled_notification_topics
   - cinder_extra_volumes
   - cinder_git_repository
+  - cinder_internal_endpoint
   - cinder_ks_services
   - cinder_ks_user_roles
   - cinder_ks_users
   - cinder_logging_debug
   - cinder_notification_topics
+  - cinder_public_endpoint
   - cinder_rpc_version_startup_delay
   - cinder_scheduler_default_volumes
   - cinder_scheduler_dimensions
@@ -7230,6 +7235,13 @@ kolla.cinder:
   - cinder_volume_image_full
   - cinder_volume_tag
   - cinder_volume_tmpfs
+  - cinder_wsgi_provider
+  - lightbits_nvme_tcp_backend_name
+  - lightos_api_address
+  - lightos_api_port
+  - lightos_default_num_replicas
+  - lightos_jwt
+  - lightos_skip_ssl_verify
   - openstack_cinder_auth
   - pure_api_token
   - pure_fc_backend
@@ -7365,7 +7377,10 @@ kolla.common:
   - syslog_glance_tls_proxy_facility
   - syslog_haproxy_facility
   - syslog_neutron_tls_proxy_facility
-  - syslog_swift_facility
+kolla.container-engine-migration:
+  - current_engine
+  - engine_data
+  - target_engine
 kolla.cyborg:
   - cyborg_agent_default_volumes
   - cyborg_agent_dimensions
@@ -7564,6 +7579,7 @@ kolla.etcd:
   - etcd_bootstrap_cluster_environment
   - etcd_bootstrap_service_environment
   - etcd_client_internal_endpoint
+  - etcd_copy_certs
   - etcd_default_environment
   - etcd_default_volumes
   - etcd_dimensions
@@ -7598,6 +7614,7 @@ kolla.glance:
   - glance_cache_max_size
   - glance_ceph_backends
   - glance_config_validation
+  - glance_copy_certs
   - glance_database_address
   - glance_database_name
   - glance_database_shard
@@ -7668,7 +7685,6 @@ kolla.gnocchi:
   - gnocchi_api_image_full
   - gnocchi_api_tag
   - gnocchi_api_workers
-  - gnocchi_ceph_cluster
   - gnocchi_config_validation
   - gnocchi_database_address
   - gnocchi_database_name
@@ -7711,12 +7727,8 @@ kolla.gnocchi:
   - gnocchi_statsd_tag
   - gnocchi_tag
   - openstack_gnocchi_auth
-  - swift_admin_tenant_name
-  - swift_keystone_user
 kolla.grafana:
   - grafana_admin_username
-  - grafana_custom_dashboards_paths
-  - grafana_custom_extra_config_paths
   - grafana_data_sources
   - grafana_database_address
   - grafana_database_name
@@ -7729,9 +7741,7 @@ kolla.grafana:
   - grafana_extra_volumes
   - grafana_image
   - grafana_image_full
-  - grafana_prometheus_config_paths
   - grafana_prometheus_url
-  - grafana_provisioning_config_paths
   - grafana_remove_old_volume
   - grafana_services
   - grafana_start_first_node_delay
@@ -7801,6 +7811,7 @@ kolla.heat:
   - heat_cfn_internal_endpoint
   - heat_cfn_public_endpoint
   - heat_config_validation
+  - heat_copy_certs
   - heat_database_address
   - heat_database_name
   - heat_database_shard
@@ -7843,6 +7854,7 @@ kolla.heat:
   - heat_tag
   - openstack_heat_auth
 kolla.horizon:
+  - horizon_copy_certs
   - horizon_custom_themes
   - horizon_database_address
   - horizon_database_name
@@ -7915,6 +7927,7 @@ kolla.ironic:
   - ironic_conductor_tag
   - ironic_config_validation
   - ironic_console_serial_speed
+  - ironic_copy_certs
   - ironic_database_address
   - ironic_database_name
   - ironic_database_shard
@@ -7979,6 +7992,7 @@ kolla.ironic:
   - ironic_ks_users
   - ironic_logging_debug
   - ironic_notification_topics
+  - ironic_pin_release_version
   - ironic_prometheus_exporter_data_dir
   - ironic_prometheus_exporter_default_volumes
   - ironic_prometheus_exporter_dimensions
@@ -8027,6 +8041,7 @@ kolla.keystone:
   - keystone_container_federation_oidc_attribute_mappings_folder
   - keystone_container_federation_oidc_idp_certificate_folder
   - keystone_container_federation_oidc_metadata_folder
+  - keystone_copy_certs
   - keystone_database_address
   - keystone_database_enable_tls_internal
   - keystone_database_name
@@ -8047,6 +8062,7 @@ kolla.keystone:
   - keystone_extra_volumes
   - keystone_federation_oidc_additional_options
   - keystone_federation_oidc_claim_delimiter
+  - keystone_federation_oidc_forwarded_headers
   - keystone_federation_oidc_jwks_uri
   - keystone_federation_oidc_response_type
   - keystone_federation_oidc_scopes
@@ -8129,12 +8145,13 @@ kolla.kuryr:
   - libnetwork_project_name
   - openstack_kuryr_auth
 kolla.letsencrypt:
-  - letsencrypt_cert_server
   - letsencrypt_cert_valid_days
   - letsencrypt_cron_renew_schedule
   - letsencrypt_email
+  - letsencrypt_external_account_binding
   - letsencrypt_external_fqdns
   - letsencrypt_internal_fqdns
+  - letsencrypt_key_type
   - letsencrypt_lego_default_volumes
   - letsencrypt_lego_dimensions
   - letsencrypt_lego_extra_volumes
@@ -8203,8 +8220,24 @@ kolla.loadbalancer:
   - keepalived_track_script_enabled
   - keepalived_traffic_mode
   - kolla_externally_managed_cert
+  - loadbalancer_copy_certs
   - loadbalancer_services
+  - mariadb_connect_retries_delay
+  - mariadb_connect_retries_on_failure
+  - mariadb_connect_timeout_client
+  - mariadb_connect_timeout_server
+  - mariadb_connect_timeout_server_max
+  - mariadb_monitor_connect_interval
+  - mariadb_monitor_connect_timeout
+  - mariadb_monitor_galera_healthcheck_interval
+  - mariadb_monitor_galera_healthcheck_max_timeout_count
+  - mariadb_monitor_galera_healthcheck_timeout
+  - mariadb_monitor_ping_interval
+  - mariadb_monitor_ping_max_failures
+  - mariadb_monitor_ping_timeout
   - mariadb_monitor_read_only_interval
+  - mariadb_shun_on_failures
+  - mariadb_singlenode
   - proxysql_admin_user
   - proxysql_backend_max_connections
   - proxysql_backend_max_replication_lag
@@ -8590,6 +8623,7 @@ kolla.neutron:
   - mechanism_drivers
   - neutron_agent_dimensions
   - neutron_agent_extensions
+  - neutron_agents_wrappers
   - neutron_api_workers
   - neutron_bgp_dragent_default_volumes
   - neutron_bgp_dragent_dimensions
@@ -8606,6 +8640,7 @@ kolla.neutron:
   - neutron_bgp_dragent_tag
   - neutron_bootstrap_services
   - neutron_config_validation
+  - neutron_copy_certs
   - neutron_database_address
   - neutron_database_name
   - neutron_database_shard
@@ -8883,6 +8918,7 @@ kolla.nova:
   - nova_cell0_database_password
   - nova_cell0_database_user
   - nova_config_validation
+  - nova_copy_certs
   - nova_database_address
   - nova_database_name
   - nova_database_shard
@@ -8904,6 +8940,16 @@ kolla.nova:
   - nova_legacy_public_endpoint
   - nova_logging_debug
   - nova_metadata_api_workers
+  - nova_metadata_default_volumes
+  - nova_metadata_dimensions
+  - nova_metadata_enable_healthchecks
+  - nova_metadata_extra_volumes
+  - nova_metadata_healthcheck
+  - nova_metadata_healthcheck_interval
+  - nova_metadata_healthcheck_retries
+  - nova_metadata_healthcheck_start_period
+  - nova_metadata_healthcheck_test
+  - nova_metadata_healthcheck_timeout
   - nova_notification_topics
   - nova_public_endpoint
   - nova_scheduler_default_volumes
@@ -8938,6 +8984,7 @@ kolla.nova:
   - nova_super_conductor_tag
   - nova_superconductor_workers
   - nova_tag
+  - nova_wsgi_provider
   - openstack_nova_auth
 kolla.nova-cell:
   - enable_shared_var_lib_nova_mnt
@@ -8954,6 +9001,7 @@ kolla.nova-cell:
   - nova_api_database_user
   - nova_cell_bootstrap_default_volumes
   - nova_cell_bootstrap_extra_volumes
+  - nova_cell_ceph_backend
   - nova_cell_compute_group
   - nova_cell_compute_ironic_group
   - nova_cell_conductor_group
@@ -8996,7 +9044,6 @@ kolla.nova-cell:
   - nova_cell_services_require_nova_conf
   - nova_cell_services_require_policy_json
   - nova_cell_spicehtml5proxy_group
-  - nova_ceph_cluster
   - nova_compute_default_volumes
   - nova_compute_dimensions
   - nova_compute_enable_healthchecks
@@ -9117,6 +9164,7 @@ kolla.nova-cell:
   - nova_tag
   - openstack_nova_auth
   - ovs_bridge
+  - project_name
   - qemu_max_files
   - qemu_max_processes
   - qemu_user_gid
@@ -9145,6 +9193,7 @@ kolla.octavia:
   - octavia_api_tag
   - octavia_api_workers
   - octavia_config_validation
+  - octavia_copy_certs
   - octavia_database_address
   - octavia_database_name
   - octavia_database_shard
@@ -9195,6 +9244,7 @@ kolla.octavia:
   - octavia_ks_users
   - octavia_loadbalancer_topology
   - octavia_logging_debug
+  - octavia_openrc_become
   - octavia_persistence_database_address
   - octavia_persistence_database_name
   - octavia_persistence_database_shard_id
@@ -9365,7 +9415,18 @@ kolla.ovn-db:
   - ovn_sb_db_image
   - ovn_sb_db_image_full
   - ovn_sb_db_inactivity_probe
+  - ovn_sb_db_relay_active_inactivity_probe
+  - ovn_sb_db_relay_config_file_args
+  - ovn_sb_db_relay_default_volumes
+  - ovn_sb_db_relay_dimensions
+  - ovn_sb_db_relay_extra_volumes
+  - ovn_sb_db_relay_image
+  - ovn_sb_db_relay_image_full
+  - ovn_sb_db_relay_max_backoff
+  - ovn_sb_db_relay_passive_inactivity_probe
+  - ovn_sb_db_relay_tag
   - ovn_sb_db_tag
+  - ovn_sb_relay_command
   - ovn_tag
 kolla.ovs-dpdk:
   - ovs_bridge_mappings
@@ -9412,6 +9473,7 @@ kolla.placement:
   - placement_api_tag
   - placement_api_workers
   - placement_config_validation
+  - placement_copy_certs
   - placement_database_address
   - placement_database_host
   - placement_database_name
@@ -9431,6 +9493,7 @@ kolla.placement:
   - placement_services
   - placement_source_version
   - placement_tag
+  - placement_wsgi_provider
 kolla.prechecks:
   - prechecks_enable_host_ntp_checks
   - prechecks_enable_host_os_checks
@@ -9465,8 +9528,6 @@ kolla.prometheus:
   - prometheus_cadvisor_image
   - prometheus_cadvisor_image_full
   - prometheus_cadvisor_tag
-  - prometheus_common_config_overrides_paths
-  - prometheus_custom_alert_paths
   - prometheus_elasticsearch_exporter_cmdline_extras
   - prometheus_elasticsearch_exporter_default_volumes
   - prometheus_elasticsearch_exporter_dimensions
@@ -9511,7 +9572,6 @@ kolla.prometheus:
   - prometheus_openstack_exporter_disabled_dns
   - prometheus_openstack_exporter_disabled_items
   - prometheus_openstack_exporter_disabled_lb
-  - prometheus_openstack_exporter_disabled_object
   - prometheus_openstack_exporter_disabled_volume
   - prometheus_openstack_exporter_extra_volumes
   - prometheus_openstack_exporter_image
@@ -9530,17 +9590,18 @@ kolla.proxysql-config:
   - proxysql_config_rules
   - proxysql_config_users
   - proxysql_project
-  - proxysql_project_database_internal_tls_enable
   - proxysql_project_database_shard
 kolla.prune-images:
   - docker_image_prune_timeout
 kolla.rabbitmq:
   - kolla_externally_managed_cert
   - rabbitmq_cluster_partition_handling
+  - rabbitmq_copy_certs
   - rabbitmq_default_volumes
   - rabbitmq_dimensions
   - rabbitmq_enable_healthchecks
   - rabbitmq_enable_prometheus_plugin
+  - rabbitmq_enable_tls_backend
   - rabbitmq_enabled_plugins
   - rabbitmq_extra_config
   - rabbitmq_extra_volumes
@@ -9595,10 +9656,15 @@ kolla.redis:
   - redis_services
   - redis_tag
 kolla.service-cert-copy:
+  - kolla_copy_backend_tls_files
   - kolla_externally_managed_cert
+kolla.service-check:
+  - service_check_services
 kolla.service-config-validate:
   - service_config_validate_output_dir
   - service_config_validate_services
+kolla.service-image-info:
+  - service_image_info_delegate_host
 kolla.service-images-pull:
   - service_images_pull_delay
   - service_images_pull_retries
@@ -9624,6 +9690,14 @@ kolla.service-rabbitmq:
   - service_rabbitmq_run_once
   - service_rabbitmq_users
   - service_rabbitmq_when
+kolla.service-uwsgi-config:
+  - service_uwsgi_config_file
+  - service_uwsgi_config_host
+  - service_uwsgi_config_log_dir
+  - service_uwsgi_config_log_file
+  - service_uwsgi_config_tls_backend
+  - service_uwsgi_config_worker_timeout
+  - service_uwsgi_config_workers
 kolla.skyline:
   - log_dir
   - openstack_skyline_auth
@@ -9659,6 +9733,7 @@ kolla.skyline:
   - skyline_console_image
   - skyline_console_image_full
   - skyline_console_tag
+  - skyline_copy_certs
   - skyline_custom_logos
   - skyline_database_address
   - skyline_database_name
@@ -9689,51 +9764,6 @@ kolla.skyline:
   - skyline_system_admin_roles
   - skyline_system_reader_roles
   - skyline_tag
-kolla.swift:
-  - openstack_swift_auth
-  - service_images_pull_delay
-  - service_images_pull_retries
-  - swift_account_image
-  - swift_account_image_full
-  - swift_account_tag
-  - swift_account_workers
-  - swift_admin_tenant_name
-  - swift_container_image
-  - swift_container_image_full
-  - swift_container_tag
-  - swift_container_workers
-  - swift_delay_auth_decision
-  - swift_devices_match_mode
-  - swift_devices_mount_point
-  - swift_devices_name
-  - swift_enable_rolling_upgrade
-  - swift_extra_ring_files
-  - swift_has_replication_network
-  - swift_internal_endpoint
-  - swift_keystone_user
-  - swift_ks_services
-  - swift_ks_users
-  - swift_log_level
-  - swift_logging_debug
-  - swift_object_expirer_image
-  - swift_object_expirer_image_full
-  - swift_object_expirer_tag
-  - swift_object_image
-  - swift_object_image_full
-  - swift_object_tag
-  - swift_object_workers
-  - swift_proxy_server_image
-  - swift_proxy_server_image_full
-  - swift_proxy_server_tag
-  - swift_proxy_server_workers
-  - swift_public_endpoint
-  - swift_rsyncd_image
-  - swift_rsyncd_image_full
-  - swift_rsyncd_tag
-  - swift_services
-  - swift_tag
-  - syslog_server
-  - syslog_swift_facility
 kolla.sysctl:
   - sysctl_path
 kolla.tacker:
@@ -9830,6 +9860,7 @@ kolla.trove:
   - trove_conductor_image_full
   - trove_conductor_tag
   - trove_config_validation
+  - trove_copy_certs
   - trove_database_address
   - trove_database_name
   - trove_database_shard
@@ -9986,7 +10017,6 @@ kolla.zun:
   - zun_api_image_full
   - zun_api_tag
   - zun_api_workers
-  - zun_ceph_cluster
   - zun_cni_daemon_default_volumes
   - zun_cni_daemon_dimensions
   - zun_cni_daemon_enable_healthchecks
