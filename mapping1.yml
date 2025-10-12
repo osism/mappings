@@ -10703,11 +10703,8 @@ osism.services.manager:
   - frontend_container_name
   - frontend_enable
   - frontend_host
-  - frontend_image
-  - frontend_image_namespace
   - frontend_osism_api_url
   - frontend_port
-  - frontend_tag
   - frontend_traefik
   - httpd_data_directory
   - httpd_sonic_ztp_directory
@@ -10780,6 +10777,9 @@ osism.services.manager:
   - osism_ansible_tag
   - osism_api_host
   - osism_api_port
+  - osism_frontend_image
+  - osism_frontend_image_namespace
+  - osism_frontend_tag
   - osism_image
   - osism_image_namespace
   - osism_kubernetes_container_name
@@ -10985,6 +10985,36 @@ osism.services.openstackclient:
   - openstackclient_version
   - operator_group
   - operator_user
+osism.services.opentelemetry_collector:
+  - docker_network_mtu
+  - docker_registry_opentelemetry_collector
+  - opentelemetry_collector_bind_host
+  - opentelemetry_collector_configuration_directory
+  - opentelemetry_collector_container_name
+  - opentelemetry_collector_dash0_auth_token
+  - opentelemetry_collector_dash0_endpoint
+  - opentelemetry_collector_data_directory
+  - opentelemetry_collector_docker_compose_directory
+  - opentelemetry_collector_health_check_endpoint
+  - opentelemetry_collector_host_networking
+  - opentelemetry_collector_image
+  - opentelemetry_collector_log_level
+  - opentelemetry_collector_metrics_host
+  - opentelemetry_collector_metrics_port
+  - opentelemetry_collector_network
+  - opentelemetry_collector_otlp_grpc_endpoint
+  - opentelemetry_collector_otlp_http_endpoint
+  - opentelemetry_collector_pprof_endpoint
+  - opentelemetry_collector_prometheus_endpoint
+  - opentelemetry_collector_prometheus_job_name
+  - opentelemetry_collector_prometheus_password
+  - opentelemetry_collector_prometheus_scrape_interval
+  - opentelemetry_collector_prometheus_username
+  - opentelemetry_collector_service_name
+  - opentelemetry_collector_tag
+  - opentelemetry_collector_version
+  - operator_group
+  - operator_user
 osism.services.osquery:
   - osquery_configure_repository
   - osquery_debian_repository
@@ -11062,6 +11092,44 @@ osism.services.squid:
   - squid_service_restart
   - squid_tag
 osism.services.sshd: []
+osism.services.stepca:
+  - configuration_directory
+  - docker_network_mtu
+  - docker_registry_stepca
+  - operator_group
+  - operator_user
+  - stepca_configuration_directory
+  - stepca_container_name
+  - stepca_docker_compose_directory
+  - stepca_host
+  - stepca_image
+  - stepca_init_dns_names
+  - stepca_init_name
+  - stepca_init_password
+  - stepca_init_provisioner_name
+  - stepca_init_ssh
+  - stepca_network
+  - stepca_port
+  - stepca_pre_pull
+  - stepca_required_packages
+  - stepca_service_allow_restart
+  - stepca_service_name
+  - stepca_tag
+osism.services.substation:
+  - docker_network_mtu
+  - docker_registry_substation
+  - operator_group
+  - operator_user
+  - substation_configuration_directory
+  - substation_container_name
+  - substation_data_directory
+  - substation_docker_compose_directory
+  - substation_host_networking
+  - substation_image
+  - substation_network
+  - substation_service_name
+  - substation_tag
+  - substation_version
 osism.services.teleport:
   - teleport_ca_pin
   - teleport_configure_repository

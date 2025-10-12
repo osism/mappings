@@ -2451,6 +2451,7 @@ configuration_directory:
   - osism.services.chrony
   - osism.services.manager
   - osism.services.netbox
+  - osism.services.stepca
   - osism.services.traefik
   - osism.validations.tempest
 configuration_git_host:
@@ -3780,9 +3781,12 @@ docker_network_mtu:
   - osism.services.netbox
   - osism.services.nexus
   - osism.services.openstackclient
+  - osism.services.opentelemetry_collector
   - osism.services.phpmyadmin
   - osism.services.scaphandre
   - osism.services.squid
+  - osism.services.stepca
+  - osism.services.substation
   - osism.services.thanos_sidecar
 docker_opts:
   - osism.services.docker
@@ -3980,6 +3984,8 @@ docker_registry_nexus:
   - osism.services.nexus
 docker_registry_openstackclient:
   - osism.services.openstackclient
+docker_registry_opentelemetry_collector:
+  - osism.services.opentelemetry_collector
 docker_registry_osism:
   - osism.services.manager
 docker_registry_osism_frontend:
@@ -4003,6 +4009,10 @@ docker_registry_service:
   - osism.services.manager
 docker_registry_squid:
   - osism.services.squid
+docker_registry_stepca:
+  - osism.services.stepca
+docker_registry_substation:
+  - osism.services.substation
 docker_registry_tempest:
   - osism.validations.tempest
 docker_registry_thanos_sidecar:
@@ -5487,15 +5497,9 @@ frontend_enable:
   - osism.services.manager
 frontend_host:
   - osism.services.manager
-frontend_image:
-  - osism.services.manager
-frontend_image_namespace:
-  - osism.services.manager
 frontend_osism_api_url:
   - osism.services.manager
 frontend_port:
-  - osism.services.manager
-frontend_tag:
   - osism.services.manager
 frontend_traefik:
   - osism.services.manager
@@ -13767,6 +13771,56 @@ openstackclient_ubuntu_repository:
   - osism.services.openstackclient
 openstackclient_version:
   - osism.services.openstackclient
+opentelemetry_collector_bind_host:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_configuration_directory:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_container_name:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_dash0_auth_token:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_dash0_endpoint:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_data_directory:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_docker_compose_directory:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_health_check_endpoint:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_host_networking:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_image:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_log_level:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_metrics_host:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_metrics_port:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_network:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_otlp_grpc_endpoint:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_otlp_http_endpoint:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_pprof_endpoint:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_prometheus_endpoint:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_prometheus_job_name:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_prometheus_password:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_prometheus_scrape_interval:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_prometheus_username:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_service_name:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_tag:
+  - osism.services.opentelemetry_collector
+opentelemetry_collector_version:
+  - osism.services.opentelemetry_collector
 openvswitch_db_default_volumes:
   - kolla.openvswitch
 openvswitch_db_dimensions:
@@ -13863,9 +13917,12 @@ operator_group:
   - osism.services.netbox
   - osism.services.nexus
   - osism.services.openstackclient
+  - osism.services.opentelemetry_collector
   - osism.services.phpmyadmin
   - osism.services.scaphandre
   - osism.services.squid
+  - osism.services.stepca
+  - osism.services.substation
   - osism.services.thanos_sidecar
   - osism.services.traefik
   - osism.validations.tempest
@@ -13897,9 +13954,12 @@ operator_user:
   - osism.services.netbox
   - osism.services.nexus
   - osism.services.openstackclient
+  - osism.services.opentelemetry_collector
   - osism.services.phpmyadmin
   - osism.services.scaphandre
   - osism.services.squid
+  - osism.services.stepca
+  - osism.services.substation
   - osism.services.thanos_sidecar
   - osism.services.traefik
   - osism.validations.tempest
@@ -13936,6 +13996,12 @@ osism_ansible_tag:
 osism_api_host:
   - osism.services.manager
 osism_api_port:
+  - osism.services.manager
+osism_frontend_image:
+  - osism.services.manager
+osism_frontend_image_namespace:
+  - osism.services.manager
+osism_frontend_tag:
   - osism.services.manager
 osism_image:
   - osism.services.manager
@@ -19051,6 +19117,40 @@ state_section:
   - osism.commons.state
 state_value:
   - osism.commons.state
+stepca_configuration_directory:
+  - osism.services.stepca
+stepca_container_name:
+  - osism.services.stepca
+stepca_docker_compose_directory:
+  - osism.services.stepca
+stepca_host:
+  - osism.services.stepca
+stepca_image:
+  - osism.services.stepca
+stepca_init_dns_names:
+  - osism.services.stepca
+stepca_init_name:
+  - osism.services.stepca
+stepca_init_password:
+  - osism.services.stepca
+stepca_init_provisioner_name:
+  - osism.services.stepca
+stepca_init_ssh:
+  - osism.services.stepca
+stepca_network:
+  - osism.services.stepca
+stepca_port:
+  - osism.services.stepca
+stepca_pre_pull:
+  - osism.services.stepca
+stepca_required_packages:
+  - osism.services.stepca
+stepca_service_allow_restart:
+  - osism.services.stepca
+stepca_service_name:
+  - osism.services.stepca
+stepca_tag:
+  - osism.services.stepca
 stig_version:
   - hardening
 stress_timeout:
@@ -19089,6 +19189,26 @@ stunnel_ssl_opts:
   - debops.debops.stunnel
 stunnel_ssl_verify:
   - debops.debops.stunnel
+substation_configuration_directory:
+  - osism.services.substation
+substation_container_name:
+  - osism.services.substation
+substation_data_directory:
+  - osism.services.substation
+substation_docker_compose_directory:
+  - osism.services.substation
+substation_host_networking:
+  - osism.services.substation
+substation_image:
+  - osism.services.substation
+substation_network:
+  - osism.services.substation
+substation_service_name:
+  - osism.services.substation
+substation_tag:
+  - osism.services.substation
+substation_version:
+  - osism.services.substation
 sudo__base_packages:
   - debops.debops.sudo
 sudo__combined_sudoers:
