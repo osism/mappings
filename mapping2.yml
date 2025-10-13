@@ -5587,6 +5587,8 @@ gitlab__additional_groups:
   - debops.debops.gitlab
 gitlab__allow:
   - debops.debops.gitlab
+gitlab__apt_preferences__dependent_list:
+  - debops.debops.gitlab
 gitlab__backup_default_environment:
   - debops.debops.gitlab
 gitlab__backup_enabled:
@@ -5685,9 +5687,13 @@ gitlab__packages:
   - debops.debops.gitlab
 gitlab__pki_enabled:
   - debops.debops.gitlab
+gitlab__pki_hook_path:
+  - debops.debops.gitlab
 gitlab__pki_path:
   - debops.debops.gitlab
 gitlab__pki_realm:
+  - debops.debops.gitlab
+gitlab__preferred_version:
   - debops.debops.gitlab
 gitlab__registry_port:
   - debops.debops.gitlab
@@ -17147,6 +17153,8 @@ resolved__packages:
 resolved__resolv_conf:
   - debops.debops.resolved
 resolved__skip_packages:
+  - debops.debops.resolved
+resolved__synthesize_hostname:
   - debops.debops.resolved
 resolved__units:
   - debops.debops.resolved

@@ -2286,6 +2286,7 @@ debops.debops.freeradius:
 debops.debops.gitlab:
   - gitlab__additional_groups
   - gitlab__allow
+  - gitlab__apt_preferences__dependent_list
   - gitlab__backup_default_environment
   - gitlab__backup_enabled
   - gitlab__backup_environment
@@ -2335,8 +2336,10 @@ debops.debops.gitlab:
   - gitlab__ldap_username_or_email_login
   - gitlab__packages
   - gitlab__pki_enabled
+  - gitlab__pki_hook_path
   - gitlab__pki_path
   - gitlab__pki_realm
+  - gitlab__preferred_version
   - gitlab__registry_port
   - gitlab__shell
   - gitlab__ssl_cacerts
@@ -5487,6 +5490,7 @@ debops.debops.resolved:
   - resolved__packages
   - resolved__resolv_conf
   - resolved__skip_packages
+  - resolved__synthesize_hostname
   - resolved__units
   - resolved__version
 debops.debops.resources:
