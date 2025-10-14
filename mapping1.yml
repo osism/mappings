@@ -7587,6 +7587,7 @@ kolla.etcd:
   - etcd_default_environment
   - etcd_default_volumes
   - etcd_dimensions
+  - etcd_enable_tls_backend
   - etcd_extra_volumes
   - etcd_image
   - etcd_image_full

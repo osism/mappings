@@ -4803,6 +4803,8 @@ etcd_default_volumes:
   - kolla.etcd
 etcd_dimensions:
   - kolla.etcd
+etcd_enable_tls_backend:
+  - kolla.etcd
 etcd_extra_volumes:
   - kolla.etcd
 etcd_image:
