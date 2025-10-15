@@ -11138,6 +11138,9 @@ osism.services.stepca:
   - stepca_docker_compose_directory
   - stepca_host
   - stepca_image
+  - stepca_init_acme_provisioner
+  - stepca_init_acme_provisioner_name
+  - stepca_init_acme_require_eab
   - stepca_init_dns_names
   - stepca_init_name
   - stepca_init_password

@@ -19279,6 +19279,12 @@ stepca_host:
   - osism.services.stepca
 stepca_image:
   - osism.services.stepca
+stepca_init_acme_provisioner:
+  - osism.services.stepca
+stepca_init_acme_provisioner_name:
+  - osism.services.stepca
+stepca_init_acme_require_eab:
+  - osism.services.stepca
 stepca_init_dns_names:
   - osism.services.stepca
 stepca_init_name:
