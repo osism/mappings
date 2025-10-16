@@ -10083,6 +10083,9 @@ kolla.zun:
   - zun_wsproxy_tag
 osism.commons.certificates:
   - certificates_ca
+  - certificates_configuration_directory
+  - certificates_manager_group
+  - configuration_directory
 osism.commons.cleanup:
   - cleanup_cloudinit
   - cleanup_packages
@@ -10147,6 +10150,7 @@ osism.commons.kernel_modules:
   - kernel_modules
   - kernel_modules_default
   - kernel_modules_extra
+  - kernel_modules_vfio_pci_ids
 osism.commons.known_hosts:
   - known_hosts
   - known_hosts_delete

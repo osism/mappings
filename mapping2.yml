@@ -2024,10 +2024,14 @@ certbot_webroot:
   - geerlingguy.certbot
 certificates_ca:
   - osism.commons.certificates
+certificates_configuration_directory:
+  - osism.commons.certificates
 certificates_generate_libvirt:
   - kolla.certificates
 certificates_libvirt_output_dir:
   - kolla.certificates
+certificates_manager_group:
+  - osism.commons.certificates
 cgit_configuration_directory:
   - osism.services.cgit
 cgit_docker_compose_directory:
@@ -2459,6 +2463,7 @@ common_services:
 common_tag:
   - kolla.common
 configuration_directory:
+  - osism.commons.certificates
   - osism.commons.configuration
   - osism.services.chrony
   - osism.services.manager
@@ -8305,6 +8310,8 @@ kernel_modules:
 kernel_modules_default:
   - osism.commons.kernel_modules
 kernel_modules_extra:
+  - osism.commons.kernel_modules
+kernel_modules_vfio_pci_ids:
   - osism.commons.kernel_modules
 kernel_version_comparison_operator:
   - osism.validations.kernel_version
