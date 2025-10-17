@@ -8315,6 +8315,7 @@ kolla.magnum:
   - magnum_keystone_user
   - magnum_ks_services
   - magnum_ks_users
+  - magnum_kubeconfig
   - magnum_logging_debug
   - magnum_notification_topics
   - magnum_public_endpoint

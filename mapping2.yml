@@ -9612,6 +9612,8 @@ magnum_ks_services:
   - kolla.magnum
 magnum_ks_users:
   - kolla.magnum
+magnum_kubeconfig:
+  - kolla.magnum
 magnum_logging_debug:
   - kolla.magnum
 magnum_notification_topics:
