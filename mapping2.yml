@@ -906,6 +906,8 @@ audit_content:
   - ubuntu22_cis
 audit_log_dir:
   - ubuntu22_cis
+audit_max_concurrent:
+  - ubuntu22_cis
 audit_only:
   - ubuntu22_cis
 audit_output_collection_method:

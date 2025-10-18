@@ -11454,6 +11454,7 @@ ubuntu22_cis:
   - audit_conf_source
   - audit_content
   - audit_log_dir
+  - audit_max_concurrent
   - audit_only
   - audit_output_collection_method
   - audit_output_destination
