@@ -17891,6 +17891,12 @@ rsyslog_fluentd_host:
   - osism.services.rsyslog
 rsyslog_fluentd_port:
   - osism.services.rsyslog
+rsyslog_logrotate_count:
+  - osism.services.rsyslog
+rsyslog_logrotate_enabled:
+  - osism.services.rsyslog
+rsyslog_logrotate_size:
+  - osism.services.rsyslog
 rsyslog_package_name:
   - osism.services.rsyslog
 rsyslog_service_name:

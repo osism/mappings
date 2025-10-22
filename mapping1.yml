@@ -11091,6 +11091,9 @@ osism.services.rsyslog:
   - rsyslog_fluentd
   - rsyslog_fluentd_host
   - rsyslog_fluentd_port
+  - rsyslog_logrotate_count
+  - rsyslog_logrotate_enabled
+  - rsyslog_logrotate_size
   - rsyslog_package_name
   - rsyslog_service_name
 osism.services.scaphandre:
