@@ -9215,6 +9215,7 @@ kolla.octavia:
   - octavia_driver_agent_image_full
   - octavia_driver_agent_tag
   - octavia_enable_tls_backend
+  - octavia_enabled_notification_topics
   - octavia_extra_volumes
   - octavia_git_repository
   - octavia_health_manager_default_volumes
@@ -9250,6 +9251,7 @@ kolla.octavia:
   - octavia_ks_users
   - octavia_loadbalancer_topology
   - octavia_logging_debug
+  - octavia_notification_topics
   - octavia_openrc_become
   - octavia_persistence_database_address
   - octavia_persistence_database_name
