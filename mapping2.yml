@@ -13473,6 +13473,8 @@ octavia_driver_agent_tag:
   - kolla.octavia
 octavia_enable_tls_backend:
   - kolla.octavia
+octavia_enabled_notification_topics:
+  - kolla.octavia
 octavia_extra_volumes:
   - kolla.octavia
 octavia_git_repository:
@@ -13542,6 +13544,8 @@ octavia_ks_users:
 octavia_loadbalancer_topology:
   - kolla.octavia
 octavia_logging_debug:
+  - kolla.octavia
+octavia_notification_topics:
   - kolla.octavia
 octavia_openrc_become:
   - kolla.octavia
@@ -17890,6 +17894,12 @@ rsyslog_fluentd:
 rsyslog_fluentd_host:
   - osism.services.rsyslog
 rsyslog_fluentd_port:
+  - osism.services.rsyslog
+rsyslog_logrotate_count:
+  - osism.services.rsyslog
+rsyslog_logrotate_enabled:
+  - osism.services.rsyslog
+rsyslog_logrotate_size:
   - osism.services.rsyslog
 rsyslog_package_name:
   - osism.services.rsyslog
