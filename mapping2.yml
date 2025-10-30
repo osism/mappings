@@ -11823,32 +11823,6 @@ neutron_l3_agent_image_full:
   - kolla.neutron
 neutron_l3_agent_tag:
   - kolla.neutron
-neutron_linuxbridge_agent_default_volumes:
-  - kolla.neutron
-neutron_linuxbridge_agent_dimensions:
-  - kolla.neutron
-neutron_linuxbridge_agent_enable_healthchecks:
-  - kolla.neutron
-neutron_linuxbridge_agent_extra_volumes:
-  - kolla.neutron
-neutron_linuxbridge_agent_healthcheck:
-  - kolla.neutron
-neutron_linuxbridge_agent_healthcheck_interval:
-  - kolla.neutron
-neutron_linuxbridge_agent_healthcheck_retries:
-  - kolla.neutron
-neutron_linuxbridge_agent_healthcheck_start_period:
-  - kolla.neutron
-neutron_linuxbridge_agent_healthcheck_test:
-  - kolla.neutron
-neutron_linuxbridge_agent_healthcheck_timeout:
-  - kolla.neutron
-neutron_linuxbridge_agent_image:
-  - kolla.neutron
-neutron_linuxbridge_agent_image_full:
-  - kolla.neutron
-neutron_linuxbridge_agent_tag:
-  - kolla.neutron
 neutron_logging_debug:
   - kolla.neutron
 neutron_mechanism_drivers:
