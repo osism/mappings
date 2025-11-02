@@ -10661,6 +10661,28 @@ osism.services.journald:
   - journald_SystemMaxFileSize
   - journald_SystemMaxUse
   - journald_service_name
+osism.services.kepler:
+  - docker_network_mtu
+  - docker_registry_kepler
+  - kepler_configuration_directory
+  - kepler_container_name
+  - kepler_docker_compose_directory
+  - kepler_exporter
+  - kepler_flags
+  - kepler_flags_defaults
+  - kepler_flags_extras
+  - kepler_host
+  - kepler_image
+  - kepler_kubeconfig_directory
+  - kepler_network
+  - kepler_port
+  - kepler_port_container
+  - kepler_repository
+  - kepler_service_name
+  - kepler_share_pids_with_host
+  - kepler_tag
+  - operator_group
+  - operator_user
 osism.services.lldpd:
   - lldpd_package_name
   - lldpd_service_name
