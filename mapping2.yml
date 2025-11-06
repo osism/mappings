@@ -3798,6 +3798,7 @@ docker_network_mtu:
   - osism.services.gnmic
   - osism.services.homer
   - osism.services.httpd
+  - osism.services.kepler
   - osism.services.manager
   - osism.services.netbox
   - osism.services.nexus
@@ -3995,6 +3996,8 @@ docker_registry_homer:
   - osism.services.homer
 docker_registry_inventory_reconciler:
   - osism.services.manager
+docker_registry_kepler:
+  - osism.services.kepler
 docker_registry_mariadb:
   - osism.services.manager
 docker_registry_mirrors:
@@ -8307,6 +8310,40 @@ keepalived_track_script_enabled:
   - kolla.loadbalancer
 keepalived_traffic_mode:
   - kolla.loadbalancer
+kepler_configuration_directory:
+  - osism.services.kepler
+kepler_container_name:
+  - osism.services.kepler
+kepler_docker_compose_directory:
+  - osism.services.kepler
+kepler_exporter:
+  - osism.services.kepler
+kepler_flags:
+  - osism.services.kepler
+kepler_flags_defaults:
+  - osism.services.kepler
+kepler_flags_extras:
+  - osism.services.kepler
+kepler_host:
+  - osism.services.kepler
+kepler_image:
+  - osism.services.kepler
+kepler_kubeconfig_directory:
+  - osism.services.kepler
+kepler_network:
+  - osism.services.kepler
+kepler_port:
+  - osism.services.kepler
+kepler_port_container:
+  - osism.services.kepler
+kepler_repository:
+  - osism.services.kepler
+kepler_service_name:
+  - osism.services.kepler
+kepler_share_pids_with_host:
+  - osism.services.kepler
+kepler_tag:
+  - osism.services.kepler
 kernel_modules:
   - osism.commons.kernel_modules
 kernel_modules_default:
@@ -14010,6 +14047,7 @@ operator_group:
   - osism.services.gnmic
   - osism.services.homer
   - osism.services.httpd
+  - osism.services.kepler
   - osism.services.manager
   - osism.services.netbox
   - osism.services.nexus
@@ -14047,6 +14085,7 @@ operator_user:
   - osism.services.gnmic
   - osism.services.homer
   - osism.services.httpd
+  - osism.services.kepler
   - osism.services.manager
   - osism.services.netbox
   - osism.services.nexus
