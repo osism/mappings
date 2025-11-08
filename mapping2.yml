@@ -14065,6 +14065,8 @@ operator_group_id:
   - osism.commons.operator
 operator_private_key:
   - osism.services.manager
+operator_ps1_mode:
+  - osism.commons.operator
 operator_shell:
   - osism.commons.operator
 operator_sudo_cmd_list:
