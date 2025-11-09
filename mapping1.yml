@@ -10211,6 +10211,7 @@ osism.commons.operator:
   - operator_environment
   - operator_group
   - operator_group_id
+  - operator_ps1_mode
   - operator_shell
   - operator_sudo_cmd_list
   - operator_sudo_nopasswd
