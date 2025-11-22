@@ -10551,6 +10551,7 @@ osism.services.frr:
   - frr_internalbackup_v4
   - frr_internalbackup_v6
   - frr_local_as
+  - frr_local_pref
   - frr_loopback_interface
   - frr_loopback_v4
   - frr_loopback_v6
