@@ -10546,6 +10546,7 @@ osism.services.frr:
   - frr_enable_bgpd
   - frr_externalbackup_v4
   - frr_externalbackup_v6
+  - frr_extra_interfaces
   - frr_hostname
   - frr_incoming_table_external
   - frr_internalbackup_v4

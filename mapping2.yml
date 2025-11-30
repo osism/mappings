@@ -5549,6 +5549,8 @@ frr_externalbackup_v4:
   - osism.services.frr
 frr_externalbackup_v6:
   - osism.services.frr
+frr_extra_interfaces:
+  - osism.services.frr
 frr_hostname:
   - osism.services.frr
 frr_incoming_table_external:
