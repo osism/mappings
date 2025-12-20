@@ -10179,6 +10179,8 @@ osism.commons.network:
   - network_dummy_interface_mtu
   - network_dummy_interfaces
   - network_ethernets
+  - network_extra_init_commands
+  - network_extra_init_enable
   - network_interface_path
   - network_interface_permissions
   - network_interface_restart_commands

@@ -11582,6 +11582,10 @@ network_dummy_interfaces:
   - osism.commons.network
 network_ethernets:
   - osism.commons.network
+network_extra_init_commands:
+  - osism.commons.network
+network_extra_init_enable:
+  - osism.commons.network
 network_interface_path:
   - osism.commons.network
 network_interface_permissions:
