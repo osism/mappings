@@ -3696,6 +3696,8 @@ docker_debug:
   - osism.services.docker
 docker_default_runtime:
   - osism.services.docker
+docker_default_ulimits:
+  - osism.services.docker
 docker_disable_default_network:
   - osism.services.docker
 docker_enforce_restart:
@@ -5545,6 +5547,8 @@ frr_enable_bfdd:
   - osism.services.frr
 frr_enable_bgpd:
   - osism.services.frr
+frr_enable_vrrpd:
+  - osism.services.frr
 frr_externalbackup_v4:
   - osism.services.frr
 frr_externalbackup_v6:
@@ -5590,6 +5594,8 @@ frr_uplinks:
 frr_uplinks_groups:
   - osism.services.frr
 frr_version:
+  - osism.services.frr
+frr_vrrp_groups:
   - osism.services.frr
 frr_vtysh_file:
   - osism.services.frr
@@ -11575,6 +11581,10 @@ network_dummy_interface_mtu:
 network_dummy_interfaces:
   - osism.commons.network
 network_ethernets:
+  - osism.commons.network
+network_extra_init_commands:
+  - osism.commons.network
+network_extra_init_enable:
   - osism.commons.network
 network_interface_path:
   - osism.commons.network

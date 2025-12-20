@@ -10179,6 +10179,8 @@ osism.commons.network:
   - network_dummy_interface_mtu
   - network_dummy_interfaces
   - network_ethernets
+  - network_extra_init_commands
+  - network_extra_init_enable
   - network_interface_path
   - network_interface_permissions
   - network_interface_restart_commands
@@ -10476,6 +10478,7 @@ osism.services.docker:
   - docker_debian_repository_key
   - docker_debug
   - docker_default_runtime
+  - docker_default_ulimits
   - docker_disable_default_network
   - docker_enforce_restart
   - docker_experimental
@@ -10544,6 +10547,7 @@ osism.services.frr:
   - frr_dummy_interface
   - frr_enable_bfdd
   - frr_enable_bgpd
+  - frr_enable_vrrpd
   - frr_externalbackup_v4
   - frr_externalbackup_v6
   - frr_extra_interfaces
@@ -10567,6 +10571,7 @@ osism.services.frr:
   - frr_uplinks
   - frr_uplinks_groups
   - frr_version
+  - frr_vrrp_groups
   - frr_vtysh_file
 osism.services.gnmic:
   - docker_network_mtu
