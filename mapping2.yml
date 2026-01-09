@@ -5547,6 +5547,10 @@ frr_enable_bfdd:
   - osism.services.frr
 frr_enable_bgpd:
   - osism.services.frr
+frr_enable_ospf6d:
+  - osism.services.frr
+frr_enable_ospfd:
+  - osism.services.frr
 frr_enable_vrrpd:
   - osism.services.frr
 frr_externalbackup_v4:
@@ -5576,6 +5580,12 @@ frr_loopback_v6:
 frr_options_bfdd:
   - osism.services.frr
 frr_options_bgpd:
+  - osism.services.frr
+frr_options_ospf6d:
+  - osism.services.frr
+frr_options_ospfd:
+  - osism.services.frr
+frr_options_vrrpd:
   - osism.services.frr
 frr_package_name:
   - osism.services.frr

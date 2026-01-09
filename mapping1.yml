@@ -10547,6 +10547,8 @@ osism.services.frr:
   - frr_dummy_interface
   - frr_enable_bfdd
   - frr_enable_bgpd
+  - frr_enable_ospf6d
+  - frr_enable_ospfd
   - frr_enable_vrrpd
   - frr_externalbackup_v4
   - frr_externalbackup_v6
@@ -10562,6 +10564,9 @@ osism.services.frr:
   - frr_loopback_v6
   - frr_options_bfdd
   - frr_options_bgpd
+  - frr_options_ospf6d
+  - frr_options_ospfd
+  - frr_options_vrrpd
   - frr_package_name
   - frr_service_name
   - frr_sysctl
