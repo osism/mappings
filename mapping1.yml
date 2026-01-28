@@ -11514,6 +11514,12 @@ ubuntu22_cis:
   - ubtu22cis_aide_init_async
   - ubtu22cis_aide_init_poll
   - ubtu22cis_aide_scan
+  - ubtu22cis_aide_systemd_day
+  - ubtu22cis_aide_systemd_exec
+  - ubtu22cis_aide_systemd_hour
+  - ubtu22cis_aide_systemd_minute
+  - ubtu22cis_aide_systemd_month
+  - ubtu22cis_aide_systemd_weekday
   - ubtu22cis_allow_auditd_uid_user_exclusions
   - ubtu22cis_apache2_mask
   - ubtu22cis_apache2_server
@@ -11548,6 +11554,7 @@ ubuntu22_cis:
   - ubtu22cis_dnsmasq_mask
   - ubtu22cis_dnsmasq_server
   - ubtu22cis_dotperm_ansiblemanaged
+  - ubtu22cis_exclude_unowned_filesystem_types
   - ubtu22cis_exclude_unowned_search_path
   - ubtu22cis_faillock_deny
   - ubtu22cis_faillock_unlock_time
@@ -11989,6 +11996,7 @@ ubuntu22_cis:
   - ubtu22cis_sudo_logfile
   - ubtu22cis_sudo_package
   - ubtu22cis_sudo_timestamp_timeout
+  - ubtu22cis_sudoers_exclude_nopasswd_list
   - ubtu22cis_sugroup
   - ubtu22cis_suid_sgid_adjust
   - ubtu22cis_sysctl_kernel_conf
