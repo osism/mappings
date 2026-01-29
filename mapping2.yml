@@ -14788,8 +14788,6 @@ pdns__secondary:
   - debops.debops.pdns
 pdns_rec_bin_name:
   - pdns_recursor
-pdns_rec_config:
-  - pdns_recursor
 pdns_rec_config_dir:
   - pdns_recursor
 pdns_rec_config_dns_script:
@@ -14807,6 +14805,8 @@ pdns_rec_config_include_dir_mode:
 pdns_rec_config_lua:
   - pdns_recursor
 pdns_rec_config_lua_file_content:
+  - pdns_recursor
+pdns_rec_custom_config:
   - pdns_recursor
 pdns_rec_debug_symbols_package_name:
   - pdns_recursor

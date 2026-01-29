@@ -11448,7 +11448,6 @@ osism.validations.ulimits:
   - ulimits_nproc_min
 pdns_recursor:
   - pdns_rec_bin_name
-  - pdns_rec_config
   - pdns_rec_config_dir
   - pdns_rec_config_dns_script
   - pdns_rec_config_dns_script_file_content
@@ -11458,6 +11457,7 @@ pdns_recursor:
   - pdns_rec_config_include_dir_mode
   - pdns_rec_config_lua
   - pdns_rec_config_lua_file_content
+  - pdns_rec_custom_config
   - pdns_rec_debug_symbols_package_name
   - pdns_rec_disable_handlers
   - pdns_rec_file_group
