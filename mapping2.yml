@@ -14788,8 +14788,6 @@ pdns__secondary:
   - debops.debops.pdns
 pdns_rec_bin_name:
   - pdns_recursor
-pdns_rec_config:
-  - pdns_recursor
 pdns_rec_config_dir:
   - pdns_recursor
 pdns_rec_config_dns_script:
@@ -14807,6 +14805,8 @@ pdns_rec_config_include_dir_mode:
 pdns_rec_config_lua:
   - pdns_recursor
 pdns_rec_config_lua_file_content:
+  - pdns_recursor
+pdns_rec_custom_config:
   - pdns_recursor
 pdns_rec_debug_symbols_package_name:
   - pdns_recursor
@@ -20498,6 +20498,18 @@ ubtu22cis_aide_init_poll:
   - ubuntu22_cis
 ubtu22cis_aide_scan:
   - ubuntu22_cis
+ubtu22cis_aide_systemd_day:
+  - ubuntu22_cis
+ubtu22cis_aide_systemd_exec:
+  - ubuntu22_cis
+ubtu22cis_aide_systemd_hour:
+  - ubuntu22_cis
+ubtu22cis_aide_systemd_minute:
+  - ubuntu22_cis
+ubtu22cis_aide_systemd_month:
+  - ubuntu22_cis
+ubtu22cis_aide_systemd_weekday:
+  - ubuntu22_cis
 ubtu22cis_allow_auditd_uid_user_exclusions:
   - ubuntu22_cis
 ubtu22cis_apache2_mask:
@@ -20565,6 +20577,8 @@ ubtu22cis_dnsmasq_mask:
 ubtu22cis_dnsmasq_server:
   - ubuntu22_cis
 ubtu22cis_dotperm_ansiblemanaged:
+  - ubuntu22_cis
+ubtu22cis_exclude_unowned_filesystem_types:
   - ubuntu22_cis
 ubtu22cis_exclude_unowned_search_path:
   - ubuntu22_cis
@@ -21447,6 +21461,8 @@ ubtu22cis_sudo_logfile:
 ubtu22cis_sudo_package:
   - ubuntu22_cis
 ubtu22cis_sudo_timestamp_timeout:
+  - ubuntu22_cis
+ubtu22cis_sudoers_exclude_nopasswd_list:
   - ubuntu22_cis
 ubtu22cis_sugroup:
   - ubuntu22_cis
