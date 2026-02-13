@@ -19962,6 +19962,8 @@ tempest_enable_glance:
   - osism.validations.tempest
 tempest_enable_horizon:
   - osism.validations.tempest
+tempest_enable_keystone:
+  - osism.validations.tempest
 tempest_enable_neutron:
   - osism.validations.tempest
 tempest_enable_nova:
