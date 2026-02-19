@@ -3836,6 +3836,8 @@ docker_pull_retry:
   - ceph.ceph-defaults
 docker_pull_timeout:
   - ceph.ceph-defaults
+docker_python3_package_deb:
+  - osism.services.docker
 docker_python3_package_name:
   - osism.services.docker
 docker_python_install:
