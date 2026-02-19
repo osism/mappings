@@ -10508,6 +10508,7 @@ osism.services.docker:
   - docker_proxy_no_proxy
   - docker_proxy_no_proxy_default
   - docker_proxy_no_proxy_extra
+  - docker_python3_package_deb
   - docker_python3_package_name
   - docker_python_install
   - docker_python_install_from_pip
@@ -11398,6 +11399,7 @@ osism.validations.tempest:
   - tempest_enable_designate
   - tempest_enable_glance
   - tempest_enable_horizon
+  - tempest_enable_keystone
   - tempest_enable_neutron
   - tempest_enable_nova
   - tempest_enable_octavia
