@@ -10648,9 +10648,12 @@ osism.services.httpd:
   - httpd_image
   - httpd_ironic_enable
   - httpd_ironic_interface
+  - httpd_ironic_listen_addresses
   - httpd_ironic_port
   - httpd_ironic_volume
+  - httpd_l3mdev_accept
   - httpd_network
+  - httpd_network_mode
   - httpd_port
   - httpd_service_name
   - httpd_sonic_ztp_allowed_ip
@@ -10794,6 +10797,7 @@ osism.services.manager:
   - manager_inventory_from_netbox
   - manager_inventory_ignore_maintenance_state
   - manager_inventory_ignore_provision_state
+  - manager_inventory_reconciler_dnsmasq_lease_time
   - manager_inventory_reconciler_mode
   - manager_inventory_reconciler_schedule
   - manager_listener_broker_uri

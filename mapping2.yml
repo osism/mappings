@@ -7017,11 +7017,17 @@ httpd_ironic_enable:
   - osism.services.httpd
 httpd_ironic_interface:
   - osism.services.httpd
+httpd_ironic_listen_addresses:
+  - osism.services.httpd
 httpd_ironic_port:
   - osism.services.httpd
 httpd_ironic_volume:
   - osism.services.httpd
+httpd_l3mdev_accept:
+  - osism.services.httpd
 httpd_network:
+  - osism.services.httpd
+httpd_network_mode:
   - osism.services.httpd
 httpd_port:
   - osism.services.httpd
@@ -9726,6 +9732,8 @@ manager_inventory_from_netbox:
 manager_inventory_ignore_maintenance_state:
   - osism.services.manager
 manager_inventory_ignore_provision_state:
+  - osism.services.manager
+manager_inventory_reconciler_dnsmasq_lease_time:
   - osism.services.manager
 manager_inventory_reconciler_mode:
   - osism.services.manager
