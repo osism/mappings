@@ -10648,9 +10648,12 @@ osism.services.httpd:
   - httpd_image
   - httpd_ironic_enable
   - httpd_ironic_interface
+  - httpd_ironic_listen_addresses
   - httpd_ironic_port
   - httpd_ironic_volume
+  - httpd_l3mdev_accept
   - httpd_network
+  - httpd_network_mode
   - httpd_port
   - httpd_service_name
   - httpd_sonic_ztp_allowed_ip

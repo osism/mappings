@@ -7017,11 +7017,17 @@ httpd_ironic_enable:
   - osism.services.httpd
 httpd_ironic_interface:
   - osism.services.httpd
+httpd_ironic_listen_addresses:
+  - osism.services.httpd
 httpd_ironic_port:
   - osism.services.httpd
 httpd_ironic_volume:
   - osism.services.httpd
+httpd_l3mdev_accept:
+  - osism.services.httpd
 httpd_network:
+  - osism.services.httpd
+httpd_network_mode:
   - osism.services.httpd
 httpd_port:
   - osism.services.httpd
