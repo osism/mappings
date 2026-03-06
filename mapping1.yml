@@ -8183,7 +8183,6 @@ kolla.loadbalancer:
   - haproxy_enable_healthchecks
   - haproxy_external_single_frontend_default_backend
   - haproxy_external_single_frontend_options
-  - haproxy_external_single_frontend_public_port
   - haproxy_extra_volumes
   - haproxy_glance_api_client_timeout
   - haproxy_healthcheck
@@ -8200,6 +8199,7 @@ kolla.loadbalancer:
   - haproxy_max_connections
   - haproxy_queue_timeout
   - haproxy_server_timeout
+  - haproxy_single_external_frontend_public_port
   - haproxy_socket_level_admin
   - haproxy_ssh_default_volumes
   - haproxy_ssh_dimensions
