@@ -6525,8 +6525,6 @@ haproxy_external_single_frontend_default_backend:
   - kolla.loadbalancer
 haproxy_external_single_frontend_options:
   - kolla.loadbalancer
-haproxy_external_single_frontend_public_port:
-  - kolla.loadbalancer
 haproxy_extra_volumes:
   - kolla.loadbalancer
 haproxy_frontend_http_extra:
@@ -6588,6 +6586,8 @@ haproxy_server_timeout:
   - kolla.loadbalancer
 haproxy_service_template:
   - kolla.haproxy-config
+haproxy_single_external_frontend_public_port:
+  - kolla.loadbalancer
 haproxy_socket_level_admin:
   - kolla.loadbalancer
 haproxy_ssh_default_volumes:
