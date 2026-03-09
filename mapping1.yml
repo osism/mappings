@@ -10805,6 +10805,8 @@ osism.services.manager:
   - manager_mem_reservation
   - manager_netbox_replicas
   - manager_network
+  - manager_network_enable_ipv6
+  - manager_network_ipv6
   - manager_old_service_name
   - manager_opensearch_address
   - manager_opensearch_enable
@@ -10926,6 +10928,8 @@ osism.services.netbox:
   - netbox_max_db_wait_time
   - netbox_metrics
   - netbox_network
+  - netbox_network_enable_ipv6
+  - netbox_network_ipv6
   - netbox_nginx_processes_idle_timeout
   - netbox_nginx_processes_max
   - netbox_nginx_processes_spare
@@ -11047,6 +11051,8 @@ osism.services.openstackclient:
   - openstackclient_image
   - openstackclient_install_type
   - openstackclient_network
+  - openstackclient_network_enable_ipv6
+  - openstackclient_network_ipv6
   - openstackclient_redhat_packages
   - openstackclient_service_name
   - openstackclient_tag
@@ -11253,6 +11259,8 @@ osism.services.traefik:
   - traefik_container_name
   - traefik_docker_compose_directory
   - traefik_external_network_cidr
+  - traefik_external_network_cidr_ipv6
+  - traefik_external_network_enable_ipv6
   - traefik_external_network_name
   - traefik_host
   - traefik_image

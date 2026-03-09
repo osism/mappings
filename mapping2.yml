@@ -9749,6 +9749,10 @@ manager_netbox_replicas:
   - osism.services.manager
 manager_network:
   - osism.services.manager
+manager_network_enable_ipv6:
+  - osism.services.manager
+manager_network_ipv6:
+  - osism.services.manager
 manager_old_service_name:
   - osism.services.manager
 manager_opensearch_address:
@@ -11461,6 +11465,10 @@ netbox_max_db_wait_time:
 netbox_metrics:
   - osism.services.netbox
 netbox_network:
+  - osism.services.netbox
+netbox_network_enable_ipv6:
+  - osism.services.netbox
+netbox_network_ipv6:
   - osism.services.netbox
 netbox_nginx_processes_idle_timeout:
   - osism.services.netbox
@@ -13928,6 +13936,10 @@ openstackclient_image:
 openstackclient_install_type:
   - osism.services.openstackclient
 openstackclient_network:
+  - osism.services.openstackclient
+openstackclient_network_enable_ipv6:
+  - osism.services.openstackclient
+openstackclient_network_ipv6:
   - osism.services.openstackclient
 openstackclient_redhat_packages:
   - osism.services.openstackclient
@@ -20293,6 +20305,10 @@ traefik_external_network_cidr:
   - osism.services.netbox
   - osism.services.nexus
   - osism.services.phpmyadmin
+  - osism.services.traefik
+traefik_external_network_cidr_ipv6:
+  - osism.services.traefik
+traefik_external_network_enable_ipv6:
   - osism.services.traefik
 traefik_external_network_name:
   - osism.services.cgit
