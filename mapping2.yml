@@ -7025,6 +7025,8 @@ httpd_ironic_volume:
   - osism.services.httpd
 httpd_l3mdev_accept:
   - osism.services.httpd
+httpd_log_ignore_partial_content:
+  - osism.services.httpd
 httpd_network:
   - osism.services.httpd
 httpd_network_mode:

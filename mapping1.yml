@@ -10652,6 +10652,7 @@ osism.services.httpd:
   - httpd_ironic_port
   - httpd_ironic_volume
   - httpd_l3mdev_accept
+  - httpd_log_ignore_partial_content
   - httpd_network
   - httpd_network_mode
   - httpd_port
