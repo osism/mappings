@@ -10668,6 +10668,11 @@ osism.services.httpd:
   - httpd_sonic_ztp_enable
   - httpd_sonic_ztp_firmware
   - httpd_sonic_ztp_hostname
+  - httpd_ssl_certificate
+  - httpd_ssl_certificate_key
+  - httpd_ssl_directory
+  - httpd_ssl_enable
+  - httpd_ssl_port
   - httpd_tag
   - operator_group
   - operator_user
@@ -10834,6 +10839,7 @@ osism.services.manager:
   - netbox_api_url
   - netbox_data_types
   - netbox_enable
+  - netbox_external
   - netbox_filter_conductor_ironic
   - netbox_filter_conductor_sonic
   - netbox_filter_inventory

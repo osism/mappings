@@ -7058,6 +7058,16 @@ httpd_sonic_ztp_firmware:
   - osism.services.httpd
 httpd_sonic_ztp_hostname:
   - osism.services.httpd
+httpd_ssl_certificate:
+  - osism.services.httpd
+httpd_ssl_certificate_key:
+  - osism.services.httpd
+httpd_ssl_directory:
+  - osism.services.httpd
+httpd_ssl_enable:
+  - osism.services.httpd
+httpd_ssl_port:
+  - osism.services.httpd
 httpd_tag:
   - osism.services.httpd
 hwraid__keyring__dependent_apt_keys:
@@ -11397,6 +11407,8 @@ netbox_data_types:
 netbox_docker_compose_directory:
   - osism.services.netbox
 netbox_enable:
+  - osism.services.manager
+netbox_external:
   - osism.services.manager
 netbox_extra:
   - osism.services.netbox
