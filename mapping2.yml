@@ -11562,6 +11562,8 @@ netbox_user_name:
   - osism.services.netbox
 netdata_accept_a_streaming_request_every_seconds:
   - osism.services.netdata
+netdata_allow_streaming_from:
+  - osism.services.netdata
 netdata_api_host:
   - osism.services.netdata
 netdata_api_key:
@@ -11596,7 +11598,23 @@ netdata_redhat_repository:
   - osism.services.netdata
 netdata_redhat_repository_key:
   - osism.services.netdata
+netdata_server_dbengine_multihost_disk_space:
+  - osism.services.netdata
+netdata_server_page_cache_size:
+  - osism.services.netdata
 netdata_service_name:
+  - osism.services.netdata
+netdata_stream_buffer_size_bytes:
+  - osism.services.netdata
+netdata_stream_enable_compression:
+  - osism.services.netdata
+netdata_stream_replication_enabled:
+  - osism.services.netdata
+netdata_stream_replication_step:
+  - osism.services.netdata
+netdata_stream_seconds_to_replicate:
+  - osism.services.netdata
+netdata_stream_timeout_seconds:
   - osism.services.netdata
 netdata_sys_vm_max_map_count:
   - osism.services.netdata
