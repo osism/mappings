@@ -2888,6 +2888,19 @@ debops.debops.influxdb:
   - influxdb__root_password
   - influxdb__server
   - influxdb__users
+debops.debops.influxdb2:
+  - influxdb2__allow
+  - influxdb2__base_packages
+  - influxdb2__combined_configuration
+  - influxdb2__configuration
+  - influxdb2__default_configuration
+  - influxdb2__etc_services__dependent_list
+  - influxdb2__fqdn
+  - influxdb2__influxdata__dependent_packages
+  - influxdb2__nginx__dependent_servers
+  - influxdb2__nginx__dependent_upstreams
+  - influxdb2__packages
+  - influxdb2__port
 debops.debops.influxdb_server:
   - influxdb_server__allow
   - influxdb_server__append_groups
@@ -3023,6 +3036,7 @@ debops.debops.keyring:
   - keyring__gpg_version
   - keyring__keybase_api
   - keyring__keyserver
+  - keyring__keyserver_api
   - keyring__local_path
   - keyring__packages
 debops.debops.kibana:
@@ -4171,6 +4185,26 @@ debops.debops.nginx:
   - nginx_welcome_domain
   - nginx_welcome_template
   - nginx_www
+debops.debops.nixos:
+  - nixos__combined_configuration
+  - nixos__config_dir
+  - nixos__configuration
+  - nixos__default_configuration
+  - nixos__distribution_string
+  - nixos__git_backup_dir
+  - nixos__git_resync
+  - nixos__git_resync_options
+  - nixos__group_configuration
+  - nixos__group_repositories
+  - nixos__group_templates
+  - nixos__host_configuration
+  - nixos__host_repositories
+  - nixos__host_templates
+  - nixos__rebuild
+  - nixos__rebuild_command
+  - nixos__repositories
+  - nixos__src
+  - nixos__templates
 debops.debops.nodejs:
   - nodejs__apt_preferences__dependent_list
   - nodejs__base_packages
@@ -4601,6 +4635,35 @@ debops.debops.persistent_paths:
   - persistent_paths__qubes_os_enabled
   - persistent_paths__qubes_os_handler
   - persistent_paths__qubes_os_storage_path
+debops.debops.pgbadger:
+  - pgbadger__additional_groups
+  - pgbadger__base_packages
+  - pgbadger__combined_instances
+  - pgbadger__comment
+  - pgbadger__cron_deploy_state
+  - pgbadger__cron_interval
+  - pgbadger__default_instances
+  - pgbadger__fqdn
+  - pgbadger__group
+  - pgbadger__group_instances
+  - pgbadger__home
+  - pgbadger__host_instances
+  - pgbadger__instances
+  - pgbadger__nginx__dependent_servers
+  - pgbadger__nginx_access_policy
+  - pgbadger__nginx_auth_realm
+  - pgbadger__packages
+  - pgbadger__scripts_command
+  - pgbadger__scripts_path
+  - pgbadger__ssh_accounts_enabled
+  - pgbadger__ssh_additional_groups
+  - pgbadger__ssh_group
+  - pgbadger__ssh_home
+  - pgbadger__ssh_inventory_group
+  - pgbadger__ssh_public_key_file
+  - pgbadger__ssh_user
+  - pgbadger__user
+  - pgbadger__www_root
 debops.debops.php:
   - php__apt_preferences__dependent_list
   - php__base_packages
@@ -4999,6 +5062,7 @@ debops.debops.postgresql_server:
   - postgresql_server__packages
   - postgresql_server__password_characters
   - postgresql_server__password_length
+  - postgresql_server__pgbadger_logs
   - postgresql_server__pki
   - postgresql_server__pki_ca
   - postgresql_server__pki_crl
@@ -10579,6 +10643,14 @@ osism.services.frr:
   - frr_version
   - frr_vrrp_groups
   - frr_vtysh_file
+  - frr_yrzn_metalbox_bmc_loopback
+  - frr_yrzn_metalbox_bmc_peer_group
+  - frr_yrzn_metalbox_data_loopback
+  - frr_yrzn_metalbox_data_peer_group
+  - frr_yrzn_metalbox_maximum_paths
+  - frr_yrzn_metalbox_timers_connect
+  - frr_yrzn_metalbox_timers_holdtime
+  - frr_yrzn_metalbox_timers_keepalive
 osism.services.gnmic:
   - docker_network_mtu
   - docker_registry

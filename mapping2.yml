@@ -5611,6 +5611,22 @@ frr_vrrp_groups:
   - osism.services.frr
 frr_vtysh_file:
   - osism.services.frr
+frr_yrzn_metalbox_bmc_loopback:
+  - osism.services.frr
+frr_yrzn_metalbox_bmc_peer_group:
+  - osism.services.frr
+frr_yrzn_metalbox_data_loopback:
+  - osism.services.frr
+frr_yrzn_metalbox_data_peer_group:
+  - osism.services.frr
+frr_yrzn_metalbox_maximum_paths:
+  - osism.services.frr
+frr_yrzn_metalbox_timers_connect:
+  - osism.services.frr
+frr_yrzn_metalbox_timers_holdtime:
+  - osism.services.frr
+frr_yrzn_metalbox_timers_keepalive:
+  - osism.services.frr
 fsid:
   - ceph.ceph-defaults
 generate_fsid:
@@ -7724,6 +7740,30 @@ influxdata__packages:
   - debops.debops.influxdata
 influxdata__repository:
   - debops.debops.influxdata
+influxdb2__allow:
+  - debops.debops.influxdb2
+influxdb2__base_packages:
+  - debops.debops.influxdb2
+influxdb2__combined_configuration:
+  - debops.debops.influxdb2
+influxdb2__configuration:
+  - debops.debops.influxdb2
+influxdb2__default_configuration:
+  - debops.debops.influxdb2
+influxdb2__etc_services__dependent_list:
+  - debops.debops.influxdb2
+influxdb2__fqdn:
+  - debops.debops.influxdb2
+influxdb2__influxdata__dependent_packages:
+  - debops.debops.influxdb2
+influxdb2__nginx__dependent_servers:
+  - debops.debops.influxdb2
+influxdb2__nginx__dependent_upstreams:
+  - debops.debops.influxdb2
+influxdb2__packages:
+  - debops.debops.influxdb2
+influxdb2__port:
+  - debops.debops.influxdb2
 influxdb__databases:
   - debops.debops.influxdb
 influxdb__delegate_to:
@@ -8413,6 +8453,8 @@ keyring__gpg_version:
 keyring__keybase_api:
   - debops.debops.keyring
 keyring__keyserver:
+  - debops.debops.keyring
+keyring__keyserver_api:
   - debops.debops.keyring
 keyring__local_path:
   - debops.debops.keyring
@@ -12630,6 +12672,44 @@ nginx_welcome_template:
   - debops.debops.nginx
 nginx_www:
   - debops.debops.nginx
+nixos__combined_configuration:
+  - debops.debops.nixos
+nixos__config_dir:
+  - debops.debops.nixos
+nixos__configuration:
+  - debops.debops.nixos
+nixos__default_configuration:
+  - debops.debops.nixos
+nixos__distribution_string:
+  - debops.debops.nixos
+nixos__git_backup_dir:
+  - debops.debops.nixos
+nixos__git_resync:
+  - debops.debops.nixos
+nixos__git_resync_options:
+  - debops.debops.nixos
+nixos__group_configuration:
+  - debops.debops.nixos
+nixos__group_repositories:
+  - debops.debops.nixos
+nixos__group_templates:
+  - debops.debops.nixos
+nixos__host_configuration:
+  - debops.debops.nixos
+nixos__host_repositories:
+  - debops.debops.nixos
+nixos__host_templates:
+  - debops.debops.nixos
+nixos__rebuild:
+  - debops.debops.nixos
+nixos__rebuild_command:
+  - debops.debops.nixos
+nixos__repositories:
+  - debops.debops.nixos
+nixos__src:
+  - debops.debops.nixos
+nixos__templates:
+  - debops.debops.nixos
 no_log_on_ceph_key_tasks:
   - ceph.ceph-defaults
 node_exporter_container_image:
@@ -14918,6 +14998,62 @@ pgautoupgrade_image_namespace:
   - osism.services.netbox
 pgautoupgrade_tag:
   - osism.services.netbox
+pgbadger__additional_groups:
+  - debops.debops.pgbadger
+pgbadger__base_packages:
+  - debops.debops.pgbadger
+pgbadger__combined_instances:
+  - debops.debops.pgbadger
+pgbadger__comment:
+  - debops.debops.pgbadger
+pgbadger__cron_deploy_state:
+  - debops.debops.pgbadger
+pgbadger__cron_interval:
+  - debops.debops.pgbadger
+pgbadger__default_instances:
+  - debops.debops.pgbadger
+pgbadger__fqdn:
+  - debops.debops.pgbadger
+pgbadger__group:
+  - debops.debops.pgbadger
+pgbadger__group_instances:
+  - debops.debops.pgbadger
+pgbadger__home:
+  - debops.debops.pgbadger
+pgbadger__host_instances:
+  - debops.debops.pgbadger
+pgbadger__instances:
+  - debops.debops.pgbadger
+pgbadger__nginx__dependent_servers:
+  - debops.debops.pgbadger
+pgbadger__nginx_access_policy:
+  - debops.debops.pgbadger
+pgbadger__nginx_auth_realm:
+  - debops.debops.pgbadger
+pgbadger__packages:
+  - debops.debops.pgbadger
+pgbadger__scripts_command:
+  - debops.debops.pgbadger
+pgbadger__scripts_path:
+  - debops.debops.pgbadger
+pgbadger__ssh_accounts_enabled:
+  - debops.debops.pgbadger
+pgbadger__ssh_additional_groups:
+  - debops.debops.pgbadger
+pgbadger__ssh_group:
+  - debops.debops.pgbadger
+pgbadger__ssh_home:
+  - debops.debops.pgbadger
+pgbadger__ssh_inventory_group:
+  - debops.debops.pgbadger
+pgbadger__ssh_public_key_file:
+  - debops.debops.pgbadger
+pgbadger__ssh_user:
+  - debops.debops.pgbadger
+pgbadger__user:
+  - debops.debops.pgbadger
+pgbadger__www_root:
+  - debops.debops.pgbadger
 php__apt_preferences__dependent_list:
   - debops.debops.php
 php__base_packages:
@@ -15799,6 +15935,8 @@ postgresql_server__packages:
 postgresql_server__password_characters:
   - debops.debops.postgresql_server
 postgresql_server__password_length:
+  - debops.debops.postgresql_server
+postgresql_server__pgbadger_logs:
   - debops.debops.postgresql_server
 postgresql_server__pki:
   - debops.debops.postgresql_server
