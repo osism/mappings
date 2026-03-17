@@ -2888,6 +2888,19 @@ debops.debops.influxdb:
   - influxdb__root_password
   - influxdb__server
   - influxdb__users
+debops.debops.influxdb2:
+  - influxdb2__allow
+  - influxdb2__base_packages
+  - influxdb2__combined_configuration
+  - influxdb2__configuration
+  - influxdb2__default_configuration
+  - influxdb2__etc_services__dependent_list
+  - influxdb2__fqdn
+  - influxdb2__influxdata__dependent_packages
+  - influxdb2__nginx__dependent_servers
+  - influxdb2__nginx__dependent_upstreams
+  - influxdb2__packages
+  - influxdb2__port
 debops.debops.influxdb_server:
   - influxdb_server__allow
   - influxdb_server__append_groups
@@ -3023,6 +3036,7 @@ debops.debops.keyring:
   - keyring__gpg_version
   - keyring__keybase_api
   - keyring__keyserver
+  - keyring__keyserver_api
   - keyring__local_path
   - keyring__packages
 debops.debops.kibana:
@@ -4171,6 +4185,26 @@ debops.debops.nginx:
   - nginx_welcome_domain
   - nginx_welcome_template
   - nginx_www
+debops.debops.nixos:
+  - nixos__combined_configuration
+  - nixos__config_dir
+  - nixos__configuration
+  - nixos__default_configuration
+  - nixos__distribution_string
+  - nixos__git_backup_dir
+  - nixos__git_resync
+  - nixos__git_resync_options
+  - nixos__group_configuration
+  - nixos__group_repositories
+  - nixos__group_templates
+  - nixos__host_configuration
+  - nixos__host_repositories
+  - nixos__host_templates
+  - nixos__rebuild
+  - nixos__rebuild_command
+  - nixos__repositories
+  - nixos__src
+  - nixos__templates
 debops.debops.nodejs:
   - nodejs__apt_preferences__dependent_list
   - nodejs__base_packages
@@ -4601,6 +4635,35 @@ debops.debops.persistent_paths:
   - persistent_paths__qubes_os_enabled
   - persistent_paths__qubes_os_handler
   - persistent_paths__qubes_os_storage_path
+debops.debops.pgbadger:
+  - pgbadger__additional_groups
+  - pgbadger__base_packages
+  - pgbadger__combined_instances
+  - pgbadger__comment
+  - pgbadger__cron_deploy_state
+  - pgbadger__cron_interval
+  - pgbadger__default_instances
+  - pgbadger__fqdn
+  - pgbadger__group
+  - pgbadger__group_instances
+  - pgbadger__home
+  - pgbadger__host_instances
+  - pgbadger__instances
+  - pgbadger__nginx__dependent_servers
+  - pgbadger__nginx_access_policy
+  - pgbadger__nginx_auth_realm
+  - pgbadger__packages
+  - pgbadger__scripts_command
+  - pgbadger__scripts_path
+  - pgbadger__ssh_accounts_enabled
+  - pgbadger__ssh_additional_groups
+  - pgbadger__ssh_group
+  - pgbadger__ssh_home
+  - pgbadger__ssh_inventory_group
+  - pgbadger__ssh_public_key_file
+  - pgbadger__ssh_user
+  - pgbadger__user
+  - pgbadger__www_root
 debops.debops.php:
   - php__apt_preferences__dependent_list
   - php__base_packages
@@ -4999,6 +5062,7 @@ debops.debops.postgresql_server:
   - postgresql_server__packages
   - postgresql_server__password_characters
   - postgresql_server__password_length
+  - postgresql_server__pgbadger_logs
   - postgresql_server__pki
   - postgresql_server__pki_ca
   - postgresql_server__pki_crl
@@ -8183,7 +8247,6 @@ kolla.loadbalancer:
   - haproxy_enable_healthchecks
   - haproxy_external_single_frontend_default_backend
   - haproxy_external_single_frontend_options
-  - haproxy_external_single_frontend_public_port
   - haproxy_extra_volumes
   - haproxy_glance_api_client_timeout
   - haproxy_healthcheck
@@ -8200,6 +8263,7 @@ kolla.loadbalancer:
   - haproxy_max_connections
   - haproxy_queue_timeout
   - haproxy_server_timeout
+  - haproxy_single_external_frontend_public_port
   - haproxy_socket_level_admin
   - haproxy_ssh_default_volumes
   - haproxy_ssh_dimensions
@@ -10579,6 +10643,22 @@ osism.services.frr:
   - frr_version
   - frr_vrrp_groups
   - frr_vtysh_file
+  - frr_yrzn_metalbox_bmc_loopback
+  - frr_yrzn_metalbox_bmc_peer_group
+  - frr_yrzn_metalbox_data_loopback
+  - frr_yrzn_metalbox_data_peer_group
+  - frr_yrzn_metalbox_maximum_paths
+  - frr_yrzn_metalbox_timers_connect
+  - frr_yrzn_metalbox_timers_holdtime
+  - frr_yrzn_metalbox_timers_keepalive
+  - frr_yrzn_network_data_loopback
+  - frr_yrzn_network_data_peer_group
+  - frr_yrzn_network_maximum_paths
+  - frr_yrzn_network_provider_loopback
+  - frr_yrzn_network_provider_peer_group
+  - frr_yrzn_network_timers_connect
+  - frr_yrzn_network_timers_holdtime
+  - frr_yrzn_network_timers_keepalive
 osism.services.gnmic:
   - docker_network_mtu
   - docker_registry
@@ -10652,6 +10732,7 @@ osism.services.httpd:
   - httpd_ironic_port
   - httpd_ironic_volume
   - httpd_l3mdev_accept
+  - httpd_log_ignore_partial_content
   - httpd_network
   - httpd_network_mode
   - httpd_port
@@ -10667,6 +10748,11 @@ osism.services.httpd:
   - httpd_sonic_ztp_enable
   - httpd_sonic_ztp_firmware
   - httpd_sonic_ztp_hostname
+  - httpd_ssl_certificate
+  - httpd_ssl_certificate_key
+  - httpd_ssl_directory
+  - httpd_ssl_enable
+  - httpd_ssl_port
   - httpd_tag
   - operator_group
   - operator_user
@@ -10805,6 +10891,8 @@ osism.services.manager:
   - manager_mem_reservation
   - manager_netbox_replicas
   - manager_network
+  - manager_network_enable_ipv6
+  - manager_network_ipv6
   - manager_old_service_name
   - manager_opensearch_address
   - manager_opensearch_enable
@@ -10831,6 +10919,7 @@ osism.services.manager:
   - netbox_api_url
   - netbox_data_types
   - netbox_enable
+  - netbox_external
   - netbox_filter_conductor_ironic
   - netbox_filter_conductor_sonic
   - netbox_filter_inventory
@@ -10926,6 +11015,8 @@ osism.services.netbox:
   - netbox_max_db_wait_time
   - netbox_metrics
   - netbox_network
+  - netbox_network_enable_ipv6
+  - netbox_network_ipv6
   - netbox_nginx_processes_idle_timeout
   - netbox_nginx_processes_max
   - netbox_nginx_processes_spare
@@ -10974,6 +11065,7 @@ osism.services.netbox:
   - traefik_external_network_name
 osism.services.netdata:
   - netdata_accept_a_streaming_request_every_seconds
+  - netdata_allow_streaming_from
   - netdata_api_host
   - netdata_api_key
   - netdata_api_port
@@ -10991,7 +11083,15 @@ osism.services.netdata:
   - netdata_redhat_arch
   - netdata_redhat_repository
   - netdata_redhat_repository_key
+  - netdata_server_dbengine_multihost_disk_space
+  - netdata_server_page_cache_size
   - netdata_service_name
+  - netdata_stream_buffer_size_bytes
+  - netdata_stream_enable_compression
+  - netdata_stream_replication_enabled
+  - netdata_stream_replication_step
+  - netdata_stream_seconds_to_replicate
+  - netdata_stream_timeout_seconds
   - netdata_sys_vm_max_map_count
   - netdata_update_every
 osism.services.nexus:
@@ -11047,6 +11147,8 @@ osism.services.openstackclient:
   - openstackclient_image
   - openstackclient_install_type
   - openstackclient_network
+  - openstackclient_network_enable_ipv6
+  - openstackclient_network_ipv6
   - openstackclient_redhat_packages
   - openstackclient_service_name
   - openstackclient_tag
@@ -11253,6 +11355,8 @@ osism.services.traefik:
   - traefik_container_name
   - traefik_docker_compose_directory
   - traefik_external_network_cidr
+  - traefik_external_network_cidr_ipv6
+  - traefik_external_network_enable_ipv6
   - traefik_external_network_name
   - traefik_host
   - traefik_image
