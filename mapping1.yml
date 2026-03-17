@@ -10651,6 +10651,14 @@ osism.services.frr:
   - frr_yrzn_metalbox_timers_connect
   - frr_yrzn_metalbox_timers_holdtime
   - frr_yrzn_metalbox_timers_keepalive
+  - frr_yrzn_network_data_loopback
+  - frr_yrzn_network_data_peer_group
+  - frr_yrzn_network_maximum_paths
+  - frr_yrzn_network_provider_loopback
+  - frr_yrzn_network_provider_peer_group
+  - frr_yrzn_network_timers_connect
+  - frr_yrzn_network_timers_holdtime
+  - frr_yrzn_network_timers_keepalive
 osism.services.gnmic:
   - docker_network_mtu
   - docker_registry
