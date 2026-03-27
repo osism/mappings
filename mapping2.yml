@@ -3522,6 +3522,8 @@ dnsdist_image:
   - osism.services.dnsdist
 dnsdist_network:
   - osism.services.dnsdist
+dnsdist_network_mode:
+  - osism.services.dnsdist
 dnsdist_port:
   - osism.services.dnsdist
 dnsdist_servers:
@@ -5626,6 +5628,8 @@ frr_yrzn_metalbox_timers_connect:
 frr_yrzn_metalbox_timers_holdtime:
   - osism.services.frr
 frr_yrzn_metalbox_timers_keepalive:
+  - osism.services.frr
+frr_yrzn_network_announced_networks:
   - osism.services.frr
 frr_yrzn_network_data_loopback:
   - osism.services.frr

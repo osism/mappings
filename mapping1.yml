@@ -10483,6 +10483,7 @@ osism.services.dnsdist:
   - dnsdist_hosts
   - dnsdist_image
   - dnsdist_network
+  - dnsdist_network_mode
   - dnsdist_port
   - dnsdist_servers
   - dnsdist_service_name
@@ -10651,6 +10652,7 @@ osism.services.frr:
   - frr_yrzn_metalbox_timers_connect
   - frr_yrzn_metalbox_timers_holdtime
   - frr_yrzn_metalbox_timers_keepalive
+  - frr_yrzn_network_announced_networks
   - frr_yrzn_network_data_loopback
   - frr_yrzn_network_data_peer_group
   - frr_yrzn_network_maximum_paths
