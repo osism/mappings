@@ -10483,6 +10483,7 @@ osism.services.dnsdist:
   - dnsdist_hosts
   - dnsdist_image
   - dnsdist_network
+  - dnsdist_network_mode
   - dnsdist_port
   - dnsdist_servers
   - dnsdist_service_name

@@ -3522,6 +3522,8 @@ dnsdist_image:
   - osism.services.dnsdist
 dnsdist_network:
   - osism.services.dnsdist
+dnsdist_network_mode:
+  - osism.services.dnsdist
 dnsdist_port:
   - osism.services.dnsdist
 dnsdist_servers:
