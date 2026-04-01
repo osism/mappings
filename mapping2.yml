@@ -16590,6 +16590,8 @@ proxysql_stats_user:
   - kolla.loadbalancer
 proxysql_tag:
   - kolla.loadbalancer
+proxysql_version_suffix:
+  - kolla.loadbalancer
 proxysql_workers:
   - kolla.loadbalancer
 public_network:

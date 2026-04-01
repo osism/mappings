@@ -8326,6 +8326,7 @@ kolla.loadbalancer:
   - proxysql_prometheus_exporter_memory_metrics_interval
   - proxysql_stats_user
   - proxysql_tag
+  - proxysql_version_suffix
   - proxysql_workers
   - syslog_haproxy_facility
   - syslog_server
