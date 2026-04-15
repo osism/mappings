@@ -21908,6 +21908,64 @@ valid_ceph_origins:
   - ceph.ceph-defaults
 valid_ceph_repository:
   - ceph.ceph-defaults
+valkey_conf_path:
+  - kolla.valkey
+valkey_default_volumes:
+  - kolla.valkey
+valkey_dimensions:
+  - kolla.valkey
+valkey_enable_healthchecks:
+  - kolla.valkey
+valkey_extra_volumes:
+  - kolla.valkey
+valkey_generated_conf_path:
+  - kolla.valkey
+valkey_healthcheck:
+  - kolla.valkey
+valkey_healthcheck_interval:
+  - kolla.valkey
+valkey_healthcheck_retries:
+  - kolla.valkey
+valkey_healthcheck_start_period:
+  - kolla.valkey
+valkey_healthcheck_test:
+  - kolla.valkey
+valkey_healthcheck_timeout:
+  - kolla.valkey
+valkey_image:
+  - kolla.valkey
+valkey_image_full:
+  - kolla.valkey
+valkey_sentinel_default_volumes:
+  - kolla.valkey
+valkey_sentinel_dimensions:
+  - kolla.valkey
+valkey_sentinel_enable_healthchecks:
+  - kolla.valkey
+valkey_sentinel_extra_volumes:
+  - kolla.valkey
+valkey_sentinel_healthcheck:
+  - kolla.valkey
+valkey_sentinel_healthcheck_interval:
+  - kolla.valkey
+valkey_sentinel_healthcheck_retries:
+  - kolla.valkey
+valkey_sentinel_healthcheck_start_period:
+  - kolla.valkey
+valkey_sentinel_healthcheck_test:
+  - kolla.valkey
+valkey_sentinel_healthcheck_timeout:
+  - kolla.valkey
+valkey_sentinel_image:
+  - kolla.valkey
+valkey_sentinel_image_full:
+  - kolla.valkey
+valkey_sentinel_tag:
+  - kolla.valkey
+valkey_services:
+  - kolla.valkey
+valkey_tag:
+  - kolla.valkey
 vault_container_name:
   - osism.services.manager
 vault_host:

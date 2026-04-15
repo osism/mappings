@@ -9956,6 +9956,36 @@ kolla.trove:
   - trove_taskmanager_image
   - trove_taskmanager_image_full
   - trove_taskmanager_tag
+kolla.valkey:
+  - valkey_conf_path
+  - valkey_default_volumes
+  - valkey_dimensions
+  - valkey_enable_healthchecks
+  - valkey_extra_volumes
+  - valkey_generated_conf_path
+  - valkey_healthcheck
+  - valkey_healthcheck_interval
+  - valkey_healthcheck_retries
+  - valkey_healthcheck_start_period
+  - valkey_healthcheck_test
+  - valkey_healthcheck_timeout
+  - valkey_image
+  - valkey_image_full
+  - valkey_sentinel_default_volumes
+  - valkey_sentinel_dimensions
+  - valkey_sentinel_enable_healthchecks
+  - valkey_sentinel_extra_volumes
+  - valkey_sentinel_healthcheck
+  - valkey_sentinel_healthcheck_interval
+  - valkey_sentinel_healthcheck_retries
+  - valkey_sentinel_healthcheck_start_period
+  - valkey_sentinel_healthcheck_test
+  - valkey_sentinel_healthcheck_timeout
+  - valkey_sentinel_image
+  - valkey_sentinel_image_full
+  - valkey_sentinel_tag
+  - valkey_services
+  - valkey_tag
 kolla.venus:
   - openstack_logging_context_format_string
   - openstack_logging_default_format_string
