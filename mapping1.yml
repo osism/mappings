@@ -412,6 +412,7 @@ community.zabbix.zabbix_agent:
   - zabbix_agent_plugintimeout
   - zabbix_agent_proxy
   - zabbix_agent_refreshactivechecks
+  - zabbix_agent_releases_url
   - zabbix_agent_runas_user
   - zabbix_agent_selinux
   - zabbix_agent_sender_package
@@ -492,6 +493,7 @@ community.zabbix.zabbix_proxy:
   - zabbix_proxy_dbpassword
   - zabbix_proxy_dbpassword_hash_method
   - zabbix_proxy_dbport
+  - zabbix_proxy_dbschema
   - zabbix_proxy_dbuser
   - zabbix_proxy_debuglevel
   - zabbix_proxy_enableremotecommands
@@ -609,6 +611,7 @@ community.zabbix.zabbix_server:
   - zabbix_server_database_schemas
   - zabbix_server_database_sqlload
   - zabbix_server_database_timescaledb
+  - zabbix_server_database_timescaledb_force_schema
   - zabbix_server_dbcollation
   - zabbix_server_dbencoding
   - zabbix_server_dbhost
@@ -617,6 +620,7 @@ community.zabbix.zabbix_server:
   - zabbix_server_dbpassword
   - zabbix_server_dbpassword_hash_method
   - zabbix_server_dbport
+  - zabbix_server_dbschema
   - zabbix_server_dbuser
   - zabbix_server_debuglevel
   - zabbix_server_enableglobalscripts
@@ -743,6 +747,41 @@ community.zabbix.zabbix_web:
   - zabbix_web_vhost_listen_ip
   - zabbix_web_vhost_port
   - zabbix_web_vhost_tls_port
+community.zabbix.zabbix_web_service:
+  - mimeapps_list_path
+  - selinux_allow_zabbix_can_network
+  - zabbix_api_frontend_url
+  - zabbix_api_login_pass
+  - zabbix_api_login_user
+  - zabbix_api_server_host
+  - zabbix_api_server_port
+  - zabbix_api_timeout
+  - zabbix_api_use_ssl
+  - zabbix_api_validate_certs
+  - zabbix_frontend_url
+  - zabbix_os_user
+  - zabbix_service_enabled
+  - zabbix_service_state
+  - zabbix_web_service_allowedip
+  - zabbix_web_service_conf_mode
+  - zabbix_web_service_config
+  - zabbix_web_service_debuglevel
+  - zabbix_web_service_ignoreurlcerterrors
+  - zabbix_web_service_include_mode
+  - zabbix_web_service_listenport
+  - zabbix_web_service_logfile
+  - zabbix_web_service_logfilesize
+  - zabbix_web_service_logtype
+  - zabbix_web_service_manage_service
+  - zabbix_web_service_package_state
+  - zabbix_web_service_packages
+  - zabbix_web_service_timeout
+  - zabbix_web_service_tlsaccept
+  - zabbix_web_service_tlscafile
+  - zabbix_web_service_tlscertfile
+  - zabbix_web_service_tlskeyfile
+  - zabbix_web_service_version_check
+  - zabbix_web_service_version_minor
 debops.debops.ansible:
   - ansible__apt_preferences__dependent_list
   - ansible__base_packages
@@ -8326,6 +8365,7 @@ kolla.loadbalancer:
   - proxysql_prometheus_exporter_memory_metrics_interval
   - proxysql_stats_user
   - proxysql_tag
+  - proxysql_version_suffix
   - proxysql_workers
   - syslog_haproxy_facility
   - syslog_server
@@ -9955,6 +9995,36 @@ kolla.trove:
   - trove_taskmanager_image
   - trove_taskmanager_image_full
   - trove_taskmanager_tag
+kolla.valkey:
+  - valkey_conf_path
+  - valkey_default_volumes
+  - valkey_dimensions
+  - valkey_enable_healthchecks
+  - valkey_extra_volumes
+  - valkey_generated_conf_path
+  - valkey_healthcheck
+  - valkey_healthcheck_interval
+  - valkey_healthcheck_retries
+  - valkey_healthcheck_start_period
+  - valkey_healthcheck_test
+  - valkey_healthcheck_timeout
+  - valkey_image
+  - valkey_image_full
+  - valkey_sentinel_default_volumes
+  - valkey_sentinel_dimensions
+  - valkey_sentinel_enable_healthchecks
+  - valkey_sentinel_extra_volumes
+  - valkey_sentinel_healthcheck
+  - valkey_sentinel_healthcheck_interval
+  - valkey_sentinel_healthcheck_retries
+  - valkey_sentinel_healthcheck_start_period
+  - valkey_sentinel_healthcheck_test
+  - valkey_sentinel_healthcheck_timeout
+  - valkey_sentinel_image
+  - valkey_sentinel_image_full
+  - valkey_sentinel_tag
+  - valkey_services
+  - valkey_tag
 kolla.venus:
   - openstack_logging_context_format_string
   - openstack_logging_default_format_string
