@@ -10535,6 +10535,8 @@ microcode_packages_redhat:
   - osism.commons.microcode
 migration_hostname:
   - kolla.nova-cell
+mimeapps_list_path:
+  - community.zabbix.zabbix_web_service
 min_int_uid:
   - ubuntu22_cis
 minidlna__allow:
@@ -18767,6 +18769,7 @@ selinux_allow_httpd_can_network_connect_db:
 selinux_allow_zabbix_can_network:
   - community.zabbix.zabbix_proxy
   - community.zabbix.zabbix_server
+  - community.zabbix.zabbix_web_service
 selinux_allow_zabbix_run_sudo:
   - community.zabbix.zabbix_agent
 service_check_services:
@@ -22551,6 +22554,8 @@ zabbix_agent_redhat_repository_key:
   - osism.services.zabbix_agent
 zabbix_agent_refreshactivechecks:
   - community.zabbix.zabbix_agent
+zabbix_agent_releases_url:
+  - community.zabbix.zabbix_agent
 zabbix_agent_runas_user:
   - community.zabbix.zabbix_agent
 zabbix_agent_selinux:
@@ -22619,28 +22624,39 @@ zabbix_api_create_proxy:
   - community.zabbix.zabbix_proxy
 zabbix_api_create_proxy_group:
   - community.zabbix.zabbix_proxy
+zabbix_api_frontend_url:
+  - community.zabbix.zabbix_web_service
 zabbix_api_login_pass:
   - community.zabbix.zabbix_agent
   - community.zabbix.zabbix_proxy
+  - community.zabbix.zabbix_web_service
 zabbix_api_login_user:
   - community.zabbix.zabbix_agent
   - community.zabbix.zabbix_proxy
+  - community.zabbix.zabbix_web_service
 zabbix_api_server_host:
   - community.zabbix.zabbix_agent
   - community.zabbix.zabbix_proxy
+  - community.zabbix.zabbix_web_service
 zabbix_api_server_port:
   - community.zabbix.zabbix_agent
   - community.zabbix.zabbix_proxy
+  - community.zabbix.zabbix_web_service
 zabbix_api_server_url:
   - community.zabbix.zabbix_web
 zabbix_api_timeout:
   - community.zabbix.zabbix_proxy
+  - community.zabbix.zabbix_web_service
 zabbix_api_use_ssl:
   - community.zabbix.zabbix_agent
   - community.zabbix.zabbix_proxy
+  - community.zabbix.zabbix_web_service
 zabbix_api_validate_certs:
   - community.zabbix.zabbix_agent
   - community.zabbix.zabbix_proxy
+  - community.zabbix.zabbix_web_service
+zabbix_frontend_url:
+  - community.zabbix.zabbix_web_service
 zabbix_host_groups:
   - community.zabbix.zabbix_agent
 zabbix_host_status:
@@ -22670,6 +22686,7 @@ zabbix_network:
 zabbix_os_user:
   - community.zabbix.zabbix_proxy
   - community.zabbix.zabbix_server
+  - community.zabbix.zabbix_web_service
 zabbix_php_fpm_conf_group:
   - community.zabbix.zabbix_web
 zabbix_php_fpm_conf_listen:
@@ -22715,6 +22732,8 @@ zabbix_proxy_dbpassword:
 zabbix_proxy_dbpassword_hash_method:
   - community.zabbix.zabbix_proxy
 zabbix_proxy_dbport:
+  - community.zabbix.zabbix_proxy
+zabbix_proxy_dbschema:
   - community.zabbix.zabbix_proxy
 zabbix_proxy_dbuser:
   - community.zabbix.zabbix_proxy
@@ -22943,6 +22962,8 @@ zabbix_server_database_sqlload:
   - community.zabbix.zabbix_server
 zabbix_server_database_timescaledb:
   - community.zabbix.zabbix_server
+zabbix_server_database_timescaledb_force_schema:
+  - community.zabbix.zabbix_server
 zabbix_server_dbcollation:
   - community.zabbix.zabbix_server
 zabbix_server_dbencoding:
@@ -22966,6 +22987,7 @@ zabbix_server_dbport:
   - community.zabbix.zabbix_server
   - community.zabbix.zabbix_web
 zabbix_server_dbschema:
+  - community.zabbix.zabbix_server
   - community.zabbix.zabbix_web
 zabbix_server_dbuser:
   - community.zabbix.zabbix_server
@@ -23135,8 +23157,10 @@ zabbix_server_vmwaretimeout:
   - community.zabbix.zabbix_server
 zabbix_service_enabled:
   - community.zabbix.zabbix_server
+  - community.zabbix.zabbix_web_service
 zabbix_service_state:
   - community.zabbix.zabbix_server
+  - community.zabbix.zabbix_web_service
 zabbix_timezone:
   - community.zabbix.zabbix_web
 zabbix_url_aliases:
@@ -23168,6 +23192,46 @@ zabbix_web_php_fpm_mode:
   - community.zabbix.zabbix_web
 zabbix_web_php_fpm_start_servers:
   - community.zabbix.zabbix_web
+zabbix_web_service_allowedip:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_conf_mode:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_config:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_debuglevel:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_ignoreurlcerterrors:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_include_mode:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_listenport:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_logfile:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_logfilesize:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_logtype:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_manage_service:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_package_state:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_packages:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_timeout:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_tlsaccept:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_tlscafile:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_tlscertfile:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_tlskeyfile:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_version_check:
+  - community.zabbix.zabbix_web_service
+zabbix_web_service_version_minor:
+  - community.zabbix.zabbix_web_service
 zabbix_web_ssl_session_cache:
   - community.zabbix.zabbix_web
 zabbix_web_ssl_session_cache_timeout:
