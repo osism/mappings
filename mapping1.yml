@@ -10678,6 +10678,7 @@ osism.services.falco:
   - falco_service_name
 osism.services.frr:
   - frr_allow_service_restart
+  - frr_bfd_profiles
   - frr_config_file
   - frr_daemons_file
   - frr_dummy_interface
