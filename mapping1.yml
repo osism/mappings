@@ -11463,11 +11463,13 @@ osism.services.wazuh_agent:
   - wazuh_agent_service_name
 osism.services.wireguard:
   - wireguard_client_allowed_ips
+  - wireguard_client_network
   - wireguard_create_client_config
   - wireguard_dns
   - wireguard_endpoint
   - wireguard_listen_port
   - wireguard_mtu
+  - wireguard_outbound_interface
   - wireguard_server_address
   - wireguard_server_public_address
   - wireguard_users

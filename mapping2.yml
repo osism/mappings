@@ -22285,6 +22285,8 @@ wazuh_agent_service_name:
   - osism.services.wazuh_agent
 wireguard_client_allowed_ips:
   - osism.services.wireguard
+wireguard_client_network:
+  - osism.services.wireguard
 wireguard_create_client_config:
   - osism.services.wireguard
 wireguard_dns:
@@ -22294,6 +22296,8 @@ wireguard_endpoint:
 wireguard_listen_port:
   - osism.services.wireguard
 wireguard_mtu:
+  - osism.services.wireguard
+wireguard_outbound_interface:
   - osism.services.wireguard
 wireguard_server_address:
   - osism.services.wireguard
