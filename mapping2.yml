@@ -2481,6 +2481,8 @@ configuration_git_package_name:
   - osism.commons.configuration
 configuration_git_port:
   - osism.commons.configuration
+configuration_git_preserve_files:
+  - osism.commons.configuration
 configuration_git_private_key:
   - osism.commons.configuration
 configuration_git_private_key_file:
