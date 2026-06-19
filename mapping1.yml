@@ -10688,6 +10688,11 @@ osism.services.frr:
   - frr_enable_ospf6d
   - frr_enable_ospfd
   - frr_enable_vrrpd
+  - frr_exporter_enable
+  - frr_exporter_host
+  - frr_exporter_package_name
+  - frr_exporter_port
+  - frr_exporter_service_name
   - frr_externalbackup_v4
   - frr_externalbackup_v6
   - frr_extra_interfaces

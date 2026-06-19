@@ -5561,6 +5561,16 @@ frr_enable_ospfd:
   - osism.services.frr
 frr_enable_vrrpd:
   - osism.services.frr
+frr_exporter_enable:
+  - osism.services.frr
+frr_exporter_host:
+  - osism.services.frr
+frr_exporter_package_name:
+  - osism.services.frr
+frr_exporter_port:
+  - osism.services.frr
+frr_exporter_service_name:
+  - osism.services.frr
 frr_externalbackup_v4:
   - osism.services.frr
 frr_externalbackup_v6:
