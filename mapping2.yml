@@ -2481,6 +2481,8 @@ configuration_git_package_name:
   - osism.commons.configuration
 configuration_git_port:
   - osism.commons.configuration
+configuration_git_preserve_files:
+  - osism.commons.configuration
 configuration_git_private_key:
   - osism.commons.configuration
 configuration_git_private_key_file:
@@ -5558,6 +5560,16 @@ frr_enable_ospf6d:
 frr_enable_ospfd:
   - osism.services.frr
 frr_enable_vrrpd:
+  - osism.services.frr
+frr_exporter_enable:
+  - osism.services.frr
+frr_exporter_host:
+  - osism.services.frr
+frr_exporter_package_name:
+  - osism.services.frr
+frr_exporter_port:
+  - osism.services.frr
+frr_exporter_service_name:
   - osism.services.frr
 frr_externalbackup_v4:
   - osism.services.frr
