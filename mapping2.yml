@@ -19186,6 +19186,16 @@ slapd__uid_gid_min:
   - debops.debops.slapd
 slapd__user:
   - debops.debops.slapd
+smartd_configure:
+  - osism.services.smartd
+smartd_devices:
+  - osism.services.smartd
+smartd_devicescan:
+  - osism.services.smartd
+smartd_devicescan_options:
+  - osism.services.smartd
+smartd_devicescan_options_default:
+  - osism.services.smartd
 smartd_package_name:
   - osism.services.smartd
 smartd_service_name:
