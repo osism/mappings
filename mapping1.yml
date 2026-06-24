@@ -11326,6 +11326,11 @@ osism.services.scaphandre:
   - scaphandre_share_pids_with_host
   - scaphandre_tag
 osism.services.smartd:
+  - smartd_configure
+  - smartd_devices
+  - smartd_devicescan
+  - smartd_devicescan_options
+  - smartd_devicescan_options_default
   - smartd_package_name
   - smartd_service_name
 osism.services.squid:
