@@ -9263,6 +9263,10 @@ libvirt_dir:
 libvirt_enable_sasl:
   - kolla.masakari
   - kolla.nova-cell
+libvirt_max_client_requests:
+  - kolla.nova-cell
+libvirt_max_workers:
+  - kolla.nova-cell
 libvirt_sasl_authname:
   - kolla.masakari
   - kolla.nova-cell
