@@ -1964,8 +1964,6 @@ cephclient_redhat_repository:
   - osism.services.cephclient
 cephclient_repository_key:
   - osism.services.cephclient
-cephclient_rook_namespace:
-  - osism.services.cephclient
 cephclient_service_name:
   - osism.services.cephclient
 cephclient_tag:

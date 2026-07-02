@@ -10500,7 +10500,6 @@ osism.services.cephclient:
   - cephclient_redhat_arch
   - cephclient_redhat_repository
   - cephclient_repository_key
-  - cephclient_rook_namespace
   - cephclient_service_name
   - cephclient_tag
   - cephclient_version
