@@ -9088,6 +9088,8 @@ kolla.nova-cell:
   - haproxy_nova_serialconsole_proxy_tunnel_timeout
   - haproxy_nova_spicehtml5_proxy_tunnel_timeout
   - libvirt_enable_sasl
+  - libvirt_max_client_requests
+  - libvirt_max_workers
   - libvirt_sasl_authname
   - libvirt_sasl_mech_list
   - libvirt_tls
@@ -10498,7 +10500,6 @@ osism.services.cephclient:
   - cephclient_redhat_arch
   - cephclient_redhat_repository
   - cephclient_repository_key
-  - cephclient_rook_namespace
   - cephclient_service_name
   - cephclient_tag
   - cephclient_version
