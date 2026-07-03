@@ -7102,7 +7102,11 @@ httpd_sonic_ztp_directory:
   - osism.services.manager
 httpd_sonic_ztp_enable:
   - osism.services.httpd
-httpd_sonic_ztp_firmware:
+httpd_sonic_ztp_firmware_identifier:
+  - osism.services.httpd
+httpd_sonic_ztp_firmware_prefix:
+  - osism.services.httpd
+httpd_sonic_ztp_firmware_suffix:
   - osism.services.httpd
 httpd_sonic_ztp_hostname:
   - osism.services.httpd
@@ -21876,6 +21880,10 @@ upgrade_packages:
 user_config:
   - ceph.ceph-client
 user_delete:
+  - osism.commons.user
+user_fetch_keys_allowed_hosts:
+  - osism.commons.user
+user_fetch_keys_delegate_to:
   - osism.commons.user
 user_groups:
   - osism.commons.user

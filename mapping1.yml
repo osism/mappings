@@ -10449,6 +10449,8 @@ osism.commons.trivy:
   - trivy_redhat_repository_key
 osism.commons.user:
   - user_delete
+  - user_fetch_keys_allowed_hosts
+  - user_fetch_keys_delegate_to
   - user_groups
   - user_keyfile
   - user_list
@@ -10826,7 +10828,9 @@ osism.services.httpd:
   - httpd_sonic_ztp_configdb_suffix
   - httpd_sonic_ztp_directory
   - httpd_sonic_ztp_enable
-  - httpd_sonic_ztp_firmware
+  - httpd_sonic_ztp_firmware_identifier
+  - httpd_sonic_ztp_firmware_prefix
+  - httpd_sonic_ztp_firmware_suffix
   - httpd_sonic_ztp_hostname
   - httpd_ssl_certificate
   - httpd_ssl_certificate_key
