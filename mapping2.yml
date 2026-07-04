@@ -19368,6 +19368,8 @@ squid_image:
   - osism.services.squid
 squid_network:
   - osism.services.squid
+squid_network_mode:
+  - osism.services.squid
 squid_port:
   - osism.services.squid
 squid_required_packages:

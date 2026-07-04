@@ -11349,6 +11349,7 @@ osism.services.squid:
   - squid_host
   - squid_image
   - squid_network
+  - squid_network_mode
   - squid_port
   - squid_required_packages
   - squid_service_name
