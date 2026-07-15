@@ -814,6 +814,8 @@ apt_proxy__proxy_auto_detect:
   - debops.debops.apt_proxy
 apt_proxy__temporally_avoid_unreachable:
   - debops.debops.apt_proxy
+ara_database_conn_max_age:
+  - osism.services.manager
 ara_enable:
   - osism.services.manager
 ara_password:
@@ -1963,8 +1965,6 @@ cephclient_redhat_arch:
 cephclient_redhat_repository:
   - osism.services.cephclient
 cephclient_repository_key:
-  - osism.services.cephclient
-cephclient_rook_namespace:
   - osism.services.cephclient
 cephclient_service_name:
   - osism.services.cephclient
@@ -7104,7 +7104,11 @@ httpd_sonic_ztp_directory:
   - osism.services.manager
 httpd_sonic_ztp_enable:
   - osism.services.httpd
-httpd_sonic_ztp_firmware:
+httpd_sonic_ztp_firmware_identifier:
+  - osism.services.httpd
+httpd_sonic_ztp_firmware_prefix:
+  - osism.services.httpd
+httpd_sonic_ztp_firmware_suffix:
   - osism.services.httpd
 httpd_sonic_ztp_hostname:
   - osism.services.httpd
@@ -9262,6 +9266,10 @@ libvirt_dir:
   - kolla.certificates
 libvirt_enable_sasl:
   - kolla.masakari
+  - kolla.nova-cell
+libvirt_max_client_requests:
+  - kolla.nova-cell
+libvirt_max_workers:
   - kolla.nova-cell
 libvirt_sasl_authname:
   - kolla.masakari
@@ -19362,6 +19370,8 @@ squid_image:
   - osism.services.squid
 squid_network:
   - osism.services.squid
+squid_network_mode:
+  - osism.services.squid
 squid_port:
   - osism.services.squid
 squid_required_packages:
@@ -21874,6 +21884,10 @@ upgrade_packages:
 user_config:
   - ceph.ceph-client
 user_delete:
+  - osism.commons.user
+user_fetch_keys_allowed_hosts:
+  - osism.commons.user
+user_fetch_keys_delegate_to:
   - osism.commons.user
 user_groups:
   - osism.commons.user

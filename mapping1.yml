@@ -9088,6 +9088,8 @@ kolla.nova-cell:
   - haproxy_nova_serialconsole_proxy_tunnel_timeout
   - haproxy_nova_spicehtml5_proxy_tunnel_timeout
   - libvirt_enable_sasl
+  - libvirt_max_client_requests
+  - libvirt_max_workers
   - libvirt_sasl_authname
   - libvirt_sasl_mech_list
   - libvirt_tls
@@ -10447,6 +10449,8 @@ osism.commons.trivy:
   - trivy_redhat_repository_key
 osism.commons.user:
   - user_delete
+  - user_fetch_keys_allowed_hosts
+  - user_fetch_keys_delegate_to
   - user_groups
   - user_keyfile
   - user_list
@@ -10498,7 +10502,6 @@ osism.services.cephclient:
   - cephclient_redhat_arch
   - cephclient_redhat_repository
   - cephclient_repository_key
-  - cephclient_rook_namespace
   - cephclient_service_name
   - cephclient_tag
   - cephclient_version
@@ -10825,7 +10828,9 @@ osism.services.httpd:
   - httpd_sonic_ztp_configdb_suffix
   - httpd_sonic_ztp_directory
   - httpd_sonic_ztp_enable
-  - httpd_sonic_ztp_firmware
+  - httpd_sonic_ztp_firmware_identifier
+  - httpd_sonic_ztp_firmware_prefix
+  - httpd_sonic_ztp_firmware_suffix
   - httpd_sonic_ztp_hostname
   - httpd_ssl_certificate
   - httpd_ssl_certificate_key
@@ -10873,6 +10878,7 @@ osism.services.manager:
   - ansible_services
   - ansible_services_defaults
   - ansible_services_extra
+  - ara_database_conn_max_age
   - ara_enable
   - ara_password
   - ara_server_database_type
@@ -11344,6 +11350,7 @@ osism.services.squid:
   - squid_host
   - squid_image
   - squid_network
+  - squid_network_mode
   - squid_port
   - squid_required_packages
   - squid_service_name
