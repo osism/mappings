@@ -10878,6 +10878,7 @@ osism.services.manager:
   - ansible_services
   - ansible_services_defaults
   - ansible_services_extra
+  - ara_database_conn_max_age
   - ara_enable
   - ara_password
   - ara_server_database_type
