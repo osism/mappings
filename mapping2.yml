@@ -3815,7 +3815,6 @@ docker_network_mtu:
   - osism.services.squid
   - osism.services.stepca
   - osism.services.substation
-  - osism.services.thanos_sidecar
 docker_opts:
   - osism.services.docker
 docker_package_name:
@@ -4047,8 +4046,6 @@ docker_registry_substation:
   - osism.services.substation
 docker_registry_tempest:
   - osism.validations.tempest
-docker_registry_thanos_sidecar:
-  - osism.services.thanos_sidecar
 docker_registry_traefik:
   - osism.services.traefik
 docker_registry_vault:
@@ -14260,7 +14257,6 @@ operator_group:
   - osism.services.squid
   - osism.services.stepca
   - osism.services.substation
-  - osism.services.thanos_sidecar
   - osism.services.traefik
   - osism.validations.tempest
 operator_group_id:
@@ -14300,7 +14296,6 @@ operator_user:
   - osism.services.squid
   - osism.services.stepca
   - osism.services.substation
-  - osism.services.thanos_sidecar
   - osism.services.traefik
   - osism.validations.tempest
 operator_user_id:
@@ -20367,30 +20362,6 @@ tgtd_interface_address:
   - kolla.iscsi
 tgtd_tag:
   - kolla.iscsi
-thanos_sidecar_configuration_directory:
-  - osism.services.thanos_sidecar
-thanos_sidecar_container_name:
-  - osism.services.thanos_sidecar
-thanos_sidecar_docker_compose_directory:
-  - osism.services.thanos_sidecar
-thanos_sidecar_grpc_port:
-  - osism.services.thanos_sidecar
-thanos_sidecar_host:
-  - osism.services.thanos_sidecar
-thanos_sidecar_http_port:
-  - osism.services.thanos_sidecar
-thanos_sidecar_image:
-  - osism.services.thanos_sidecar
-thanos_sidecar_network:
-  - osism.services.thanos_sidecar
-thanos_sidecar_prometheus_http_client_config:
-  - osism.services.thanos_sidecar
-thanos_sidecar_prometheus_url:
-  - osism.services.thanos_sidecar
-thanos_sidecar_service_name:
-  - osism.services.thanos_sidecar
-thanos_sidecar_tag:
-  - osism.services.thanos_sidecar
 timeout_command:
   - ceph.ceph-defaults
 timesyncd__base_packages:
