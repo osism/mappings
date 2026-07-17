@@ -11397,7 +11397,6 @@ osism.services.substation:
   - substation_network
   - substation_service_name
   - substation_tag
-  - substation_version
 osism.services.teleport:
   - teleport_ca_pin
   - teleport_configure_repository

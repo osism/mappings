@@ -19671,8 +19671,6 @@ substation_service_name:
   - osism.services.substation
 substation_tag:
   - osism.services.substation
-substation_version:
-  - osism.services.substation
 sudo__base_packages:
   - debops.debops.sudo
 sudo__combined_sudoers:
