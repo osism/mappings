@@ -20194,6 +20194,8 @@ tempest_create_flavors:
   - osism.validations.tempest
 tempest_dashboard_url:
   - osism.validations.tempest
+tempest_debug:
+  - osism.validations.tempest
 tempest_dhcp_client:
   - osism.validations.tempest
 tempest_enable_barbican:
@@ -20257,6 +20259,8 @@ tempest_min_compute_nodes:
 tempest_nameservers:
   - osism.validations.tempest
 tempest_network_build_timeout:
+  - osism.validations.tempest
+tempest_neutron_dns_domain:
   - osism.validations.tempest
 tempest_object_build_timeout:
   - osism.validations.tempest

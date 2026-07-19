@@ -11576,6 +11576,7 @@ osism.validations.tempest:
   - tempest_container_sync_timeout
   - tempest_create_flavors
   - tempest_dashboard_url
+  - tempest_debug
   - tempest_dhcp_client
   - tempest_enable_barbican
   - tempest_enable_cinder
@@ -11608,6 +11609,7 @@ osism.validations.tempest:
   - tempest_min_compute_nodes
   - tempest_nameservers
   - tempest_network_build_timeout
+  - tempest_neutron_dns_domain
   - tempest_object_build_timeout
   - tempest_osism_image
   - tempest_osism_tag
