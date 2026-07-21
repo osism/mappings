@@ -11602,7 +11602,6 @@ osism.validations.tempest:
   - tempest_include_list
   - tempest_include_regex
   - tempest_ipv6_subnet_attributes
-  - tempest_loadbalancer_enabled_provider_drivers
   - tempest_loadbalancer_provider
   - tempest_loadblancer_not_implemented_is_error
   - tempest_manager
