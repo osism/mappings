@@ -2066,6 +2066,12 @@ chrony_bindaddresses:
   - osism.services.chrony
 chrony_local_conf_template:
   - osism.services.chrony
+chrony_max_stratum:
+  - osism.validations.chrony
+chrony_max_system_clock_deviation:
+  - osism.validations.chrony
+chrony_max_upper_clock_error_bound:
+  - osism.validations.chrony
 chrony_minimum_number_of_servers:
   - osism.services.chrony
 chrony_package_name:

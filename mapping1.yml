@@ -11535,6 +11535,10 @@ osism.services.zuul:
   - zuul_zuul_tag
 osism.validations.ansible_version:
   - ansible_core_version
+osism.validations.chrony:
+  - chrony_max_stratum
+  - chrony_max_system_clock_deviation
+  - chrony_max_upper_clock_error_bound
 osism.validations.docker_version:
   - docker_version_expected
 osism.validations.kernel_version:
