@@ -11397,7 +11397,6 @@ osism.services.substation:
   - substation_network
   - substation_service_name
   - substation_tag
-  - substation_version
 osism.services.teleport:
   - teleport_ca_pin
   - teleport_configure_repository
@@ -11415,23 +11414,6 @@ osism.services.teleport:
   - teleport_token_method
   - teleport_token_name
   - teleport_version
-osism.services.thanos_sidecar:
-  - docker_network_mtu
-  - docker_registry_thanos_sidecar
-  - operator_group
-  - operator_user
-  - thanos_sidecar_configuration_directory
-  - thanos_sidecar_container_name
-  - thanos_sidecar_docker_compose_directory
-  - thanos_sidecar_grpc_port
-  - thanos_sidecar_host
-  - thanos_sidecar_http_port
-  - thanos_sidecar_image
-  - thanos_sidecar_network
-  - thanos_sidecar_prometheus_http_client_config
-  - thanos_sidecar_prometheus_url
-  - thanos_sidecar_service_name
-  - thanos_sidecar_tag
 osism.services.traefik:
   - configuration_directory
   - docker_registry
@@ -11553,6 +11535,10 @@ osism.services.zuul:
   - zuul_zuul_tag
 osism.validations.ansible_version:
   - ansible_core_version
+osism.validations.chrony:
+  - chrony_max_stratum
+  - chrony_max_system_clock_deviation
+  - chrony_max_upper_clock_error_bound
 osism.validations.docker_version:
   - docker_version_expected
 osism.validations.kernel_version:
@@ -11594,6 +11580,7 @@ osism.validations.tempest:
   - tempest_container_sync_timeout
   - tempest_create_flavors
   - tempest_dashboard_url
+  - tempest_debug
   - tempest_dhcp_client
   - tempest_enable_barbican
   - tempest_enable_cinder
@@ -11619,13 +11606,13 @@ osism.validations.tempest:
   - tempest_include_list
   - tempest_include_regex
   - tempest_ipv6_subnet_attributes
-  - tempest_loadbalancer_enabled_provider_drivers
   - tempest_loadbalancer_provider
   - tempest_loadblancer_not_implemented_is_error
   - tempest_manager
   - tempest_min_compute_nodes
   - tempest_nameservers
   - tempest_network_build_timeout
+  - tempest_neutron_dns_domain
   - tempest_object_build_timeout
   - tempest_osism_image
   - tempest_osism_tag

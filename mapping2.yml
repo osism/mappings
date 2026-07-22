@@ -2066,6 +2066,12 @@ chrony_bindaddresses:
   - osism.services.chrony
 chrony_local_conf_template:
   - osism.services.chrony
+chrony_max_stratum:
+  - osism.validations.chrony
+chrony_max_system_clock_deviation:
+  - osism.validations.chrony
+chrony_max_upper_clock_error_bound:
+  - osism.validations.chrony
 chrony_minimum_number_of_servers:
   - osism.services.chrony
 chrony_package_name:
@@ -3815,7 +3821,6 @@ docker_network_mtu:
   - osism.services.squid
   - osism.services.stepca
   - osism.services.substation
-  - osism.services.thanos_sidecar
 docker_opts:
   - osism.services.docker
 docker_package_name:
@@ -4047,8 +4052,6 @@ docker_registry_substation:
   - osism.services.substation
 docker_registry_tempest:
   - osism.validations.tempest
-docker_registry_thanos_sidecar:
-  - osism.services.thanos_sidecar
 docker_registry_traefik:
   - osism.services.traefik
 docker_registry_vault:
@@ -14260,7 +14263,6 @@ operator_group:
   - osism.services.squid
   - osism.services.stepca
   - osism.services.substation
-  - osism.services.thanos_sidecar
   - osism.services.traefik
   - osism.validations.tempest
 operator_group_id:
@@ -14300,7 +14302,6 @@ operator_user:
   - osism.services.squid
   - osism.services.stepca
   - osism.services.substation
-  - osism.services.thanos_sidecar
   - osism.services.traefik
   - osism.validations.tempest
 operator_user_id:
@@ -19676,8 +19677,6 @@ substation_service_name:
   - osism.services.substation
 substation_tag:
   - osism.services.substation
-substation_version:
-  - osism.services.substation
 sudo__base_packages:
   - debops.debops.sudo
 sudo__combined_sudoers:
@@ -20201,6 +20200,8 @@ tempest_create_flavors:
   - osism.validations.tempest
 tempest_dashboard_url:
   - osism.validations.tempest
+tempest_debug:
+  - osism.validations.tempest
 tempest_dhcp_client:
   - osism.validations.tempest
 tempest_enable_barbican:
@@ -20251,8 +20252,6 @@ tempest_include_regex:
   - osism.validations.tempest
 tempest_ipv6_subnet_attributes:
   - osism.validations.tempest
-tempest_loadbalancer_enabled_provider_drivers:
-  - osism.validations.tempest
 tempest_loadbalancer_provider:
   - osism.validations.tempest
 tempest_loadblancer_not_implemented_is_error:
@@ -20264,6 +20263,8 @@ tempest_min_compute_nodes:
 tempest_nameservers:
   - osism.validations.tempest
 tempest_network_build_timeout:
+  - osism.validations.tempest
+tempest_neutron_dns_domain:
   - osism.validations.tempest
 tempest_object_build_timeout:
   - osism.validations.tempest
@@ -20367,30 +20368,6 @@ tgtd_interface_address:
   - kolla.iscsi
 tgtd_tag:
   - kolla.iscsi
-thanos_sidecar_configuration_directory:
-  - osism.services.thanos_sidecar
-thanos_sidecar_container_name:
-  - osism.services.thanos_sidecar
-thanos_sidecar_docker_compose_directory:
-  - osism.services.thanos_sidecar
-thanos_sidecar_grpc_port:
-  - osism.services.thanos_sidecar
-thanos_sidecar_host:
-  - osism.services.thanos_sidecar
-thanos_sidecar_http_port:
-  - osism.services.thanos_sidecar
-thanos_sidecar_image:
-  - osism.services.thanos_sidecar
-thanos_sidecar_network:
-  - osism.services.thanos_sidecar
-thanos_sidecar_prometheus_http_client_config:
-  - osism.services.thanos_sidecar
-thanos_sidecar_prometheus_url:
-  - osism.services.thanos_sidecar
-thanos_sidecar_service_name:
-  - osism.services.thanos_sidecar
-thanos_sidecar_tag:
-  - osism.services.thanos_sidecar
 timeout_command:
   - ceph.ceph-defaults
 timesyncd__base_packages:
