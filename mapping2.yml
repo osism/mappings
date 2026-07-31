@@ -5598,6 +5598,8 @@ frr_loopback_v4:
   - osism.services.frr
 frr_loopback_v6:
   - osism.services.frr
+frr_maximum_paths:
+  - osism.services.frr
 frr_options_bfdd:
   - osism.services.frr
 frr_options_bgpd:
@@ -5629,6 +5631,8 @@ frr_version:
 frr_vrrp_groups:
   - osism.services.frr
 frr_vtysh_file:
+  - osism.services.frr
+frr_yrzn001_maximum_paths:
   - osism.services.frr
 frr_yrzn_metalbox_bmc_loopback:
   - osism.services.frr
