@@ -5628,6 +5628,8 @@ frr_uplinks_groups:
   - osism.services.frr
 frr_version:
   - osism.services.frr
+frr_version_lock:
+  - osism.services.frr
 frr_vrrp_groups:
   - osism.services.frr
 frr_vtysh_file:

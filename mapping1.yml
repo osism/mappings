@@ -10723,6 +10723,7 @@ osism.services.frr:
   - frr_uplinks
   - frr_uplinks_groups
   - frr_version
+  - frr_version_lock
   - frr_vrrp_groups
   - frr_vtysh_file
   - frr_yrzn001_maximum_paths
