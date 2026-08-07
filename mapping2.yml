@@ -3516,6 +3516,8 @@ discover_int_uid:
   - ubuntu22_cis
 dmcrypt:
   - ceph.ceph-osd
+dnsdist_acls:
+  - osism.services.dnsdist
 dnsdist_configuration_directory:
   - osism.services.dnsdist
 dnsdist_container_name:

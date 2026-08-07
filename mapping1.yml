@@ -10550,6 +10550,7 @@ osism.services.containerd:
   - containerd_packages_fail
   - containerd_service_name
 osism.services.dnsdist:
+  - dnsdist_acls
   - dnsdist_configuration_directory
   - dnsdist_container_name
   - dnsdist_docker_compose_directory
