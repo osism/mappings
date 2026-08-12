@@ -10550,6 +10550,7 @@ osism.services.containerd:
   - containerd_packages_fail
   - containerd_service_name
 osism.services.dnsdist:
+  - dnsdist_acls
   - dnsdist_configuration_directory
   - dnsdist_container_name
   - dnsdist_docker_compose_directory
@@ -10723,6 +10724,7 @@ osism.services.frr:
   - frr_uplinks
   - frr_uplinks_groups
   - frr_version
+  - frr_version_lock
   - frr_vrrp_groups
   - frr_vtysh_file
   - frr_yrzn001_maximum_paths
@@ -11668,7 +11670,6 @@ pdns_recursor:
 ubuntu22_cis:
   - ansible_facts_path
   - audit_bin_copy_location
-  - audit_capture_files_dir
   - audit_conf_dest
   - audit_conf_source
   - audit_content
@@ -11683,7 +11684,6 @@ ubuntu22_cis:
   - container_vars_file
   - create_benchmark_facts
   - discover_int_uid
-  - fetch_audit_files
   - fetch_audit_output
   - get_audit_binary_method
   - max_int_uid
@@ -11691,6 +11691,7 @@ ubuntu22_cis:
   - run_audit
   - setup_audit
   - skip_reboot
+  - system_is_container
   - system_is_ec2
   - ubtu22cis_aide_cron_day
   - ubtu22cis_aide_cron_file
@@ -11706,17 +11707,12 @@ ubuntu22_cis:
   - ubtu22cis_aide_init_async
   - ubtu22cis_aide_init_poll
   - ubtu22cis_aide_scan
-  - ubtu22cis_aide_systemd_day
-  - ubtu22cis_aide_systemd_exec
-  - ubtu22cis_aide_systemd_hour
-  - ubtu22cis_aide_systemd_minute
-  - ubtu22cis_aide_systemd_month
-  - ubtu22cis_aide_systemd_weekday
   - ubtu22cis_allow_auditd_uid_user_exclusions
   - ubtu22cis_apache2_mask
   - ubtu22cis_apache2_server
   - ubtu22cis_apparmor_disable
   - ubtu22cis_apparmor_mode
+  - ubtu22cis_apt_lock_timeout
   - ubtu22cis_ask_passwd_to_boot
   - ubtu22cis_audit_back_log_limit
   - ubtu22cis_auditd_admin_space_left_action
@@ -11760,7 +11756,6 @@ ubuntu22_cis:
   - ubtu22cis_grub_user_passwd
   - ubtu22cis_gui
   - ubtu22cis_ignore_apt_update_changed_when
-  - ubtu22cis_install_network_manager
   - ubtu22cis_ipv4_required
   - ubtu22cis_ipv6_disable
   - ubtu22cis_ipv6_required
@@ -11779,6 +11774,7 @@ ubuntu22_cis:
   - ubtu22cis_ldap_server
   - ubtu22cis_level_1
   - ubtu22cis_level_2
+  - ubtu22cis_logrotate
   - ubtu22cis_max_log_file_size
   - ubtu22cis_message_mask
   - ubtu22cis_message_server
@@ -11792,8 +11788,6 @@ ubuntu22_cis:
   - ubtu22cis_no_world_write_adjust
   - ubtu22cis_ownership_adjust
   - ubtu22cis_pam_auth_faillock
-  - ubtu22cis_pam_auth_pwhistory
-  - ubtu22cis_pam_auth_pwquality
   - ubtu22cis_pam_auth_unix
   - ubtu22cis_pam_confd_dir
   - ubtu22cis_pam_create_faillock_files
@@ -11832,11 +11826,14 @@ ubuntu22_cis:
   - ubtu22cis_passwd_quality_enforce_root_file
   - ubtu22cis_passwd_quality_enforce_root_value
   - ubtu22cis_passwd_quality_enforce_value
-  - ubtu22cis_passwd_setpam_hash_algo
   - ubtu22cis_passwd_ucredit
   - ubtu22cis_print_mask
   - ubtu22cis_print_server
+  - ubtu22cis_ptrace_scope
   - ubtu22cis_purge_apt
+  - ubtu22cis_remote_log_host
+  - ubtu22cis_remote_log_port
+  - ubtu22cis_remote_log_protocol
   - ubtu22cis_remote_log_server
   - ubtu22cis_root_umask
   - ubtu22cis_rpc_mask
@@ -11844,7 +11841,10 @@ ubuntu22_cis:
   - ubtu22cis_rsh_client
   - ubtu22cis_rsync_mask
   - ubtu22cis_rsync_server
+  - ubtu22cis_rsyslog_ansible_managed
   - ubtu22cis_rule_1_1_1_1
+  - ubtu22cis_rule_1_1_1_10
+  - ubtu22cis_rule_1_1_1_11
   - ubtu22cis_rule_1_1_1_2
   - ubtu22cis_rule_1_1_1_3
   - ubtu22cis_rule_1_1_1_4
@@ -11852,6 +11852,7 @@ ubuntu22_cis:
   - ubtu22cis_rule_1_1_1_6
   - ubtu22cis_rule_1_1_1_7
   - ubtu22cis_rule_1_1_1_8
+  - ubtu22cis_rule_1_1_1_9
   - ubtu22cis_rule_1_1_2_1_1
   - ubtu22cis_rule_1_1_2_1_2
   - ubtu22cis_rule_1_1_2_1_3
@@ -11892,6 +11893,7 @@ ubuntu22_cis:
   - ubtu22cis_rule_1_5_3
   - ubtu22cis_rule_1_5_4
   - ubtu22cis_rule_1_5_5
+  - ubtu22cis_rule_1_5_6
   - ubtu22cis_rule_1_6_1
   - ubtu22cis_rule_1_6_2
   - ubtu22cis_rule_1_6_3
@@ -11900,6 +11902,7 @@ ubuntu22_cis:
   - ubtu22cis_rule_1_6_6
   - ubtu22cis_rule_1_7_1
   - ubtu22cis_rule_1_7_10
+  - ubtu22cis_rule_1_7_11
   - ubtu22cis_rule_1_7_2
   - ubtu22cis_rule_1_7_3
   - ubtu22cis_rule_1_7_4
@@ -11950,6 +11953,7 @@ ubuntu22_cis:
   - ubtu22cis_rule_2_4_1_6
   - ubtu22cis_rule_2_4_1_7
   - ubtu22cis_rule_2_4_1_8
+  - ubtu22cis_rule_2_4_1_9
   - ubtu22cis_rule_2_4_2_1
   - ubtu22cis_rule_3_1_1
   - ubtu22cis_rule_3_1_2
@@ -11958,45 +11962,37 @@ ubuntu22_cis:
   - ubtu22cis_rule_3_2_2
   - ubtu22cis_rule_3_2_3
   - ubtu22cis_rule_3_2_4
-  - ubtu22cis_rule_3_3_1
-  - ubtu22cis_rule_3_3_10
-  - ubtu22cis_rule_3_3_11
-  - ubtu22cis_rule_3_3_2
-  - ubtu22cis_rule_3_3_3
-  - ubtu22cis_rule_3_3_4
-  - ubtu22cis_rule_3_3_5
-  - ubtu22cis_rule_3_3_6
-  - ubtu22cis_rule_3_3_7
-  - ubtu22cis_rule_3_3_8
-  - ubtu22cis_rule_3_3_9
+  - ubtu22cis_rule_3_3_1_1
+  - ubtu22cis_rule_3_3_1_10
+  - ubtu22cis_rule_3_3_1_11
+  - ubtu22cis_rule_3_3_1_12
+  - ubtu22cis_rule_3_3_1_13
+  - ubtu22cis_rule_3_3_1_14
+  - ubtu22cis_rule_3_3_1_15
+  - ubtu22cis_rule_3_3_1_16
+  - ubtu22cis_rule_3_3_1_17
+  - ubtu22cis_rule_3_3_1_18
+  - ubtu22cis_rule_3_3_1_2
+  - ubtu22cis_rule_3_3_1_3
+  - ubtu22cis_rule_3_3_1_4
+  - ubtu22cis_rule_3_3_1_5
+  - ubtu22cis_rule_3_3_1_6
+  - ubtu22cis_rule_3_3_1_7
+  - ubtu22cis_rule_3_3_1_8
+  - ubtu22cis_rule_3_3_1_9
+  - ubtu22cis_rule_3_3_2_1
+  - ubtu22cis_rule_3_3_2_2
+  - ubtu22cis_rule_3_3_2_3
+  - ubtu22cis_rule_3_3_2_4
+  - ubtu22cis_rule_3_3_2_5
+  - ubtu22cis_rule_3_3_2_6
+  - ubtu22cis_rule_3_3_2_7
+  - ubtu22cis_rule_3_3_2_8
   - ubtu22cis_rule_4_1_1
   - ubtu22cis_rule_4_1_2
   - ubtu22cis_rule_4_1_3
   - ubtu22cis_rule_4_1_4
   - ubtu22cis_rule_4_1_5
-  - ubtu22cis_rule_4_1_6
-  - ubtu22cis_rule_4_1_7
-  - ubtu22cis_rule_4_2_1
-  - ubtu22cis_rule_4_2_10
-  - ubtu22cis_rule_4_2_2
-  - ubtu22cis_rule_4_2_3
-  - ubtu22cis_rule_4_2_4
-  - ubtu22cis_rule_4_2_5
-  - ubtu22cis_rule_4_2_6
-  - ubtu22cis_rule_4_2_7
-  - ubtu22cis_rule_4_2_8
-  - ubtu22cis_rule_4_2_9
-  - ubtu22cis_rule_4_3_1_1
-  - ubtu22cis_rule_4_3_1_2
-  - ubtu22cis_rule_4_3_1_3
-  - ubtu22cis_rule_4_3_2_1
-  - ubtu22cis_rule_4_3_2_2
-  - ubtu22cis_rule_4_3_2_3
-  - ubtu22cis_rule_4_3_2_4
-  - ubtu22cis_rule_4_3_3_1
-  - ubtu22cis_rule_4_3_3_2
-  - ubtu22cis_rule_4_3_3_3
-  - ubtu22cis_rule_4_3_3_4
   - ubtu22cis_rule_5_1_1
   - ubtu22cis_rule_5_1_10
   - ubtu22cis_rule_5_1_11
@@ -12068,59 +12064,67 @@ ubuntu22_cis:
   - ubtu22cis_rule_5_4_3_1
   - ubtu22cis_rule_5_4_3_2
   - ubtu22cis_rule_5_4_3_3
-  - ubtu22cis_rule_6_1_1
-  - ubtu22cis_rule_6_1_2
-  - ubtu22cis_rule_6_1_3
-  - ubtu22cis_rule_6_2_1_1_1
-  - ubtu22cis_rule_6_2_1_1_2
-  - ubtu22cis_rule_6_2_1_1_3
-  - ubtu22cis_rule_6_2_1_1_4
-  - ubtu22cis_rule_6_2_1_1_5
-  - ubtu22cis_rule_6_2_1_1_6
-  - ubtu22cis_rule_6_2_1_2_1
-  - ubtu22cis_rule_6_2_1_2_2
-  - ubtu22cis_rule_6_2_1_2_3
-  - ubtu22cis_rule_6_2_1_2_4
+  - ubtu22cis_rule_6_1_1_1_1
+  - ubtu22cis_rule_6_1_1_1_2
+  - ubtu22cis_rule_6_1_1_1_3
+  - ubtu22cis_rule_6_1_1_1_4
+  - ubtu22cis_rule_6_1_1_1_5
+  - ubtu22cis_rule_6_1_1_1_6
+  - ubtu22cis_rule_6_1_1_2_1
+  - ubtu22cis_rule_6_1_1_2_2
+  - ubtu22cis_rule_6_1_1_2_3
+  - ubtu22cis_rule_6_1_1_2_4
+  - ubtu22cis_rule_6_1_2_1
+  - ubtu22cis_rule_6_1_2_2
+  - ubtu22cis_rule_6_1_2_3
+  - ubtu22cis_rule_6_1_2_4
+  - ubtu22cis_rule_6_1_2_5
+  - ubtu22cis_rule_6_1_2_6
+  - ubtu22cis_rule_6_1_2_7
+  - ubtu22cis_rule_6_1_2_8
+  - ubtu22cis_rule_6_1_3_1
+  - ubtu22cis_rule_6_2_1_1
+  - ubtu22cis_rule_6_2_1_2
+  - ubtu22cis_rule_6_2_1_3
+  - ubtu22cis_rule_6_2_1_4
   - ubtu22cis_rule_6_2_2_1
-  - ubtu22cis_rule_6_3_1_1
-  - ubtu22cis_rule_6_3_1_2
-  - ubtu22cis_rule_6_3_1_3
-  - ubtu22cis_rule_6_3_1_4
-  - ubtu22cis_rule_6_3_2_1
-  - ubtu22cis_rule_6_3_2_2
-  - ubtu22cis_rule_6_3_2_3
-  - ubtu22cis_rule_6_3_2_4
-  - ubtu22cis_rule_6_3_3_1
-  - ubtu22cis_rule_6_3_3_10
-  - ubtu22cis_rule_6_3_3_11
-  - ubtu22cis_rule_6_3_3_12
-  - ubtu22cis_rule_6_3_3_13
-  - ubtu22cis_rule_6_3_3_14
-  - ubtu22cis_rule_6_3_3_15
-  - ubtu22cis_rule_6_3_3_16
-  - ubtu22cis_rule_6_3_3_17
-  - ubtu22cis_rule_6_3_3_18
-  - ubtu22cis_rule_6_3_3_19
-  - ubtu22cis_rule_6_3_3_2
-  - ubtu22cis_rule_6_3_3_20
-  - ubtu22cis_rule_6_3_3_21
-  - ubtu22cis_rule_6_3_3_3
-  - ubtu22cis_rule_6_3_3_4
-  - ubtu22cis_rule_6_3_3_5
-  - ubtu22cis_rule_6_3_3_6
-  - ubtu22cis_rule_6_3_3_7
-  - ubtu22cis_rule_6_3_3_8
-  - ubtu22cis_rule_6_3_3_9
-  - ubtu22cis_rule_6_3_4_1
-  - ubtu22cis_rule_6_3_4_10
-  - ubtu22cis_rule_6_3_4_2
-  - ubtu22cis_rule_6_3_4_3
-  - ubtu22cis_rule_6_3_4_4
-  - ubtu22cis_rule_6_3_4_5
-  - ubtu22cis_rule_6_3_4_6
-  - ubtu22cis_rule_6_3_4_7
-  - ubtu22cis_rule_6_3_4_8
-  - ubtu22cis_rule_6_3_4_9
+  - ubtu22cis_rule_6_2_2_2
+  - ubtu22cis_rule_6_2_2_3
+  - ubtu22cis_rule_6_2_2_4
+  - ubtu22cis_rule_6_2_3_1
+  - ubtu22cis_rule_6_2_3_10
+  - ubtu22cis_rule_6_2_3_11
+  - ubtu22cis_rule_6_2_3_12
+  - ubtu22cis_rule_6_2_3_13
+  - ubtu22cis_rule_6_2_3_14
+  - ubtu22cis_rule_6_2_3_15
+  - ubtu22cis_rule_6_2_3_16
+  - ubtu22cis_rule_6_2_3_17
+  - ubtu22cis_rule_6_2_3_18
+  - ubtu22cis_rule_6_2_3_19
+  - ubtu22cis_rule_6_2_3_2
+  - ubtu22cis_rule_6_2_3_20
+  - ubtu22cis_rule_6_2_3_21
+  - ubtu22cis_rule_6_2_3_3
+  - ubtu22cis_rule_6_2_3_4
+  - ubtu22cis_rule_6_2_3_5
+  - ubtu22cis_rule_6_2_3_6
+  - ubtu22cis_rule_6_2_3_7
+  - ubtu22cis_rule_6_2_3_8
+  - ubtu22cis_rule_6_2_3_9
+  - ubtu22cis_rule_6_2_4_1
+  - ubtu22cis_rule_6_2_4_10
+  - ubtu22cis_rule_6_2_4_2
+  - ubtu22cis_rule_6_2_4_3
+  - ubtu22cis_rule_6_2_4_4
+  - ubtu22cis_rule_6_2_4_5
+  - ubtu22cis_rule_6_2_4_6
+  - ubtu22cis_rule_6_2_4_7
+  - ubtu22cis_rule_6_2_4_8
+  - ubtu22cis_rule_6_2_4_9
+  - ubtu22cis_rule_6_3_1
+  - ubtu22cis_rule_6_3_2
+  - ubtu22cis_rule_6_3_3
   - ubtu22cis_rule_7_1_1
   - ubtu22cis_rule_7_1_10
   - ubtu22cis_rule_7_1_11
@@ -12159,40 +12163,35 @@ ubuntu22_cis:
   - ubtu22cis_set_grub_user_pass
   - ubtu22cis_shell_session_file
   - ubtu22cis_shell_session_timeout
+  - ubtu22cis_skip_for_test
   - ubtu22cis_snmp_mask
   - ubtu22cis_snmp_server
   - ubtu22cis_squid_mask
   - ubtu22cis_squid_server
-  - ubtu22cis_sshd_allow_groups
-  - ubtu22cis_sshd_allow_users
+  - ubtu22cis_sshd_allowgroups
+  - ubtu22cis_sshd_allowusers
   - ubtu22cis_sshd_ciphers
-  - ubtu22cis_sshd_client_alive_count_max
-  - ubtu22cis_sshd_client_alive_interval
-  - ubtu22cis_sshd_default_ciphers
-  - ubtu22cis_sshd_default_client_alive_count_max
-  - ubtu22cis_sshd_default_client_alive_interval
-  - ubtu22cis_sshd_default_kex_algorithms
-  - ubtu22cis_sshd_default_log_level
-  - ubtu22cis_sshd_default_login_grace_time
-  - ubtu22cis_sshd_default_macs
-  - ubtu22cis_sshd_default_max_auth_tries
-  - ubtu22cis_sshd_default_max_sessions
-  - ubtu22cis_sshd_deny_groups
-  - ubtu22cis_sshd_deny_users
+  - ubtu22cis_sshd_clientalivecountmax
+  - ubtu22cis_sshd_clientaliveinterval
+  - ubtu22cis_sshd_config_file
+  - ubtu22cis_sshd_denygroups
+  - ubtu22cis_sshd_denyusers
   - ubtu22cis_sshd_kex_algorithms
-  - ubtu22cis_sshd_log_level
-  - ubtu22cis_sshd_login_grace_time
+  - ubtu22cis_sshd_limited
+  - ubtu22cis_sshd_logingracetime
+  - ubtu22cis_sshd_loglevel
   - ubtu22cis_sshd_macs
-  - ubtu22cis_sshd_max_auth_tries
-  - ubtu22cis_sshd_max_sessions
+  - ubtu22cis_sshd_maxauthtries
+  - ubtu22cis_sshd_maxsessions
+  - ubtu22cis_sshd_maxstartups
   - ubtu22cis_sudo_logfile
   - ubtu22cis_sudo_package
   - ubtu22cis_sudo_timestamp_timeout
-  - ubtu22cis_sudoers_exclude_nopasswd_list
   - ubtu22cis_sugroup
   - ubtu22cis_suid_sgid_adjust
   - ubtu22cis_sysctl_kernel_conf
   - ubtu22cis_sysctl_network_conf
+  - ubtu22cis_syslog_service
   - ubtu22cis_system_is_log_server
   - ubtu22cis_talk_client
   - ubtu22cis_telnet_mask
@@ -12203,6 +12202,7 @@ ubuntu22_cis:
   - ubtu22cis_time_pool
   - ubtu22cis_time_servers
   - ubtu22cis_time_sync_tool
+  - ubtu22cis_tmp_partition_mount_options
   - ubtu22cis_tmp_svc
   - ubtu22cis_ufw_allow_out_ports
   - ubtu22cis_ufw_use_sysctl
