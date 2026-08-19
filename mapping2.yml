@@ -7119,6 +7119,12 @@ httpd_sonic_ztp_firmware_suffix:
   - osism.services.httpd
 httpd_sonic_ztp_hostname:
   - osism.services.httpd
+httpd_sonic_ztp_onie_installer_name:
+  - osism.services.httpd
+httpd_sonic_ztp_onie_installer_per_device:
+  - osism.services.httpd
+httpd_sonic_ztp_onie_installer_version:
+  - osism.services.httpd
 httpd_ssl_certificate:
   - osism.services.httpd
 httpd_ssl_certificate_key:
