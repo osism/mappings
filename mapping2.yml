@@ -20216,11 +20216,7 @@ tempest_debug:
   - osism.validations.tempest
 tempest_dhcp_client:
   - osism.validations.tempest
-tempest_enable_barbican:
-  - osism.validations.tempest
 tempest_enable_cinder:
-  - osism.validations.tempest
-tempest_enable_designate:
   - osism.validations.tempest
 tempest_enable_glance:
   - osism.validations.tempest
@@ -20231,10 +20227,6 @@ tempest_enable_keystone:
 tempest_enable_neutron:
   - osism.validations.tempest
 tempest_enable_nova:
-  - osism.validations.tempest
-tempest_enable_octavia:
-  - osism.validations.tempest
-tempest_enable_swift:
   - osism.validations.tempest
 tempest_exclude_list:
   - osism.validations.tempest
