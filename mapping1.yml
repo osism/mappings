@@ -10250,6 +10250,9 @@ osism.commons.docker_compose:
   - docker_compose_service_group
   - docker_compose_service_user
 osism.commons.docker_login:
+  - docker_login_as_operator
+  - docker_login_as_root
+  - docker_login_operator_user
   - docker_login_password
   - docker_login_registry
   - docker_login_username
