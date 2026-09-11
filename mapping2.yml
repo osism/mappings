@@ -3794,6 +3794,12 @@ docker_log_level:
   - osism.services.docker
 docker_log_opts:
   - osism.services.docker
+docker_login_as_operator:
+  - osism.commons.docker_login
+docker_login_as_root:
+  - osism.commons.docker_login
+docker_login_operator_user:
+  - osism.commons.docker_login
 docker_login_password:
   - osism.commons.docker_login
 docker_login_registry:
