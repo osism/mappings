@@ -10967,6 +10967,7 @@ osism.services.manager:
   - kolla_ansible_tag
   - logs_directory
   - manager_configuration_directory
+  - manager_configure_proxy
   - manager_cpus
   - manager_data_directory
   - manager_docker_compose_directory
@@ -11000,6 +11001,11 @@ osism.services.manager:
   - manager_openstack_os_user_domain_name
   - manager_openstack_os_username
   - manager_pre_pull
+  - manager_proxy_http
+  - manager_proxy_https
+  - manager_proxy_no_proxy
+  - manager_proxy_no_proxy_default
+  - manager_proxy_no_proxy_extra
   - manager_redis_image
   - manager_redis_image_namespace
   - manager_redis_tag
@@ -11463,6 +11469,13 @@ osism.services.wazuh_agent:
   - wazuh_agent_configure_repository
   - wazuh_agent_debian_repository
   - wazuh_agent_debian_repository_key
+  - wazuh_agent_enrollment_agent_address
+  - wazuh_agent_enrollment_agent_name
+  - wazuh_agent_enrollment_enabled
+  - wazuh_agent_enrollment_groups
+  - wazuh_agent_enrollment_key
+  - wazuh_agent_enrollment_manager_address
+  - wazuh_agent_enrollment_port
   - wazuh_agent_package_name
   - wazuh_agent_redhat_arch
   - wazuh_agent_redhat_repository

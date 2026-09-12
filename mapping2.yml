@@ -9826,6 +9826,8 @@ mailman__core_original_configuration:
   - debops.debops.mailman
 manager_configuration_directory:
   - osism.services.manager
+manager_configure_proxy:
+  - osism.services.manager
 manager_cpus:
   - osism.services.manager
 manager_data_directory:
@@ -9891,6 +9893,16 @@ manager_openstack_os_user_domain_name:
 manager_openstack_os_username:
   - osism.services.manager
 manager_pre_pull:
+  - osism.services.manager
+manager_proxy_http:
+  - osism.services.manager
+manager_proxy_https:
+  - osism.services.manager
+manager_proxy_no_proxy:
+  - osism.services.manager
+manager_proxy_no_proxy_default:
+  - osism.services.manager
+manager_proxy_no_proxy_extra:
   - osism.services.manager
 manager_redis_image:
   - osism.services.manager
@@ -22287,6 +22299,20 @@ wazuh_agent_configure_repository:
 wazuh_agent_debian_repository:
   - osism.services.wazuh_agent
 wazuh_agent_debian_repository_key:
+  - osism.services.wazuh_agent
+wazuh_agent_enrollment_agent_address:
+  - osism.services.wazuh_agent
+wazuh_agent_enrollment_agent_name:
+  - osism.services.wazuh_agent
+wazuh_agent_enrollment_enabled:
+  - osism.services.wazuh_agent
+wazuh_agent_enrollment_groups:
+  - osism.services.wazuh_agent
+wazuh_agent_enrollment_key:
+  - osism.services.wazuh_agent
+wazuh_agent_enrollment_manager_address:
+  - osism.services.wazuh_agent
+wazuh_agent_enrollment_port:
   - osism.services.wazuh_agent
 wazuh_agent_package_name:
   - osism.services.wazuh_agent
