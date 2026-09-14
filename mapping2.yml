@@ -4033,16 +4033,12 @@ docker_registry_osism:
   - osism.services.manager
 docker_registry_osism_frontend:
   - osism.services.manager
-docker_registry_osism_netbox:
-  - osism.services.manager
 docker_registry_pgautoupgrade:
   - osism.services.netbox
 docker_registry_phpmyadmin:
   - osism.services.phpmyadmin
 docker_registry_postgres:
   - osism.services.netbox
-docker_registry_receptor:
-  - osism.services.manager
 docker_registry_redis:
   - osism.services.manager
   - osism.services.netbox
