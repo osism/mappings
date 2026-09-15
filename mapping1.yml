@@ -11482,6 +11482,21 @@ osism.services.wazuh_agent:
   - wazuh_agent_server_port
   - wazuh_agent_server_protocol
   - wazuh_agent_service_name
+osism.services.wazuh_proxy:
+  - docker_registry_wazuh_proxy
+  - operator_group
+  - operator_user
+  - wazuh_proxy_agent_connection_listen_port
+  - wazuh_proxy_agent_connection_upstream_servers
+  - wazuh_proxy_configuration_directory
+  - wazuh_proxy_container_name
+  - wazuh_proxy_docker_compose_directory
+  - wazuh_proxy_image
+  - wazuh_proxy_listen_address
+  - wazuh_proxy_registration_listen_port
+  - wazuh_proxy_registration_upstream_servers
+  - wazuh_proxy_service_name
+  - wazuh_proxy_tag
 osism.services.wireguard:
   - wireguard_client_allowed_ips
   - wireguard_client_network

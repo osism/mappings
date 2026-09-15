@@ -4058,6 +4058,8 @@ docker_registry_traefik:
   - osism.services.traefik
 docker_registry_vault:
   - osism.services.manager
+docker_registry_wazuh_proxy:
+  - osism.services.wazuh_proxy
 docker_registry_zuul:
   - osism.services.zuul
 docker_server__admins:
@@ -14288,6 +14290,7 @@ operator_group:
   - osism.services.stepca
   - osism.services.substation
   - osism.services.traefik
+  - osism.services.wazuh_proxy
   - osism.validations.tempest
 operator_group_id:
   - osism.commons.operator
@@ -14327,6 +14330,7 @@ operator_user:
   - osism.services.stepca
   - osism.services.substation
   - osism.services.traefik
+  - osism.services.wazuh_proxy
   - osism.validations.tempest
 operator_user_id:
   - osism.commons.operator
@@ -22326,6 +22330,28 @@ wazuh_agent_server_protocol:
   - osism.services.wazuh_agent
 wazuh_agent_service_name:
   - osism.services.wazuh_agent
+wazuh_proxy_agent_connection_listen_port:
+  - osism.services.wazuh_proxy
+wazuh_proxy_agent_connection_upstream_servers:
+  - osism.services.wazuh_proxy
+wazuh_proxy_configuration_directory:
+  - osism.services.wazuh_proxy
+wazuh_proxy_container_name:
+  - osism.services.wazuh_proxy
+wazuh_proxy_docker_compose_directory:
+  - osism.services.wazuh_proxy
+wazuh_proxy_image:
+  - osism.services.wazuh_proxy
+wazuh_proxy_listen_address:
+  - osism.services.wazuh_proxy
+wazuh_proxy_registration_listen_port:
+  - osism.services.wazuh_proxy
+wazuh_proxy_registration_upstream_servers:
+  - osism.services.wazuh_proxy
+wazuh_proxy_service_name:
+  - osism.services.wazuh_proxy
+wazuh_proxy_tag:
+  - osism.services.wazuh_proxy
 wireguard_client_allowed_ips:
   - osism.services.wireguard
 wireguard_client_network:
