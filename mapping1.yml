@@ -923,6 +923,7 @@ debops.debops.apt:
   - apt__combined_repositories
   - apt__combined_sources
   - apt__configuration
+  - apt__core_packages
   - apt__debian_archived_releases
   - apt__debian_sources
   - apt__default_configuration
@@ -1904,6 +1905,8 @@ debops.debops.elasticsearch:
   - elasticsearch__api_base_url
   - elasticsearch__api_password
   - elasticsearch__api_username
+  - elasticsearch__authentication_anonymous_access
+  - elasticsearch__authentication_enabled
   - elasticsearch__base_packages
   - elasticsearch__cluster_name
   - elasticsearch__combined_configuration
@@ -1945,7 +1948,6 @@ debops.debops.elasticsearch:
   - elasticsearch__inventory_group_lb
   - elasticsearch__inventory_group_master
   - elasticsearch__inventory_master_hosts
-  - elasticsearch__java_policy
   - elasticsearch__jvm_memory_heap_size_multiplier
   - elasticsearch__jvm_memory_max_heap_size
   - elasticsearch__jvm_memory_min_heap_size
@@ -1973,6 +1975,9 @@ debops.debops.elasticsearch:
   - elasticsearch__plugin_configuration
   - elasticsearch__plugins
   - elasticsearch__secret_path
+  - elasticsearch__ssl_default_symlinks
+  - elasticsearch__ssl_symlinks
+  - elasticsearch__symlink_type
   - elasticsearch__sysctl__dependent_parameters
   - elasticsearch__systemd_limit_memlock
   - elasticsearch__tls_ca_certificate
@@ -3021,9 +3026,13 @@ debops.debops.iscsi:
   - iscsi__unattended_upgrades__dependent_blacklist
 debops.debops.java:
   - java__alternatives
+  - java__architecture
+  - java__architecture_map
   - java__base_packages
   - java__default_security_policy
   - java__dependent_packages
+  - java__extrepo__dependent_sources
+  - java__flavor
   - java__group_packages
   - java__host_packages
   - java__install_jdk
@@ -3031,6 +3040,9 @@ debops.debops.java:
   - java__major_version
   - java__packages
   - java__security_policy_path
+  - java__temurin_package_type
+  - java__temurin_version
+  - java__temurin_version_map
   - java__version
 debops.debops.journald:
   - journald__combined_configuration
@@ -3093,6 +3105,7 @@ debops.debops.kibana:
   - kibana__dependent_role
   - kibana__dependent_state
   - kibana__domain
+  - kibana__elasticsearch_anonymous_access
   - kibana__elasticsearch_cluster_name
   - kibana__elasticsearch_hosts
   - kibana__elasticsearch_password
@@ -3125,6 +3138,7 @@ debops.debops.kibana:
   - kibana__plugins
   - kibana__reporting_encryption_key
   - kibana__secure_connection
+  - kibana__security_enabled
   - kibana__security_encryption_key
   - kibana__server_host
   - kibana__server_name
@@ -5344,6 +5358,9 @@ debops.debops.rabbitmq_server:
   - rabbitmq_server__cacertfile
   - rabbitmq_server__certfile
   - rabbitmq_server__cluster_allow
+  - rabbitmq_server__cluster_autojoin
+  - rabbitmq_server__cluster_hosts
+  - rabbitmq_server__cluster_seed_node
   - rabbitmq_server__combined_accounts
   - rabbitmq_server__combined_bindings
   - rabbitmq_server__combined_config
@@ -5944,6 +5961,7 @@ debops.debops.rsyslog:
   - rsyslog__rotation_period_system
   - rsyslog__rules
   - rsyslog__send_permitted_peers
+  - rsyslog__shell
   - rsyslog__syslog_srv_rr
   - rsyslog__tls_packages
   - rsyslog__unprivileged
@@ -6125,7 +6143,6 @@ debops.debops.slapd:
   - slapd__python__dependent_packages2
   - slapd__python__dependent_packages3
   - slapd__rfc2307bis_enabled
-  - slapd__rfc2307bis_packages
   - slapd__saslauthd__dependent_instances
   - slapd__saslauthd_enabled
   - slapd__schema_packages
@@ -6430,6 +6447,7 @@ debops.debops.system_users:
   - system_users__base_packages
   - system_users__combined_accounts
   - system_users__default_accounts
+  - system_users__default_append
   - system_users__default_home_mode
   - system_users__default_shell
   - system_users__dependent_accounts
@@ -6659,6 +6677,7 @@ debops.debops.users:
   - users__chroot_shell
   - users__combined_accounts
   - users__default_accounts
+  - users__default_append
   - users__default_home_mode
   - users__default_shell
   - users__dependent_accounts

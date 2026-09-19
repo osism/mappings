@@ -474,6 +474,8 @@ apt__combined_sources:
   - debops.debops.apt
 apt__configuration:
   - debops.debops.apt
+apt__core_packages:
+  - debops.debops.apt
 apt__debian_archived_releases:
   - debops.debops.apt
 apt__debian_sources:
@@ -4568,6 +4570,10 @@ elasticsearch__api_password:
   - debops.debops.elasticsearch
 elasticsearch__api_username:
   - debops.debops.elasticsearch
+elasticsearch__authentication_anonymous_access:
+  - debops.debops.elasticsearch
+elasticsearch__authentication_enabled:
+  - debops.debops.elasticsearch
 elasticsearch__base_packages:
   - debops.debops.elasticsearch
 elasticsearch__cluster_name:
@@ -4650,8 +4656,6 @@ elasticsearch__inventory_group_master:
   - debops.debops.elasticsearch
 elasticsearch__inventory_master_hosts:
   - debops.debops.elasticsearch
-elasticsearch__java_policy:
-  - debops.debops.elasticsearch
 elasticsearch__jvm_memory_heap_size_multiplier:
   - debops.debops.elasticsearch
 elasticsearch__jvm_memory_max_heap_size:
@@ -4705,6 +4709,12 @@ elasticsearch__plugin_configuration:
 elasticsearch__plugins:
   - debops.debops.elasticsearch
 elasticsearch__secret_path:
+  - debops.debops.elasticsearch
+elasticsearch__ssl_default_symlinks:
+  - debops.debops.elasticsearch
+elasticsearch__ssl_symlinks:
+  - debops.debops.elasticsearch
+elasticsearch__symlink_type:
   - debops.debops.elasticsearch
 elasticsearch__sysctl__dependent_parameters:
   - debops.debops.elasticsearch
@@ -8339,11 +8349,19 @@ issue_path:
   - osism.commons.motd
 java__alternatives:
   - debops.debops.java
+java__architecture:
+  - debops.debops.java
+java__architecture_map:
+  - debops.debops.java
 java__base_packages:
   - debops.debops.java
 java__default_security_policy:
   - debops.debops.java
 java__dependent_packages:
+  - debops.debops.java
+java__extrepo__dependent_sources:
+  - debops.debops.java
+java__flavor:
   - debops.debops.java
 java__group_packages:
   - debops.debops.java
@@ -8358,6 +8376,12 @@ java__major_version:
 java__packages:
   - debops.debops.java
 java__security_policy_path:
+  - debops.debops.java
+java__temurin_package_type:
+  - debops.debops.java
+java__temurin_version:
+  - debops.debops.java
+java__temurin_version_map:
   - debops.debops.java
 java__version:
   - debops.debops.java
@@ -8713,6 +8737,8 @@ kibana__dependent_state:
   - debops.debops.kibana
 kibana__domain:
   - debops.debops.kibana
+kibana__elasticsearch_anonymous_access:
+  - debops.debops.kibana
 kibana__elasticsearch_cluster_name:
   - debops.debops.kibana
 kibana__elasticsearch_hosts:
@@ -8776,6 +8802,8 @@ kibana__plugins:
 kibana__reporting_encryption_key:
   - debops.debops.kibana
 kibana__secure_connection:
+  - debops.debops.kibana
+kibana__security_enabled:
   - debops.debops.kibana
 kibana__security_encryption_key:
   - debops.debops.kibana
@@ -16833,6 +16861,12 @@ rabbitmq_server__certfile:
   - debops.debops.rabbitmq_server
 rabbitmq_server__cluster_allow:
   - debops.debops.rabbitmq_server
+rabbitmq_server__cluster_autojoin:
+  - debops.debops.rabbitmq_server
+rabbitmq_server__cluster_hosts:
+  - debops.debops.rabbitmq_server
+rabbitmq_server__cluster_seed_node:
+  - debops.debops.rabbitmq_server
 rabbitmq_server__combined_accounts:
   - debops.debops.rabbitmq_server
 rabbitmq_server__combined_bindings:
@@ -18191,6 +18225,8 @@ rsyslog__rules:
   - debops.debops.rsyslog
 rsyslog__send_permitted_peers:
   - debops.debops.rsyslog
+rsyslog__shell:
+  - debops.debops.rsyslog
 rsyslog__syslog_srv_rr:
   - debops.debops.rsyslog
 rsyslog__tls_packages:
@@ -19163,8 +19199,6 @@ slapd__python__dependent_packages3:
   - debops.debops.slapd
 slapd__rfc2307bis_enabled:
   - debops.debops.slapd
-slapd__rfc2307bis_packages:
-  - debops.debops.slapd
 slapd__saslauthd__dependent_instances:
   - debops.debops.slapd
 slapd__saslauthd_enabled:
@@ -19907,6 +19941,8 @@ system_users__base_packages:
 system_users__combined_accounts:
   - debops.debops.system_users
 system_users__default_accounts:
+  - debops.debops.system_users
+system_users__default_append:
   - debops.debops.system_users
 system_users__default_home_mode:
   - debops.debops.system_users
@@ -20873,6 +20909,8 @@ users__chroot_shell:
 users__combined_accounts:
   - debops.debops.users
 users__default_accounts:
+  - debops.debops.users
+users__default_append:
   - debops.debops.users
 users__default_home_mode:
   - debops.debops.users
