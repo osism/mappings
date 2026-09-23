@@ -6971,7 +6971,9 @@ kolla.aodh:
   - aodh_api_tag
   - aodh_api_workers
   - aodh_config_validation
+  - aodh_copy_certs
   - aodh_database_address
+  - aodh_database_enable_tls_internal
   - aodh_database_name
   - aodh_database_shard
   - aodh_database_shard_id
@@ -7051,6 +7053,7 @@ kolla.barbican:
   - barbican_copy_certs
   - barbican_creator_role
   - barbican_database_address
+  - barbican_database_enable_tls_internal
   - barbican_database_name
   - barbican_database_shard
   - barbican_database_shard_id
@@ -7106,7 +7109,6 @@ kolla.bifrost:
   - bifrost_deploy_image_full
   - bifrost_deploy_tag
   - bifrost_deploy_verbosity
-  - bifrost_enable_ironic_inspector
   - bifrost_tag
 kolla.blazar:
   - blazar_aggregate_pool_name
@@ -7123,8 +7125,11 @@ kolla.blazar:
   - blazar_api_image
   - blazar_api_image_full
   - blazar_api_tag
+  - blazar_api_workers
   - blazar_config_validation
+  - blazar_copy_certs
   - blazar_database_address
+  - blazar_database_enable_tls_internal
   - blazar_database_name
   - blazar_database_shard
   - blazar_database_shard_id
@@ -7187,6 +7192,7 @@ kolla.ceilometer:
   - ceilometer_compute_image_full
   - ceilometer_compute_tag
   - ceilometer_config_validation
+  - ceilometer_copy_certs
   - ceilometer_custom_meters_local_folder
   - ceilometer_database_type
   - ceilometer_dev_mode
@@ -7249,13 +7255,13 @@ kolla.ceph-rgw:
   - enable_ceph_rgw_keystone
   - openstack_ceph_rgw_auth
 kolla.certificates:
-  - backend_dir
+  - certificates_backend_dir
+  - certificates_external_dir
   - certificates_generate_libvirt
+  - certificates_internal_dir
+  - certificates_libvirt_dir
   - certificates_libvirt_output_dir
-  - external_dir
-  - internal_dir
-  - libvirt_dir
-  - root_dir
+  - certificates_root_dir
 kolla.cinder:
   - cinder_api_default_volumes
   - cinder_api_dimensions
@@ -7271,20 +7277,6 @@ kolla.cinder:
   - cinder_api_image_full
   - cinder_api_tag
   - cinder_api_workers
-  - cinder_backend_ceph_name
-  - cinder_backend_lightbits_name
-  - cinder_backend_lvm_name
-  - cinder_backend_nfs_name
-  - cinder_backend_pure_fc_name
-  - cinder_backend_pure_iscsi_name
-  - cinder_backend_pure_nvme_tcp_name
-  - cinder_backend_pure_roce_name
-  - cinder_backend_quobyte_name
-  - cinder_backend_vmware_vstorage_object_name
-  - cinder_backend_vmwarevc_vmdk_name
-  - cinder_backends
-  - cinder_backup_backend_ceph_name
-  - cinder_backup_ceph_backend
   - cinder_backup_default_volumes
   - cinder_backup_dimensions
   - cinder_backup_enable_healthchecks
@@ -7302,12 +7294,12 @@ kolla.cinder:
   - cinder_backup_s3_secret_key
   - cinder_backup_s3_url
   - cinder_backup_tag
-  - cinder_ceph_backends
   - cinder_cluster_name
   - cinder_cluster_skip_precheck
   - cinder_config_validation
   - cinder_copy_certs
   - cinder_database_address
+  - cinder_database_enable_tls_internal
   - cinder_database_name
   - cinder_database_shard
   - cinder_database_shard_id
@@ -7317,7 +7309,6 @@ kolla.cinder:
   - cinder_dev_repos_pull
   - cinder_enable_conversion_tmpfs
   - cinder_enable_tls_backend
-  - cinder_enabled_backends
   - cinder_enabled_notification_topics
   - cinder_extra_volumes
   - cinder_git_repository
@@ -7361,7 +7352,6 @@ kolla.cinder:
   - cinder_volume_image_full
   - cinder_volume_tag
   - cinder_volume_tmpfs
-  - cinder_wsgi_provider
   - lightbits_nvme_tcp_backend_name
   - lightos_api_address
   - lightos_api_port
@@ -7393,8 +7383,10 @@ kolla.cloudkitty:
   - cloudkitty_api_workers
   - cloudkitty_collector_backend
   - cloudkitty_config_validation
+  - cloudkitty_copy_certs
   - cloudkitty_custom_metrics_yaml_file
   - cloudkitty_database_address
+  - cloudkitty_database_enable_tls_internal
   - cloudkitty_database_name
   - cloudkitty_database_shard
   - cloudkitty_database_shard_id
@@ -7409,9 +7401,6 @@ kolla.cloudkitty:
   - cloudkitty_extra_volumes
   - cloudkitty_fetcher_backend
   - cloudkitty_git_repository
-  - cloudkitty_influxdb_cafile
-  - cloudkitty_influxdb_name
-  - cloudkitty_influxdb_use_ssl
   - cloudkitty_keystone_user
   - cloudkitty_ks_roles
   - cloudkitty_ks_services
@@ -7452,9 +7441,12 @@ kolla.collectd:
   - collectd_logging_debug
   - collectd_services
   - collectd_tag
-kolla.common:
-  - common_services
-  - common_tag
+kolla.container-engine-migration:
+  - current_engine
+  - engine_data
+  - target_engine
+kolla.cron:
+  - cron_copy_certs
   - cron_default_volumes
   - cron_dimensions
   - cron_extra_volumes
@@ -7465,48 +7457,8 @@ kolla.common:
   - cron_logrotate_rotation_count
   - cron_logrotate_rotation_interval
   - cron_logrotate_schedule
+  - cron_services
   - cron_tag
-  - fluentd_buffer_chunk_limit_size
-  - fluentd_bulk_message_request_threshold
-  - fluentd_default_volumes
-  - fluentd_dimensions
-  - fluentd_elasticsearch_cacert
-  - fluentd_elasticsearch_password
-  - fluentd_elasticsearch_path
-  - fluentd_elasticsearch_request_timeout
-  - fluentd_elasticsearch_scheme
-  - fluentd_elasticsearch_ssl_verify
-  - fluentd_elasticsearch_ssl_version
-  - fluentd_elasticsearch_user
-  - fluentd_enable_watch_timer
-  - fluentd_enabled_input_openstack_services
-  - fluentd_extra_volumes
-  - fluentd_image
-  - fluentd_image_full
-  - fluentd_input_openstack_services
-  - fluentd_opensearch_cacert
-  - fluentd_opensearch_password
-  - fluentd_opensearch_path
-  - fluentd_opensearch_request_timeout
-  - fluentd_opensearch_scheme
-  - fluentd_opensearch_ssl_verify
-  - fluentd_opensearch_ssl_version
-  - fluentd_opensearch_user
-  - fluentd_tag
-  - kolla_toolbox_default_volumes
-  - kolla_toolbox_dimensions
-  - kolla_toolbox_extra_volumes
-  - kolla_toolbox_image
-  - kolla_toolbox_image_full
-  - kolla_toolbox_tag
-  - syslog_facilities
-  - syslog_glance_tls_proxy_facility
-  - syslog_haproxy_facility
-  - syslog_neutron_tls_proxy_facility
-kolla.container-engine-migration:
-  - current_engine
-  - engine_data
-  - target_engine
 kolla.cyborg:
   - cyborg_agent_default_volumes
   - cyborg_agent_dimensions
@@ -7534,6 +7486,7 @@ kolla.cyborg:
   - cyborg_api_image
   - cyborg_api_image_full
   - cyborg_api_tag
+  - cyborg_api_workers
   - cyborg_conductor_default_volumes
   - cyborg_conductor_dimensions
   - cyborg_conductor_enable_healthchecks
@@ -7548,14 +7501,19 @@ kolla.cyborg:
   - cyborg_conductor_image_full
   - cyborg_conductor_tag
   - cyborg_config_validation
+  - cyborg_copy_certs
   - cyborg_database_address
+  - cyborg_database_enable_tls_internal
   - cyborg_database_name
   - cyborg_database_shard
   - cyborg_database_shard_id
   - cyborg_database_shard_root_user
   - cyborg_database_user
+  - cyborg_dev_mode
+  - cyborg_dev_repos_pull
   - cyborg_enabled_notification_topics
   - cyborg_extra_volumes
+  - cyborg_git_repository
   - cyborg_internal_endpoint
   - cyborg_keystone_user
   - cyborg_ks_services
@@ -7564,6 +7522,7 @@ kolla.cyborg:
   - cyborg_notification_topics
   - cyborg_public_endpoint
   - cyborg_services
+  - cyborg_source_version
   - cyborg_tag
   - openstack_cyborg_auth
 kolla.designate:
@@ -7612,7 +7571,9 @@ kolla.designate:
   - designate_central_tag
   - designate_central_workers
   - designate_config_validation
+  - designate_copy_certs
   - designate_database_address
+  - designate_database_enable_tls_internal
   - designate_database_name
   - designate_database_shard
   - designate_database_shard_id
@@ -7621,6 +7582,7 @@ kolla.designate:
   - designate_dev_mode
   - designate_dev_repos_pull
   - designate_dnssec_validation
+  - designate_enable_tls_backend
   - designate_enabled_notification_topics
   - designate_extra_volumes
   - designate_forwarders_addresses
@@ -7709,14 +7671,49 @@ kolla.etcd:
   - etcd_default_environment
   - etcd_default_volumes
   - etcd_dimensions
+  - etcd_enable_healthchecks
   - etcd_enable_tls_backend
   - etcd_extra_volumes
+  - etcd_healthcheck
+  - etcd_healthcheck_interval
+  - etcd_healthcheck_retries
+  - etcd_healthcheck_start_period
+  - etcd_healthcheck_test
+  - etcd_healthcheck_timeout
   - etcd_image
   - etcd_image_full
   - etcd_peer_internal_endpoint
   - etcd_remove_deleted_members
   - etcd_services
   - etcd_tag
+kolla.fluentd:
+  - fluentd_buffer_chunk_limit_size
+  - fluentd_bulk_message_request_threshold
+  - fluentd_default_volumes
+  - fluentd_dimensions
+  - fluentd_elasticsearch_cacert
+  - fluentd_elasticsearch_password
+  - fluentd_elasticsearch_path
+  - fluentd_elasticsearch_request_timeout
+  - fluentd_elasticsearch_scheme
+  - fluentd_elasticsearch_ssl_verify
+  - fluentd_elasticsearch_ssl_version
+  - fluentd_elasticsearch_user
+  - fluentd_enable_watch_timer
+  - fluentd_enabled_input_openstack_services
+  - fluentd_extra_volumes
+  - fluentd_image
+  - fluentd_image_full
+  - fluentd_input_openstack_services
+  - fluentd_opensearch_password
+  - fluentd_opensearch_path
+  - fluentd_opensearch_request_timeout
+  - fluentd_opensearch_scheme
+  - fluentd_opensearch_user
+  - fluentd_services
+  - fluentd_tag
+  - syslog_facilities
+  - syslog_haproxy_facility
 kolla.glance:
   - glance_api_container_proxy
   - glance_api_default_volumes
@@ -7743,6 +7740,7 @@ kolla.glance:
   - glance_config_validation
   - glance_copy_certs
   - glance_database_address
+  - glance_database_enable_tls_internal
   - glance_database_name
   - glance_database_shard
   - glance_database_shard_id
@@ -7762,41 +7760,18 @@ kolla.glance:
   - glance_source_version
   - glance_store_backends
   - glance_tag
-  - glance_tls_proxy_check_timeout
-  - glance_tls_proxy_client_timeout
-  - glance_tls_proxy_connect_timeout
-  - glance_tls_proxy_default_volumes
-  - glance_tls_proxy_defaults_balance
-  - glance_tls_proxy_defaults_max_connections
-  - glance_tls_proxy_dimensions
   - glance_tls_proxy_enable_healthchecks
-  - glance_tls_proxy_extra_volumes
   - glance_tls_proxy_healthcheck
   - glance_tls_proxy_healthcheck_interval
   - glance_tls_proxy_healthcheck_retries
   - glance_tls_proxy_healthcheck_start_period
   - glance_tls_proxy_healthcheck_test
   - glance_tls_proxy_healthcheck_timeout
-  - glance_tls_proxy_http_keep_alive_timeout
-  - glance_tls_proxy_http_request_timeout
-  - glance_tls_proxy_image
-  - glance_tls_proxy_image_full
-  - glance_tls_proxy_max_connections
-  - glance_tls_proxy_queue_timeout
-  - glance_tls_proxy_server_timeout
-  - glance_tls_proxy_tag
-  - glance_tls_proxy_thread_cpu_map
-  - glance_tls_proxy_threads
   - haproxy_glance_api_client_timeout
   - haproxy_glance_api_server_timeout
   - haproxy_members
   - haproxy_tag
-  - haproxy_tls_members
   - openstack_glance_auth
-  - syslog_glance_tls_proxy_facility
-  - syslog_server
-  - vmware_datastore_name
-  - vmware_vcenter_name
 kolla.gnocchi:
   - gnocchi_api_default_volumes
   - gnocchi_api_dimensions
@@ -7812,8 +7787,11 @@ kolla.gnocchi:
   - gnocchi_api_image_full
   - gnocchi_api_tag
   - gnocchi_api_workers
+  - gnocchi_ceph_cluster
   - gnocchi_config_validation
+  - gnocchi_copy_certs
   - gnocchi_database_address
+  - gnocchi_database_enable_tls_internal
   - gnocchi_database_name
   - gnocchi_database_shard
   - gnocchi_database_shard_id
@@ -7856,6 +7834,8 @@ kolla.gnocchi:
   - openstack_gnocchi_auth
 kolla.grafana:
   - grafana_admin_username
+  - grafana_copy_certs
+  - grafana_custom_home_dashboard
   - grafana_data_sources
   - grafana_database_address
   - grafana_database_name
@@ -7865,7 +7845,14 @@ kolla.grafana:
   - grafana_database_user
   - grafana_default_volumes
   - grafana_dimensions
+  - grafana_enable_healthchecks
   - grafana_extra_volumes
+  - grafana_healthcheck
+  - grafana_healthcheck_interval
+  - grafana_healthcheck_retries
+  - grafana_healthcheck_start_period
+  - grafana_healthcheck_test
+  - grafana_healthcheck_timeout
   - grafana_image
   - grafana_image_full
   - grafana_prometheus_url
@@ -7940,6 +7927,7 @@ kolla.heat:
   - heat_config_validation
   - heat_copy_certs
   - heat_database_address
+  - heat_database_enable_tls_internal
   - heat_database_name
   - heat_database_shard
   - heat_database_shard_id
@@ -8013,15 +8001,6 @@ kolla.horizon:
   - horizon_use_keystone_public_url
   - horizon_wsgi_processes
   - horizon_wsgi_threads
-kolla.influxdb:
-  - influxdb_default_volumes
-  - influxdb_dimensions
-  - influxdb_enable_tsi
-  - influxdb_extra_volumes
-  - influxdb_image
-  - influxdb_image_full
-  - influxdb_services
-  - influxdb_tag
 kolla.ironic:
   - ironic_agent_files_directory
   - ironic_api_default_volumes
@@ -8056,6 +8035,7 @@ kolla.ironic:
   - ironic_console_serial_speed
   - ironic_copy_certs
   - ironic_database_address
+  - ironic_database_enable_tls_internal
   - ironic_database_name
   - ironic_database_shard
   - ironic_database_shard_id
@@ -8076,7 +8056,6 @@ kolla.ironic:
   - ironic_dnsmasq_tag
   - ironic_dnsmasq_uefi_ipxe_boot_file
   - ironic_enable_keystone_integration
-  - ironic_enable_rolling_upgrade
   - ironic_enable_tls_backend
   - ironic_enabled_notification_topics
   - ironic_extra_volumes
@@ -8091,34 +8070,21 @@ kolla.ironic:
   - ironic_http_healthcheck_start_period
   - ironic_http_healthcheck_test
   - ironic_http_healthcheck_timeout
+  - ironic_http_image
+  - ironic_http_image_full
+  - ironic_http_tag
   - ironic_http_url
-  - ironic_inspector_database_address
-  - ironic_inspector_database_name
-  - ironic_inspector_database_user
-  - ironic_inspector_default_volumes
-  - ironic_inspector_dev_mode
-  - ironic_inspector_dimensions
-  - ironic_inspector_enable_healthchecks
-  - ironic_inspector_extra_volumes
-  - ironic_inspector_git_repository
-  - ironic_inspector_healthcheck
-  - ironic_inspector_healthcheck_interval
-  - ironic_inspector_healthcheck_retries
-  - ironic_inspector_healthcheck_start_period
-  - ironic_inspector_healthcheck_test
-  - ironic_inspector_healthcheck_timeout
-  - ironic_inspector_image
-  - ironic_inspector_image_full
-  - ironic_inspector_kernel_cmdline_extras
   - ironic_inspector_keystone_user
-  - ironic_inspector_pxe_filter
-  - ironic_inspector_source_version
-  - ironic_inspector_tag
+  - ironic_kernel_append_params
+  - ironic_kernel_append_params_default
+  - ironic_kernel_append_params_extras
+  - ironic_kernel_cmdline_extras
   - ironic_ks_services
   - ironic_ks_user_roles
   - ironic_ks_users
   - ironic_logging_debug
   - ironic_notification_topics
+  - ironic_ntp_server
   - ironic_pin_release_version
   - ironic_prometheus_exporter_data_dir
   - ironic_prometheus_exporter_default_volumes
@@ -8129,6 +8095,14 @@ kolla.ironic:
   - ironic_prometheus_exporter_sensor_data_interval
   - ironic_prometheus_exporter_sensor_data_undeployed_nodes
   - ironic_prometheus_exporter_tag
+  - ironic_prometheus_exporter_workers
+  - ironic_pxe_filter
+  - ironic_pxe_filter_default_volumes
+  - ironic_pxe_filter_dimensions
+  - ironic_pxe_filter_extra_volumes
+  - ironic_pxe_filter_image
+  - ironic_pxe_filter_image_full
+  - ironic_pxe_filter_tag
   - ironic_pxe_image
   - ironic_pxe_image_full
   - ironic_pxe_tag
@@ -8141,13 +8115,14 @@ kolla.ironic:
   - ironic_tftp_listen_address
   - ironic_upgrade_skip_wait_check
   - openstack_ironic_auth
-  - openstack_ironic_inspector_auth
 kolla.iscsi:
   - enable_iscsid_for_cinder
   - enable_iscsid_for_ironic
   - enable_tgtd
   - iscsi_services
   - iscsi_tag
+  - iscsid_cinder_backup_group
+  - iscsid_cinder_volume_group
   - iscsid_default_volumes
   - iscsid_dimensions
   - iscsid_extra_volumes
@@ -8189,6 +8164,7 @@ kolla.keystone:
   - keystone_extra_volumes
   - keystone_federation_oidc_additional_options
   - keystone_federation_oidc_claim_delimiter
+  - keystone_federation_oidc_error_page_retry_login_delay_milliseconds
   - keystone_federation_oidc_forwarded_headers
   - keystone_federation_oidc_jwks_uri
   - keystone_federation_oidc_response_type
@@ -8212,9 +8188,23 @@ kolla.keystone:
   - keystone_healthcheck_start_period
   - keystone_healthcheck_test
   - keystone_healthcheck_timeout
+  - keystone_host_federation_base_folder
   - keystone_host_federation_oidc_attribute_mappings_folder
   - keystone_host_federation_oidc_idp_certificate_folder
   - keystone_host_federation_oidc_metadata_folder
+  - keystone_httpd_default_volumes
+  - keystone_httpd_dimensions
+  - keystone_httpd_enable_healthchecks
+  - keystone_httpd_extra_volumes
+  - keystone_httpd_healthcheck
+  - keystone_httpd_healthcheck_interval
+  - keystone_httpd_healthcheck_retries
+  - keystone_httpd_healthcheck_start_period
+  - keystone_httpd_healthcheck_test
+  - keystone_httpd_healthcheck_timeout
+  - keystone_httpd_image
+  - keystone_httpd_image_full
+  - keystone_httpd_tag
   - keystone_image
   - keystone_image_full
   - keystone_ks_services
@@ -8242,37 +8232,21 @@ kolla.keystone:
   - keystone_tag
   - keystone_trusted_dashboards
   - keystone_username
+  - keystone_wsgi_socket_port
   - openstack_keystone_auth
   - skyline_trusted_dashboards
-kolla.kuryr:
-  - kuryr_config_validation
-  - kuryr_default_volumes
-  - kuryr_dev_mode
-  - kuryr_dev_repos_pull
-  - kuryr_dimensions
-  - kuryr_enable_healthchecks
-  - kuryr_extra_volumes
-  - kuryr_git_repository
-  - kuryr_healthcheck
-  - kuryr_healthcheck_interval
-  - kuryr_healthcheck_retries
-  - kuryr_healthcheck_start_period
-  - kuryr_healthcheck_test
-  - kuryr_healthcheck_timeout
-  - kuryr_image
-  - kuryr_image_full
-  - kuryr_internal_endpoint
-  - kuryr_keystone_user
-  - kuryr_ks_users
-  - kuryr_libnetwork_git_repository
-  - kuryr_logging_debug
-  - kuryr_services
-  - kuryr_source_version
-  - kuryr_tag
-  - libnetwork_project_name
-  - openstack_kuryr_auth
+kolla.kolla_toolbox:
+  - kolla_toolbox_copy_certs
+  - kolla_toolbox_default_volumes
+  - kolla_toolbox_dimensions
+  - kolla_toolbox_extra_volumes
+  - kolla_toolbox_image
+  - kolla_toolbox_image_full
+  - kolla_toolbox_services
+  - kolla_toolbox_tag
 kolla.letsencrypt:
   - letsencrypt_cert_valid_days
+  - letsencrypt_copy_certs
   - letsencrypt_cron_renew_schedule
   - letsencrypt_email
   - letsencrypt_external_account_binding
@@ -8365,6 +8339,7 @@ kolla.loadbalancer:
   - mariadb_monitor_read_only_interval
   - mariadb_shun_on_failures
   - mariadb_singlenode
+  - mariadb_verbose_query_error
   - proxysql_admin_user
   - proxysql_backend_max_connections
   - proxysql_backend_max_replication_lag
@@ -8384,7 +8359,6 @@ kolla.loadbalancer:
   - proxysql_prometheus_exporter_memory_metrics_interval
   - proxysql_stats_user
   - proxysql_tag
-  - proxysql_version_suffix
   - proxysql_workers
   - syslog_haproxy_facility
   - syslog_server
@@ -8423,7 +8397,9 @@ kolla.magnum:
   - magnum_conductor_tag
   - magnum_conductor_workers
   - magnum_config_validation
+  - magnum_copy_certs
   - magnum_database_address
+  - magnum_database_enable_tls_internal
   - magnum_database_name
   - magnum_database_shard
   - magnum_database_shard_id
@@ -8431,6 +8407,7 @@ kolla.magnum:
   - magnum_database_user
   - magnum_dev_mode
   - magnum_dev_repos_pull
+  - magnum_enable_tls_backend
   - magnum_enabled_notification_topics
   - magnum_extra_volumes
   - magnum_git_repository
@@ -8467,6 +8444,7 @@ kolla.manila:
   - manila_ceph_backends
   - manila_cephfs_filesystem_name
   - manila_config_validation
+  - manila_copy_certs
   - manila_data_default_volumes
   - manila_data_dimensions
   - manila_data_enable_healthchecks
@@ -8481,6 +8459,7 @@ kolla.manila:
   - manila_data_image_full
   - manila_data_tag
   - manila_database_address
+  - manila_database_enable_tls_internal
   - manila_database_name
   - manila_database_shard
   - manila_database_shard_id
@@ -8538,20 +8517,14 @@ kolla.manila:
 kolla.mariadb:
   - database_cluster_name
   - database_max_timeout
-  - enable_mariadb_clustercheck
   - external_haproxy_members
-  - internal_haproxy_members
   - mariadb_backup_database_schema
   - mariadb_backup_database_user
   - mariadb_backup_host
   - mariadb_backup_possible
   - mariadb_backup_type
-  - mariadb_clustercheck_default_volumes
-  - mariadb_clustercheck_dimensions
-  - mariadb_clustercheck_extra_volumes
-  - mariadb_clustercheck_image
-  - mariadb_clustercheck_image_full
-  - mariadb_clustercheck_tag
+  - mariadb_copy_certs
+  - mariadb_database_enable_tls_internal
   - mariadb_database_shard
   - mariadb_default_volumes
   - mariadb_dimensions
@@ -8571,19 +8544,29 @@ kolla.mariadb:
   - mariadb_shard_database_user
   - mariadb_tag
   - mariadb_wsrep_extra_provider_options
+  - mariadb_wsrep_sst_method
 kolla.masakari:
   - libvirt_enable_sasl
   - libvirt_sasl_authname
   - libvirt_sasl_mech_list
   - masakari_api_default_volumes
   - masakari_api_dimensions
+  - masakari_api_enable_healthchecks
   - masakari_api_extra_volumes
+  - masakari_api_healthcheck
+  - masakari_api_healthcheck_interval
+  - masakari_api_healthcheck_retries
+  - masakari_api_healthcheck_start_period
+  - masakari_api_healthcheck_test
+  - masakari_api_healthcheck_timeout
   - masakari_api_image
   - masakari_api_image_full
   - masakari_api_tag
   - masakari_api_workers
   - masakari_config_validation
+  - masakari_copy_certs
   - masakari_database_address
+  - masakari_database_enable_tls_internal
   - masakari_database_name
   - masakari_database_shard
   - masakari_database_shard_id
@@ -8653,7 +8636,9 @@ kolla.mistral:
   - mistral_api_tag
   - mistral_api_workers
   - mistral_config_validation
+  - mistral_copy_certs
   - mistral_database_address
+  - mistral_database_enable_tls_internal
   - mistral_database_name
   - mistral_database_shard
   - mistral_database_shard_id
@@ -8771,6 +8756,7 @@ kolla.neutron:
   - neutron_config_validation
   - neutron_copy_certs
   - neutron_database_address
+  - neutron_database_enable_tls_internal
   - neutron_database_name
   - neutron_database_shard
   - neutron_database_shard_id
@@ -8895,6 +8881,19 @@ kolla.neutron:
   - neutron_ovn_agent_image_full
   - neutron_ovn_agent_tag
   - neutron_ovn_dhcp_agent
+  - neutron_ovn_maintenance_worker_default_volumes
+  - neutron_ovn_maintenance_worker_dimensions
+  - neutron_ovn_maintenance_worker_enable_healthchecks
+  - neutron_ovn_maintenance_worker_extra_volumes
+  - neutron_ovn_maintenance_worker_healthcheck
+  - neutron_ovn_maintenance_worker_healthcheck_interval
+  - neutron_ovn_maintenance_worker_healthcheck_retries
+  - neutron_ovn_maintenance_worker_healthcheck_start_period
+  - neutron_ovn_maintenance_worker_healthcheck_test
+  - neutron_ovn_maintenance_worker_healthcheck_timeout
+  - neutron_ovn_maintenance_worker_image
+  - neutron_ovn_maintenance_worker_image_full
+  - neutron_ovn_maintenance_worker_tag
   - neutron_ovn_metadata_agent_default_volumes
   - neutron_ovn_metadata_agent_dimensions
   - neutron_ovn_metadata_agent_enable_healthchecks
@@ -8908,7 +8907,46 @@ kolla.neutron:
   - neutron_ovn_metadata_agent_image
   - neutron_ovn_metadata_agent_image_full
   - neutron_ovn_metadata_agent_tag
+  - neutron_ovn_vpn_agent_default_volumes
+  - neutron_ovn_vpn_agent_dimensions
+  - neutron_ovn_vpn_agent_enable_healthchecks
+  - neutron_ovn_vpn_agent_extra_volumes
+  - neutron_ovn_vpn_agent_healthcheck
+  - neutron_ovn_vpn_agent_healthcheck_interval
+  - neutron_ovn_vpn_agent_healthcheck_retries
+  - neutron_ovn_vpn_agent_healthcheck_start_period
+  - neutron_ovn_vpn_agent_healthcheck_test
+  - neutron_ovn_vpn_agent_healthcheck_timeout
+  - neutron_ovn_vpn_agent_image
+  - neutron_ovn_vpn_agent_image_full
+  - neutron_ovn_vpn_agent_tag
+  - neutron_periodic_worker_default_volumes
+  - neutron_periodic_worker_dimensions
+  - neutron_periodic_worker_enable_healthchecks
+  - neutron_periodic_worker_extra_volumes
+  - neutron_periodic_worker_healthcheck
+  - neutron_periodic_worker_healthcheck_interval
+  - neutron_periodic_worker_healthcheck_retries
+  - neutron_periodic_worker_healthcheck_start_period
+  - neutron_periodic_worker_healthcheck_test
+  - neutron_periodic_worker_healthcheck_timeout
+  - neutron_periodic_worker_image
+  - neutron_periodic_worker_image_full
+  - neutron_periodic_worker_tag
   - neutron_rolling_upgrade_services
+  - neutron_rpc_server_default_volumes
+  - neutron_rpc_server_dimensions
+  - neutron_rpc_server_enable_healthchecks
+  - neutron_rpc_server_extra_volumes
+  - neutron_rpc_server_healthcheck
+  - neutron_rpc_server_healthcheck_interval
+  - neutron_rpc_server_healthcheck_retries
+  - neutron_rpc_server_healthcheck_start_period
+  - neutron_rpc_server_healthcheck_test
+  - neutron_rpc_server_healthcheck_timeout
+  - neutron_rpc_server_image
+  - neutron_rpc_server_image_full
+  - neutron_rpc_server_tag
   - neutron_server_default_volumes
   - neutron_server_dimensions
   - neutron_server_enable_healthchecks
@@ -8941,74 +8979,10 @@ kolla.neutron:
   - neutron_sriov_physnets
   - neutron_subprojects
   - neutron_tag
-  - neutron_tls_proxy_check_timeout
-  - neutron_tls_proxy_client_timeout
-  - neutron_tls_proxy_connect_timeout
-  - neutron_tls_proxy_default_volumes
-  - neutron_tls_proxy_defaults_balance
-  - neutron_tls_proxy_defaults_max_connections
-  - neutron_tls_proxy_dimensions
-  - neutron_tls_proxy_enable_healthchecks
-  - neutron_tls_proxy_extra_volumes
-  - neutron_tls_proxy_healthcheck
-  - neutron_tls_proxy_healthcheck_interval
-  - neutron_tls_proxy_healthcheck_retries
-  - neutron_tls_proxy_healthcheck_start_period
-  - neutron_tls_proxy_healthcheck_test
-  - neutron_tls_proxy_healthcheck_timeout
-  - neutron_tls_proxy_http_keep_alive_timeout
-  - neutron_tls_proxy_http_request_timeout
-  - neutron_tls_proxy_image
-  - neutron_tls_proxy_image_full
-  - neutron_tls_proxy_max_connections
-  - neutron_tls_proxy_queue_timeout
-  - neutron_tls_proxy_server_timeout
-  - neutron_tls_proxy_tag
-  - neutron_tls_proxy_thread_cpu_map
-  - neutron_tls_proxy_threads
   - notification_drivers
-  - nsxv3_api_managers
-  - nsxv3_api_user
-  - nsxv3_default_overlay_tz
-  - nsxv3_default_tier0_router
-  - nsxv3_default_vlan_tz
-  - nsxv3_dhcp_profile
-  - nsxv3_metadata_proxy
-  - nsxv3_native_dhcp_metadata
   - openstack_neutron_auth
   - ovsdb_timeout
   - service_plugins
-  - syslog_neutron_tls_proxy_facility
-  - syslog_server
-  - vmware_dvs_dhcp_override_mac
-  - vmware_dvs_dvs_name
-  - vmware_dvs_host_ip
-  - vmware_dvs_host_port
-  - vmware_dvs_host_username
-  - vmware_dvs_insecure
-  - vmware_nsxp_api_managers
-  - vmware_nsxp_api_user
-  - vmware_nsxp_default_overlay_tz
-  - vmware_nsxp_default_tier0_router
-  - vmware_nsxp_default_vlan_tz
-  - vmware_nsxp_dhcp_profile
-  - vmware_nsxp_insecure
-  - vmware_nsxp_metadata_proxy
-  - vmware_nsxp_native_dhcp_metadata
-  - vmware_nsxv_backup_edge_pool
-  - vmware_nsxv_cluster_moid
-  - vmware_nsxv_datacenter_moid
-  - vmware_nsxv_datastore_id
-  - vmware_nsxv_dvs_id
-  - vmware_nsxv_edge_ha
-  - vmware_nsxv_external_network
-  - vmware_nsxv_insecure
-  - vmware_nsxv_manager_uri
-  - vmware_nsxv_metadata_initializer
-  - vmware_nsxv_resource_pool_id
-  - vmware_nsxv_spoofguard_enabled
-  - vmware_nsxv_user
-  - vmware_nsxv_vdn_scope_id
 kolla.nova:
   - nova_api_bootstrap_default_volumes
   - nova_api_bootstrap_extra_volumes
@@ -9029,17 +9003,11 @@ kolla.nova:
   - nova_api_image_full
   - nova_api_tag
   - nova_api_workers
-  - nova_cell0_database_address
-  - nova_cell0_database_name
-  - nova_cell0_database_password
-  - nova_cell0_database_user
   - nova_config_validation
   - nova_copy_certs
-  - nova_database_address
-  - nova_database_name
+  - nova_database_enable_tls_internal
   - nova_database_shard
   - nova_database_shard_root_user
-  - nova_database_user
   - nova_dev_mode
   - nova_dev_repos_pull
   - nova_enable_external_metadata
@@ -9100,9 +9068,9 @@ kolla.nova:
   - nova_super_conductor_tag
   - nova_superconductor_workers
   - nova_tag
-  - nova_wsgi_provider
   - openstack_nova_auth
 kolla.nova-cell:
+  - enable_nova_swtpm
   - enable_shared_var_lib_nova_mnt
   - haproxy_nova_serialconsole_proxy_tunnel_timeout
   - haproxy_nova_spicehtml5_proxy_tunnel_timeout
@@ -9117,6 +9085,7 @@ kolla.nova-cell:
   - nova_api_database_address
   - nova_api_database_name
   - nova_api_database_user
+  - nova_cell0_and_default_cell_database_shard
   - nova_cell_bootstrap_default_volumes
   - nova_cell_bootstrap_extra_volumes
   - nova_cell_ceph_backend
@@ -9126,15 +9095,19 @@ kolla.nova-cell:
   - nova_cell_conductor_has_api_database
   - nova_cell_conductor_workers
   - nova_cell_config_validation
+  - nova_cell_copy_certs
   - nova_cell_database_address
   - nova_cell_database_admin_password
   - nova_cell_database_admin_user
+  - nova_cell_database_enable_tls_internal
   - nova_cell_database_name
   - nova_cell_database_password
   - nova_cell_database_port
   - nova_cell_database_shard
   - nova_cell_database_shard_root_user
   - nova_cell_database_user
+  - nova_cell_dynamic_rules
+  - nova_cell_dynamic_users
   - nova_cell_get_settings_volumes
   - nova_cell_ironic_cell_name
   - nova_cell_name
@@ -9230,6 +9203,7 @@ kolla.nova-cell:
   - nova_libvirt_tag
   - nova_libvirt_volume
   - nova_logging_debug
+  - nova_multi_compute_ironic_config
   - nova_notification_topics
   - nova_novncproxy_default_volumes
   - nova_novncproxy_dimensions
@@ -9281,12 +9255,12 @@ kolla.nova-cell:
   - nova_ssh_tag
   - nova_tag
   - openstack_nova_auth
-  - ovs_bridge
   - project_name
   - qemu_max_files
   - qemu_max_processes
   - qemu_user_gid
-  - vmware_vcenter_datastore_regex
+  - swtpm_group
+  - swtpm_user
 kolla.octavia:
   - octavia_amp_flavor
   - octavia_amp_image_tag
@@ -9313,6 +9287,7 @@ kolla.octavia:
   - octavia_config_validation
   - octavia_copy_certs
   - octavia_database_address
+  - octavia_database_enable_tls_internal
   - octavia_database_name
   - octavia_database_shard
   - octavia_database_shard_id
@@ -9373,7 +9348,6 @@ kolla.octavia:
   - octavia_provider_agents
   - octavia_provider_drivers
   - octavia_required_roles
-  - octavia_service_auth_project
   - octavia_services
   - octavia_source_version
   - octavia_tag
@@ -9392,6 +9366,7 @@ kolla.octavia:
   - octavia_worker_image_full
   - octavia_worker_tag
   - openstack_octavia_auth
+  - openstack_octavia_auth_cloud
 kolla.octavia-certificates:
   - octavia_certs_check_expiry
   - octavia_certs_client_ca_common_name
@@ -9421,6 +9396,7 @@ kolla.octavia-certificates:
 kolla.opensearch:
   - opensearch_apply_log_retention_policy
   - opensearch_cluster_name
+  - opensearch_copy_certs
   - opensearch_dashboards_default_app_id
   - opensearch_dashboards_default_volumes
   - opensearch_dashboards_dimensions
@@ -9520,6 +9496,7 @@ kolla.ovn-db:
   - ovn_nb_db_image_full
   - ovn_nb_db_inactivity_probe
   - ovn_nb_db_tag
+  - ovn_northd_cmdline_extras
   - ovn_northd_default_volumes
   - ovn_northd_dimensions
   - ovn_northd_extra_volumes
@@ -9595,6 +9572,7 @@ kolla.placement:
   - placement_config_validation
   - placement_copy_certs
   - placement_database_address
+  - placement_database_enable_tls_internal
   - placement_database_host
   - placement_database_name
   - placement_database_shard
@@ -9613,8 +9591,8 @@ kolla.placement:
   - placement_services
   - placement_source_version
   - placement_tag
-  - placement_wsgi_provider
 kolla.prechecks:
+  - kolla_test_images
   - prechecks_enable_host_ntp_checks
   - prechecks_enable_host_os_checks
 kolla.prometheus:
@@ -9641,13 +9619,7 @@ kolla.prometheus:
   - prometheus_blackbox_exporter_image
   - prometheus_blackbox_exporter_image_full
   - prometheus_blackbox_exporter_tag
-  - prometheus_cadvisor_cmdline_extras
-  - prometheus_cadvisor_default_volumes
-  - prometheus_cadvisor_dimensions
-  - prometheus_cadvisor_extra_volumes
-  - prometheus_cadvisor_image
-  - prometheus_cadvisor_image_full
-  - prometheus_cadvisor_tag
+  - prometheus_copy_certs
   - prometheus_elasticsearch_exporter_cmdline_extras
   - prometheus_elasticsearch_exporter_default_volumes
   - prometheus_elasticsearch_exporter_dimensions
@@ -9678,13 +9650,6 @@ kolla.prometheus:
   - prometheus_mysqld_exporter_image
   - prometheus_mysqld_exporter_image_full
   - prometheus_mysqld_exporter_tag
-  - prometheus_node_exporter_cmdline_extras
-  - prometheus_node_exporter_default_volumes
-  - prometheus_node_exporter_dimensions
-  - prometheus_node_exporter_extra_volumes
-  - prometheus_node_exporter_image
-  - prometheus_node_exporter_image_full
-  - prometheus_node_exporter_tag
   - prometheus_node_exporter_targets_extra
   - prometheus_openstack_exporter_cmdline_extras
   - prometheus_openstack_exporter_default_volumes
@@ -9697,6 +9662,13 @@ kolla.prometheus:
   - prometheus_openstack_exporter_image
   - prometheus_openstack_exporter_image_full
   - prometheus_openstack_exporter_tag
+  - prometheus_openstack_network_exporter_default_volumes
+  - prometheus_openstack_network_exporter_dimensions
+  - prometheus_openstack_network_exporter_extra_volumes
+  - prometheus_openstack_network_exporter_image
+  - prometheus_openstack_network_exporter_image_full
+  - prometheus_openstack_network_exporter_interval
+  - prometheus_openstack_network_exporter_tag
   - prometheus_server_command
   - prometheus_server_default_volumes
   - prometheus_server_dimensions
@@ -9704,6 +9676,32 @@ kolla.prometheus:
   - prometheus_server_image
   - prometheus_server_image_full
   - prometheus_server_tag
+  - prometheus_services
+  - prometheus_tag
+  - prometheus_valkey_exporter_default_volumes
+  - prometheus_valkey_exporter_dimensions
+  - prometheus_valkey_exporter_extra_volumes
+  - prometheus_valkey_exporter_image
+  - prometheus_valkey_exporter_image_full
+  - prometheus_valkey_exporter_tag
+kolla.prometheus-node-exporters:
+  - project_name
+  - prometheus_cadvisor_cmdline_extras
+  - prometheus_cadvisor_default_volumes
+  - prometheus_cadvisor_dimensions
+  - prometheus_cadvisor_extra_volumes
+  - prometheus_cadvisor_image
+  - prometheus_cadvisor_image_full
+  - prometheus_cadvisor_tag
+  - prometheus_extra_volumes
+  - prometheus_install_type
+  - prometheus_node_exporter_cmdline_extras
+  - prometheus_node_exporter_default_volumes
+  - prometheus_node_exporter_dimensions
+  - prometheus_node_exporter_extra_volumes
+  - prometheus_node_exporter_image
+  - prometheus_node_exporter_image_full
+  - prometheus_node_exporter_tag
   - prometheus_services
   - prometheus_tag
 kolla.proxysql-config:
@@ -9715,6 +9713,7 @@ kolla.prune-images:
   - docker_image_prune_timeout
 kolla.rabbitmq:
   - kolla_externally_managed_cert
+  - rabbitmq_allowed_upgrades
   - rabbitmq_cluster_partition_handling
   - rabbitmq_copy_certs
   - rabbitmq_default_volumes
@@ -9742,39 +9741,11 @@ kolla.rabbitmq:
   - rabbitmq_server_additional_erl_args
   - rabbitmq_server_count
   - rabbitmq_services
+  - rabbitmq_stream_max_segment_size_bytes
+  - rabbitmq_stream_segment_max_age
   - rabbitmq_tag
   - rabbitmq_tls_options
   - rabbitmq_version_suffix
-kolla.redis:
-  - redis_conf_path
-  - redis_default_volumes
-  - redis_dimensions
-  - redis_enable_healthchecks
-  - redis_extra_volumes
-  - redis_generated_conf_path
-  - redis_healthcheck
-  - redis_healthcheck_interval
-  - redis_healthcheck_retries
-  - redis_healthcheck_start_period
-  - redis_healthcheck_test
-  - redis_healthcheck_timeout
-  - redis_image
-  - redis_image_full
-  - redis_sentinel_default_volumes
-  - redis_sentinel_dimensions
-  - redis_sentinel_enable_healthchecks
-  - redis_sentinel_extra_volumes
-  - redis_sentinel_healthcheck
-  - redis_sentinel_healthcheck_interval
-  - redis_sentinel_healthcheck_retries
-  - redis_sentinel_healthcheck_start_period
-  - redis_sentinel_healthcheck_test
-  - redis_sentinel_healthcheck_timeout
-  - redis_sentinel_image
-  - redis_sentinel_image_full
-  - redis_sentinel_tag
-  - redis_services
-  - redis_tag
 kolla.service-cert-copy:
   - kolla_copy_backend_tls_files
   - kolla_externally_managed_cert
@@ -9815,6 +9786,7 @@ kolla.service-uwsgi-config:
   - service_uwsgi_config_host
   - service_uwsgi_config_log_dir
   - service_uwsgi_config_log_file
+  - service_uwsgi_config_socket_port
   - service_uwsgi_config_tls_backend
   - service_uwsgi_config_worker_timeout
   - service_uwsgi_config_workers
@@ -9856,6 +9828,7 @@ kolla.skyline:
   - skyline_copy_certs
   - skyline_custom_logos
   - skyline_database_address
+  - skyline_database_enable_tls_internal
   - skyline_database_name
   - skyline_database_shard
   - skyline_database_shard_id
@@ -9903,7 +9876,9 @@ kolla.tacker:
   - tacker_conductor_image_full
   - tacker_conductor_tag
   - tacker_config_validation
+  - tacker_copy_certs
   - tacker_database_address
+  - tacker_database_enable_tls_internal
   - tacker_database_name
   - tacker_database_shard
   - tacker_database_shard_id
@@ -9937,19 +9912,6 @@ kolla.tacker:
   - tacker_services
   - tacker_source_version
   - tacker_tag
-kolla.telegraf:
-  - haproxy_proto
-  - influxdb_proto
-  - mariadb_proto
-  - opensearch_proto
-  - rabbitmq_proto
-  - telegraf_default_volumes
-  - telegraf_dimensions
-  - telegraf_extra_volumes
-  - telegraf_image
-  - telegraf_image_full
-  - telegraf_services
-  - telegraf_tag
 kolla.trove:
   - openstack_trove_auth
   - trove_api_default_volumes
@@ -9982,6 +9944,7 @@ kolla.trove:
   - trove_config_validation
   - trove_copy_certs
   - trove_database_address
+  - trove_database_enable_tls_internal
   - trove_database_name
   - trove_database_shard
   - trove_database_shard_id
@@ -10046,49 +10009,6 @@ kolla.valkey:
   - valkey_sentinel_tag
   - valkey_services
   - valkey_tag
-kolla.venus:
-  - openstack_logging_context_format_string
-  - openstack_logging_default_format_string
-  - openstack_venus_auth
-  - venus_api_default_volumes
-  - venus_api_dimensions
-  - venus_api_enable_healthchecks
-  - venus_api_extra_volumes
-  - venus_api_healthcheck
-  - venus_api_healthcheck_interval
-  - venus_api_healthcheck_retries
-  - venus_api_healthcheck_start_period
-  - venus_api_healthcheck_test
-  - venus_api_healthcheck_timeout
-  - venus_api_image
-  - venus_api_image_full
-  - venus_api_tag
-  - venus_config_validation
-  - venus_database_address
-  - venus_database_name
-  - venus_database_shard
-  - venus_database_shard_id
-  - venus_database_shard_root_user
-  - venus_database_user
-  - venus_dev_mode
-  - venus_dev_repos_pull
-  - venus_enabled_notification_topics
-  - venus_extra_volumes
-  - venus_git_repository
-  - venus_keystone_user
-  - venus_ks_services
-  - venus_ks_users
-  - venus_logging_debug
-  - venus_manager_default_volumes
-  - venus_manager_dimensions
-  - venus_manager_extra_volumes
-  - venus_manager_image
-  - venus_manager_image_full
-  - venus_manager_tag
-  - venus_notification_topics
-  - venus_services
-  - venus_source_version
-  - venus_tag
 kolla.watcher:
   - openstack_watcher_auth
   - watcher_api_default_volumes
@@ -10119,7 +10039,9 @@ kolla.watcher:
   - watcher_applier_image_full
   - watcher_applier_tag
   - watcher_config_validation
+  - watcher_copy_certs
   - watcher_database_address
+  - watcher_database_enable_tls_internal
   - watcher_database_name
   - watcher_database_shard
   - watcher_database_shard_id
@@ -10151,81 +10073,6 @@ kolla.watcher:
   - watcher_services
   - watcher_source_version
   - watcher_tag
-kolla.zun:
-  - openstack_zun_auth
-  - zun_api_default_volumes
-  - zun_api_dimensions
-  - zun_api_enable_healthchecks
-  - zun_api_extra_volumes
-  - zun_api_healthcheck
-  - zun_api_healthcheck_interval
-  - zun_api_healthcheck_retries
-  - zun_api_healthcheck_start_period
-  - zun_api_healthcheck_test
-  - zun_api_healthcheck_timeout
-  - zun_api_image
-  - zun_api_image_full
-  - zun_api_tag
-  - zun_api_workers
-  - zun_cni_daemon_default_volumes
-  - zun_cni_daemon_dimensions
-  - zun_cni_daemon_enable_healthchecks
-  - zun_cni_daemon_extra_volumes
-  - zun_cni_daemon_healthcheck
-  - zun_cni_daemon_healthcheck_interval
-  - zun_cni_daemon_healthcheck_retries
-  - zun_cni_daemon_healthcheck_start_period
-  - zun_cni_daemon_healthcheck_test
-  - zun_cni_daemon_healthcheck_timeout
-  - zun_cni_daemon_image
-  - zun_cni_daemon_image_full
-  - zun_cni_daemon_tag
-  - zun_compute_default_volumes
-  - zun_compute_dimensions
-  - zun_compute_enable_healthchecks
-  - zun_compute_extra_volumes
-  - zun_compute_healthcheck
-  - zun_compute_healthcheck_interval
-  - zun_compute_healthcheck_retries
-  - zun_compute_healthcheck_start_period
-  - zun_compute_healthcheck_test
-  - zun_compute_healthcheck_timeout
-  - zun_compute_image
-  - zun_compute_image_full
-  - zun_compute_tag
-  - zun_config_validation
-  - zun_database_address
-  - zun_database_name
-  - zun_database_shard
-  - zun_database_shard_id
-  - zun_database_shard_root_user
-  - zun_database_user
-  - zun_dev_mode
-  - zun_dev_repos_pull
-  - zun_extra_volumes
-  - zun_git_repository
-  - zun_internal_endpoint
-  - zun_keystone_user
-  - zun_ks_services
-  - zun_ks_users
-  - zun_logging_debug
-  - zun_public_endpoint
-  - zun_services
-  - zun_source_version
-  - zun_tag
-  - zun_wsproxy_default_volumes
-  - zun_wsproxy_dimensions
-  - zun_wsproxy_enable_healthchecks
-  - zun_wsproxy_extra_volumes
-  - zun_wsproxy_healthcheck
-  - zun_wsproxy_healthcheck_interval
-  - zun_wsproxy_healthcheck_retries
-  - zun_wsproxy_healthcheck_start_period
-  - zun_wsproxy_healthcheck_test
-  - zun_wsproxy_healthcheck_timeout
-  - zun_wsproxy_image
-  - zun_wsproxy_image_full
-  - zun_wsproxy_tag
 osism.commons.certificates:
   - certificates_ca
   - certificates_configuration_directory
