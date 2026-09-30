@@ -7047,8 +7047,12 @@ horizon_wsgi_processes:
   - kolla.horizon
 horizon_wsgi_threads:
   - kolla.horizon
+hostname_check_enabled:
+  - osism.commons.hostname_check
 hostname_name:
   - osism.commons.hostname
+hostname_split_accepted:
+  - osism.commons.hostname_check
 hostname_use_fqdn:
   - osism.commons.hostname
 hosts_additional_entries:

@@ -10129,6 +10129,9 @@ osism.commons.firewall:
 osism.commons.hostname:
   - hostname_name
   - hostname_use_fqdn
+osism.commons.hostname_check:
+  - hostname_check_enabled
+  - hostname_split_accepted
 osism.commons.hosts:
   - hosts_additional_entries
   - hosts_enable
