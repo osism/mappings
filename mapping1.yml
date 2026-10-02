@@ -951,6 +951,7 @@ debops.debops.apt:
   - apt__nonfree
   - apt__nonfree_firmware
   - apt__packages
+  - apt__purge_allowed
   - apt__purge_group_packages
   - apt__purge_host_packages
   - apt__purge_packages
@@ -2984,23 +2985,13 @@ debops.debops.ipxe:
   - ipxe__base_packages
   - ipxe__bootloaders
   - ipxe__combined_scripts
-  - ipxe__debian_netboot_architectures
-  - ipxe__debian_netboot_combined_release_map
-  - ipxe__debian_netboot_default_release_map
-  - ipxe__debian_netboot_enabled
-  - ipxe__debian_netboot_firmware
-  - ipxe__debian_netboot_firmware_mirror
-  - ipxe__debian_netboot_mirror
-  - ipxe__debian_netboot_pxe_root
-  - ipxe__debian_netboot_release_map
-  - ipxe__debian_netboot_releases
-  - ipxe__debian_netboot_src
   - ipxe__default_scripts
   - ipxe__group_scripts
   - ipxe__host_scripts
   - ipxe__packages
   - ipxe__scripts
   - ipxe__tftp_root
+  - ipxe__tftp_subdir
 debops.debops.iscsi:
   - iscsi__default_fs_type
   - iscsi__default_mount_options
@@ -3890,6 +3881,27 @@ debops.debops.netbase:
   - netbase__packages
   - netbase__python__dependent_packages2
   - netbase__python__dependent_packages3
+debops.debops.netboot_assistant:
+  - netboot_assistant__architecture
+  - netboot_assistant__base_packages
+  - netboot_assistant__combined_configuration
+  - netboot_assistant__combined_installs
+  - netboot_assistant__configuration
+  - netboot_assistant__default_configuration
+  - netboot_assistant__default_installs
+  - netboot_assistant__deploy_state
+  - netboot_assistant__group_configuration
+  - netboot_assistant__group_installs
+  - netboot_assistant__host_configuration
+  - netboot_assistant__host_installs
+  - netboot_assistant__installs
+  - netboot_assistant__nonfree_firmware
+  - netboot_assistant__original_configuration
+  - netboot_assistant__packages
+  - netboot_assistant__refresh
+  - netboot_assistant__refresh_recurrence
+  - netboot_assistant__refresh_releases
+  - netboot_assistant__tftp_root
 debops.debops.netbox:
   - netbox__app_bind
   - netbox__app_internal_appserver
@@ -4163,6 +4175,7 @@ debops.debops.nginx:
   - nginx_default_type
   - nginx_enable_http2
   - nginx_etc_path
+  - nginx_events_extra_options
   - nginx_extra_options
   - nginx_ferm_dependent_rules
   - nginx_flavor
@@ -6309,6 +6322,8 @@ debops.debops.sshd:
   - sshd__ports
   - sshd__recommended_packages
   - sshd__scan_for_host_certs
+  - sshd__socket_activation
+  - sshd__socket_activation_instanced
   - sshd__sudo__dependent_sudoers
   - sshd__tcpwrappers__dependent_allow
   - sshd__tcpwrappers_default
