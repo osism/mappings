@@ -1930,6 +1930,8 @@ ceph_rgw_swift_compatibility:
   - kolla.ceph-rgw
 ceph_rgwloadbalancer_firewall_zone:
   - ceph.ceph-defaults
+ceph_ssh_private_key:
+  - osism.services.manager
 ceph_stable_key:
   - ceph.ceph-defaults
 ceph_stable_openstack_release_uca:
@@ -14330,6 +14332,10 @@ openvswitch_vswitchd_image_full:
   - kolla.openvswitch
 openvswitch_vswitchd_tag:
   - kolla.openvswitch
+operator_additional_authorized_keys:
+  - osism.commons.operator
+operator_additional_authorized_keys_delete:
+  - osism.commons.operator
 operator_authorized_github_accounts:
   - osism.commons.operator
 operator_authorized_github_accounts_delete:
