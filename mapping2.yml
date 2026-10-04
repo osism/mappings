@@ -534,6 +534,8 @@ apt__nonfree_firmware:
   - debops.debops.apt
 apt__packages:
   - debops.debops.apt
+apt__purge_allowed:
+  - debops.debops.apt
 apt__purge_group_packages:
   - debops.debops.apt
 apt__purge_host_packages:
@@ -1928,6 +1930,8 @@ ceph_rgw_swift_compatibility:
   - kolla.ceph-rgw
 ceph_rgwloadbalancer_firewall_zone:
   - ceph.ceph-defaults
+ceph_ssh_private_key:
+  - osism.services.manager
 ceph_stable_key:
   - ceph.ceph-defaults
 ceph_stable_openstack_release_uca:
@@ -7971,28 +7975,6 @@ ipxe__bootloaders:
   - debops.debops.ipxe
 ipxe__combined_scripts:
   - debops.debops.ipxe
-ipxe__debian_netboot_architectures:
-  - debops.debops.ipxe
-ipxe__debian_netboot_combined_release_map:
-  - debops.debops.ipxe
-ipxe__debian_netboot_default_release_map:
-  - debops.debops.ipxe
-ipxe__debian_netboot_enabled:
-  - debops.debops.ipxe
-ipxe__debian_netboot_firmware:
-  - debops.debops.ipxe
-ipxe__debian_netboot_firmware_mirror:
-  - debops.debops.ipxe
-ipxe__debian_netboot_mirror:
-  - debops.debops.ipxe
-ipxe__debian_netboot_pxe_root:
-  - debops.debops.ipxe
-ipxe__debian_netboot_release_map:
-  - debops.debops.ipxe
-ipxe__debian_netboot_releases:
-  - debops.debops.ipxe
-ipxe__debian_netboot_src:
-  - debops.debops.ipxe
 ipxe__default_scripts:
   - debops.debops.ipxe
 ipxe__group_scripts:
@@ -8004,6 +7986,8 @@ ipxe__packages:
 ipxe__scripts:
   - debops.debops.ipxe
 ipxe__tftp_root:
+  - debops.debops.ipxe
+ipxe__tftp_subdir:
   - debops.debops.ipxe
 ironic_agent_files_directory:
   - kolla.ironic
@@ -11275,6 +11259,46 @@ netbird_setup_key:
   - osism.services.netbird
 netbird_wireguard_port:
   - osism.services.netbird
+netboot_assistant__architecture:
+  - debops.debops.netboot_assistant
+netboot_assistant__base_packages:
+  - debops.debops.netboot_assistant
+netboot_assistant__combined_configuration:
+  - debops.debops.netboot_assistant
+netboot_assistant__combined_installs:
+  - debops.debops.netboot_assistant
+netboot_assistant__configuration:
+  - debops.debops.netboot_assistant
+netboot_assistant__default_configuration:
+  - debops.debops.netboot_assistant
+netboot_assistant__default_installs:
+  - debops.debops.netboot_assistant
+netboot_assistant__deploy_state:
+  - debops.debops.netboot_assistant
+netboot_assistant__group_configuration:
+  - debops.debops.netboot_assistant
+netboot_assistant__group_installs:
+  - debops.debops.netboot_assistant
+netboot_assistant__host_configuration:
+  - debops.debops.netboot_assistant
+netboot_assistant__host_installs:
+  - debops.debops.netboot_assistant
+netboot_assistant__installs:
+  - debops.debops.netboot_assistant
+netboot_assistant__nonfree_firmware:
+  - debops.debops.netboot_assistant
+netboot_assistant__original_configuration:
+  - debops.debops.netboot_assistant
+netboot_assistant__packages:
+  - debops.debops.netboot_assistant
+netboot_assistant__refresh:
+  - debops.debops.netboot_assistant
+netboot_assistant__refresh_recurrence:
+  - debops.debops.netboot_assistant
+netboot_assistant__refresh_releases:
+  - debops.debops.netboot_assistant
+netboot_assistant__tftp_root:
+  - debops.debops.netboot_assistant
 netbox__app_bind:
   - debops.debops.netbox
 netbox__app_internal_appserver:
@@ -12676,6 +12700,8 @@ nginx_default_type:
 nginx_enable_http2:
   - debops.debops.nginx
 nginx_etc_path:
+  - debops.debops.nginx
+nginx_events_extra_options:
   - debops.debops.nginx
 nginx_extra_options:
   - debops.debops.nginx
@@ -14306,6 +14332,10 @@ openvswitch_vswitchd_image_full:
   - kolla.openvswitch
 openvswitch_vswitchd_tag:
   - kolla.openvswitch
+operator_additional_authorized_keys:
+  - osism.commons.operator
+operator_additional_authorized_keys_delete:
+  - osism.commons.operator
 operator_authorized_github_accounts:
   - osism.commons.operator
 operator_authorized_github_accounts_delete:
@@ -19586,6 +19616,10 @@ sshd__ports:
 sshd__recommended_packages:
   - debops.debops.sshd
 sshd__scan_for_host_certs:
+  - debops.debops.sshd
+sshd__socket_activation:
+  - debops.debops.sshd
+sshd__socket_activation_instanced:
   - debops.debops.sshd
 sshd__sudo__dependent_sudoers:
   - debops.debops.sshd
