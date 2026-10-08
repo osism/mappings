@@ -22,6 +22,34 @@ SUMMARY_LIMIT = 50
 mapping1 = {}
 mapping2 = {}
 
+
+def load_parameters(path):
+    with open(path, "r") as fp:
+        d = yaml.load(fp)
+
+    if not isinstance(d, dict):
+        return []
+
+    return list(d.keys())
+
+
+def add_parameters(rolename, parameters):
+    mapping1.setdefault(rolename, set())
+
+    for parameter in parameters:
+        logging.info(f"Found parameter {parameter} in {rolename}")
+        mapping1[rolename].add(parameter)
+        mapping2.setdefault(parameter, set()).add(rolename)
+
+
+def is_defaults_file(path):
+    # Ansible loads defaults/main.{yml,yaml,json}, defaults/main, and
+    # every file below a defaults/main/ directory
+    return re.search(r"/defaults/main(\.ya?ml|\.json)?$", path) or re.search(
+        r"/defaults/main/[^/]+\.(ya?ml|json)$", path
+    )
+
+
 for ansible_directory in ANSIBLE_DIRECTORIES:
     logging.info(f"Analyzing {ansible_directory}")
     for p in sorted([x[0] for x in os.walk(ansible_directory, followlinks=True)]):
@@ -42,6 +70,9 @@ for ansible_directory in ANSIBLE_DIRECTORIES:
             ):
                 # skip integration tests of the ansible community collections
                 if "tests/integration" in f:
+                    continue
+
+                if not is_defaults_file(f):
                     continue
 
                 if "collections/ansible_collections" in f:
@@ -67,38 +98,12 @@ for ansible_directory in ANSIBLE_DIRECTORIES:
                     else:
                         rolename = f"{match.group(1)}"
 
-                if rolename in mapping1:
-                    continue
+                logging.info(f"Analyzing {rolename} ({f})")
+                add_parameters(rolename, load_parameters(f))
 
-                logging.info(f"Analyzing {rolename}")
-
-                mapping1[rolename] = []
-
-                with open(f, "r") as fp:
-                    d = yaml.load(fp)
-
-                try:
-                    for parameter in sorted(d.keys()):
-                        logging.info(f"Found parameter {parameter} in {rolename}")
-                        mapping1[rolename].append(parameter)
-
-                        if parameter not in mapping2:
-                            mapping2[parameter] = []
-                        mapping2[parameter].append(rolename)
-
-                except:  # noqa
-                    pass
-
-# Sort all lists in mapping1 and mapping2 for stable output
-for rolename in mapping1:
-    mapping1[rolename].sort()
-
-for parameter in mapping2:
-    mapping2[parameter].sort()
-
-# Create sorted dictionaries for stable key ordering
-sorted_mapping1 = {k: mapping1[k] for k in sorted(mapping1.keys())}
-sorted_mapping2 = {k: mapping2[k] for k in sorted(mapping2.keys())}
+# Sort everything for stable output
+sorted_mapping1 = {k: sorted(mapping1[k]) for k in sorted(mapping1.keys())}
+sorted_mapping2 = {k: sorted(mapping2[k]) for k in sorted(mapping2.keys())}
 
 
 def load_previous_mapping(path):
