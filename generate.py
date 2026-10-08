@@ -15,7 +15,25 @@ logging.basicConfig(
     format="%(asctime)s - %(message)s", level=level, datefmt="%Y-%m-%d %H:%M:%S"
 )
 
-ANSIBLE_DIRECTORIES = ["/ceph-ansible", "/kolla-ansible", "/osism-ansible"]
+ANSIBLE_DIRECTORIES = [
+    "/ceph-ansible",
+    "/kolla-ansible",
+    "/osism-ansible",
+    "/osism-kubernetes",
+]
+
+# kolla-ansible defines its global parameters (enable_*,
+# kolla_internal_vip_address, ...) in group_vars, not in role defaults
+KOLLA_GROUP_VARS_DIRECTORY = "/kolla-group_vars/all"
+
+# osism/defaults, one directory per inventory group
+OSISM_DEFAULTS_DIRECTORY = "/osism-defaults"
+
+# files in osism/defaults that mirror or override kolla-ansible parameters,
+# which are already covered by kolla.group_vars and the kolla roles
+OSISM_DEFAULTS_KOLLA_FILES = re.compile(
+    r"^(001-.*|002-images-kolla|003-kolla-overlays|010-.*|099-kolla)\.yml$"
+)
 
 SUMMARY_LIMIT = 50
 
@@ -95,11 +113,24 @@ for ansible_directory in ANSIBLE_DIRECTORIES:
                         rolename = f"ceph.{match.group(1)}"
                     elif "kolla" in ansible_directory:
                         rolename = f"kolla.{match.group(1)}"
+                    elif "kubernetes" in ansible_directory:
+                        rolename = f"kubernetes.{match.group(1)}"
                     else:
                         rolename = f"{match.group(1)}"
 
                 logging.info(f"Analyzing {rolename} ({f})")
                 add_parameters(rolename, load_parameters(f))
+
+logging.info(f"Analyzing {KOLLA_GROUP_VARS_DIRECTORY}")
+for f in sorted(glob.glob(f"{KOLLA_GROUP_VARS_DIRECTORY}/*.yml")):
+    add_parameters("kolla.group_vars", load_parameters(f))
+
+logging.info(f"Analyzing {OSISM_DEFAULTS_DIRECTORY}")
+for f in sorted(glob.glob(f"{OSISM_DEFAULTS_DIRECTORY}/*/*.yml")):
+    group = os.path.basename(os.path.dirname(f))
+    if OSISM_DEFAULTS_KOLLA_FILES.match(os.path.basename(f)):
+        continue
+    add_parameters(f"osism.defaults.{group}", load_parameters(f))
 
 # Sort everything for stable output
 sorted_mapping1 = {k: sorted(mapping1[k]) for k in sorted(mapping1.keys())}
