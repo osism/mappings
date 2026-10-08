@@ -17,6 +17,8 @@ logging.basicConfig(
 
 ANSIBLE_DIRECTORIES = ["/ceph-ansible", "/kolla-ansible", "/osism-ansible"]
 
+SUMMARY_LIMIT = 50
+
 mapping1 = {}
 mapping2 = {}
 
@@ -97,6 +99,67 @@ for parameter in mapping2:
 # Create sorted dictionaries for stable key ordering
 sorted_mapping1 = {k: mapping1[k] for k in sorted(mapping1.keys())}
 sorted_mapping2 = {k: mapping2[k] for k in sorted(mapping2.keys())}
+
+
+def load_previous_mapping(path):
+    try:
+        with open(path, "r") as fp:
+            return yaml.load(fp) or {}
+    except FileNotFoundError:
+        return {}
+
+
+def limited(lines, limit=SUMMARY_LIMIT):
+    if len(lines) <= limit:
+        return lines
+    return lines[:limit] + [f"... and {len(lines) - limit} more"]
+
+
+def summarize(previous, current):
+    # Printed to stdout and used as the PR body by the update-mappings
+    # workflow, so every list is limited to stay well below GitHub's
+    # 65,536 character limit
+    sections = []
+
+    added_roles = sorted(set(current) - set(previous))
+    removed_roles = sorted(set(previous) - set(current))
+    common_roles = sorted(set(current) & set(previous))
+
+    added_parameters = [
+        f"{rolename}: {parameter}"
+        for rolename in common_roles
+        for parameter in current[rolename]
+        if parameter not in previous[rolename]
+    ]
+    removed_parameters = [
+        f"{rolename}: {parameter}"
+        for rolename in common_roles
+        for parameter in previous[rolename]
+        if parameter not in current[rolename]
+    ]
+
+    for title, lines in [
+        (
+            "Roles added",
+            [f"{r} ({len(current[r])} parameters)" for r in added_roles],
+        ),
+        (
+            "Roles removed",
+            [f"{r} ({len(previous[r])} parameters)" for r in removed_roles],
+        ),
+        ("Parameters removed", removed_parameters),
+        ("Parameters added", added_parameters),
+    ]:
+        if lines:
+            sections.append("\n".join([f"{title} ({len(lines)}):"] + limited(lines)))
+
+    if not sections:
+        return "No changes."
+
+    return "\n\n".join(sections)
+
+
+print(summarize(load_previous_mapping("/output/mapping1.yml"), sorted_mapping1))
 
 with open("/output/mapping1.yml", "w+") as fp:
     yaml.dump(sorted_mapping1, fp)
