@@ -31,3 +31,11 @@ jobs:
           PR_BRANCH_NAME: 'update-mappings'
           PR_BRANCH_PREFIX: 'chore/'
           PR_TITLE: 'chore: update mappings'
+          # The default bodies embed ${COMMANDS_OUTPUT}, which includes the
+          # generator's log on stderr (over 1 MB) and exceeds GitHub's
+          # 65,536 character limit. Use only stdout, where generate.py
+          # prints a size-limited summary of the changes.
+          PR_BODY: |
+            ${COMMANDS_STDOUT_OPENED}
+          PR_COMMENT_BODY: |
+            ${COMMANDS_STDOUT_OPENED}
