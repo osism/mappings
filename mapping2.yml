@@ -1,3 +1,17 @@
+_ssl_intermediate_ciphers:
+  - kolla.group_vars
+_ssl_intermediate_ciphersuites:
+  - kolla.group_vars
+_ssl_intermediate_options:
+  - kolla.group_vars
+_ssl_modern_ciphersuites:
+  - kolla.group_vars
+_ssl_modern_options:
+  - kolla.group_vars
+acme_client_lego:
+  - kolla.group_vars
+acme_client_servers:
+  - kolla.group_vars
 admin_secret:
   - ceph.ceph-mon
 adminer_database_host:
@@ -62,6 +76,10 @@ ansible_core_version:
   - osism.validations.ansible_version
 ansible_directory:
   - osism.services.manager
+ansible_facts_path:
+  - ubuntu22_cis
+ansible_python_interpreter:
+  - osism.defaults.all
 ansible_services:
   - osism.services.manager
 ansible_services_defaults:
@@ -92,6 +110,12 @@ aodh_api_image:
   - kolla.aodh
 aodh_api_image_full:
   - kolla.aodh
+aodh_api_listen_port:
+  - kolla.group_vars
+aodh_api_port:
+  - kolla.group_vars
+aodh_api_public_port:
+  - kolla.group_vars
 aodh_api_tag:
   - kolla.aodh
 aodh_api_workers:
@@ -148,10 +172,16 @@ aodh_evaluator_image_full:
   - kolla.aodh
 aodh_evaluator_tag:
   - kolla.aodh
+aodh_external_fqdn:
+  - kolla.group_vars
 aodh_extra_volumes:
   - kolla.aodh
 aodh_git_repository:
   - kolla.aodh
+aodh_internal_endpoint:
+  - kolla.group_vars
+aodh_internal_fqdn:
+  - kolla.group_vars
 aodh_keystone_user:
   - kolla.aodh
 aodh_ks_services:
@@ -214,6 +244,8 @@ aodh_notifier_image_full:
   - kolla.aodh
 aodh_notifier_tag:
   - kolla.aodh
+aodh_public_endpoint:
+  - kolla.group_vars
 aodh_services:
   - kolla.aodh
 aodh_source_version:
@@ -410,6 +442,16 @@ apache__vhost_type:
   - debops.debops.apache
 apache__vhosts:
   - debops.debops.apache
+api_address_family:
+  - kolla.group_vars
+  - osism.defaults.all
+api_interface:
+  - kolla.group_vars
+  - osism.defaults.all
+api_interface_address:
+  - kolla.group_vars
+apiserver_endpoint:
+  - osism.defaults.all
 apparmor__base_packages:
   - debops.debops.apparmor
 apparmor__combined_locals:
@@ -500,6 +542,7 @@ apt__distribution_version:
   - debops.debops.apt
 apt__enabled:
   - debops.debops.apt
+  - osism.defaults.all
 apt__extra_architectures:
   - debops.debops.apt
 apt__group_auth_files:
@@ -829,6 +872,7 @@ ara_password:
 ara_server_database_type:
   - osism.services.manager
 ara_server_host:
+  - osism.defaults.manager
   - osism.services.manager
 ara_server_image:
   - osism.services.manager
@@ -1154,6 +1198,12 @@ barbican_api_image:
   - kolla.barbican
 barbican_api_image_full:
   - kolla.barbican
+barbican_api_listen_port:
+  - kolla.group_vars
+barbican_api_port:
+  - kolla.group_vars
+barbican_api_public_port:
+  - kolla.group_vars
 barbican_api_tag:
   - kolla.barbican
 barbican_api_workers:
@@ -1166,6 +1216,8 @@ barbican_copy_certs:
   - kolla.barbican
 barbican_creator_role:
   - kolla.barbican
+barbican_crypto_plugin:
+  - kolla.group_vars
 barbican_database_address:
   - kolla.barbican
 barbican_database_enable_tls_internal:
@@ -1188,10 +1240,16 @@ barbican_enable_tls_backend:
   - kolla.barbican
 barbican_enabled_notification_topics:
   - kolla.barbican
+barbican_external_fqdn:
+  - kolla.group_vars
 barbican_extra_volumes:
   - kolla.barbican
 barbican_git_repository:
   - kolla.barbican
+barbican_internal_endpoint:
+  - kolla.group_vars
+barbican_internal_fqdn:
+  - kolla.group_vars
 barbican_keymanager_role:
   - kolla.barbican
 barbican_keystone_listener_default_volumes:
@@ -1228,12 +1286,16 @@ barbican_ks_services:
   - kolla.barbican
 barbican_ks_users:
   - kolla.barbican
+barbican_library_path:
+  - kolla.group_vars
 barbican_logging_debug:
   - kolla.barbican
 barbican_notification_topics:
   - kolla.barbican
 barbican_observer_role:
   - kolla.barbican
+barbican_public_endpoint:
+  - kolla.group_vars
 barbican_services:
   - kolla.barbican
 barbican_source_version:
@@ -1268,6 +1330,10 @@ barbican_worker_tag:
   - kolla.barbican
 beat_enable:
   - osism.services.manager
+benchmark:
+  - ubuntu22_cis
+benchmark_version:
+  - ubuntu22_cis
 bifrost_deploy_container_proxy:
   - kolla.bifrost
 bifrost_deploy_image:
@@ -1278,6 +1344,12 @@ bifrost_deploy_tag:
   - kolla.bifrost
 bifrost_deploy_verbosity:
   - kolla.bifrost
+bifrost_network_address_family:
+  - kolla.group_vars
+  - osism.defaults.all
+bifrost_network_interface:
+  - kolla.group_vars
+  - osism.defaults.all
 bifrost_tag:
   - kolla.bifrost
 bind__accept_any:
@@ -1472,6 +1544,12 @@ blazar_api_image:
   - kolla.blazar
 blazar_api_image_full:
   - kolla.blazar
+blazar_api_listen_port:
+  - kolla.group_vars
+blazar_api_port:
+  - kolla.group_vars
+blazar_api_public_port:
+  - kolla.group_vars
 blazar_api_tag:
   - kolla.blazar
 blazar_api_workers:
@@ -1500,12 +1578,18 @@ blazar_dev_repos_pull:
   - kolla.blazar
 blazar_enabled_notification_topics:
   - kolla.blazar
+blazar_external_fqdn:
+  - kolla.group_vars
 blazar_extra_volumes:
   - kolla.blazar
 blazar_git_repository:
   - kolla.blazar
+blazar_internal_base_endpoint:
+  - kolla.group_vars
 blazar_internal_endpoint:
   - kolla.blazar
+blazar_internal_fqdn:
+  - kolla.group_vars
 blazar_keystone_user:
   - kolla.blazar
 blazar_ks_services:
@@ -1542,6 +1626,8 @@ blazar_manager_tag:
   - kolla.blazar
 blazar_notification_topics:
   - kolla.blazar
+blazar_public_base_endpoint:
+  - kolla.group_vars
 blazar_public_endpoint:
   - kolla.blazar
 blazar_services:
@@ -1554,10 +1640,30 @@ block_db_size:
   - ceph.ceph-defaults
 bluestore_wal_devices:
   - ceph.ceph-osd
+bootstrap_dirs_group:
+  - osism.defaults.all
+bootstrap_dirs_owner:
+  - osism.defaults.all
+bpf_lb_algorithm:
+  - kubernetes.k3s_server_post
+bpf_lb_mode:
+  - kubernetes.k3s_server_post
 cache_directory:
   - osism.services.manager
 cache_timeout:
   - hardening
+calico_blockSize:
+  - kubernetes.k3s_server_post
+calico_ebpf:
+  - kubernetes.k3s_server_post
+calico_encapsulation:
+  - kubernetes.k3s_server_post
+calico_natOutgoing:
+  - kubernetes.k3s_server_post
+calico_nodeSelector:
+  - kubernetes.k3s_server_post
+calico_tag:
+  - kubernetes.k3s_server_post
 ceilometer_central_default_volumes:
   - kolla.ceilometer
 ceilometer_central_dimensions:
@@ -1718,12 +1824,22 @@ ceph_ansible_image_namespace:
   - osism.services.manager
 ceph_ansible_tag:
   - osism.services.manager
+ceph_cinder_backup_pool_name:
+  - kolla.group_vars
+ceph_cinder_backup_user:
+  - kolla.group_vars
+ceph_cinder_pool_name:
+  - kolla.group_vars
+ceph_cinder_user:
+  - kolla.group_vars
 ceph_client_docker_image:
   - ceph.ceph-defaults
 ceph_client_docker_image_tag:
   - ceph.ceph-defaults
 ceph_client_docker_registry:
   - ceph.ceph-defaults
+ceph_cluster:
+  - kolla.group_vars
 ceph_cluster_conf:
   - ceph.ceph-defaults
 ceph_common_container_params:
@@ -1744,6 +1860,10 @@ ceph_custom_repo:
   - ceph.ceph-defaults
 ceph_dashboard_firewall_zone:
   - ceph.ceph-defaults
+ceph_dashboard_standby_behaviour:
+  - osism.defaults.all
+ceph_dashboard_standby_error_status_code:
+  - osism.defaults.all
 ceph_dev_branch:
   - ceph.ceph-defaults
 ceph_dev_sha1:
@@ -1753,15 +1873,21 @@ ceph_directories_mode:
 ceph_docker_image:
   - ceph.ceph-defaults
   - ceph.ceph-nfs
+  - osism.defaults.all
 ceph_docker_image_tag:
   - ceph.ceph-defaults
   - ceph.ceph-nfs
+  - osism.defaults.all
 ceph_docker_no_proxy:
   - ceph.ceph-defaults
 ceph_docker_registry:
   - ceph.ceph-defaults
+  - osism.defaults.all
 ceph_docker_registry_auth:
   - ceph.ceph-defaults
+  - osism.defaults.all
+ceph_docker_tag:
+  - osism.defaults.all
 ceph_ec_profiles:
   - ceph.ceph-osd
 ceph_exporter_addr:
@@ -1774,8 +1900,22 @@ ceph_exporter_prio_limit:
   - ceph.ceph-exporter
 ceph_exporter_stats_period:
   - ceph.ceph-exporter
+ceph_glance_pool_name:
+  - kolla.group_vars
+ceph_glance_user:
+  - kolla.group_vars
+ceph_gnocchi_pool_name:
+  - kolla.group_vars
+ceph_gnocchi_user:
+  - kolla.group_vars
+ceph_group_name:
+  - osism.defaults.all
+ceph_image_version:
+  - osism.defaults.all
 ceph_keyring_permissions:
   - ceph.ceph-defaults
+ceph_manila_user:
+  - kolla.group_vars
 ceph_mds_container_params:
   - ceph.ceph-mds
 ceph_mds_docker_cpu_limit:
@@ -1794,8 +1934,15 @@ ceph_mgr_firewall_zone:
   - ceph.ceph-defaults
 ceph_mgr_modules:
   - ceph.ceph-mgr
+  - osism.defaults.all
+ceph_mgr_modules_defaults:
+  - osism.defaults.all
+ceph_mgr_modules_extra:
+  - osism.defaults.all
 ceph_mgr_packages:
   - ceph.ceph-mgr
+ceph_min_compat_client_order:
+  - osism.defaults.all
 ceph_mirror:
   - ceph.ceph-defaults
 ceph_mon_container_listen_port:
@@ -1854,10 +2001,15 @@ ceph_nfs_rgw_squash:
   - ceph.ceph-nfs
 ceph_nfs_rgw_user:
   - ceph.ceph-nfs
+ceph_nova_pool_name:
+  - kolla.group_vars
+ceph_nova_user:
+  - kolla.group_vars
 ceph_obs_repo:
   - ceph.ceph-defaults
 ceph_origin:
   - ceph.ceph-defaults
+  - osism.defaults.all
 ceph_osd_container_params:
   - ceph.ceph-osd
 ceph_osd_docker_cpu_limit:
@@ -1894,6 +2046,9 @@ ceph_release_num:
   - ceph.ceph-defaults
 ceph_repository:
   - ceph.ceph-defaults
+  - osism.defaults.all
+ceph_require_min_compat_client:
+  - osism.defaults.all
 ceph_rgw_container_params:
   - ceph.ceph-rgw
 ceph_rgw_docker_cpu_limit:
@@ -1902,6 +2057,8 @@ ceph_rgw_docker_memory_limit:
   - ceph.ceph-rgw
 ceph_rgw_endpoint_path:
   - kolla.ceph-rgw
+ceph_rgw_external_fqdn:
+  - kolla.group_vars
 ceph_rgw_firewall_zone:
   - ceph.ceph-defaults
 ceph_rgw_haproxy_healthcheck:
@@ -1910,8 +2067,12 @@ ceph_rgw_haproxy_members:
   - kolla.ceph-rgw
 ceph_rgw_hosts:
   - kolla.ceph-rgw
+ceph_rgw_internal_base_endpoint:
+  - kolla.group_vars
 ceph_rgw_internal_endpoint:
   - kolla.ceph-rgw
+ceph_rgw_internal_fqdn:
+  - kolla.group_vars
 ceph_rgw_keystone_user:
   - kolla.ceph-rgw
 ceph_rgw_ks_roles:
@@ -1920,8 +2081,14 @@ ceph_rgw_ks_services:
   - kolla.ceph-rgw
 ceph_rgw_ks_users:
   - kolla.ceph-rgw
+ceph_rgw_port:
+  - kolla.group_vars
+ceph_rgw_public_base_endpoint:
+  - kolla.group_vars
 ceph_rgw_public_endpoint:
   - kolla.ceph-rgw
+ceph_rgw_public_port:
+  - kolla.group_vars
 ceph_rgw_services:
   - kolla.ceph-rgw
 ceph_rgw_swift_account_in_url:
@@ -1930,6 +2097,8 @@ ceph_rgw_swift_compatibility:
   - kolla.ceph-rgw
 ceph_rgwloadbalancer_firewall_zone:
   - ceph.ceph-defaults
+ceph_share_directory:
+  - osism.defaults.all
 ceph_ssh_private_key:
   - osism.services.manager
 ceph_stable_key:
@@ -1950,6 +2119,7 @@ ceph_test:
   - ceph.ceph-defaults
 ceph_uid:
   - ceph.ceph-defaults
+  - osism.defaults.all
 ceph_use_distro_backports:
   - ceph.ceph-defaults
 ceph_volume_debug:
@@ -1962,6 +2132,8 @@ cephadm_ssh_pub_key_path:
   - ceph.ceph-defaults
 cephadm_ssh_user:
   - ceph.ceph-defaults
+cephclient_cluster_fsid:
+  - osism.defaults.all
 cephclient_configuration_directory:
   - osism.services.cephclient
 cephclient_configure_repository:
@@ -1974,6 +2146,8 @@ cephclient_debian_repository:
   - osism.services.cephclient
 cephclient_docker_compose_directory:
   - osism.services.cephclient
+cephclient_groupname:
+  - osism.defaults.all
 cephclient_host_networking:
   - osism.services.cephclient
 cephclient_image:
@@ -1981,8 +2155,10 @@ cephclient_image:
 cephclient_install_type:
   - osism.services.cephclient
 cephclient_keyring:
+  - osism.defaults.all
   - osism.services.cephclient
 cephclient_keyring_name:
+  - osism.defaults.all
   - osism.services.cephclient
 cephclient_mons:
   - osism.services.cephclient
@@ -2006,12 +2182,45 @@ cephfs:
   - ceph.ceph-defaults
 cephfs_data_pool:
   - ceph.ceph-defaults
+  - osism.defaults.all
 cephfs_metadata_pool:
   - ceph.ceph-defaults
+  - osism.defaults.all
+cephfs_pool_default_min_size:
+  - osism.defaults.all
+cephfs_pool_default_pg_num:
+  - osism.defaults.all
+cephfs_pool_default_rule_name:
+  - osism.defaults.all
+cephfs_pool_default_size:
+  - osism.defaults.all
 cephfs_pools:
   - ceph.ceph-defaults
+  - osism.defaults.all
+cephfs_pools_defaults:
+  - osism.defaults.all
+cephfs_pools_extra:
+  - osism.defaults.all
 cephx:
   - ceph.ceph-defaults
+cert_manager_crds:
+  - kubernetes.cert_manager
+cert_manager_crds_helm_chart_ref:
+  - kubernetes.cert_manager
+cert_manager_crds_helm_release_name:
+  - kubernetes.cert_manager
+cert_manager_crds_helm_release_namespace:
+  - kubernetes.cert_manager
+cert_manager_crds_helm_values:
+  - kubernetes.cert_manager
+cert_manager_helm_chart_ref:
+  - kubernetes.cert_manager
+cert_manager_helm_release_name:
+  - kubernetes.cert_manager
+cert_manager_helm_release_namespace:
+  - kubernetes.cert_manager
+cert_manager_helm_values:
+  - kubernetes.cert_manager
 certbot_admin_email:
   - geerlingguy.certbot
 certbot_auto_renew:
@@ -2079,6 +2288,7 @@ cgit_configuration_directory:
 cgit_docker_compose_directory:
   - osism.services.cgit
 cgit_host:
+  - osism.defaults.all
   - osism.services.cgit
 cgit_image:
   - osism.services.cgit
@@ -2099,6 +2309,7 @@ cgit_tag:
 cgit_traefik:
   - osism.services.cgit
 chrony_allowed_subnets:
+  - osism.defaults.all
   - osism.services.chrony
 chrony_bind_local_interfaces_only:
   - osism.services.chrony
@@ -2119,9 +2330,47 @@ chrony_package_name:
 chrony_server_options:
   - osism.services.chrony
 chrony_servers:
+  - osism.defaults.all
   - osism.services.chrony
 chrony_sync_rtc:
   - osism.services.chrony
+cilium_bgp:
+  - kubernetes.k3s_server_post
+  - osism.defaults.all
+cilium_bgp_lb_cidr:
+  - kubernetes.k3s_server_post
+  - osism.defaults.all
+cilium_bgp_my_asn:
+  - kubernetes.k3s_server_post
+  - osism.defaults.all
+cilium_bgp_neighbors:
+  - kubernetes.k3s_server_post
+cilium_bgp_neighbors_groups:
+  - kubernetes.k3s_server_post
+cilium_bgp_peer_address:
+  - osism.defaults.all
+cilium_bgp_peer_asn:
+  - kubernetes.k3s_server_post
+  - osism.defaults.all
+cilium_cli:
+  - osism.defaults.all
+cilium_exportPodCIDR:
+  - kubernetes.k3s_server_post
+cilium_health_check:
+  - kubernetes.k3s_server_post
+cilium_hubble:
+  - kubernetes.k3s_server_post
+  - osism.defaults.all
+cilium_hubble_ui_lb:
+  - kubernetes.k3s_server_post
+  - osism.defaults.all
+cilium_iface:
+  - osism.defaults.all
+cilium_mode:
+  - kubernetes.k3s_server_post
+  - osism.defaults.all
+cilium_tag:
+  - osism.defaults.all
 cinder_api_default_volumes:
   - kolla.cinder
 cinder_api_dimensions:
@@ -2146,14 +2395,52 @@ cinder_api_image:
   - kolla.cinder
 cinder_api_image_full:
   - kolla.cinder
+cinder_api_listen_port:
+  - kolla.group_vars
+cinder_api_port:
+  - kolla.group_vars
+cinder_api_public_port:
+  - kolla.group_vars
 cinder_api_tag:
   - kolla.cinder
 cinder_api_workers:
   - kolla.cinder
+cinder_backend_ceph:
+  - kolla.group_vars
+cinder_backend_ceph_name:
+  - kolla.group_vars
+cinder_backend_huawei:
+  - kolla.group_vars
+cinder_backend_huawei_xml_files:
+  - kolla.group_vars
+cinder_backend_lightbits_name:
+  - kolla.group_vars
+cinder_backend_lvm_name:
+  - kolla.group_vars
+cinder_backend_nfs_name:
+  - kolla.group_vars
+cinder_backend_pure_fc_name:
+  - kolla.group_vars
+cinder_backend_pure_iscsi_name:
+  - kolla.group_vars
+cinder_backend_pure_nvme_tcp_name:
+  - kolla.group_vars
+cinder_backend_pure_roce_name:
+  - kolla.group_vars
+cinder_backend_quobyte_name:
+  - kolla.group_vars
+cinder_backends:
+  - kolla.group_vars
+cinder_backup_backend_ceph_name:
+  - kolla.group_vars
+cinder_backup_ceph_backend:
+  - kolla.group_vars
 cinder_backup_default_volumes:
   - kolla.cinder
 cinder_backup_dimensions:
   - kolla.cinder
+cinder_backup_driver:
+  - kolla.group_vars
 cinder_backup_enable_healthchecks:
   - kolla.cinder
 cinder_backup_extra_volumes:
@@ -2174,6 +2461,8 @@ cinder_backup_image:
   - kolla.cinder
 cinder_backup_image_full:
   - kolla.cinder
+cinder_backup_mount_options_nfs:
+  - kolla.group_vars
 cinder_backup_s3_access_key:
   - kolla.cinder
 cinder_backup_s3_bucket:
@@ -2182,14 +2471,20 @@ cinder_backup_s3_secret_key:
   - kolla.cinder
 cinder_backup_s3_url:
   - kolla.cinder
+cinder_backup_share:
+  - kolla.group_vars
 cinder_backup_tag:
   - kolla.cinder
+cinder_ceph_backends:
+  - kolla.group_vars
 cinder_cluster_name:
   - kolla.cinder
 cinder_cluster_skip_precheck:
   - kolla.cinder
 cinder_config_validation:
   - kolla.cinder
+cinder_coordination_backend:
+  - kolla.group_vars
 cinder_copy_certs:
   - kolla.cinder
 cinder_database_address:
@@ -2214,14 +2509,24 @@ cinder_enable_conversion_tmpfs:
   - kolla.cinder
 cinder_enable_tls_backend:
   - kolla.cinder
+cinder_enabled_backends:
+  - kolla.group_vars
 cinder_enabled_notification_topics:
   - kolla.cinder
+cinder_external_fqdn:
+  - kolla.group_vars
 cinder_extra_volumes:
   - kolla.cinder
 cinder_git_repository:
   - kolla.cinder
+cinder_internal_base_endpoint:
+  - kolla.group_vars
 cinder_internal_endpoint:
   - kolla.cinder
+cinder_internal_fqdn:
+  - kolla.group_vars
+cinder_keystone_user:
+  - kolla.group_vars
 cinder_ks_services:
   - kolla.cinder
 cinder_ks_user_roles:
@@ -2232,6 +2537,8 @@ cinder_logging_debug:
   - kolla.cinder
 cinder_notification_topics:
   - kolla.cinder
+cinder_public_base_endpoint:
+  - kolla.group_vars
 cinder_public_endpoint:
   - kolla.cinder
 cinder_rpc_version_startup_delay:
@@ -2268,6 +2575,8 @@ cinder_source_version:
   - kolla.cinder
 cinder_tag:
   - kolla.cinder
+cinder_target_helper:
+  - kolla.group_vars
 cinder_v3_internal_endpoint:
   - kolla.cinder
 cinder_v3_public_endpoint:
@@ -2280,6 +2589,8 @@ cinder_volume_enable_healthchecks:
   - kolla.cinder
 cinder_volume_extra_volumes:
   - kolla.cinder
+cinder_volume_group:
+  - kolla.group_vars
 cinder_volume_healthcheck:
   - kolla.cinder
 cinder_volume_healthcheck_interval:
@@ -2324,6 +2635,7 @@ client_admin_ceph_authtool_cap:
   - ceph.ceph-mon
 client_group_name:
   - ceph.ceph-defaults
+  - osism.defaults.all
 cloudkitty_api_default_volumes:
   - kolla.cloudkitty
 cloudkitty_api_dimensions:
@@ -2348,6 +2660,12 @@ cloudkitty_api_image:
   - kolla.cloudkitty
 cloudkitty_api_image_full:
   - kolla.cloudkitty
+cloudkitty_api_listen_port:
+  - kolla.group_vars
+cloudkitty_api_port:
+  - kolla.group_vars
+cloudkitty_api_public_port:
+  - kolla.group_vars
 cloudkitty_api_tag:
   - kolla.cloudkitty
 cloudkitty_api_workers:
@@ -2386,12 +2704,18 @@ cloudkitty_elasticsearch_insecure_connections:
   - kolla.cloudkitty
 cloudkitty_elasticsearch_url:
   - kolla.cloudkitty
+cloudkitty_external_fqdn:
+  - kolla.group_vars
 cloudkitty_extra_volumes:
   - kolla.cloudkitty
 cloudkitty_fetcher_backend:
   - kolla.cloudkitty
 cloudkitty_git_repository:
   - kolla.cloudkitty
+cloudkitty_internal_endpoint:
+  - kolla.group_vars
+cloudkitty_internal_fqdn:
+  - kolla.group_vars
 cloudkitty_keystone_user:
   - kolla.cloudkitty
 cloudkitty_ks_roles:
@@ -2446,14 +2770,29 @@ cloudkitty_prometheus_insecure_connections:
   - kolla.cloudkitty
 cloudkitty_prometheus_url:
   - kolla.cloudkitty
+cloudkitty_public_endpoint:
+  - kolla.group_vars
 cloudkitty_services:
   - kolla.cloudkitty
 cloudkitty_source_version:
   - kolla.cloudkitty
+cloudkitty_storage_backend:
+  - kolla.group_vars
 cloudkitty_tag:
   - kolla.cloudkitty
+cloudnative_pg_chart_ref:
+  - kubernetes.cloudnative_pg
+cloudnative_pg_release_name:
+  - kubernetes.cloudnative_pg
+cloudnative_pg_release_namespace:
+  - kubernetes.cloudnative_pg
+cloudnative_pg_values:
+  - kubernetes.cloudnative_pg
 cluster:
   - ceph.ceph-defaults
+cluster_cidr:
+  - kubernetes.k3s_server_post
+  - osism.defaults.all
 cluster_network:
   - ceph.ceph-defaults
 collectd_default_volumes:
@@ -2472,9 +2811,20 @@ collectd_services:
   - kolla.collectd
 collectd_tag:
   - kolla.collectd
+collectd_udp_port:
+  - kolla.group_vars
+computes_need_external_bridge:
+  - kolla.group_vars
+config_owner_group:
+  - kolla.group_vars
+config_owner_user:
+  - kolla.group_vars
+config_strategy:
+  - kolla.group_vars
 configuration_directory:
   - osism.commons.certificates
   - osism.commons.configuration
+  - osism.defaults.all
   - osism.services.chrony
   - osism.services.manager
   - osism.services.netbox
@@ -2515,8 +2865,17 @@ configuration_no_log:
   - osism.commons.configuration
 configuration_type:
   - osism.commons.configuration
+configure_adminer:
+  - osism.defaults.all
 configure_firewall:
   - ceph.ceph-defaults
+  - osism.defaults.all
+configure_phpmyadmin:
+  - osism.defaults.all
+configure_rally:
+  - osism.defaults.all
+configure_sshconfig:
+  - osism.defaults.all
 console_base_packages:
   - debops.debops.console
 console_conditional_packages:
@@ -2525,6 +2884,8 @@ console_fsckfix:
   - debops.debops.console
 console_fsckfix_releases:
   - debops.debops.console
+console_interface:
+  - osism.defaults.all
 console_serial:
   - debops.debops.console
 console_serial_baud:
@@ -2537,10 +2898,30 @@ console_serial_term:
   - debops.debops.console
 container_binary:
   - ceph.ceph-defaults
+container_config_directory:
+  - kolla.group_vars
+container_engine_volumes_path:
+  - kolla.group_vars
 container_exec_cmd:
   - ceph.ceph-defaults
+container_http_proxy:
+  - kolla.group_vars
+container_https_proxy:
+  - kolla.group_vars
 container_name:
   - osism.services.zuul
+container_no_proxy:
+  - kolla.group_vars
+container_proxy:
+  - kolla.group_vars
+container_proxy_no_proxy_entries:
+  - kolla.group_vars
+container_registry_mariadb_operator:
+  - kubernetes.mariadb_operator
+container_registry_rabbitmq_operator:
+  - kubernetes.rabbitmq_operator
+container_vars_file:
+  - ubuntu22_cis
 containerd_configure_repository:
   - osism.services.containerd
 containerd_grpc_gid:
@@ -2556,6 +2937,7 @@ containerd_service_name:
   - osism.services.docker
 containerized_deployment:
   - ceph.ceph-defaults
+  - osism.defaults.all
 controller__async_timeout:
   - debops.debops.controller
 controller__base_packages:
@@ -2680,6 +3062,18 @@ cran__upstream_apt_suite_map:
   - debops.debops.cran
 cran__upstream_mirror:
   - debops.debops.cran
+crds_prometheus_operator:
+  - kubernetes.crds
+crds_prometheus_operator_helm_chart_ref:
+  - kubernetes.crds
+crds_prometheus_operator_helm_release_name:
+  - kubernetes.crds
+crds_prometheus_operator_helm_release_namespace:
+  - kubernetes.crds
+crds_prometheus_operator_helm_values:
+  - kubernetes.crds
+create_benchmark_facts:
+  - ubuntu22_cis
 create_crush_tree:
   - ceph.ceph-osd
 cron__base_packages:
@@ -2892,6 +3286,12 @@ cyborg_api_image:
   - kolla.cyborg
 cyborg_api_image_full:
   - kolla.cyborg
+cyborg_api_listen_port:
+  - kolla.group_vars
+cyborg_api_port:
+  - kolla.group_vars
+cyborg_api_public_port:
+  - kolla.group_vars
 cyborg_api_tag:
   - kolla.cyborg
 cyborg_api_workers:
@@ -2946,12 +3346,16 @@ cyborg_dev_repos_pull:
   - kolla.cyborg
 cyborg_enabled_notification_topics:
   - kolla.cyborg
+cyborg_external_fqdn:
+  - kolla.group_vars
 cyborg_extra_volumes:
   - kolla.cyborg
 cyborg_git_repository:
   - kolla.cyborg
 cyborg_internal_endpoint:
   - kolla.cyborg
+cyborg_internal_fqdn:
+  - kolla.group_vars
 cyborg_keystone_user:
   - kolla.cyborg
 cyborg_ks_services:
@@ -2970,6 +3374,8 @@ cyborg_source_version:
   - kolla.cyborg
 cyborg_tag:
   - kolla.cyborg
+dashboard_admin_password:
+  - osism.defaults.all
 dashboard_admin_user:
   - ceph.ceph-defaults
 dashboard_admin_user_ro:
@@ -2982,6 +3388,7 @@ dashboard_disabled_features:
   - ceph.ceph-defaults
 dashboard_enabled:
   - ceph.ceph-defaults
+  - osism.defaults.all
 dashboard_frontend_vip:
   - ceph.ceph-defaults
 dashboard_grafana_api_no_ssl_verify:
@@ -3002,10 +3409,24 @@ dashboard_rgw_api_user_id:
   - ceph.ceph-defaults
 dashboard_tls_external:
   - ceph.ceph-defaults
+database_address:
+  - kolla.group_vars
 database_cluster_name:
   - kolla.mariadb
+database_connection_recycle_time:
+  - kolla.group_vars
+database_enable_tls_backend:
+  - kolla.group_vars
+database_enable_tls_internal:
+  - kolla.group_vars
+database_max_pool_size:
+  - kolla.group_vars
 database_max_timeout:
   - kolla.mariadb
+database_port:
+  - kolla.group_vars
+database_user:
+  - kolla.group_vars
 debconf__alternatives:
   - debops.debops.debconf
 debconf__apt_state:
@@ -3094,12 +3515,38 @@ debops_legacy__remove_packages:
   - debops.debops.debops_legacy
 dedicated_devices:
   - ceph.ceph-osd
+default_container_dimensions:
+  - kolla.group_vars
+default_container_dimensions_docker:
+  - kolla.group_vars
+default_container_dimensions_podman:
+  - kolla.group_vars
+default_container_healthcheck_interval:
+  - kolla.group_vars
+default_container_healthcheck_retries:
+  - kolla.group_vars
+default_container_healthcheck_start_period:
+  - kolla.group_vars
+default_container_healthcheck_timeout:
+  - kolla.group_vars
 default_docker_volume_type:
   - kolla.magnum
+default_extra_volumes:
+  - kolla.group_vars
+default_project_domain_id:
+  - kolla.group_vars
+default_project_domain_name:
+  - kolla.group_vars
+default_user_domain_id:
+  - kolla.group_vars
+default_user_domain_name:
+  - kolla.group_vars
 delay_wait_osd_up:
   - ceph.ceph-osd
 deploy_private_key:
   - osism.services.manager
+deploy_user:
+  - osism.defaults.all
 designate_api_default_volumes:
   - kolla.designate
 designate_api_dimensions:
@@ -3124,10 +3571,18 @@ designate_api_image:
   - kolla.designate
 designate_api_image_full:
   - kolla.designate
+designate_api_listen_port:
+  - kolla.group_vars
+designate_api_port:
+  - kolla.group_vars
+designate_api_public_port:
+  - kolla.group_vars
 designate_api_tag:
   - kolla.designate
 designate_api_workers:
   - kolla.designate
+designate_backend:
+  - kolla.group_vars
 designate_backend_bind9_cmdline_extras:
   - kolla.designate
 designate_backend_bind9_default_volumes:
@@ -3158,8 +3613,14 @@ designate_backend_bind9_tag:
   - kolla.designate
 designate_backend_bind9_workers:
   - kolla.designate
+designate_backend_external:
+  - kolla.group_vars
+designate_backend_external_bind9_nameservers:
+  - kolla.group_vars
 designate_backend_infoblox_nameservers:
   - kolla.designate
+designate_bind_port:
+  - kolla.group_vars
 designate_central_default_volumes:
   - kolla.designate
 designate_central_dimensions:
@@ -3190,6 +3651,8 @@ designate_central_workers:
   - kolla.designate
 designate_config_validation:
   - kolla.designate
+designate_coordination_backend:
+  - kolla.group_vars
 designate_copy_certs:
   - kolla.designate
 designate_database_address:
@@ -3212,10 +3675,14 @@ designate_dev_repos_pull:
   - kolla.designate
 designate_dnssec_validation:
   - kolla.designate
+designate_enable_notifications_sink:
+  - kolla.group_vars
 designate_enable_tls_backend:
   - kolla.designate
 designate_enabled_notification_topics:
   - kolla.designate
+designate_external_fqdn:
+  - kolla.group_vars
 designate_extra_volumes:
   - kolla.designate
 designate_forwarders_addresses:
@@ -3236,6 +3703,12 @@ designate_infoblox_ssl_verify:
   - kolla.designate
 designate_infoblox_wapi_url:
   - kolla.designate
+designate_internal_endpoint:
+  - kolla.group_vars
+designate_internal_fqdn:
+  - kolla.group_vars
+designate_keystone_user:
+  - kolla.group_vars
 designate_ks_services:
   - kolla.designate
 designate_ks_users:
@@ -3266,12 +3739,18 @@ designate_mdns_image:
   - kolla.designate
 designate_mdns_image_full:
   - kolla.designate
+designate_mdns_port:
+  - kolla.group_vars
 designate_mdns_tag:
   - kolla.designate
 designate_mdns_workers:
   - kolla.designate
 designate_notification_topics:
   - kolla.designate
+designate_notifications_topic_name:
+  - kolla.group_vars
+designate_ns_record:
+  - kolla.group_vars
 designate_producer_default_volumes:
   - kolla.designate
 designate_producer_dimensions:
@@ -3300,8 +3779,12 @@ designate_producer_tag:
   - kolla.designate
 designate_producer_workers:
   - kolla.designate
+designate_public_endpoint:
+  - kolla.group_vars
 designate_recursion:
   - kolla.designate
+designate_rndc_port:
+  - kolla.group_vars
 designate_services:
   - kolla.designate
 designate_sink_default_volumes:
@@ -3534,8 +4017,16 @@ dhparam__suffix:
   - debops.debops.dhparam
 disable_transparent_hugepage:
   - ceph.ceph-defaults
+discover_int_uid:
+  - ubuntu22_cis
 dmcrypt:
   - ceph.ceph-osd
+dns_address_family:
+  - kolla.group_vars
+  - osism.defaults.all
+dns_interface:
+  - kolla.group_vars
+  - osism.defaults.all
 dnsdist_acls:
   - osism.services.dnsdist
 dnsdist_configuration_directory:
@@ -3545,6 +4036,7 @@ dnsdist_container_name:
 dnsdist_docker_compose_directory:
   - osism.services.dnsdist
 dnsdist_host:
+  - osism.defaults.all
   - osism.services.dnsdist
 dnsdist_hosts:
   - osism.services.dnsdist
@@ -3671,6 +4163,7 @@ dnsmasq_dns_servers:
 dnsmasq_docker_compose_directory:
   - osism.services.dnsmasq
 dnsmasq_docker_registry:
+  - osism.defaults.all
   - osism.services.dnsmasq
 dnsmasq_dynamic_hosts:
   - osism.services.dnsmasq
@@ -3700,8 +4193,13 @@ docker_allow_restart:
   - osism.services.docker
 docker_cli_package_name:
   - osism.services.docker
+docker_client_timeout:
+  - kolla.group_vars
+docker_common_options:
+  - kolla.group_vars
 docker_compose_install_type:
   - osism.commons.docker_compose
+  - osism.defaults.all
 docker_compose_package_name:
   - osism.commons.docker_compose
 docker_compose_plugin_package_name:
@@ -3715,9 +4213,12 @@ docker_compose_service_user:
 docker_configure_proxy:
   - osism.services.docker
 docker_configure_repository:
+  - osism.defaults.all
   - osism.services.docker
 docker_configure_storage_block_device:
   - osism.services.docker
+docker_configure_storage_driver:
+  - osism.defaults.all
 docker_configure_storage_zram_device:
   - osism.services.docker
 docker_debian_repository:
@@ -3730,8 +4231,13 @@ docker_default_runtime:
   - osism.services.docker
 docker_default_ulimits:
   - osism.services.docker
+docker_disable_default_iptables_rules:
+  - kolla.group_vars
 docker_disable_default_network:
+  - kolla.group_vars
   - osism.services.docker
+docker_disable_ip_forward:
+  - kolla.group_vars
 docker_enforce_restart:
   - osism.services.docker
 docker_experimental:
@@ -3790,6 +4296,8 @@ docker_gen__templates:
   - debops.debops.docker_gen
 docker_gen__version:
   - debops.debops.docker_gen
+docker_graceful_timeout:
+  - kolla.group_vars
 docker_group:
   - osism.services.docker
 docker_hosts:
@@ -3800,8 +4308,12 @@ docker_hosts_extra:
   - osism.services.docker
 docker_ignore_restart_groupname:
   - osism.services.docker
+docker_image_name_prefix:
+  - kolla.group_vars
 docker_image_prune_timeout:
   - kolla.prune-images
+docker_image_url:
+  - kolla.group_vars
 docker_insecure_registries:
   - osism.services.docker
 docker_ip6tables:
@@ -3814,6 +4326,10 @@ docker_log_driver:
   - osism.services.docker
 docker_log_level:
   - osism.services.docker
+docker_log_max_file:
+  - kolla.group_vars
+docker_log_max_size:
+  - kolla.group_vars
 docker_log_opts:
   - osism.services.docker
 docker_login_as_operator:
@@ -3830,6 +4346,8 @@ docker_login_username:
   - osism.commons.docker_login
 docker_manage_containerd:
   - osism.services.docker
+docker_namespace:
+  - kolla.group_vars
 docker_network_mtu:
   - osism.services.adminer
   - osism.services.cephclient
@@ -3888,6 +4406,8 @@ docker_python_package_names:
 docker_redhat_repository:
   - osism.services.docker
 docker_registry:
+  - kolla.group_vars
+  - osism.defaults.all
   - osism.services.adminer
   - osism.services.docker
   - osism.services.gnmic
@@ -4024,30 +4544,44 @@ docker_registry__version:
 docker_registry_adminer:
   - osism.services.adminer
 docker_registry_ansible:
+  - osism.defaults.all
   - osism.services.manager
 docker_registry_ara_server:
   - osism.services.manager
 docker_registry_cephclient:
+  - osism.defaults.all
   - osism.services.cephclient
 docker_registry_cgit:
+  - osism.defaults.all
   - osism.services.cgit
 docker_registry_dnsdist:
+  - osism.defaults.all
   - osism.services.dnsdist
+docker_registry_email:
+  - kolla.group_vars
 docker_registry_homer:
+  - osism.defaults.all
   - osism.services.homer
+docker_registry_insecure:
+  - kolla.group_vars
 docker_registry_inventory_reconciler:
   - osism.services.manager
 docker_registry_kepler:
   - osism.services.kepler
 docker_registry_mariadb:
   - osism.services.manager
+docker_registry_memcached:
+  - osism.defaults.all
 docker_registry_mirrors:
   - osism.services.docker
 docker_registry_netbox:
+  - osism.defaults.all
   - osism.services.netbox
 docker_registry_nexus:
+  - osism.defaults.all
   - osism.services.nexus
 docker_registry_openstackclient:
+  - osism.defaults.all
   - osism.services.openstackclient
 docker_registry_opentelemetry_collector:
   - osism.services.opentelemetry_collector
@@ -4056,8 +4590,10 @@ docker_registry_osism:
 docker_registry_osism_frontend:
   - osism.services.manager
 docker_registry_pgautoupgrade:
+  - osism.defaults.all
   - osism.services.netbox
 docker_registry_phpmyadmin:
+  - osism.defaults.all
   - osism.services.phpmyadmin
 docker_registry_postgres:
   - osism.services.netbox
@@ -4067,8 +4603,10 @@ docker_registry_redis:
 docker_registry_scaphandre:
   - osism.services.scaphandre
 docker_registry_service:
+  - osism.defaults.all
   - osism.services.manager
 docker_registry_squid:
+  - osism.defaults.all
   - osism.services.squid
 docker_registry_stepca:
   - osism.services.stepca
@@ -4077,13 +4615,26 @@ docker_registry_substation:
 docker_registry_tempest:
   - osism.validations.tempest
 docker_registry_traefik:
+  - osism.defaults.all
   - osism.services.traefik
+docker_registry_username:
+  - kolla.group_vars
 docker_registry_vault:
+  - osism.defaults.all
   - osism.services.manager
 docker_registry_wazuh_proxy:
   - osism.services.wazuh_proxy
+docker_registry_zookeeper:
+  - osism.defaults.all
 docker_registry_zuul:
+  - osism.defaults.all
   - osism.services.zuul
+docker_restart_policy:
+  - kolla.group_vars
+docker_restart_policy_retry:
+  - kolla.group_vars
+docker_runtime_directory:
+  - kolla.group_vars
 docker_server__admins:
   - debops.debops.docker_server
 docker_server__base_packages:
@@ -4131,6 +4682,7 @@ docker_storage_block_device:
 docker_storage_containerd_snapshotter:
   - osism.services.docker
 docker_storage_driver:
+  - osism.defaults.all
   - osism.services.docker
 docker_storage_filesystem:
   - osism.services.docker
@@ -4148,6 +4700,8 @@ docker_user:
   - osism.services.docker
 docker_version_expected:
   - osism.validations.docker_version
+docker_volumes_path:
+  - kolla.group_vars
 docker_wait_after_restart:
   - osism.services.docker
 docker_wait_after_restart_seconds:
@@ -4288,16 +4842,20 @@ dokuwiki__www:
   - debops.debops.dokuwiki
 dotfiles_files:
   - geerlingguy.dotfiles
+  - osism.defaults.all
 dotfiles_home:
   - geerlingguy.dotfiles
 dotfiles_repo:
   - geerlingguy.dotfiles
+  - osism.defaults.all
 dotfiles_repo_accept_hostkey:
   - geerlingguy.dotfiles
 dotfiles_repo_local_destination:
   - geerlingguy.dotfiles
+  - osism.defaults.all
 dotfiles_repo_version:
   - geerlingguy.dotfiles
+  - osism.defaults.all
 dovecot__accept_any:
   - debops.debops.dovecot
 dovecot__allow_doveadm:
@@ -4476,6 +5034,12 @@ dovecot__vmail_posix_group:
   - debops.debops.dovecot
 dovecot__vmail_posix_user:
   - debops.debops.dovecot
+dpdk_tunnel_address_family:
+  - kolla.group_vars
+dpdk_tunnel_interface:
+  - kolla.group_vars
+dpdk_tunnel_interface_address:
+  - kolla.group_vars
 dpkg_cleanup__dependent_packages:
   - debops.debops.dpkg_cleanup
 dpkg_cleanup__enabled:
@@ -4744,42 +5308,365 @@ elasticsearch__version:
   - debops.debops.elasticsearch
 elasticsearch__xpack_enabled:
   - debops.debops.elasticsearch
+enable_aodh:
+  - kolla.group_vars
 enable_ara:
   - osism.services.manager
+enable_auditd:
+  - osism.defaults.all
+enable_barbican:
+  - kolla.group_vars
+enable_blazar:
+  - kolla.group_vars
+enable_bpf_masquerade:
+  - kubernetes.k3s_server_post
+enable_ceilometer:
+  - kolla.group_vars
+enable_ceilometer_horizon_policy_file:
+  - kolla.group_vars
+enable_ceilometer_ipmi:
+  - kolla.group_vars
+enable_ceilometer_prometheus_pushgateway:
+  - kolla.group_vars
 enable_celery:
   - osism.services.manager
+enable_cells:
+  - kolla.group_vars
+enable_central_logging:
+  - kolla.group_vars
 enable_ceph_ansible:
   - osism.services.manager
+enable_ceph_rgw:
+  - kolla.group_vars
 enable_ceph_rgw_keystone:
   - kolla.ceph-rgw
+enable_ceph_rgw_loadbalancer:
+  - kolla.group_vars
 enable_ceph_volume_debug:
   - ceph.ceph-defaults
+enable_chrony:
+  - osism.defaults.all
+enable_cinder:
+  - kolla.group_vars
+enable_cinder_backend_iscsi:
+  - kolla.group_vars
+enable_cinder_backend_lightbits:
+  - kolla.group_vars
+enable_cinder_backend_lvm:
+  - kolla.group_vars
+enable_cinder_backend_nfs:
+  - kolla.group_vars
+enable_cinder_backend_pure_fc:
+  - kolla.group_vars
+enable_cinder_backend_pure_iscsi:
+  - kolla.group_vars
+enable_cinder_backend_pure_nvme_tcp:
+  - kolla.group_vars
+enable_cinder_backend_pure_roce:
+  - kolla.group_vars
+enable_cinder_backend_quobyte:
+  - kolla.group_vars
+enable_cinder_backup:
+  - kolla.group_vars
+enable_cinder_horizon_policy_file:
+  - kolla.group_vars
+enable_cloudkitty:
+  - kolla.group_vars
 enable_cluster_user_trust:
   - kolla.magnum
+enable_collectd:
+  - kolla.group_vars
+enable_container_healthchecks:
+  - kolla.group_vars
+enable_cyborg:
+  - kolla.group_vars
+enable_designate:
+  - kolla.group_vars
+enable_destroy_images:
+  - kolla.group_vars
+enable_etcd:
+  - kolla.group_vars
+enable_external_api_firewalld:
+  - kolla.group_vars
+enable_external_mariadb_load_balancer:
+  - kolla.group_vars
+enable_fluentd:
+  - kolla.group_vars
+enable_fluentd_systemd:
+  - kolla.group_vars
 enable_frontend:
   - osism.services.manager
+enable_glance:
+  - kolla.group_vars
+enable_glance_horizon_policy_file:
+  - kolla.group_vars
+enable_glance_image_cache:
+  - kolla.group_vars
+enable_gnocchi:
+  - kolla.group_vars
+enable_gnocchi_statsd:
+  - kolla.group_vars
+enable_grafana:
+  - kolla.group_vars
+enable_grafana_external:
+  - kolla.group_vars
+enable_hacluster:
+  - kolla.group_vars
+enable_haproxy:
+  - kolla.group_vars
+enable_haproxy_memcached:
+  - kolla.group_vars
+enable_heat:
+  - kolla.group_vars
+enable_heat_horizon_policy_file:
+  - kolla.group_vars
+enable_horizon:
+  - kolla.group_vars
+enable_horizon_blazar:
+  - kolla.group_vars
+enable_horizon_cloudkitty:
+  - kolla.group_vars
+enable_horizon_designate:
+  - kolla.group_vars
+enable_horizon_fwaas:
+  - kolla.group_vars
+enable_horizon_heat:
+  - kolla.group_vars
+enable_horizon_ironic:
+  - kolla.group_vars
+enable_horizon_magnum:
+  - kolla.group_vars
+enable_horizon_manila:
+  - kolla.group_vars
+enable_horizon_masakari:
+  - kolla.group_vars
+enable_horizon_mistral:
+  - kolla.group_vars
+enable_horizon_neutron_vpnaas:
+  - kolla.group_vars
+enable_horizon_octavia:
+  - kolla.group_vars
+enable_horizon_tacker:
+  - kolla.group_vars
+enable_horizon_trove:
+  - kolla.group_vars
+enable_horizon_watcher:
+  - kolla.group_vars
+enable_ironic:
+  - kolla.group_vars
+enable_ironic_dnsmasq:
+  - kolla.group_vars
+enable_ironic_neutron_agent:
+  - kolla.group_vars
+enable_ironic_prometheus_exporter:
+  - kolla.group_vars
+enable_ironic_pxe_filter:
+  - kolla.group_vars
+enable_iscsid:
+  - kolla.group_vars
 enable_iscsid_for_cinder:
   - kolla.iscsi
 enable_iscsid_for_ironic:
   - kolla.iscsi
+enable_keepalived:
+  - kolla.group_vars
+enable_keystone:
+  - kolla.group_vars
+enable_keystone_federation:
+  - kolla.group_vars
+enable_keystone_horizon_policy_file:
+  - kolla.group_vars
 enable_kolla_ansible:
   - osism.services.manager
+enable_letsencrypt:
+  - kolla.group_vars
 enable_listener:
   - osism.services.manager
+enable_loadbalancer:
+  - kolla.group_vars
+enable_magnum:
+  - kolla.group_vars
+enable_manila:
+  - kolla.group_vars
+enable_manila_backend_cephfs_native:
+  - kolla.group_vars
+enable_manila_backend_cephfs_nfs:
+  - kolla.group_vars
+enable_manila_backend_flashblade:
+  - kolla.group_vars
+enable_manila_backend_generic:
+  - kolla.group_vars
+enable_manila_backend_glusterfs_nfs:
+  - kolla.group_vars
+enable_manila_backend_hnas:
+  - kolla.group_vars
+enable_mariabackup:
+  - kolla.group_vars
+enable_mariadb:
+  - kolla.group_vars
+enable_masakari:
+  - kolla.group_vars
+enable_masakari_hostmonitor:
+  - kolla.group_vars
+enable_masakari_instancemonitor:
+  - kolla.group_vars
+enable_memcached:
+  - kolla.group_vars
+enable_mistral:
+  - kolla.group_vars
+enable_multipathd:
+  - kolla.group_vars
 enable_netbox:
   - osism.services.manager
+enable_neutron:
+  - kolla.group_vars
+enable_neutron_agent_ha:
+  - kolla.group_vars
+enable_neutron_bgp_dragent:
+  - kolla.group_vars
+enable_neutron_dvr:
+  - kolla.group_vars
+enable_neutron_fwaas:
+  - kolla.group_vars
+enable_neutron_horizon_policy_file:
+  - kolla.group_vars
+enable_neutron_infoblox_ipam_agent:
+  - kolla.group_vars
+enable_neutron_metering:
+  - kolla.group_vars
+enable_neutron_mlnx:
+  - kolla.group_vars
+enable_neutron_packet_logging:
+  - kolla.group_vars
+enable_neutron_port_forwarding:
+  - kolla.group_vars
+enable_neutron_provider_networks:
+  - kolla.group_vars
+enable_neutron_qos:
+  - kolla.group_vars
+enable_neutron_segments:
+  - kolla.group_vars
+enable_neutron_sfc:
+  - kolla.group_vars
+enable_neutron_sriov:
+  - kolla.group_vars
+enable_neutron_taas:
+  - kolla.group_vars
+enable_neutron_trunk:
+  - kolla.group_vars
+enable_neutron_vpnaas:
+  - kolla.group_vars
+enable_nova:
+  - kolla.group_vars
+enable_nova_fake:
+  - kolla.group_vars
+enable_nova_horizon_policy_file:
+  - kolla.group_vars
+enable_nova_libvirt_container:
+  - kolla.group_vars
+enable_nova_serialconsole_proxy:
+  - kolla.group_vars
+enable_nova_ssh:
+  - kolla.group_vars
 enable_nova_swtpm:
   - kolla.nova-cell
+enable_octavia:
+  - kolla.group_vars
+enable_octavia_driver_agent:
+  - kolla.group_vars
+enable_octavia_jobboard:
+  - kolla.group_vars
+enable_opensearch:
+  - kolla.group_vars
+enable_opensearch_dashboards:
+  - kolla.group_vars
+enable_opensearch_dashboards_external:
+  - kolla.group_vars
+enable_openstack_core:
+  - kolla.group_vars
+enable_openstack_exporter:
+  - kubernetes.monitoring
+  - osism.defaults.all
+enable_openvswitch:
+  - kolla.group_vars
 enable_osism_kubernetes:
   - osism.services.manager
+enable_osprofiler:
+  - kolla.group_vars
+enable_ovn:
+  - kolla.group_vars
+enable_ovn_sb_db_relay:
+  - kolla.group_vars
+enable_ovs_dpdk:
+  - kolla.group_vars
+enable_placement:
+  - kolla.group_vars
+enable_prometheus:
+  - kolla.group_vars
+enable_prometheus_alertmanager:
+  - kolla.group_vars
+enable_prometheus_alertmanager_external:
+  - kolla.group_vars
+enable_prometheus_blackbox_exporter:
+  - kolla.group_vars
+enable_prometheus_cadvisor:
+  - kolla.group_vars
+enable_prometheus_ceph_mgr_exporter:
+  - kolla.group_vars
+enable_prometheus_elasticsearch_exporter:
+  - kolla.group_vars
+enable_prometheus_etcd_integration:
+  - kolla.group_vars
+enable_prometheus_fluentd_integration:
+  - kolla.group_vars
+enable_prometheus_haproxy_exporter:
+  - kolla.group_vars
+enable_prometheus_libvirt_exporter:
+  - kolla.group_vars
+enable_prometheus_memcached_exporter:
+  - kolla.group_vars
+enable_prometheus_mysqld_exporter:
+  - kolla.group_vars
+enable_prometheus_node_exporter:
+  - kolla.group_vars
+enable_prometheus_openstack_exporter:
+  - kolla.group_vars
+enable_prometheus_openstack_exporter_external:
+  - kolla.group_vars
+enable_prometheus_openstack_network_exporter:
+  - kolla.group_vars
+enable_prometheus_proxysql_exporter:
+  - kolla.group_vars
+enable_prometheus_rabbitmq_exporter:
+  - kolla.group_vars
+enable_prometheus_server:
+  - kolla.group_vars
 enable_prometheus_server_external:
   - kolla.prometheus
+enable_prometheus_valkey_exporter:
+  - kolla.group_vars
+enable_proxysql:
+  - kolla.group_vars
+enable_rabbitmq:
+  - kolla.group_vars
 enable_shared_var_lib_nova_mnt:
   - kolla.nova-cell
+enable_skyline:
+  - kolla.group_vars
+enable_tacker:
+  - kolla.group_vars
 enable_tgtd:
   - kolla.iscsi
+enable_trove:
+  - kolla.group_vars
+enable_trove_singletenant:
+  - kolla.group_vars
+enable_valkey:
+  - kolla.group_vars
 enable_vault:
   - osism.services.manager
+enable_watcher:
+  - kolla.group_vars
 engine_data:
   - kolla.container-engine-migration
 environment__case:
@@ -4850,6 +5737,8 @@ etcd_bootstrap_service_environment:
   - kolla.etcd
 etcd_client_internal_endpoint:
   - kolla.etcd
+etcd_client_port:
+  - kolla.group_vars
 etcd_copy_certs:
   - kolla.etcd
 etcd_default_environment:
@@ -4860,6 +5749,8 @@ etcd_dimensions:
   - kolla.etcd
 etcd_enable_healthchecks:
   - kolla.etcd
+etcd_enable_tls:
+  - kolla.group_vars
 etcd_enable_tls_backend:
   - kolla.etcd
 etcd_extra_volumes:
@@ -4882,6 +5773,10 @@ etcd_image_full:
   - kolla.etcd
 etcd_peer_internal_endpoint:
   - kolla.etcd
+etcd_peer_port:
+  - kolla.group_vars
+etcd_protocol:
+  - kolla.group_vars
 etcd_remove_deleted_members:
   - kolla.etcd
 etcd_services:
@@ -5160,8 +6055,20 @@ etherpad_welcome_text:
   - debops.debops.etherpad
 extension_drivers:
   - kolla.neutron
+external_api_firewalld_zone:
+  - kolla.group_vars
+external_ceph_cephx_enabled:
+  - kolla.group_vars
 external_haproxy_members:
   - kolla.mariadb
+extra_agent_args:
+  - kubernetes.k3s_agent
+  - osism.defaults.all
+extra_args:
+  - osism.defaults.all
+extra_server_args:
+  - kubernetes.k3s_server
+  - osism.defaults.all
 extrepo__base_packages:
   - debops.debops.extrepo
 extrepo__combined_configuration:
@@ -5255,6 +6162,7 @@ fail2ban_usedns:
 falco_configuration_files:
   - osism.services.falco
 falco_configure_repository:
+  - osism.defaults.all
   - osism.services.falco
 falco_debian_repository:
   - osism.services.falco
@@ -5400,10 +6308,17 @@ ferm_input_host_list:
   - debops.debops.ferm
 ferm_input_list:
   - debops.debops.ferm
+fernet_key_rotation_interval:
+  - kolla.group_vars
+fernet_token_allow_expired_window:
+  - kolla.group_vars
+fernet_token_expiry:
+  - kolla.group_vars
 fetch_audit_output:
   - ubuntu22_cis
 fetch_directory:
   - ceph.ceph-fetch-keys
+  - osism.defaults.all
 fhs__combined_directories:
   - debops.debops.fhs
 fhs__default_directories:
@@ -5457,6 +6372,7 @@ filebeat__version:
 flower_enable:
   - osism.services.manager
 flower_host:
+  - osism.defaults.manager
   - osism.services.manager
 flower_port:
   - osism.services.manager
@@ -5493,7 +6409,7 @@ fluentd_enabled_input_openstack_services:
 fluentd_extra_volumes:
   - kolla.fluentd
 fluentd_host:
-  - osism.services.rsyslog
+  - osism.defaults.all
 fluentd_image:
   - kolla.fluentd
 fluentd_image_full:
@@ -5510,10 +6426,10 @@ fluentd_opensearch_scheme:
   - kolla.fluentd
 fluentd_opensearch_user:
   - kolla.fluentd
-fluentd_port:
-  - osism.services.rsyslog
 fluentd_services:
   - kolla.fluentd
+fluentd_syslog_port:
+  - kolla.group_vars
 fluentd_tag:
   - kolla.fluentd
 freeradius__accept_any:
@@ -5714,6 +6630,7 @@ fsid:
   - ceph.ceph-defaults
 generate_fsid:
   - ceph.ceph-defaults
+  - osism.defaults.all
 get_audit_binary_method:
   - ubuntu22_cis
 gitlab__additional_groups:
@@ -6070,14 +6987,28 @@ glance_api_healthcheck_test:
   - kolla.glance
 glance_api_healthcheck_timeout:
   - kolla.glance
+glance_api_hosts:
+  - kolla.group_vars
 glance_api_image:
   - kolla.glance
 glance_api_image_full:
   - kolla.glance
+glance_api_listen_port:
+  - kolla.group_vars
+glance_api_port:
+  - kolla.group_vars
+glance_api_public_port:
+  - kolla.group_vars
 glance_api_tag:
   - kolla.glance
 glance_api_workers:
   - kolla.glance
+glance_backend_ceph:
+  - kolla.group_vars
+glance_backend_file:
+  - kolla.group_vars
+glance_backend_s3:
+  - kolla.group_vars
 glance_backend_s3_access_key:
   - kolla.glance
 glance_backend_s3_bucket:
@@ -6116,12 +7047,30 @@ glance_dev_mode:
   - kolla.glance
 glance_dev_repos_pull:
   - kolla.glance
+glance_enable_interoperable_image_import:
+  - kolla.group_vars
+glance_enable_property_protection:
+  - kolla.group_vars
+glance_enable_rolling_upgrade:
+  - kolla.group_vars
+glance_enable_tls_backend:
+  - kolla.group_vars
 glance_enabled_notification_topics:
   - kolla.glance
+glance_external_fqdn:
+  - kolla.group_vars
 glance_extra_volumes:
   - kolla.glance
+glance_file_datadir_volume:
+  - kolla.group_vars
 glance_git_repository:
   - kolla.glance
+glance_internal_endpoint:
+  - kolla.group_vars
+glance_internal_fqdn:
+  - kolla.group_vars
+glance_keystone_user:
+  - kolla.group_vars
 glance_ks_services:
   - kolla.glance
 glance_ks_users:
@@ -6130,6 +7079,8 @@ glance_logging_debug:
   - kolla.glance
 glance_notification_topics:
   - kolla.glance
+glance_public_endpoint:
+  - kolla.group_vars
 glance_services:
   - kolla.glance
 glance_source_version:
@@ -6159,6 +7110,7 @@ gnmic_container_name:
 gnmic_docker_compose_directory:
   - osism.services.gnmic
 gnmic_docker_registry:
+  - osism.defaults.all
   - osism.services.gnmic
 gnmic_image:
   - osism.services.gnmic
@@ -6204,10 +7156,18 @@ gnocchi_api_image:
   - kolla.gnocchi
 gnocchi_api_image_full:
   - kolla.gnocchi
+gnocchi_api_listen_port:
+  - kolla.group_vars
+gnocchi_api_port:
+  - kolla.group_vars
+gnocchi_api_public_port:
+  - kolla.group_vars
 gnocchi_api_tag:
   - kolla.gnocchi
 gnocchi_api_workers:
   - kolla.gnocchi
+gnocchi_backend_storage:
+  - kolla.group_vars
 gnocchi_ceph_cluster:
   - kolla.gnocchi
 gnocchi_config_validation:
@@ -6228,8 +7188,16 @@ gnocchi_database_shard_root_user:
   - kolla.gnocchi
 gnocchi_database_user:
   - kolla.gnocchi
+gnocchi_external_fqdn:
+  - kolla.group_vars
 gnocchi_extra_volumes:
   - kolla.gnocchi
+gnocchi_incoming_storage:
+  - kolla.group_vars
+gnocchi_internal_endpoint:
+  - kolla.group_vars
+gnocchi_internal_fqdn:
+  - kolla.group_vars
 gnocchi_keystone_user:
   - kolla.gnocchi
 gnocchi_ks_services:
@@ -6238,6 +7206,8 @@ gnocchi_ks_users:
   - kolla.gnocchi
 gnocchi_logging_debug:
   - kolla.gnocchi
+gnocchi_metric_datadir_volume:
+  - kolla.group_vars
 gnocchi_metricd_default_volumes:
   - kolla.gnocchi
 gnocchi_metricd_dimensions:
@@ -6266,6 +7236,8 @@ gnocchi_metricd_tag:
   - kolla.gnocchi
 gnocchi_metricd_workers:
   - kolla.gnocchi
+gnocchi_public_endpoint:
+  - kolla.group_vars
 gnocchi_services:
   - kolla.gnocchi
 gnocchi_statsd_default_volumes:
@@ -6338,6 +7310,8 @@ golang__shell:
   - debops.debops.golang
 golang__user:
   - debops.debops.golang
+grafana_admin_password:
+  - osism.defaults.all
 grafana_admin_user:
   - ceph.ceph-defaults
 grafana_admin_username:
@@ -6394,6 +7368,8 @@ grafana_dimensions:
   - kolla.grafana
 grafana_enable_healthchecks:
   - kolla.grafana
+grafana_external_fqdn:
+  - kolla.group_vars
 grafana_extra_volumes:
   - kolla.grafana
 grafana_folders:
@@ -6414,8 +7390,14 @@ grafana_image:
   - kolla.grafana
 grafana_image_full:
   - kolla.grafana
+grafana_internal_endpoint:
+  - kolla.group_vars
+grafana_internal_fqdn:
+  - kolla.group_vars
 grafana_key:
   - ceph.ceph-defaults
+grafana_ldap_enabled:
+  - kolla.group_vars
 grafana_network:
   - ceph.ceph-defaults
 grafana_notification_channels:
@@ -6430,10 +7412,20 @@ grafana_port:
   - ceph.ceph-defaults
 grafana_prometheus_url:
   - kolla.grafana
+grafana_public_endpoint:
+  - kolla.group_vars
 grafana_remove_old_volume:
   - kolla.grafana
 grafana_server_fqdn:
   - ceph.ceph-defaults
+grafana_server_group_name:
+  - osism.defaults.all
+grafana_server_listen_port:
+  - kolla.group_vars
+grafana_server_port:
+  - kolla.group_vars
+grafana_server_public_port:
+  - kolla.group_vars
 grafana_services:
   - kolla.grafana
 grafana_silences:
@@ -6450,6 +7442,11 @@ grafana_uid:
   - ceph.ceph-defaults
 grafana_users:
   - community.grafana.grafana
+group_name_master:
+  - kubernetes.k3s_agent
+  - kubernetes.k3s_server
+  - kubernetes.k3s_server_post
+  - osism.defaults.all
 grub__combined_configuration:
   - debops.debops.grub
 grub__combined_users:
@@ -6492,6 +7489,8 @@ grub__timeout_virtual:
   - debops.debops.grub
 grub__users:
   - debops.debops.grub
+grub_hidden_timeout:
+  - osism.defaults.all
 gunicorn__applications:
   - debops.debops.gunicorn
 gunicorn__binary:
@@ -6522,6 +7521,8 @@ hacluster_corosync_image:
   - kolla.hacluster
 hacluster_corosync_image_full:
   - kolla.hacluster
+hacluster_corosync_port:
+  - kolla.group_vars
 hacluster_corosync_tag:
   - kolla.hacluster
 hacluster_extra_volumes:
@@ -6588,6 +7589,10 @@ handler_health_rgw_check_retries:
   - ceph.ceph-defaults
 handler_rgw_use_haproxy_maintenance:
   - ceph.ceph-defaults
+haproxy_backend_cacert:
+  - kolla.group_vars
+haproxy_backend_cacert_dir:
+  - kolla.group_vars
 haproxy_backend_http_extra:
   - kolla.haproxy-config
 haproxy_backend_tcp_extra:
@@ -6608,8 +7613,12 @@ haproxy_defaults_max_connections:
   - kolla.loadbalancer
 haproxy_dimensions:
   - kolla.loadbalancer
+haproxy_enable_external_vip:
+  - kolla.group_vars
 haproxy_enable_healthchecks:
   - kolla.loadbalancer
+haproxy_enable_http2:
+  - kolla.group_vars
 haproxy_external_single_frontend_default_backend:
   - kolla.loadbalancer
 haproxy_external_single_frontend_options:
@@ -6651,6 +7660,8 @@ haproxy_healthcheck_timeout:
   - kolla.loadbalancer
 haproxy_host_ipv4_tcp_retries2:
   - kolla.loadbalancer
+haproxy_http2_protocol:
+  - kolla.group_vars
 haproxy_http_keep_alive_timeout:
   - kolla.loadbalancer
 haproxy_http_request_timeout:
@@ -6663,6 +7674,8 @@ haproxy_max_connections:
   - kolla.loadbalancer
 haproxy_members:
   - kolla.glance
+haproxy_monitor_port:
+  - kolla.group_vars
 haproxy_nova_serialconsole_proxy_tunnel_timeout:
   - kolla.nova-cell
 haproxy_nova_spicehtml5_proxy_tunnel_timeout:
@@ -6673,7 +7686,10 @@ haproxy_server_timeout:
   - kolla.loadbalancer
 haproxy_service_template:
   - kolla.haproxy-config
+haproxy_single_external_frontend:
+  - kolla.group_vars
 haproxy_single_external_frontend_public_port:
+  - kolla.group_vars
   - kolla.loadbalancer
 haproxy_socket_level_admin:
   - kolla.loadbalancer
@@ -6699,6 +7715,8 @@ haproxy_ssh_image:
   - kolla.loadbalancer
 haproxy_ssh_image_full:
   - kolla.loadbalancer
+haproxy_ssh_port:
+  - kolla.group_vars
 haproxy_ssh_tag:
   - kolla.loadbalancer
 haproxy_ssl_ciphers:
@@ -6707,6 +7725,10 @@ haproxy_ssl_dh_param:
   - ceph.ceph-rgw-loadbalancer
 haproxy_ssl_options:
   - ceph.ceph-rgw-loadbalancer
+haproxy_ssl_settings:
+  - kolla.group_vars
+haproxy_stats_port:
+  - kolla.group_vars
 haproxy_tag:
   - kolla.glance
   - kolla.loadbalancer
@@ -6715,6 +7737,8 @@ haproxy_thread_cpu_map:
   - kolla.loadbalancer
 haproxy_threads:
   - kolla.loadbalancer
+haproxy_user:
+  - kolla.group_vars
 hashicorp__applications:
   - debops.debops.hashicorp
 hashicorp__architecture:
@@ -6781,6 +7805,14 @@ hashicorp__version_map:
   - debops.debops.hashicorp
 hci_safety_factor:
   - ceph.ceph-defaults
+headlamp_helm_chart_ref:
+  - kubernetes.headlamp
+headlamp_helm_release_name:
+  - kubernetes.headlamp
+headlamp_helm_release_namespace:
+  - kubernetes.headlamp
+headlamp_helm_values:
+  - kubernetes.headlamp
 health_mon_check_delay:
   - ceph.ceph-defaults
 health_mon_check_retries:
@@ -6813,6 +7845,12 @@ heat_api_cfn_image:
   - kolla.heat
 heat_api_cfn_image_full:
   - kolla.heat
+heat_api_cfn_listen_port:
+  - kolla.group_vars
+heat_api_cfn_port:
+  - kolla.group_vars
+heat_api_cfn_public_port:
+  - kolla.group_vars
 heat_api_cfn_tag:
   - kolla.heat
 heat_api_cfn_workers:
@@ -6841,12 +7879,26 @@ heat_api_image:
   - kolla.heat
 heat_api_image_full:
   - kolla.heat
+heat_api_listen_port:
+  - kolla.group_vars
+heat_api_port:
+  - kolla.group_vars
+heat_api_public_port:
+  - kolla.group_vars
 heat_api_tag:
   - kolla.heat
 heat_api_workers:
   - kolla.heat
+heat_cfn_external_fqdn:
+  - kolla.group_vars
+heat_cfn_internal_base_endpoint:
+  - kolla.group_vars
 heat_cfn_internal_endpoint:
   - kolla.heat
+heat_cfn_internal_fqdn:
+  - kolla.group_vars
+heat_cfn_public_base_endpoint:
+  - kolla.group_vars
 heat_cfn_public_endpoint:
   - kolla.heat
 heat_config_validation:
@@ -6903,12 +7955,18 @@ heat_engine_tag:
   - kolla.heat
 heat_engine_workers:
   - kolla.heat
+heat_external_fqdn:
+  - kolla.group_vars
 heat_extra_volumes:
   - kolla.heat
 heat_git_repository:
   - kolla.heat
+heat_internal_base_endpoint:
+  - kolla.group_vars
 heat_internal_endpoint:
   - kolla.heat
+heat_internal_fqdn:
+  - kolla.group_vars
 heat_keystone_user:
   - kolla.heat
 heat_ks_roles:
@@ -6923,6 +7981,8 @@ heat_logging_debug:
   - kolla.heat
 heat_notification_topics:
   - kolla.heat
+heat_public_base_endpoint:
+  - kolla.group_vars
 heat_public_endpoint:
   - kolla.heat
 heat_services:
@@ -6985,6 +8045,8 @@ homer_url_skyline:
   - osism.services.homer
 homer_url_vault:
   - osism.services.homer
+horizon_backend_database:
+  - kolla.group_vars
 horizon_copy_certs:
   - kolla.horizon
 horizon_custom_themes:
@@ -7011,6 +8073,10 @@ horizon_dimensions:
   - kolla.horizon
 horizon_enable_healthchecks:
   - kolla.horizon
+horizon_enable_tls_backend:
+  - kolla.group_vars
+horizon_external_fqdn:
+  - kolla.group_vars
 horizon_extra_volumes:
   - kolla.horizon
 horizon_git_repository:
@@ -7031,18 +8097,34 @@ horizon_image:
   - kolla.horizon
 horizon_image_full:
   - kolla.horizon
+horizon_internal_endpoint:
+  - kolla.group_vars
+horizon_internal_fqdn:
+  - kolla.group_vars
 horizon_keystone_domain_choices:
   - kolla.horizon
+horizon_keystone_multidomain:
+  - kolla.group_vars
 horizon_keystone_url:
   - kolla.horizon
+horizon_listen_port:
+  - kolla.group_vars
 horizon_logging_debug:
   - kolla.horizon
+horizon_port:
+  - kolla.group_vars
+horizon_public_endpoint:
+  - kolla.group_vars
 horizon_services:
   - kolla.horizon
+horizon_session_cache_backend:
+  - kolla.group_vars
 horizon_source_version:
   - kolla.horizon
 horizon_tag:
   - kolla.horizon
+horizon_tls_port:
+  - kolla.group_vars
 horizon_trusted_dashboards:
   - kolla.keystone
 horizon_use_keystone_public_url:
@@ -7061,6 +8143,8 @@ hostname_use_fqdn:
   - osism.commons.hostname
 hosts_additional_entries:
   - osism.commons.hosts
+hosts_chrony:
+  - osism.defaults.all
 hosts_enable:
   - osism.commons.hosts
 hosts_file:
@@ -7069,12 +8153,17 @@ hosts_file_backup:
   - osism.commons.hosts
 hosts_file_reset:
   - osism.commons.hosts
+hosts_gather_facts:
+  - osism.defaults.all
 hosts_group_name:
   - osism.commons.hosts
 hosts_ignore:
   - osism.commons.hosts
+hosts_interface:
+  - osism.defaults.all
 hosts_type:
   - osism.commons.hosts
+  - osism.defaults.all
 hosts_use_dns_as_single_source_of_truth:
   - osism.commons.hosts
 httpd_configuration_directory:
@@ -7099,6 +8188,7 @@ httpd_data_uid:
 httpd_docker_compose_directory:
   - osism.services.httpd
 httpd_docker_registry:
+  - osism.defaults.all
   - osism.services.httpd
 httpd_host:
   - osism.services.httpd
@@ -7957,6 +9047,10 @@ infoblox_wapi_max_results:
   - kolla.neutron
 infoblox_wapi_version:
   - kolla.neutron
+internal_address:
+  - osism.defaults.all
+internal_protocol:
+  - kolla.group_vars
 inventory_reconciler_image:
   - osism.services.manager
 inventory_reconciler_image_namespace:
@@ -8015,6 +9109,12 @@ ironic_api_image:
   - kolla.ironic
 ironic_api_image_full:
   - kolla.ironic
+ironic_api_listen_port:
+  - kolla.group_vars
+ironic_api_port:
+  - kolla.group_vars
+ironic_api_public_port:
+  - kolla.group_vars
 ironic_api_tag:
   - kolla.ironic
 ironic_api_workers:
@@ -8051,6 +9151,8 @@ ironic_config_validation:
   - kolla.ironic
 ironic_console_serial_speed:
   - kolla.ironic
+ironic_coordination_backend:
+  - kolla.group_vars
 ironic_copy_certs:
   - kolla.ironic
 ironic_database_address:
@@ -8101,10 +9203,14 @@ ironic_enable_tls_backend:
   - kolla.ironic
 ironic_enabled_notification_topics:
   - kolla.ironic
+ironic_external_fqdn:
+  - kolla.group_vars
 ironic_extra_volumes:
   - kolla.ironic
 ironic_git_repository:
   - kolla.ironic
+ironic_http_address_family:
+  - kolla.group_vars
 ironic_http_default_volumes:
   - kolla.ironic
 ironic_http_dimensions:
@@ -8129,12 +9235,22 @@ ironic_http_image:
   - kolla.ironic
 ironic_http_image_full:
   - kolla.ironic
+ironic_http_interface:
+  - kolla.group_vars
+ironic_http_interface_address:
+  - kolla.group_vars
+ironic_http_port:
+  - kolla.group_vars
 ironic_http_tag:
   - kolla.ironic
 ironic_http_url:
   - kolla.ironic
 ironic_inspector_keystone_user:
   - kolla.ironic
+ironic_internal_endpoint:
+  - kolla.group_vars
+ironic_internal_fqdn:
+  - kolla.group_vars
 ironic_kernel_append_params:
   - kolla.ironic
 ironic_kernel_append_params_default:
@@ -8143,6 +9259,8 @@ ironic_kernel_append_params_extras:
   - kolla.ironic
 ironic_kernel_cmdline_extras:
   - kolla.ironic
+ironic_keystone_user:
+  - kolla.group_vars
 ironic_ks_services:
   - kolla.ironic
 ironic_ks_user_roles:
@@ -8195,6 +9313,8 @@ ironic_prometheus_exporter_image:
   - kolla.ironic
 ironic_prometheus_exporter_image_full:
   - kolla.ironic
+ironic_prometheus_exporter_port:
+  - kolla.group_vars
 ironic_prometheus_exporter_sensor_data_interval:
   - kolla.ironic
 ironic_prometheus_exporter_sensor_data_undeployed_nodes:
@@ -8203,6 +9323,8 @@ ironic_prometheus_exporter_tag:
   - kolla.ironic
 ironic_prometheus_exporter_workers:
   - kolla.ironic
+ironic_public_endpoint:
+  - kolla.group_vars
 ironic_pxe_filter:
   - kolla.ironic
 ironic_pxe_filter_default_volumes:
@@ -8229,12 +9351,18 @@ ironic_source_version:
   - kolla.ironic
 ironic_tag:
   - kolla.ironic
+ironic_tftp_address_family:
+  - kolla.group_vars
 ironic_tftp_default_volumes:
   - kolla.ironic
 ironic_tftp_dimensions:
   - kolla.ironic
 ironic_tftp_extra_volumes:
   - kolla.ironic
+ironic_tftp_interface:
+  - kolla.group_vars
+ironic_tftp_interface_address:
+  - kolla.group_vars
 ironic_tftp_listen_address:
   - kolla.ironic
 ironic_upgrade_skip_wait_check:
@@ -8285,6 +9413,10 @@ iscsi__targets:
   - debops.debops.iscsi
 iscsi__unattended_upgrades__dependent_blacklist:
   - debops.debops.iscsi
+iscsi_gw_group_name:
+  - osism.defaults.all
+iscsi_port:
+  - kolla.group_vars
 iscsi_services:
   - kolla.iscsi
 iscsi_tag:
@@ -8349,6 +9481,7 @@ java__version:
   - debops.debops.java
 journal_size:
   - ceph.ceph-defaults
+  - osism.defaults.all
 journald_RuntimeKeepFree:
   - osism.services.journald
 journald_RuntimeMaxFileSize:
@@ -8389,6 +9522,54 @@ journald__version:
   - debops.debops.journald
 journald_service_name:
   - osism.services.journald
+k3s_add_labels__compute:
+  - osism.defaults.compute
+k3s_add_labels__control:
+  - osism.defaults.control
+k3s_add_labels__k3s_master:
+  - osism.defaults.k3s_master
+k3s_add_labels__k3s_node:
+  - osism.defaults.k3s_node
+k3s_add_labels__manager:
+  - osism.defaults.manager
+k3s_add_labels__network:
+  - osism.defaults.network
+k3s_add_labels_monitoring:
+  - osism.defaults.monitoring
+k3s_create_crictl_symlink:
+  - osism.defaults.all
+k3s_create_kubectl_symlink:
+  - osism.defaults.all
+k3s_interface:
+  - osism.defaults.all
+k3s_kubectl_binary:
+  - kubernetes.k3s_server
+  - kubernetes.k3s_server_post
+  - osism.defaults.all
+k3s_master_taint:
+  - osism.defaults.all
+k3s_monitoring:
+  - osism.defaults.all
+k3s_monitoring_bind_address:
+  - osism.defaults.all
+k3s_monitoring_controller_manage_port:
+  - osism.defaults.all
+k3s_monitoring_scheduler_port:
+  - osism.defaults.all
+k3s_node_ip:
+  - osism.defaults.all
+k3s_resolvconf_nameserver:
+  - kubernetes.k3s_agent
+  - kubernetes.k3s_server
+k3s_resolvconf_search:
+  - kubernetes.k3s_agent
+  - kubernetes.k3s_server
+k3s_version:
+  - osism.defaults.all
+k9s_base_url:
+  - kubernetes.k9s
+k9s_version:
+  - kubernetes.k9s
 keepalived__allow:
   - debops.debops.keepalived
 keepalived__base_packages:
@@ -8441,6 +9622,8 @@ keepalived_track_script_enabled:
   - kolla.loadbalancer
 keepalived_traffic_mode:
   - kolla.loadbalancer
+keepalived_virtual_router_id:
+  - kolla.group_vars
 kepler_configuration_directory:
   - osism.services.kepler
 kepler_container_name:
@@ -8487,6 +9670,18 @@ kernel_version_comparison_operator:
   - osism.validations.kernel_version
 kernel_version_expected:
   - osism.validations.kernel_version
+keycloak_operator_crd_directory:
+  - kubernetes.keycloak_operator
+keycloak_operator_crd_names:
+  - kubernetes.keycloak_operator
+keycloak_operator_crds:
+  - kubernetes.keycloak_operator
+keycloak_operator_directory:
+  - kubernetes.keycloak_operator
+keycloak_operator_namespace:
+  - kubernetes.keycloak_operator
+keycloak_operator_template_directory:
+  - kubernetes.keycloak_operator
 keyring__base_packages:
   - debops.debops.keyring
 keyring__dependent_apt_auth_files:
@@ -8513,6 +9708,10 @@ keyring__packages:
   - debops.debops.keyring
 keys:
   - ceph.ceph-client
+keystone_admin_project:
+  - kolla.group_vars
+keystone_admin_user:
+  - kolla.group_vars
 keystone_api_workers:
   - kolla.keystone
 keystone_config_validation:
@@ -8543,6 +9742,8 @@ keystone_default_notifications_topic_enabled:
   - kolla.keystone
 keystone_default_notifications_topic_name:
   - kolla.keystone
+keystone_default_user_role:
+  - kolla.group_vars
 keystone_default_volumes:
   - kolla.keystone
 keystone_dev_mode:
@@ -8559,6 +9760,8 @@ keystone_enable_tls_backend:
   - kolla.keystone
 keystone_enabled_notification_topics:
   - kolla.keystone
+keystone_external_fqdn:
+  - kolla.group_vars
 keystone_extra_volumes:
   - kolla.keystone
 keystone_federation_oidc_additional_options:
@@ -8647,18 +9850,38 @@ keystone_httpd_image_full:
   - kolla.keystone
 keystone_httpd_tag:
   - kolla.keystone
+keystone_identity_mappings:
+  - kolla.group_vars
+keystone_identity_providers:
+  - kolla.group_vars
 keystone_image:
   - kolla.keystone
 keystone_image_full:
   - kolla.keystone
+keystone_internal_fqdn:
+  - kolla.group_vars
+keystone_internal_listen_port:
+  - kolla.group_vars
+keystone_internal_port:
+  - kolla.group_vars
+keystone_internal_url:
+  - kolla.group_vars
 keystone_ks_services:
   - kolla.keystone
+keystone_listen_port:
+  - kolla.group_vars
 keystone_logging_debug:
   - kolla.keystone
 keystone_notification_topics:
   - kolla.keystone
 keystone_oidc_enable_memcached:
   - kolla.keystone
+keystone_public_listen_port:
+  - kolla.group_vars
+keystone_public_port:
+  - kolla.group_vars
+keystone_public_url:
+  - kolla.group_vars
 keystone_remote_id_attribute_oidc:
   - kolla.keystone
 keystone_service_endpoints:
@@ -8693,6 +9916,8 @@ keystone_ssh_image:
   - kolla.keystone
 keystone_ssh_image_full:
   - kolla.keystone
+keystone_ssh_port:
+  - kolla.group_vars
 keystone_ssh_tag:
   - kolla.keystone
 keystone_tag:
@@ -8869,24 +10094,89 @@ known_hosts_group_name:
   - osism.commons.known_hosts
 known_hosts_list:
   - osism.commons.known_hosts
+kolla_admin_openrc_cacert:
+  - kolla.group_vars
 kolla_ansible_container_name:
   - osism.services.manager
+kolla_ansible_delegate_facts_hosts:
+  - kolla.group_vars
 kolla_ansible_enable:
   - osism.services.manager
 kolla_ansible_image:
   - osism.services.manager
 kolla_ansible_image_namespace:
   - osism.services.manager
+kolla_ansible_setup_filter:
+  - kolla.group_vars
+kolla_ansible_setup_gather_subset:
+  - kolla.group_vars
 kolla_ansible_tag:
   - osism.services.manager
+kolla_base_distro:
+  - kolla.group_vars
+kolla_base_distro_version:
+  - kolla.group_vars
+kolla_base_distro_version_default_map:
+  - kolla.group_vars
+kolla_certificates_dir:
+  - kolla.group_vars
+kolla_container_engine:
+  - kolla.group_vars
 kolla_copy_backend_tls_files:
   - kolla.service-cert-copy
+kolla_copy_ca_into_containers:
+  - kolla.group_vars
+kolla_dev_mode:
+  - kolla.group_vars
+kolla_dev_repos_directory:
+  - kolla.group_vars
+kolla_dev_repos_git:
+  - kolla.group_vars
+kolla_dev_repos_pull:
+  - kolla.group_vars
+kolla_enable_tls_backend:
+  - kolla.group_vars
+kolla_enable_tls_external:
+  - kolla.group_vars
+kolla_enable_tls_internal:
+  - kolla.group_vars
+kolla_external_fqdn:
+  - kolla.group_vars
+kolla_external_fqdn_cert:
+  - kolla.group_vars
+kolla_external_vip_address:
+  - kolla.group_vars
+kolla_external_vip_interface:
+  - kolla.group_vars
+  - osism.defaults.all
 kolla_externally_managed_cert:
   - kolla.loadbalancer
   - kolla.rabbitmq
   - kolla.service-cert-copy
+kolla_haproxy_ssl_settings:
+  - kolla.group_vars
+kolla_httpd_keep_alive:
+  - kolla.group_vars
+kolla_httpd_timeout:
+  - kolla.group_vars
+kolla_internal_fqdn:
+  - kolla.group_vars
+kolla_internal_fqdn_cert:
+  - kolla.group_vars
+kolla_internal_vip_address:
+  - kolla.group_vars
+kolla_same_external_internal_vip:
+  - kolla.group_vars
+kolla_source_version:
+  - kolla.group_vars
+kolla_sysctl_conf_path:
+  - kolla.group_vars
 kolla_test_images:
   - kolla.prechecks
+kolla_tls_backend_cert:
+  - kolla.group_vars
+kolla_tls_backend_key:
+  - kolla.group_vars
 kolla_toolbox_copy_certs:
   - kolla.kolla_toolbox
 kolla_toolbox_default_volumes:
@@ -8903,6 +10193,61 @@ kolla_toolbox_services:
   - kolla.kolla_toolbox
 kolla_toolbox_tag:
   - kolla.kolla_toolbox
+kolla_verify_tls_backend:
+  - kolla.group_vars
+kube_proxy_replacement:
+  - kubernetes.k3s_server_post
+  - osism.defaults.all
+kube_vip_arp:
+  - kubernetes.k3s_server
+kube_vip_bgp:
+  - kubernetes.k3s_server
+kube_vip_bgp_as:
+  - kubernetes.k3s_server
+  - osism.defaults.all
+kube_vip_bgp_peeraddress:
+  - kubernetes.k3s_server
+  - osism.defaults.all
+kube_vip_bgp_peeras:
+  - kubernetes.k3s_server
+  - osism.defaults.all
+kube_vip_bgp_peers:
+  - kubernetes.k3s_server
+kube_vip_bgp_peers_groups:
+  - kubernetes.k3s_server
+kube_vip_bgp_routerid:
+  - kubernetes.k3s_server
+  - osism.defaults.all
+kube_vip_cloud_provider_tag_version:
+  - kubernetes.k3s_server
+kube_vip_iface:
+  - kubernetes.k3s_server
+  - osism.defaults.all
+kube_vip_tag_version:
+  - kubernetes.k3s_server
+  - osism.defaults.all
+kubectl_configure_repository:
+  - kubernetes.kubectl
+kubectl_debian_repository:
+  - kubernetes.kubectl
+kubectl_debian_repository_key:
+  - kubernetes.kubectl
+kubectl_redhat_repository:
+  - kubernetes.kubectl
+kubectl_redhat_repository_key:
+  - kubernetes.kubectl
+kubectl_version:
+  - kubernetes.kubectl
+kubernetes_monitoring_chart_source:
+  - kubernetes.monitoring
+kubernetes_monitoring_chart_version:
+  - kubernetes.monitoring
+kubernetes_monitoring_namespace:
+  - kubernetes.monitoring
+kubernetes_monitoring_template_directory:
+  - kubernetes.monitoring
+kubernetes_monitoring_work_directory:
+  - kubernetes.monitoring
 l3_agent_extensions:
   - kolla.neutron
 ldap__admin_become:
@@ -9061,8 +10406,12 @@ letsencrypt_email:
   - kolla.letsencrypt
 letsencrypt_external_account_binding:
   - kolla.letsencrypt
+letsencrypt_external_cert_server:
+  - kolla.group_vars
 letsencrypt_external_fqdns:
   - kolla.letsencrypt
+letsencrypt_internal_cert_server:
+  - kolla.group_vars
 letsencrypt_internal_fqdns:
   - kolla.letsencrypt
 letsencrypt_key_type:
@@ -9081,6 +10430,8 @@ letsencrypt_lego_tag:
   - kolla.letsencrypt
 letsencrypt_logging_debug:
   - kolla.letsencrypt
+letsencrypt_managed_certs:
+  - kolla.group_vars
 letsencrypt_services:
   - kolla.letsencrypt
 letsencrypt_tag:
@@ -9095,6 +10446,8 @@ letsencrypt_webserver_image:
   - kolla.letsencrypt
 letsencrypt_webserver_image_full:
   - kolla.letsencrypt
+letsencrypt_webserver_port:
+  - kolla.group_vars
 letsencrypt_webserver_tag:
   - kolla.letsencrypt
 libntirpc_stable_deb_repo:
@@ -9646,6 +10999,7 @@ lxd__upstream_type:
   - debops.debops.lxd
 lynis_configure_repository:
   - osism.commons.lynis
+  - osism.defaults.all
 lynis_debian_repository:
   - osism.commons.lynis
 lynis_debian_repository_key:
@@ -9714,6 +11068,12 @@ magnum_api_image:
   - kolla.magnum
 magnum_api_image_full:
   - kolla.magnum
+magnum_api_listen_port:
+  - kolla.group_vars
+magnum_api_port:
+  - kolla.group_vars
+magnum_api_public_port:
+  - kolla.group_vars
 magnum_api_tag:
   - kolla.magnum
 magnum_api_workers:
@@ -9774,12 +11134,18 @@ magnum_enable_tls_backend:
   - kolla.magnum
 magnum_enabled_notification_topics:
   - kolla.magnum
+magnum_external_fqdn:
+  - kolla.group_vars
 magnum_extra_volumes:
   - kolla.magnum
 magnum_git_repository:
   - kolla.magnum
+magnum_internal_base_endpoint:
+  - kolla.group_vars
 magnum_internal_endpoint:
   - kolla.magnum
+magnum_internal_fqdn:
+  - kolla.group_vars
 magnum_keystone_user:
   - kolla.magnum
 magnum_ks_services:
@@ -9792,6 +11158,8 @@ magnum_logging_debug:
   - kolla.magnum
 magnum_notification_topics:
   - kolla.magnum
+magnum_public_base_endpoint:
+  - kolla.group_vars
 magnum_public_endpoint:
   - kolla.magnum
 magnum_services:
@@ -9804,6 +11172,12 @@ magnum_trustee_domain:
   - kolla.magnum
 magnum_trustee_domain_admin:
   - kolla.magnum
+mailman__additional_domains:
+  - debops.debops.mailman
+mailman__base_packages:
+  - debops.debops.mailman
+mailman__combined_templates:
+  - debops.debops.mailman
 mailman__core_combined_configuration:
   - debops.debops.mailman
 mailman__core_configuration:
@@ -9816,6 +11190,104 @@ mailman__core_host_configuration:
   - debops.debops.mailman
 mailman__core_original_configuration:
   - debops.debops.mailman
+mailman__database_type:
+  - debops.debops.mailman
+mailman__default_templates:
+  - debops.debops.mailman
+mailman__domain:
+  - debops.debops.mailman
+mailman__fqdn:
+  - debops.debops.mailman
+mailman__group:
+  - debops.debops.mailman
+mailman__group_templates:
+  - debops.debops.mailman
+mailman__host_templates:
+  - debops.debops.mailman
+mailman__hyperkitty_combined_configuration:
+  - debops.debops.mailman
+mailman__hyperkitty_configuration:
+  - debops.debops.mailman
+mailman__hyperkitty_default_configuration:
+  - debops.debops.mailman
+mailman__hyperkitty_group_configuration:
+  - debops.debops.mailman
+mailman__hyperkitty_host_configuration:
+  - debops.debops.mailman
+mailman__hyperkitty_original_configuration:
+  - debops.debops.mailman
+mailman__ldap__dependent_tasks:
+  - debops.debops.mailman
+mailman__ldap_base_dn:
+  - debops.debops.mailman
+mailman__ldap_bind_dn:
+  - debops.debops.mailman
+mailman__ldap_bind_password:
+  - debops.debops.mailman
+mailman__ldap_device_dn:
+  - debops.debops.mailman
+mailman__ldap_enabled:
+  - debops.debops.mailman
+mailman__ldap_groups_dn:
+  - debops.debops.mailman
+mailman__ldap_groups_filter:
+  - debops.debops.mailman
+mailman__ldap_groups_rdn:
+  - debops.debops.mailman
+mailman__ldap_people_dn:
+  - debops.debops.mailman
+mailman__ldap_people_filter:
+  - debops.debops.mailman
+mailman__ldap_people_rdn:
+  - debops.debops.mailman
+mailman__ldap_self_attributes:
+  - debops.debops.mailman
+mailman__ldap_self_object_classes:
+  - debops.debops.mailman
+mailman__ldap_self_rdn:
+  - debops.debops.mailman
+mailman__ldap_starttls:
+  - debops.debops.mailman
+mailman__ldap_superusers_group:
+  - debops.debops.mailman
+mailman__ldap_uri:
+  - debops.debops.mailman
+mailman__nginx__dependent_servers:
+  - debops.debops.mailman
+mailman__nginx__dependent_upstreams:
+  - debops.debops.mailman
+mailman__packages:
+  - debops.debops.mailman
+mailman__postfix__dependent_maincf:
+  - debops.debops.mailman
+mailman__python__dependent_packages2:
+  - debops.debops.mailman
+mailman__python__dependent_packages3:
+  - debops.debops.mailman
+mailman__superuser_email:
+  - debops.debops.mailman
+mailman__superuser_name:
+  - debops.debops.mailman
+mailman__templates:
+  - debops.debops.mailman
+mailman__user:
+  - debops.debops.mailman
+mailman__web_combined_configuration:
+  - debops.debops.mailman
+mailman__web_configuration:
+  - debops.debops.mailman
+mailman__web_default_configuration:
+  - debops.debops.mailman
+mailman__web_group_configuration:
+  - debops.debops.mailman
+mailman__web_host_configuration:
+  - debops.debops.mailman
+mailman__web_ldap_configuration:
+  - debops.debops.mailman
+mailman__web_original_configuration:
+  - debops.debops.mailman
+management_interface:
+  - osism.defaults.all
 manager_configuration_directory:
   - osism.services.manager
 manager_configure_proxy:
@@ -9940,6 +11412,12 @@ manila_api_image:
   - kolla.manila
 manila_api_image_full:
   - kolla.manila
+manila_api_listen_port:
+  - kolla.group_vars
+manila_api_port:
+  - kolla.group_vars
+manila_api_public_port:
+  - kolla.group_vars
 manila_api_tag:
   - kolla.manila
 manila_api_workers:
@@ -10002,6 +11480,8 @@ manila_enabled_backends:
   - kolla.manila
 manila_enabled_notification_topics:
   - kolla.manila
+manila_external_fqdn:
+  - kolla.group_vars
 manila_extra_volumes:
   - kolla.manila
 manila_git_repository:
@@ -10010,8 +11490,12 @@ manila_glusterfs_nfs_server_type:
   - kolla.manila
 manila_glusterfs_share_layout:
   - kolla.manila
+manila_internal_base_endpoint:
+  - kolla.group_vars
 manila_internal_endpoint:
   - kolla.manila
+manila_internal_fqdn:
+  - kolla.group_vars
 manila_keystone_user:
   - kolla.manila
 manila_ks_services:
@@ -10022,6 +11506,8 @@ manila_logging_debug:
   - kolla.manila
 manila_notification_topics:
   - kolla.manila
+manila_public_base_endpoint:
+  - kolla.group_vars
 manila_public_endpoint:
   - kolla.manila
 manila_scheduler_default_volumes:
@@ -10168,6 +11654,8 @@ mariadb_backup_host:
   - kolla.mariadb
 mariadb_backup_possible:
   - kolla.mariadb
+mariadb_backup_target:
+  - kolla.group_vars
 mariadb_backup_type:
   - kolla.mariadb
 mariadb_connect_retries_delay:
@@ -10186,12 +11674,20 @@ mariadb_database_enable_tls_internal:
   - kolla.mariadb
 mariadb_database_shard:
   - kolla.mariadb
+mariadb_datadir_volume:
+  - kolla.group_vars
+mariadb_default_database_shard_hosts:
+  - kolla.group_vars
+mariadb_default_database_shard_id:
+  - kolla.group_vars
 mariadb_default_volumes:
   - kolla.mariadb
 mariadb_dimensions:
   - kolla.mariadb
 mariadb_enable_healthchecks:
   - kolla.mariadb
+mariadb_enable_tls_backend:
+  - kolla.group_vars
 mariadb_extra_volumes:
   - kolla.mariadb
 mariadb_healthcheck:
@@ -10210,6 +11706,12 @@ mariadb_image:
   - kolla.mariadb
 mariadb_image_full:
   - kolla.mariadb
+mariadb_innodb_log_file_size_mb:
+  - kolla.group_vars
+mariadb_ist_port:
+  - kolla.group_vars
+mariadb_loadbalancer:
+  - kolla.group_vars
 mariadb_monitor_connect_interval:
   - kolla.loadbalancer
 mariadb_monitor_connect_timeout:
@@ -10228,6 +11730,32 @@ mariadb_monitor_ping_timeout:
   - kolla.loadbalancer
 mariadb_monitor_read_only_interval:
   - kolla.loadbalancer
+mariadb_monitor_user:
+  - kolla.group_vars
+mariadb_operator_crds:
+  - kubernetes.mariadb_operator
+mariadb_operator_crds_helm_chart_ref:
+  - kubernetes.mariadb_operator
+mariadb_operator_crds_helm_release_name:
+  - kubernetes.mariadb_operator
+mariadb_operator_crds_helm_release_namespace:
+  - kubernetes.mariadb_operator
+mariadb_operator_crds_helm_values:
+  - kubernetes.mariadb_operator
+mariadb_operator_helm_chart_ref:
+  - kubernetes.mariadb_operator
+mariadb_operator_helm_release_name:
+  - kubernetes.mariadb_operator
+mariadb_operator_helm_release_namespace:
+  - kubernetes.mariadb_operator
+mariadb_operator_helm_values:
+  - kubernetes.mariadb_operator
+mariadb_operator_image:
+  - kubernetes.mariadb_operator
+mariadb_operator_image_tag:
+  - kubernetes.mariadb_operator
+mariadb_port:
+  - kolla.group_vars
 mariadb_recover_tmp_file_path:
   - kolla.mariadb
 mariadb_server__allow:
@@ -10334,18 +11862,34 @@ mariadb_service:
   - kolla.mariadb
 mariadb_services:
   - kolla.mariadb
+mariadb_shard_backup_user_prefix:
+  - kolla.group_vars
 mariadb_shard_database_user:
   - kolla.mariadb
+mariadb_shard_group:
+  - kolla.group_vars
+mariadb_shard_id:
+  - kolla.group_vars
+mariadb_shard_name:
+  - kolla.group_vars
+mariadb_shard_root_user_prefix:
+  - kolla.group_vars
+mariadb_shards_info:
+  - kolla.group_vars
 mariadb_shun_on_failures:
   - kolla.loadbalancer
 mariadb_singlenode:
   - kolla.loadbalancer
+mariadb_sst_port:
+  - kolla.group_vars
 mariadb_tag:
   - kolla.mariadb
 mariadb_verbose_query_error:
   - kolla.loadbalancer
 mariadb_wsrep_extra_provider_options:
   - kolla.mariadb
+mariadb_wsrep_port:
+  - kolla.group_vars
 mariadb_wsrep_sst_method:
   - kolla.mariadb
 masakari_api_default_volumes:
@@ -10372,12 +11916,20 @@ masakari_api_image:
   - kolla.masakari
 masakari_api_image_full:
   - kolla.masakari
+masakari_api_listen_port:
+  - kolla.group_vars
+masakari_api_port:
+  - kolla.group_vars
+masakari_api_public_port:
+  - kolla.group_vars
 masakari_api_tag:
   - kolla.masakari
 masakari_api_workers:
   - kolla.masakari
 masakari_config_validation:
   - kolla.masakari
+masakari_coordination_backend:
+  - kolla.group_vars
 masakari_copy_certs:
   - kolla.masakari
 masakari_database_address:
@@ -10410,6 +11962,8 @@ masakari_engine_image_full:
   - kolla.masakari
 masakari_engine_tag:
   - kolla.masakari
+masakari_external_fqdn:
+  - kolla.group_vars
 masakari_extra_volumes:
   - kolla.masakari
 masakari_git_repository:
@@ -10426,6 +11980,10 @@ masakari_instancemonitor_dimensions:
   - kolla.masakari
 masakari_instancemonitor_extra_volumes:
   - kolla.masakari
+masakari_internal_endpoint:
+  - kolla.group_vars
+masakari_internal_fqdn:
+  - kolla.group_vars
 masakari_keystone_user:
   - kolla.masakari
 masakari_ks_services:
@@ -10448,12 +12006,16 @@ masakari_monitors_source_version:
   - kolla.masakari
 masakari_monitors_tag:
   - kolla.masakari
+masakari_public_endpoint:
+  - kolla.group_vars
 masakari_services:
   - kolla.masakari
 masakari_source_version:
   - kolla.masakari
 masakari_tag:
   - kolla.masakari
+max_int_uid:
+  - ubuntu22_cis
 max_l3_agents_per_router:
   - kolla.neutron
 mcli__binary:
@@ -10480,10 +12042,13 @@ mcli__upstream_url_release:
   - debops.debops.mcli
 mds_group_name:
   - ceph.ceph-defaults
+  - osism.defaults.all
 mds_max_mds:
   - ceph.ceph-defaults
 mechanism_drivers:
   - kolla.neutron
+memcache_security_strategy:
+  - kolla.group_vars
 memcached__allow:
   - debops.debops.memcached
 memcached__base_packages:
@@ -10530,16 +12095,50 @@ memcached_healthcheck_test:
   - kolla.memcached
 memcached_healthcheck_timeout:
   - kolla.memcached
+memcached_helm_chart_ref:
+  - kubernetes.memcached
+memcached_helm_release_name:
+  - kubernetes.memcached
+memcached_helm_release_namespace:
+  - kubernetes.memcached
+memcached_helm_values:
+  - kubernetes.memcached
 memcached_image:
   - kolla.memcached
 memcached_image_full:
   - kolla.memcached
 memcached_max_memory:
   - kolla.memcached
+memcached_port:
+  - kolla.group_vars
 memcached_services:
   - kolla.memcached
 memcached_tag:
   - kolla.memcached
+metal_lb_available_timeout:
+  - kubernetes.k3s_server_post
+metal_lb_bgp_my_asn:
+  - osism.defaults.all
+metal_lb_bgp_peer_address:
+  - osism.defaults.all
+metal_lb_bgp_peer_asn:
+  - osism.defaults.all
+metal_lb_controller_tag_version:
+  - kubernetes.k3s_server
+  - kubernetes.k3s_server_post
+  - osism.defaults.all
+metal_lb_ip_range:
+  - kubernetes.k3s_server_post
+  - osism.defaults.all
+metal_lb_mode:
+  - kubernetes.k3s_server_post
+  - osism.defaults.all
+metal_lb_speaker_tag_version:
+  - kubernetes.k3s_server
+  - osism.defaults.all
+metal_lb_type:
+  - kubernetes.k3s_server
+  - osism.defaults.all
 metricbeat__base_packages:
   - debops.debops.metricbeat
 metricbeat__combined_configuration:
@@ -10580,6 +12179,7 @@ metricbeat__version:
   - debops.debops.metricbeat
 mgr_group_name:
   - ceph.ceph-defaults
+  - osism.defaults.all
 mgr_secret:
   - ceph.ceph-mgr
 microcode_packages_centos:
@@ -10592,10 +12192,20 @@ microcode_packages_extra:
   - osism.commons.microcode
 microcode_packages_redhat:
   - osism.commons.microcode
+migration_address_family:
+  - kolla.group_vars
+  - osism.defaults.all
 migration_hostname:
   - kolla.nova-cell
+migration_interface:
+  - kolla.group_vars
+  - osism.defaults.all
+migration_interface_address:
+  - kolla.group_vars
 mimeapps_list_path:
   - community.zabbix.zabbix_web_service
+min_int_uid:
+  - ubuntu22_cis
 minidlna__allow:
   - debops.debops.minidlna
 minidlna__base_packages:
@@ -10810,6 +12420,12 @@ mistral_api_image:
   - kolla.mistral
 mistral_api_image_full:
   - kolla.mistral
+mistral_api_listen_port:
+  - kolla.group_vars
+mistral_api_port:
+  - kolla.group_vars
+mistral_api_public_port:
+  - kolla.group_vars
 mistral_api_tag:
   - kolla.mistral
 mistral_api_workers:
@@ -10916,12 +12532,18 @@ mistral_executor_image_full:
   - kolla.mistral
 mistral_executor_tag:
   - kolla.mistral
+mistral_external_fqdn:
+  - kolla.group_vars
 mistral_extra_volumes:
   - kolla.mistral
 mistral_git_repository:
   - kolla.mistral
+mistral_internal_base_endpoint:
+  - kolla.group_vars
 mistral_internal_endpoint:
   - kolla.mistral
+mistral_internal_fqdn:
+  - kolla.group_vars
 mistral_keystone_user:
   - kolla.mistral
 mistral_ks_services:
@@ -10932,6 +12554,8 @@ mistral_logging_debug:
   - kolla.mistral
 mistral_notification_topics:
   - kolla.mistral
+mistral_public_base_endpoint:
+  - kolla.group_vars
 mistral_public_endpoint:
   - kolla.mistral
 mistral_services:
@@ -10949,6 +12573,7 @@ mon_docker_privileged:
 mon_group_name:
   - ceph.ceph-defaults
   - ceph.ceph-mon
+  - osism.defaults.all
 mon_host_v1:
   - ceph.ceph-defaults
 mon_host_v2:
@@ -10989,10 +12614,15 @@ monit__service_config:
   - debops.debops.monit
 monit__start_delay:
   - debops.debops.monit
+monitor_interface:
+  - osism.defaults.all
 monitor_secret:
   - ceph.ceph-mon
+monitoring_args:
+  - osism.defaults.all
 monitoring_group_name:
   - ceph.ceph-defaults
+  - osism.defaults.all
 mosquitto__acl:
   - debops.debops.mosquitto
 mosquitto__acl_file:
@@ -11187,6 +12817,8 @@ multipathd_services:
   - kolla.multipathd
 multipathd_tag:
   - kolla.multipathd
+multiple_regions_names:
+  - kolla.group_vars
 mysql_open_files_limit_min:
   - osism.validations.mysql_open_files_limit
 nb_retry_wait_osd_up:
@@ -11584,6 +13216,7 @@ netbox_filter_conductor_sonic:
 netbox_filter_inventory:
   - osism.services.manager
 netbox_host:
+  - osism.defaults.manager
   - osism.services.netbox
 netbox_ignored_roles:
   - osism.services.manager
@@ -11717,8 +13350,12 @@ netbox_superuser_password:
   - osism.services.netbox
 netbox_tag:
   - osism.services.netbox
+netbox_token:
+  - osism.defaults.manager
 netbox_traefik:
   - osism.services.netbox
+netbox_url:
+  - osism.defaults.manager
 netbox_user:
   - osism.services.netbox
 netbox_user_api_token:
@@ -11738,6 +13375,7 @@ netdata_api_port:
 netdata_configuration_files:
   - osism.services.netdata
 netdata_configure_repository:
+  - osism.defaults.all
   - osism.services.netdata
 netdata_debian_repository:
   - osism.services.netdata
@@ -11785,8 +13423,12 @@ netdata_sys_vm_max_map_count:
   - osism.services.netdata
 netdata_update_every:
   - osism.services.netdata
+network_address_family:
+  - kolla.group_vars
+  - osism.defaults.all
 network_allow_service_restart:
   - osism.commons.network
+  - osism.defaults.all
 network_bonds:
   - osism.commons.network
 network_bridges:
@@ -11811,6 +13453,9 @@ network_extra_init_commands:
   - osism.commons.network
 network_extra_init_enable:
   - osism.commons.network
+network_interface:
+  - kolla.group_vars
+  - osism.defaults.all
 network_interface_path:
   - osism.commons.network
 network_interface_permissions:
@@ -11845,6 +13490,7 @@ network_renderer:
   - osism.commons.network
 network_restart_method:
   - osism.commons.network
+  - osism.defaults.all
 network_tunnels:
   - osism.commons.network
 network_type:
@@ -11965,8 +13611,14 @@ neutron_bgp_dragent_image_full:
   - kolla.neutron
 neutron_bgp_dragent_tag:
   - kolla.neutron
+neutron_bgp_router_id:
+  - kolla.group_vars
 neutron_bootstrap_services:
   - kolla.neutron
+neutron_bridge_name:
+  - kolla.group_vars
+neutron_compute_dvr_mode:
+  - kolla.group_vars
 neutron_config_validation:
   - kolla.neutron
 neutron_copy_certs:
@@ -12019,8 +13671,14 @@ neutron_dns_domain:
   - kolla.neutron
 neutron_dns_integration:
   - kolla.neutron
+neutron_dnsmasq_dns_servers:
+  - kolla.group_vars
+neutron_enable_ovn_agent:
+  - kolla.group_vars
 neutron_enable_rolling_upgrade:
   - kolla.neutron
+neutron_enable_tls_backend:
+  - kolla.group_vars
 neutron_enabled_notification_topics:
   - kolla.neutron
 neutron_eswitchd_default_volumes:
@@ -12037,6 +13695,11 @@ neutron_eswitchd_tag:
   - kolla.neutron
 neutron_extension_drivers:
   - kolla.neutron
+neutron_external_fqdn:
+  - kolla.group_vars
+neutron_external_interface:
+  - kolla.group_vars
+  - osism.defaults.all
 neutron_extra_volumes:
   - kolla.neutron
 neutron_git_repository:
@@ -12053,6 +13716,14 @@ neutron_infoblox_ipam_agent_image_full:
   - kolla.neutron
 neutron_infoblox_ipam_agent_tag:
   - kolla.neutron
+neutron_internal_endpoint:
+  - kolla.group_vars
+neutron_internal_fqdn:
+  - kolla.group_vars
+neutron_ipam_driver:
+  - kolla.group_vars
+neutron_keystone_user:
+  - kolla.group_vars
 neutron_ks_services:
   - kolla.neutron
 neutron_ks_user_roles:
@@ -12221,8 +13892,12 @@ neutron_ovn_agent_image_full:
   - kolla.neutron
 neutron_ovn_agent_tag:
   - kolla.neutron
+neutron_ovn_availability_zones:
+  - kolla.group_vars
 neutron_ovn_dhcp_agent:
   - kolla.neutron
+neutron_ovn_distributed_fip:
+  - kolla.group_vars
 neutron_ovn_maintenance_worker_default_volumes:
   - kolla.neutron
 neutron_ovn_maintenance_worker_dimensions:
@@ -12327,6 +14002,12 @@ neutron_periodic_worker_image_full:
   - kolla.neutron
 neutron_periodic_worker_tag:
   - kolla.neutron
+neutron_physical_networks:
+  - kolla.group_vars
+neutron_plugin_agent:
+  - kolla.group_vars
+neutron_public_endpoint:
+  - kolla.group_vars
 neutron_rolling_upgrade_services:
   - kolla.neutron
 neutron_rpc_server_default_volumes:
@@ -12379,6 +14060,12 @@ neutron_server_image:
   - kolla.neutron
 neutron_server_image_full:
   - kolla.neutron
+neutron_server_listen_port:
+  - kolla.group_vars
+neutron_server_port:
+  - kolla.group_vars
+neutron_server_public_port:
+  - kolla.group_vars
 neutron_server_tag:
   - kolla.neutron
 neutron_service_plugins:
@@ -12413,17 +14100,24 @@ neutron_sriov_agent_image_full:
   - kolla.neutron
 neutron_sriov_agent_tag:
   - kolla.neutron
+neutron_sriov_physnet_mappings:
+  - kolla.group_vars
 neutron_sriov_physnets:
   - kolla.neutron
 neutron_subprojects:
   - kolla.neutron
 neutron_tag:
   - kolla.neutron
+neutron_tenant_network_types:
+  - kolla.group_vars
+neutron_type_drivers:
+  - kolla.group_vars
 nexus_admin_password:
   - osism.services.nexus
 nexus_admin_username:
   - osism.services.nexus
 nexus_bind_host:
+  - osism.defaults.all
   - osism.services.nexus
 nexus_configuration_directory:
   - osism.services.nexus
@@ -12436,6 +14130,7 @@ nexus_docker_compose_directory:
 nexus_force_init:
   - osism.services.nexus
 nexus_host:
+  - osism.defaults.all
   - osism.services.nexus
 nexus_http_proxy_host:
   - osism.services.nexus
@@ -12521,6 +14216,7 @@ nfs_ganesha_stable_deb_repo:
   - ceph.ceph-defaults
 nfs_group_name:
   - ceph.ceph-defaults
+  - osism.defaults.all
 nfs_obj_gw:
   - ceph.ceph-defaults
 nfs_server__accept_any:
@@ -12893,10 +14589,24 @@ nixos__templates:
   - debops.debops.nixos
 no_log_on_ceph_key_tasks:
   - ceph.ceph-defaults
+node_config:
+  - kolla.group_vars
+node_config_directory:
+  - kolla.group_vars
+node_custom_config:
+  - kolla.group_vars
 node_exporter_container_image:
   - ceph.ceph-defaults
 node_exporter_port:
   - ceph.ceph-defaults
+node_feature_discovery_helm_chart_ref:
+  - kubernetes.node_feature_discovery
+node_feature_discovery_helm_release_name:
+  - kubernetes.node_feature_discovery
+node_feature_discovery_helm_release_namespace:
+  - kubernetes.node_feature_discovery
+node_feature_discovery_helm_values:
+  - kubernetes.node_feature_discovery
 nodejs__apt_preferences__dependent_list:
   - debops.debops.nodejs
 nodejs__base_packages:
@@ -12943,6 +14653,8 @@ non_hci_safety_factor:
   - ceph.ceph-defaults
 notification_drivers:
   - kolla.neutron
+notify_transport_url:
+  - kolla.group_vars
 nova_api_bootstrap_default_volumes:
   - kolla.nova
 nova_api_bootstrap_extra_volumes:
@@ -12984,12 +14696,32 @@ nova_api_image:
   - kolla.nova
 nova_api_image_full:
   - kolla.nova
+nova_api_listen_port:
+  - kolla.group_vars
+nova_api_port:
+  - kolla.group_vars
+nova_api_public_port:
+  - kolla.group_vars
 nova_api_tag:
   - kolla.nova
 nova_api_workers:
   - kolla.nova
+nova_backend:
+  - kolla.group_vars
+nova_backend_ceph:
+  - kolla.group_vars
 nova_cell0_and_default_cell_database_shard:
   - kolla.nova-cell
+nova_cell0_database_address:
+  - kolla.group_vars
+nova_cell0_database_name:
+  - kolla.group_vars
+nova_cell0_database_password:
+  - kolla.group_vars
+nova_cell0_database_shard_id:
+  - kolla.group_vars
+nova_cell0_database_user:
+  - kolla.group_vars
 nova_cell_bootstrap_default_volumes:
   - kolla.nova-cell
 nova_cell_bootstrap_extra_volumes:
@@ -13144,6 +14876,8 @@ nova_compute_startup_delay:
   - kolla.nova-cell
 nova_compute_tag:
   - kolla.nova-cell
+nova_compute_virt_type:
+  - kolla.group_vars
 nova_conductor_default_volumes:
   - kolla.nova-cell
 nova_conductor_dimensions:
@@ -13172,14 +14906,24 @@ nova_conductor_tag:
   - kolla.nova-cell
 nova_config_validation:
   - kolla.nova
+nova_console:
+  - kolla.group_vars
 nova_copy_certs:
   - kolla.nova
+nova_database_address:
+  - kolla.group_vars
 nova_database_enable_tls_internal:
   - kolla.nova
+nova_database_name:
+  - kolla.group_vars
 nova_database_shard:
   - kolla.nova
+nova_database_shard_id:
+  - kolla.group_vars
 nova_database_shard_root_user:
   - kolla.nova
+nova_database_user:
+  - kolla.group_vars
 nova_dev_mode:
   - kolla.nova
   - kolla.nova-cell
@@ -13195,6 +14939,8 @@ nova_enable_tls_backend:
 nova_enabled_notification_topics:
   - kolla.nova
   - kolla.nova-cell
+nova_external_fqdn:
+  - kolla.group_vars
 nova_extra_volumes:
   - kolla.nova
   - kolla.nova-cell
@@ -13203,8 +14949,16 @@ nova_git_repository:
   - kolla.nova-cell
 nova_hw_disk_discard:
   - kolla.nova-cell
+nova_instance_datadir_volume:
+  - kolla.group_vars
+nova_internal_base_endpoint:
+  - kolla.group_vars
 nova_internal_endpoint:
   - kolla.nova
+nova_internal_fqdn:
+  - kolla.group_vars
+nova_keystone_user:
+  - kolla.group_vars
 nova_ks_services:
   - kolla.nova
 nova_ks_user_roles:
@@ -13266,6 +15020,8 @@ nova_metadata_dimensions:
   - kolla.nova
 nova_metadata_enable_healthchecks:
   - kolla.nova
+nova_metadata_external_fqdn:
+  - kolla.group_vars
 nova_metadata_extra_volumes:
   - kolla.nova
 nova_metadata_healthcheck:
@@ -13280,6 +15036,12 @@ nova_metadata_healthcheck_test:
   - kolla.nova
 nova_metadata_healthcheck_timeout:
   - kolla.nova
+nova_metadata_internal_fqdn:
+  - kolla.group_vars
+nova_metadata_listen_port:
+  - kolla.group_vars
+nova_metadata_port:
+  - kolla.group_vars
 nova_multi_compute_ironic_config:
   - kolla.nova-cell
 nova_notification_topics:
@@ -13293,6 +15055,8 @@ nova_novncproxy_enable_healthchecks:
   - kolla.nova-cell
 nova_novncproxy_extra_volumes:
   - kolla.nova-cell
+nova_novncproxy_fqdn:
+  - kolla.group_vars
 nova_novncproxy_healthcheck:
   - kolla.nova-cell
 nova_novncproxy_healthcheck_interval:
@@ -13309,12 +15073,22 @@ nova_novncproxy_image:
   - kolla.nova-cell
 nova_novncproxy_image_full:
   - kolla.nova-cell
+nova_novncproxy_listen_port:
+  - kolla.group_vars
+nova_novncproxy_port:
+  - kolla.group_vars
+nova_novncproxy_public_port:
+  - kolla.group_vars
 nova_novncproxy_tag:
   - kolla.nova-cell
 nova_pci_passthrough_whitelist:
   - kolla.nova-cell
+nova_public_base_endpoint:
+  - kolla.group_vars
 nova_public_endpoint:
   - kolla.nova
+nova_safety_upgrade:
+  - kolla.group_vars
 nova_scheduler_default_volumes:
   - kolla.nova
 nova_scheduler_dimensions:
@@ -13349,10 +15123,20 @@ nova_serialproxy_dimensions:
   - kolla.nova-cell
 nova_serialproxy_extra_volumes:
   - kolla.nova-cell
+nova_serialproxy_fqdn:
+  - kolla.group_vars
 nova_serialproxy_image:
   - kolla.nova-cell
 nova_serialproxy_image_full:
   - kolla.nova-cell
+nova_serialproxy_listen_port:
+  - kolla.group_vars
+nova_serialproxy_port:
+  - kolla.group_vars
+nova_serialproxy_protocol:
+  - kolla.group_vars
+nova_serialproxy_public_port:
+  - kolla.group_vars
 nova_serialproxy_tag:
   - kolla.nova-cell
 nova_services:
@@ -13362,6 +15146,18 @@ nova_services_require_policy_json:
 nova_source_version:
   - kolla.nova
   - kolla.nova-cell
+nova_spice_html5:
+  - kolla.group_vars
+nova_spice_image_compression:
+  - kolla.group_vars
+nova_spice_jpeg_compression:
+  - kolla.group_vars
+nova_spice_playback_compression:
+  - kolla.group_vars
+nova_spice_streaming_mode:
+  - kolla.group_vars
+nova_spice_zlib_compression:
+  - kolla.group_vars
 nova_spicehtml5proxy_default_volumes:
   - kolla.nova-cell
 nova_spicehtml5proxy_dimensions:
@@ -13370,6 +15166,8 @@ nova_spicehtml5proxy_enable_healthchecks:
   - kolla.nova-cell
 nova_spicehtml5proxy_extra_volumes:
   - kolla.nova-cell
+nova_spicehtml5proxy_fqdn:
+  - kolla.group_vars
 nova_spicehtml5proxy_healthcheck:
   - kolla.nova-cell
 nova_spicehtml5proxy_healthcheck_interval:
@@ -13386,6 +15184,12 @@ nova_spicehtml5proxy_image:
   - kolla.nova-cell
 nova_spicehtml5proxy_image_full:
   - kolla.nova-cell
+nova_spicehtml5proxy_listen_port:
+  - kolla.group_vars
+nova_spicehtml5proxy_port:
+  - kolla.group_vars
+nova_spicehtml5proxy_public_port:
+  - kolla.group_vars
 nova_spicehtml5proxy_tag:
   - kolla.nova-cell
 nova_ssh_default_volumes:
@@ -13583,6 +15387,7 @@ ntp_daemon_type:
   - ceph.ceph-defaults
 ntp_service_enabled:
   - ceph.ceph-defaults
+  - osism.defaults.all
 nullmailer__adminaddr:
   - debops.debops.nullmailer
 nullmailer__allmailfrom:
@@ -13673,6 +15478,8 @@ nullmailer__starttls:
   - debops.debops.nullmailer
 nullmailer__tcpwrappers__dependent_allow:
   - debops.debops.nullmailer
+num_nova_fake_per_node:
+  - kolla.group_vars
 octavia_amp_flavor:
   - kolla.octavia
 octavia_amp_image_tag:
@@ -13713,10 +15520,18 @@ octavia_api_image:
   - kolla.octavia
 octavia_api_image_full:
   - kolla.octavia
+octavia_api_listen_port:
+  - kolla.group_vars
+octavia_api_port:
+  - kolla.group_vars
+octavia_api_public_port:
+  - kolla.group_vars
 octavia_api_tag:
   - kolla.octavia
 octavia_api_workers:
   - kolla.octavia
+octavia_auto_configure:
+  - kolla.group_vars
 octavia_certs_check_expiry:
   - kolla.octavia-certificates
 octavia_certs_client_ca_common_name:
@@ -13805,6 +15620,8 @@ octavia_enable_tls_backend:
   - kolla.octavia
 octavia_enabled_notification_topics:
   - kolla.octavia
+octavia_external_fqdn:
+  - kolla.group_vars
 octavia_extra_volumes:
   - kolla.octavia
 octavia_git_repository:
@@ -13833,6 +15650,8 @@ octavia_health_manager_image:
   - kolla.octavia
 octavia_health_manager_image_full:
   - kolla.octavia
+octavia_health_manager_port:
+  - kolla.group_vars
 octavia_health_manager_tag:
   - kolla.octavia
 octavia_healthmanager_health_workers:
@@ -13865,6 +15684,10 @@ octavia_housekeeping_image_full:
   - kolla.octavia
 octavia_housekeeping_tag:
   - kolla.octavia
+octavia_internal_endpoint:
+  - kolla.group_vars
+octavia_internal_fqdn:
+  - kolla.group_vars
 octavia_keystone_user:
   - kolla.octavia
 octavia_ks_services:
@@ -13875,6 +15698,15 @@ octavia_loadbalancer_topology:
   - kolla.octavia
 octavia_logging_debug:
   - kolla.octavia
+octavia_network_address_family:
+  - kolla.group_vars
+  - osism.defaults.all
+octavia_network_interface:
+  - kolla.group_vars
+octavia_network_interface_address:
+  - kolla.group_vars
+octavia_network_type:
+  - kolla.group_vars
 octavia_notification_topics:
   - kolla.octavia
 octavia_openrc_become:
@@ -13893,8 +15725,12 @@ octavia_provider_agents:
   - kolla.octavia
 octavia_provider_drivers:
   - kolla.octavia
+octavia_public_endpoint:
+  - kolla.group_vars
 octavia_required_roles:
   - kolla.octavia
+octavia_service_auth_project:
+  - kolla.group_vars
 octavia_services:
   - kolla.octavia
 octavia_source_version:
@@ -13929,6 +15765,38 @@ octavia_worker_image_full:
   - kolla.octavia
 octavia_worker_tag:
   - kolla.octavia
+om_enable_rabbitmq_stream_fanout:
+  - kolla.group_vars
+om_enable_rabbitmq_tls:
+  - kolla.group_vars
+om_notify_group:
+  - kolla.group_vars
+om_notify_password:
+  - kolla.group_vars
+om_notify_port:
+  - kolla.group_vars
+om_notify_transport:
+  - kolla.group_vars
+om_notify_user:
+  - kolla.group_vars
+om_notify_vhost:
+  - kolla.group_vars
+om_rabbitmq_cacert:
+  - kolla.group_vars
+om_rabbitmq_qos_prefetch_count:
+  - kolla.group_vars
+om_rpc_group:
+  - kolla.group_vars
+om_rpc_password:
+  - kolla.group_vars
+om_rpc_port:
+  - kolla.group_vars
+om_rpc_transport:
+  - kolla.group_vars
+om_rpc_user:
+  - kolla.group_vars
+om_rpc_vhost:
+  - kolla.group_vars
 opendkim__base_packages:
   - debops.debops.opendkim
 opendkim__combined_config:
@@ -14043,10 +15911,14 @@ opensearch__user:
   - debops.debops.opensearch
 opensearch__version:
   - debops.debops.opensearch
+opensearch_address:
+  - kolla.group_vars
 opensearch_apply_log_retention_policy:
   - kolla.opensearch
 opensearch_cluster_name:
   - kolla.opensearch
+opensearch_connection_string:
+  - kolla.group_vars
 opensearch_copy_certs:
   - kolla.opensearch
 opensearch_dashboards_default_app_id:
@@ -14057,6 +15929,10 @@ opensearch_dashboards_dimensions:
   - kolla.opensearch
 opensearch_dashboards_enable_healthchecks:
   - kolla.opensearch
+opensearch_dashboards_external_endpoint:
+  - kolla.group_vars
+opensearch_dashboards_external_fqdn:
+  - kolla.group_vars
 opensearch_dashboards_extra_volumes:
   - kolla.opensearch
 opensearch_dashboards_healthcheck:
@@ -14075,14 +15951,28 @@ opensearch_dashboards_image:
   - kolla.opensearch
 opensearch_dashboards_image_full:
   - kolla.opensearch
+opensearch_dashboards_internal_endpoint:
+  - kolla.group_vars
+opensearch_dashboards_internal_fqdn:
+  - kolla.group_vars
+opensearch_dashboards_listen_port:
+  - kolla.group_vars
 opensearch_dashboards_opensearch_request_timeout:
   - kolla.opensearch
 opensearch_dashboards_opensearch_shard_timeout:
   - kolla.opensearch
 opensearch_dashboards_opensearch_ssl_verify:
   - kolla.opensearch
+opensearch_dashboards_port:
+  - kolla.group_vars
+opensearch_dashboards_port_external:
+  - kolla.group_vars
 opensearch_dashboards_tag:
   - kolla.opensearch
+opensearch_dashboards_user:
+  - kolla.group_vars
+opensearch_datadir_volume:
+  - kolla.group_vars
 opensearch_default_volumes:
   - kolla.opensearch
 opensearch_dimensions:
@@ -14113,12 +16003,18 @@ opensearch_image:
   - kolla.opensearch
 opensearch_image_full:
   - kolla.opensearch
+opensearch_internal_endpoint:
+  - kolla.group_vars
 opensearch_java_opts:
   - kolla.opensearch
 opensearch_ks_services:
   - kolla.opensearch
+opensearch_log_index_prefix:
+  - kolla.group_vars
 opensearch_openstack_auth:
   - kolla.opensearch
+opensearch_port:
+  - kolla.group_vars
 opensearch_retention_policy:
   - kolla.opensearch
 opensearch_services:
@@ -14129,32 +16025,98 @@ opensearch_tag:
   - kolla.opensearch
 openstack_aodh_auth:
   - kolla.aodh
+openstack_auth:
+  - kolla.group_vars
+openstack_auth_cloud:
+  - kolla.group_vars
+openstack_auth_cloud_system:
+  - kolla.group_vars
 openstack_barbican_auth:
   - kolla.barbican
 openstack_blazar_auth:
   - kolla.blazar
+openstack_ca_certificate_path:
+  - kubernetes.monitoring
+  - osism.defaults.all
+openstack_cacert:
+  - kolla.group_vars
 openstack_ceilometer_auth:
   - kolla.ceilometer
 openstack_ceph_rgw_auth:
   - kolla.ceph-rgw
 openstack_cinder_auth:
   - kolla.cinder
+openstack_cinder_backup_pool:
+  - osism.defaults.all
+openstack_cinder_pool:
+  - osism.defaults.all
 openstack_cloudkitty_auth:
   - kolla.cloudkitty
 openstack_cyborg_auth:
   - kolla.cyborg
 openstack_designate_auth:
   - kolla.designate
+openstack_exporter_chart_source:
+  - kubernetes.monitoring
+openstack_exporter_chart_version:
+  - kubernetes.monitoring
+openstack_exporter_clouds_yml_cloud:
+  - kubernetes.monitoring
+  - osism.defaults.all
+openstack_exporter_clouds_yml_path:
+  - kubernetes.monitoring
+  - osism.defaults.all
+openstack_exporter_namespace:
+  - kubernetes.monitoring
+openstack_exporter_secure_yml_path:
+  - kubernetes.monitoring
+  - osism.defaults.all
+openstack_exporter_service_monitor_scrape_interval:
+  - kubernetes.monitoring
+  - osism.defaults.all
+openstack_exporter_service_monitor_scrape_timeout:
+  - kubernetes.monitoring
+  - osism.defaults.all
+openstack_exporter_template_directory:
+  - kubernetes.monitoring
+openstack_exporter_work_directory:
+  - kubernetes.monitoring
+openstack_external_fqdn:
+  - kubernetes.monitoring
+  - osism.defaults.all
+openstack_external_vip_address:
+  - kubernetes.monitoring
+  - osism.defaults.all
 openstack_glance_auth:
   - kolla.glance
+openstack_glance_pool:
+  - osism.defaults.all
 openstack_gnocchi_auth:
   - kolla.gnocchi
+openstack_gnocchi_pool:
+  - osism.defaults.all
 openstack_heat_auth:
   - kolla.heat
+openstack_interface:
+  - kolla.group_vars
+openstack_internal_fqdn:
+  - kubernetes.monitoring
+  - osism.defaults.all
+openstack_internal_vip_address:
+  - kubernetes.monitoring
+  - osism.defaults.all
 openstack_ironic_auth:
   - kolla.ironic
+openstack_keys:
+  - osism.defaults.all
+openstack_keys_defaults:
+  - osism.defaults.all
+openstack_keys_extra:
+  - osism.defaults.all
 openstack_keystone_auth:
   - kolla.keystone
+openstack_logging_debug:
+  - kolla.group_vars
 openstack_magnum_auth:
   - kolla.magnum
 openstack_manila_auth:
@@ -14168,21 +16130,52 @@ openstack_neutron_auth:
 openstack_nova_auth:
   - kolla.nova
   - kolla.nova-cell
+openstack_nova_pool:
+  - osism.defaults.all
 openstack_octavia_auth:
   - kolla.octavia
 openstack_octavia_auth_cloud:
   - kolla.octavia
 openstack_placement_auth:
   - kolla.placement
+openstack_pool_default_min_size:
+  - osism.defaults.all
+openstack_pool_default_pg_autoscale_mode:
+  - osism.defaults.all
+openstack_pool_default_pg_num:
+  - osism.defaults.all
+openstack_pool_default_rule_name:
+  - osism.defaults.all
+openstack_pool_default_size:
+  - osism.defaults.all
+openstack_pools:
+  - osism.defaults.all
+openstack_pools_defaults:
+  - osism.defaults.all
+openstack_pools_extra:
+  - osism.defaults.all
+openstack_region_name:
+  - kolla.group_vars
+openstack_release:
+  - kolla.group_vars
+openstack_service_rpc_workers:
+  - kolla.group_vars
+openstack_service_workers:
+  - kolla.group_vars
 openstack_skyline_auth:
   - kolla.skyline
 openstack_tacker_auth:
   - kolla.tacker
+openstack_tag:
+  - kolla.group_vars
+openstack_tag_suffix:
+  - kolla.group_vars
 openstack_trove_auth:
   - kolla.trove
 openstack_watcher_auth:
   - kolla.watcher
 openstackclient_configuration_directory:
+  - osism.defaults.all
   - osism.services.openstackclient
 openstackclient_configure_repository:
   - osism.services.openstackclient
@@ -14266,6 +16259,8 @@ opentelemetry_collector_tag:
   - osism.services.opentelemetry_collector
 opentelemetry_collector_version:
   - osism.services.opentelemetry_collector
+opentstackclient_groupname:
+  - osism.defaults.all
 openvswitch_db_default_volumes:
   - kolla.openvswitch
 openvswitch_db_dimensions:
@@ -14349,11 +16344,15 @@ operator_authorized_keys_minimal:
 operator_environment:
   - osism.commons.operator
 operator_group:
+  - kubernetes.keycloak_operator
+  - kubernetes.monitoring
+  - kubernetes.rabbitmq_operator
   - osism.commons.configuration
   - osism.commons.known_hosts
   - osism.commons.operator
   - osism.commons.sosreport
   - osism.commons.sshconfig
+  - osism.defaults.all
   - osism.services.adminer
   - osism.services.cephclient
   - osism.services.cgit
@@ -14389,11 +16388,15 @@ operator_sudo_cmd_list:
 operator_sudo_nopasswd:
   - osism.commons.operator
 operator_user:
+  - kubernetes.keycloak_operator
+  - kubernetes.monitoring
+  - kubernetes.rabbitmq_operator
   - osism.commons.configuration
   - osism.commons.known_hosts
   - osism.commons.operator
   - osism.commons.sosreport
   - osism.commons.sshconfig
+  - osism.defaults.all
   - osism.services.adminer
   - osism.services.cephclient
   - osism.services.cgit
@@ -14426,6 +16429,7 @@ osd_auto_discovery_exclude:
   - ceph.ceph-defaults
 osd_group_name:
   - ceph.ceph-defaults
+  - osism.defaults.all
 osd_memory_target:
   - ceph.ceph-defaults
 osd_mkfs_options_xfs:
@@ -14436,6 +16440,9 @@ osd_mount_options_xfs:
   - ceph.ceph-defaults
 osd_objectstore:
   - ceph.ceph-defaults
+  - osism.defaults.all
+osd_scenario:
+  - osism.defaults.all
 osds_per_device:
   - ceph.ceph-osd
 osism_ansible_container_name:
@@ -14470,9 +16477,20 @@ osism_kubernetes_image_namespace:
   - osism.services.manager
 osism_kubernetes_tag:
   - osism.services.manager
+osism_serial:
+  - osism.defaults.all
+osism_serial_default:
+  - osism.defaults.all
+osism_strategy:
+  - osism.defaults.all
 osism_tag:
   - osism.services.manager
+osprofiler_backend:
+  - kolla.group_vars
+osprofiler_backend_connection_string:
+  - kolla.group_vars
 osquery_configure_repository:
+  - osism.defaults.all
   - osism.services.osquery
 osquery_debian_repository:
   - osism.services.osquery
@@ -14514,6 +16532,8 @@ ovn_monitor_all:
   - kolla.ovn-controller
 ovn_nb_command:
   - kolla.ovn-db
+ovn_nb_connection:
+  - kolla.group_vars
 ovn_nb_db_default_volumes:
   - kolla.ovn-db
 ovn_nb_db_dimensions:
@@ -14526,6 +16546,8 @@ ovn_nb_db_image_full:
   - kolla.ovn-db
 ovn_nb_db_inactivity_probe:
   - kolla.ovn-db
+ovn_nb_db_port:
+  - kolla.group_vars
 ovn_nb_db_tag:
   - kolla.ovn-db
 ovn_northd_cmdline_extras:
@@ -14550,6 +16572,12 @@ ovn_remote_probe_interval:
   - kolla.ovn-db
 ovn_sb_command:
   - kolla.ovn-db
+ovn_sb_connection:
+  - kolla.group_vars
+ovn_sb_connection_no_relay:
+  - kolla.group_vars
+ovn_sb_connection_relay:
+  - kolla.group_vars
 ovn_sb_db_default_volumes:
   - kolla.ovn-db
 ovn_sb_db_dimensions:
@@ -14562,10 +16590,18 @@ ovn_sb_db_image_full:
   - kolla.ovn-db
 ovn_sb_db_inactivity_probe:
   - kolla.ovn-db
+ovn_sb_db_port:
+  - kolla.group_vars
 ovn_sb_db_relay_active_inactivity_probe:
   - kolla.ovn-db
+ovn_sb_db_relay_client_group_id:
+  - kolla.group_vars
+ovn_sb_db_relay_compute_per_relay:
+  - kolla.group_vars
 ovn_sb_db_relay_config_file_args:
   - kolla.ovn-db
+ovn_sb_db_relay_count:
+  - kolla.group_vars
 ovn_sb_db_relay_default_volumes:
   - kolla.ovn-db
 ovn_sb_db_relay_dimensions:
@@ -14580,6 +16616,10 @@ ovn_sb_db_relay_max_backoff:
   - kolla.ovn-db
 ovn_sb_db_relay_passive_inactivity_probe:
   - kolla.ovn-db
+ovn_sb_db_relay_port:
+  - kolla.group_vars
+ovn_sb_db_relay_port_prefix:
+  - kolla.group_vars
 ovn_sb_db_relay_tag:
   - kolla.ovn-db
 ovn_sb_db_tag:
@@ -14593,6 +16633,8 @@ ovs_bridge_mappings:
   - kolla.ovs-dpdk
 ovs_cidr_mappings:
   - kolla.ovs-dpdk
+ovs_datapath:
+  - kolla.group_vars
 ovs_hugepage_mountpoint:
   - kolla.ovs-dpdk
 ovs_mem_channels:
@@ -14603,6 +16645,8 @@ ovs_port_mappings:
   - kolla.ovs-dpdk
 ovs_socket_mem:
   - kolla.ovs-dpdk
+ovsdb_port:
+  - kolla.group_vars
 ovsdb_timeout:
   - kolla.neutron
 ovsdpdk_db_default_volumes:
@@ -15470,6 +17514,7 @@ phpmyadmin_allow:
 phpmyadmin_control_password:
   - debops.debops.phpmyadmin
 phpmyadmin_database_host:
+  - osism.defaults.all
   - osism.services.phpmyadmin
 phpmyadmin_dependencies:
   - debops.debops.phpmyadmin
@@ -15478,6 +17523,7 @@ phpmyadmin_docker_compose_directory:
 phpmyadmin_domain:
   - debops.debops.phpmyadmin
 phpmyadmin_host:
+  - osism.defaults.all
   - osism.services.phpmyadmin
 phpmyadmin_image:
   - osism.services.phpmyadmin
@@ -15707,6 +17753,12 @@ placement_api_image:
   - kolla.placement
 placement_api_image_full:
   - kolla.placement
+placement_api_listen_port:
+  - kolla.group_vars
+placement_api_port:
+  - kolla.group_vars
+placement_api_public_port:
+  - kolla.group_vars
 placement_api_tag:
   - kolla.placement
 placement_api_workers:
@@ -15739,8 +17791,16 @@ placement_enable_tls_backend:
   - kolla.placement
 placement_enabled_notification_topics:
   - kolla.placement
+placement_external_fqdn:
+  - kolla.group_vars
 placement_git_repository:
   - kolla.placement
+placement_internal_endpoint:
+  - kolla.group_vars
+placement_internal_fqdn:
+  - kolla.group_vars
+placement_keystone_user:
+  - kolla.group_vars
 placement_ks_services:
   - kolla.placement
 placement_ks_users:
@@ -15749,6 +17809,8 @@ placement_logging_debug:
   - kolla.placement
 placement_notification_topics:
   - kolla.placement
+placement_public_endpoint:
+  - kolla.group_vars
 placement_services:
   - kolla.placement
 placement_source_version:
@@ -15759,6 +17821,8 @@ podman_action:
   - osism.commons.podman
 podman_package_name:
   - osism.commons.podman
+podman_volumes_path:
+  - kolla.group_vars
 pools:
   - ceph.ceph-client
 post_audit_outfile:
@@ -16408,10 +18472,14 @@ prometheus_alert_status_user:
   - osism.validations.prometheus_alert_status
 prometheus_alertmanager_active_passive:
   - kolla.prometheus
+prometheus_alertmanager_cluster_port:
+  - kolla.group_vars
 prometheus_alertmanager_default_volumes:
   - kolla.prometheus
 prometheus_alertmanager_dimensions:
   - kolla.prometheus
+prometheus_alertmanager_external_fqdn:
+  - kolla.group_vars
 prometheus_alertmanager_external_url:
   - kolla.prometheus
 prometheus_alertmanager_extra_volumes:
@@ -16420,8 +18488,22 @@ prometheus_alertmanager_image:
   - kolla.prometheus
 prometheus_alertmanager_image_full:
   - kolla.prometheus
+prometheus_alertmanager_internal_endpoint:
+  - kolla.group_vars
+prometheus_alertmanager_internal_fqdn:
+  - kolla.group_vars
+prometheus_alertmanager_listen_port:
+  - kolla.group_vars
+prometheus_alertmanager_port:
+  - kolla.group_vars
+prometheus_alertmanager_public_endpoint:
+  - kolla.group_vars
+prometheus_alertmanager_public_port:
+  - kolla.group_vars
 prometheus_alertmanager_tag:
   - kolla.prometheus
+prometheus_alertmanager_user:
+  - kolla.group_vars
 prometheus_basic_auth_users:
   - kolla.prometheus
 prometheus_basic_auth_users_default:
@@ -16446,6 +18528,8 @@ prometheus_blackbox_exporter_image:
   - kolla.prometheus
 prometheus_blackbox_exporter_image_full:
   - kolla.prometheus
+prometheus_blackbox_exporter_port:
+  - kolla.group_vars
 prometheus_blackbox_exporter_tag:
   - kolla.prometheus
 prometheus_cadvisor_cmdline_extras:
@@ -16460,8 +18544,16 @@ prometheus_cadvisor_image:
   - kolla.prometheus-node-exporters
 prometheus_cadvisor_image_full:
   - kolla.prometheus-node-exporters
+prometheus_cadvisor_port:
+  - kolla.group_vars
 prometheus_cadvisor_tag:
   - kolla.prometheus-node-exporters
+prometheus_ceph_exporter_interval:
+  - kolla.group_vars
+prometheus_ceph_mgr_exporter_endpoints:
+  - kolla.group_vars
+prometheus_cmdline_extras:
+  - kolla.group_vars
 prometheus_conf_dir:
   - ceph.ceph-defaults
 prometheus_conf_overrides:
@@ -16490,17 +18582,39 @@ prometheus_elasticsearch_exporter_image:
   - kolla.prometheus
 prometheus_elasticsearch_exporter_image_full:
   - kolla.prometheus
+prometheus_elasticsearch_exporter_interval:
+  - kolla.group_vars
+prometheus_elasticsearch_exporter_port:
+  - kolla.group_vars
 prometheus_elasticsearch_exporter_tag:
   - kolla.prometheus
+prometheus_etcd_integration_port:
+  - kolla.group_vars
+prometheus_external_fqdn:
+  - kolla.group_vars
 prometheus_external_labels:
   - kolla.prometheus
 prometheus_extra_volumes:
   - kolla.prometheus
   - kolla.prometheus-node-exporters
+prometheus_fluentd_integration_port:
+  - kolla.group_vars
 prometheus_frontend_vip:
   - ceph.ceph-defaults
+prometheus_grafana_user:
+  - kolla.group_vars
+prometheus_haproxy_exporter_port:
+  - kolla.group_vars
+prometheus_haproxy_user:
+  - kolla.group_vars
 prometheus_install_type:
   - kolla.prometheus-node-exporters
+prometheus_instance_label:
+  - kolla.group_vars
+prometheus_internal_endpoint:
+  - kolla.group_vars
+prometheus_internal_fqdn:
+  - kolla.group_vars
 prometheus_libvirt_exporter_default_volumes:
   - kolla.prometheus
 prometheus_libvirt_exporter_dimensions:
@@ -16511,8 +18625,14 @@ prometheus_libvirt_exporter_image:
   - kolla.prometheus
 prometheus_libvirt_exporter_image_full:
   - kolla.prometheus
+prometheus_libvirt_exporter_interval:
+  - kolla.group_vars
+prometheus_libvirt_exporter_port:
+  - kolla.group_vars
 prometheus_libvirt_exporter_tag:
   - kolla.prometheus
+prometheus_listen_port:
+  - kolla.group_vars
 prometheus_memcached_exporter_cmdline_extras:
   - kolla.prometheus
 prometheus_memcached_exporter_default_volumes:
@@ -16525,6 +18645,8 @@ prometheus_memcached_exporter_image:
   - kolla.prometheus
 prometheus_memcached_exporter_image_full:
   - kolla.prometheus
+prometheus_memcached_exporter_port:
+  - kolla.group_vars
 prometheus_memcached_exporter_tag:
   - kolla.prometheus
 prometheus_mysql_exporter_database_user:
@@ -16541,6 +18663,8 @@ prometheus_mysqld_exporter_image:
   - kolla.prometheus
 prometheus_mysqld_exporter_image_full:
   - kolla.prometheus
+prometheus_mysqld_exporter_port:
+  - kolla.group_vars
 prometheus_mysqld_exporter_tag:
   - kolla.prometheus
 prometheus_node_exporter_cmdline_extras:
@@ -16555,12 +18679,16 @@ prometheus_node_exporter_image:
   - kolla.prometheus-node-exporters
 prometheus_node_exporter_image_full:
   - kolla.prometheus-node-exporters
+prometheus_node_exporter_port:
+  - kolla.group_vars
 prometheus_node_exporter_tag:
   - kolla.prometheus-node-exporters
 prometheus_node_exporter_targets_extra:
   - kolla.prometheus
 prometheus_openstack_exporter_cmdline_extras:
   - kolla.prometheus
+prometheus_openstack_exporter_compute_api_version:
+  - kolla.group_vars
 prometheus_openstack_exporter_default_volumes:
   - kolla.prometheus
 prometheus_openstack_exporter_dimensions:
@@ -16573,14 +18701,22 @@ prometheus_openstack_exporter_disabled_lb:
   - kolla.prometheus
 prometheus_openstack_exporter_disabled_volume:
   - kolla.prometheus
+prometheus_openstack_exporter_endpoint_type:
+  - kolla.group_vars
 prometheus_openstack_exporter_extra_volumes:
   - kolla.prometheus
 prometheus_openstack_exporter_image:
   - kolla.prometheus
 prometheus_openstack_exporter_image_full:
   - kolla.prometheus
+prometheus_openstack_exporter_interval:
+  - kolla.group_vars
+prometheus_openstack_exporter_port:
+  - kolla.group_vars
 prometheus_openstack_exporter_tag:
   - kolla.prometheus
+prometheus_openstack_exporter_timeout:
+  - kolla.group_vars
 prometheus_openstack_network_exporter_default_volumes:
   - kolla.prometheus
 prometheus_openstack_network_exporter_dimensions:
@@ -16593,10 +18729,21 @@ prometheus_openstack_network_exporter_image_full:
   - kolla.prometheus
 prometheus_openstack_network_exporter_interval:
   - kolla.prometheus
+prometheus_openstack_network_exporter_port:
+  - kolla.group_vars
 prometheus_openstack_network_exporter_tag:
   - kolla.prometheus
 prometheus_port:
   - ceph.ceph-defaults
+  - kolla.group_vars
+prometheus_public_endpoint:
+  - kolla.group_vars
+prometheus_public_port:
+  - kolla.group_vars
+prometheus_rabbitmq_exporter_port:
+  - kolla.group_vars
+prometheus_scrape_interval:
+  - kolla.group_vars
 prometheus_server_command:
   - kolla.prometheus
 prometheus_server_default_volumes:
@@ -16614,6 +18761,8 @@ prometheus_server_tag:
 prometheus_services:
   - kolla.prometheus
   - kolla.prometheus-node-exporters
+prometheus_skyline_user:
+  - kolla.group_vars
 prometheus_tag:
   - kolla.prometheus
   - kolla.prometheus-node-exporters
@@ -16629,6 +18778,8 @@ prometheus_valkey_exporter_image:
   - kolla.prometheus
 prometheus_valkey_exporter_image_full:
   - kolla.prometheus
+prometheus_valkey_exporter_port:
+  - kolla.group_vars
 prometheus_valkey_exporter_tag:
   - kolla.prometheus
 prosody__admins:
@@ -16719,6 +18870,9 @@ proxy_package_manager:
   - osism.commons.proxy
 proxy_proxies:
   - osism.commons.proxy
+  - osism.defaults.all
+proxysql_admin_port:
+  - kolla.group_vars
 proxysql_admin_user:
   - kolla.loadbalancer
 proxysql_backend_max_connections:
@@ -16761,6 +18915,8 @@ proxysql_project_database_shard:
   - kolla.proxysql-config
 proxysql_prometheus_exporter_memory_metrics_interval:
   - kolla.loadbalancer
+proxysql_prometheus_exporter_port:
+  - kolla.group_vars
 proxysql_stats_user:
   - kolla.loadbalancer
 proxysql_tag:
@@ -16769,6 +18925,8 @@ proxysql_workers:
   - kolla.loadbalancer
 public_network:
   - ceph.ceph-defaults
+public_protocol:
+  - kolla.group_vars
 pure_api_token:
   - kolla.cinder
 pure_fc_backend:
@@ -16835,10 +18993,16 @@ quobyte_storage_volume:
   - kolla.cinder
 rabbitmq_allowed_upgrades:
   - kolla.rabbitmq
+rabbitmq_cacert:
+  - kolla.group_vars
 rabbitmq_cluster_partition_handling:
   - kolla.rabbitmq
+rabbitmq_cluster_port:
+  - kolla.group_vars
 rabbitmq_copy_certs:
   - kolla.rabbitmq
+rabbitmq_datadir_volume:
+  - kolla.group_vars
 rabbitmq_default_volumes:
   - kolla.rabbitmq
 rabbitmq_dimensions:
@@ -16847,10 +19011,14 @@ rabbitmq_enable_healthchecks:
   - kolla.rabbitmq
 rabbitmq_enable_prometheus_plugin:
   - kolla.rabbitmq
+rabbitmq_enable_tls:
+  - kolla.group_vars
 rabbitmq_enable_tls_backend:
   - kolla.rabbitmq
 rabbitmq_enabled_plugins:
   - kolla.rabbitmq
+rabbitmq_epmd_port:
+  - kolla.group_vars
 rabbitmq_extra_config:
   - kolla.rabbitmq
 rabbitmq_extra_volumes:
@@ -16909,12 +19077,28 @@ rabbitmq_management__rabbitmq_server__dependent_config:
   - debops.debops.rabbitmq_management
 rabbitmq_management__webserver_allow:
   - debops.debops.rabbitmq_management
+rabbitmq_management_port:
+  - kolla.group_vars
 rabbitmq_message_ttl_ms:
   - kolla.rabbitmq
+rabbitmq_monitoring_user:
+  - kolla.group_vars
+rabbitmq_operator_component:
+  - kubernetes.rabbitmq_operator
+rabbitmq_operator_image:
+  - kubernetes.rabbitmq_operator
+rabbitmq_operator_image_tag:
+  - kubernetes.rabbitmq_operator
+rabbitmq_operator_namespace:
+  - kubernetes.rabbitmq_operator
 rabbitmq_pid_file:
   - kolla.rabbitmq
 rabbitmq_plugins:
   - kolla.rabbitmq
+rabbitmq_port:
+  - kolla.group_vars
+rabbitmq_prometheus_port:
+  - kolla.group_vars
 rabbitmq_queue_expiry_ms:
   - kolla.rabbitmq
 rabbitmq_server__account_password_length:
@@ -17129,6 +19313,8 @@ rabbitmq_tag:
   - kolla.rabbitmq
 rabbitmq_tls_options:
   - kolla.rabbitmq
+rabbitmq_user:
+  - kolla.group_vars
 rabbitmq_version_suffix:
   - kolla.rabbitmq
 radosgw_address:
@@ -17139,14 +19325,17 @@ radosgw_frontend_options:
   - ceph.ceph-defaults
 radosgw_frontend_port:
   - ceph.ceph-defaults
+  - osism.defaults.all
 radosgw_frontend_ssl_certificate:
   - ceph.ceph-defaults
 radosgw_frontend_ssl_certificate_data:
   - ceph.ceph-defaults
 radosgw_frontend_type:
   - ceph.ceph-defaults
+  - osism.defaults.all
 radosgw_interface:
   - ceph.ceph-defaults
+  - osism.defaults.all
 radosgw_keystone_ssl:
   - ceph.ceph-defaults
 radosgw_num_instances:
@@ -17197,6 +19386,7 @@ rbd_concurrent_management_ops:
   - ceph.ceph-defaults
 rbdmirror_group_name:
   - ceph.ceph-defaults
+  - osism.defaults.all
 reboot__boot_time_command:
   - debops.debops.reboot
 reboot__default_search_paths:
@@ -17209,6 +19399,8 @@ reboot__timeout:
   - debops.debops.reboot
 redhat_package_dependencies:
   - ceph.ceph-defaults
+redis_port:
+  - kolla.group_vars
 redis_sentinel__allow:
   - debops.debops.redis_sentinel
 redis_sentinel__apt_preferences__dependent_list:
@@ -17279,6 +19471,8 @@ redis_sentinel__user:
   - debops.debops.redis_sentinel
 redis_sentinel__version:
   - debops.debops.redis_sentinel
+redis_sentinel_port:
+  - kolla.group_vars
 redis_server__allow:
   - debops.debops.redis_server
 redis_server__apt_preferences__dependent_list:
@@ -17643,16 +19837,31 @@ resources__time_format:
   - debops.debops.resources
 resources__urls:
   - debops.debops.resources
+restapi_group_name:
+  - osism.defaults.all
+retry_count:
+  - kubernetes.k3s_server
 rgw_client_name:
   - ceph.ceph-nfs
 rgw_config_keys:
   - ceph.ceph-rgw
+rgw_create_pools:
+  - osism.defaults.all
 rgw_group_name:
   - ceph.ceph-defaults
+  - osism.defaults.all
+rgw_multisite:
+  - osism.defaults.all
+rgw_pool_default_pg_num:
+  - osism.defaults.all
+rgw_pool_default_size:
+  - osism.defaults.all
 rgw_zone:
   - ceph.ceph-defaults
+  - osism.defaults.all
 rgwloadbalancer_group_name:
   - ceph.ceph-defaults
+  - osism.defaults.all
 rng_package_name:
   - osism.services.rng
 rolling_update:
@@ -17917,6 +20126,8 @@ roundcube__webserver_user:
   - debops.debops.roundcube
 roundcube__www:
   - debops.debops.roundcube
+rpc_transport_url:
+  - kolla.group_vars
 rsnapshot__base_packages:
   - debops.debops.rsnapshot
 rsnapshot__combined_configuration:
@@ -18270,6 +20481,7 @@ rsyslog_additional_protocol:
 rsyslog_fluentd:
   - osism.services.rsyslog
 rsyslog_fluentd_host:
+  - osism.defaults.all
   - osism.services.rsyslog
 rsyslog_fluentd_port:
   - osism.services.rsyslog
@@ -18315,8 +20527,20 @@ ruby__user_gems:
   - debops.debops.ruby
 run_audit:
   - ubuntu22_cis
+run_default_volumes_docker:
+  - kolla.group_vars
+run_default_volumes_podman:
+  - kolla.group_vars
 runc_package_name:
   - osism.commons.runc
+s3_access_key:
+  - kolla.group_vars
+s3_bucket:
+  - kolla.group_vars
+s3_secret_key:
+  - kolla.group_vars
+s3_url:
+  - kolla.group_vars
 safety_factor:
   - ceph.ceph-defaults
 salt__allow:
@@ -18464,6 +20688,7 @@ scaphandre_flags_defaults:
 scaphandre_flags_extra:
   - osism.services.scaphandre
 scaphandre_host:
+  - osism.defaults.all
   - osism.services.scaphandre
 scaphandre_image:
   - osism.services.scaphandre
@@ -18543,6 +20768,8 @@ secure_cluster:
   - ceph.ceph-mon
 secure_cluster_flags:
   - ceph.ceph-mon
+secure_path:
+  - kubernetes.k3s_prereq
 security_aide_exclude_dirs:
   - hardening
 security_allowed_ntp_subnets:
@@ -18635,6 +20862,7 @@ security_ntp_sync_rtc:
   - hardening
 security_package_clean_on_remove:
   - hardening
+  - osism.defaults.all
 security_package_state:
   - hardening
 security_pam_faillock_attempts:
@@ -18805,8 +21033,10 @@ security_rhel7_enable_aide:
   - hardening
 security_rhel7_enable_chrony:
   - hardening
+  - osism.defaults.all
 security_rhel7_enable_linux_security_module:
   - hardening
+  - osism.defaults.all
 security_rhel7_initialize_aide:
   - hardening
 security_rhel7_remove_rsh_server:
@@ -18815,6 +21045,7 @@ security_rhel7_remove_shosts_exclude_dirs:
   - hardening
 security_rhel7_remove_shosts_files:
   - hardening
+  - osism.defaults.all
 security_rhel7_remove_telnet_server:
   - hardening
 security_rhel7_remove_tftp_server:
@@ -18827,6 +21058,7 @@ security_rhel7_restrict_mail_relaying:
   - hardening
 security_rhel7_session_timeout:
   - hardening
+  - osism.defaults.all
 security_run_virus_scanner_update:
   - hardening
 security_search_for_invalid_group_owner:
@@ -18845,6 +21077,7 @@ security_shadow_utils_fail_delay:
   - hardening
 security_sshd_allowed_macs:
   - hardening
+  - osism.defaults.all
 security_sshd_banner_file:
   - hardening
 security_sshd_cipher_list:
@@ -18895,6 +21128,8 @@ selinux_allow_zabbix_can_network:
   - community.zabbix.zabbix_web_service
 selinux_allow_zabbix_run_sudo:
   - community.zabbix.zabbix_agent
+server_init_args:
+  - kubernetes.k3s_server
 service_check_services:
   - kolla.service-check
 service_config_validate_output_dir:
@@ -18947,6 +21182,8 @@ service_rabbitmq_users:
   - kolla.service-rabbitmq
 service_rabbitmq_when:
   - kolla.service-rabbitmq
+service_uwsgi_config_env:
+  - kolla.service-uwsgi-config
 service_uwsgi_config_file:
   - kolla.service-uwsgi-config
 service_uwsgi_config_host:
@@ -18975,10 +21212,16 @@ services_warning_default:
   - osism.commons.services
 services_warning_extra:
   - osism.commons.services
+set_sysctl:
+  - kolla.group_vars
 setup_audit:
   - ubuntu22_cis
 skip_cinder_backend_check:
   - kolla.cinder
+skip_reboot:
+  - ubuntu22_cis
+skip_stop_containers:
+  - kolla.group_vars
 sks__etc_services__dependent_list:
   - debops.debops.sks
 sks__ferm__dependent_rules:
@@ -19013,6 +21256,8 @@ skyline_apiserver_dimensions:
   - kolla.skyline
 skyline_apiserver_enable_healthchecks:
   - kolla.skyline
+skyline_apiserver_external_fqdn:
+  - kolla.group_vars
 skyline_apiserver_extra_volumes:
   - kolla.skyline
 skyline_apiserver_healthcheck:
@@ -19033,8 +21278,20 @@ skyline_apiserver_image_full:
   - kolla.skyline
 skyline_apiserver_internal_base_endpoint:
   - kolla.skyline
+skyline_apiserver_internal_endpoint:
+  - kolla.group_vars
+skyline_apiserver_internal_fqdn:
+  - kolla.group_vars
+skyline_apiserver_listen_port:
+  - kolla.group_vars
+skyline_apiserver_port:
+  - kolla.group_vars
 skyline_apiserver_public_base_endpoint:
   - kolla.skyline
+skyline_apiserver_public_endpoint:
+  - kolla.group_vars
+skyline_apiserver_public_port:
+  - kolla.group_vars
 skyline_apiserver_tag:
   - kolla.skyline
 skyline_backend_cors_origins:
@@ -19047,6 +21304,8 @@ skyline_console_dimensions:
   - kolla.skyline
 skyline_console_enable_healthchecks:
   - kolla.skyline
+skyline_console_external_fqdn:
+  - kolla.group_vars
 skyline_console_extra_volumes:
   - kolla.skyline
 skyline_console_healthcheck:
@@ -19065,6 +21324,18 @@ skyline_console_image:
   - kolla.skyline
 skyline_console_image_full:
   - kolla.skyline
+skyline_console_internal_endpoint:
+  - kolla.group_vars
+skyline_console_internal_fqdn:
+  - kolla.group_vars
+skyline_console_listen_port:
+  - kolla.group_vars
+skyline_console_port:
+  - kolla.group_vars
+skyline_console_public_endpoint:
+  - kolla.group_vars
+skyline_console_public_port:
+  - kolla.group_vars
 skyline_console_tag:
   - kolla.skyline
 skyline_copy_certs:
@@ -19086,6 +21357,7 @@ skyline_database_shard_root_user:
 skyline_database_user:
   - kolla.skyline
 skyline_enable_sso:
+  - kolla.group_vars
   - kolla.skyline
 skyline_enable_tls_backend:
   - kolla.skyline
@@ -19466,6 +21738,7 @@ squid_container_name:
 squid_docker_compose_directory:
   - osism.services.squid
 squid_host:
+  - osism.defaults.all
   - osism.services.squid
 squid_image:
   - osism.services.squid
@@ -19635,6 +21908,12 @@ sshd__version:
   - debops.debops.sshd
 sshd__whitelist:
   - debops.debops.sshd
+ssl_intermediate_settings:
+  - kolla.group_vars
+ssl_legacy_settings:
+  - kolla.group_vars
+ssl_modern_settings:
+  - kolla.group_vars
 sssd__base_packages:
   - debops.debops.sssd
 sssd__combined_configuration:
@@ -19727,6 +22006,12 @@ stepca_tag:
   - osism.services.stepca
 stig_version:
   - hardening
+  - osism.defaults.all
+storage_address_family:
+  - kolla.group_vars
+  - osism.defaults.all
+storage_interface:
+  - osism.defaults.all
 stress_timeout:
   - osism.validations.stress
 stunnel_debug:
@@ -19764,6 +22049,7 @@ stunnel_ssl_opts:
 stunnel_ssl_verify:
   - debops.debops.stunnel
 substation_configuration_directory:
+  - osism.defaults.all
   - osism.services.substation
 substation_container_name:
   - osism.services.substation
@@ -19827,6 +22113,8 @@ sudo__packages:
   - debops.debops.sudo
 sudo__sudoers:
   - debops.debops.sudo
+supported_policy_format_list:
+  - kolla.group_vars
 suse_package_dependencies:
   - ceph.ceph-defaults
 swapfile__files:
@@ -19837,6 +22125,14 @@ swapfile__size:
   - debops.debops.swapfile
 swapfile__use_dd:
   - debops.debops.swapfile
+swift_replication_address_family:
+  - osism.defaults.all
+swift_replication_interface:
+  - osism.defaults.all
+swift_storage_address_family:
+  - osism.defaults.all
+swift_storage_interface:
+  - osism.defaults.all
 swtpm_group:
   - kolla.nova-cell
 swtpm_user:
@@ -19883,6 +22179,8 @@ sysctl_extra:
   - osism.commons.sysctl
 sysctl_path:
   - kolla.sysctl
+sysdig_configure_repository:
+  - osism.defaults.all
 sysfs__attributes:
   - debops.debops.sysfs
 sysfs__base_packages:
@@ -19910,6 +22208,8 @@ syslog_haproxy_facility:
   - kolla.loadbalancer
 syslog_server:
   - kolla.loadbalancer
+syslog_udp_port:
+  - kolla.group_vars
 sysnews__base_packages:
   - debops.debops.sysnews
 sysnews__combined_entries:
@@ -19960,6 +22260,10 @@ system_groups__sudo_enabled:
   - debops.debops.system_groups
 system_groups__throttle:
   - debops.debops.system_groups
+system_is_container:
+  - ubuntu22_cis
+system_is_ec2:
+  - ubuntu22_cis
 system_users__accounts:
   - debops.debops.system_users
 system_users__acl_enabled:
@@ -20072,6 +22376,11 @@ systemd__user_units:
   - debops.debops.systemd
 systemd__version:
   - debops.debops.systemd
+systemd_dir:
+  - kubernetes.k3s_agent
+  - kubernetes.k3s_reset
+  - kubernetes.k3s_server
+  - osism.defaults.all
 systohc:
   - osism.commons.systohc
 systohc_common:
@@ -20128,6 +22437,8 @@ tacker_dev_repos_pull:
   - kolla.tacker
 tacker_enabled_notification_topics:
   - kolla.tacker
+tacker_external_fqdn:
+  - kolla.group_vars
 tacker_extra_volumes:
   - kolla.tacker
 tacker_git_repository:
@@ -20136,6 +22447,10 @@ tacker_haproxy_members:
   - kolla.tacker
 tacker_hosts:
   - kolla.tacker
+tacker_internal_endpoint:
+  - kolla.group_vars
+tacker_internal_fqdn:
+  - kolla.group_vars
 tacker_keystone_user:
   - kolla.tacker
 tacker_ks_services:
@@ -20146,6 +22461,8 @@ tacker_logging_debug:
   - kolla.tacker
 tacker_notification_topics:
   - kolla.tacker
+tacker_public_endpoint:
+  - kolla.group_vars
 tacker_server_default_volumes:
   - kolla.tacker
 tacker_server_dimensions:
@@ -20170,6 +22487,12 @@ tacker_server_image:
   - kolla.tacker
 tacker_server_image_full:
   - kolla.tacker
+tacker_server_listen_port:
+  - kolla.group_vars
+tacker_server_port:
+  - kolla.group_vars
+tacker_server_public_port:
+  - kolla.group_vars
 tacker_server_tag:
   - kolla.tacker
 tacker_services:
@@ -20480,6 +22803,7 @@ timezone_hwclock:
   - osism.commons.timezone
 timezone_name:
   - osism.commons.timezone
+  - osism.defaults.all
 tinc__base_packages:
   - debops.debops.tinc
 tinc__combined_networks:
@@ -20607,6 +22931,7 @@ traefik_external_network_name:
   - osism.services.phpmyadmin
   - osism.services.traefik
 traefik_host:
+  - osism.defaults.all
   - osism.services.traefik
 traefik_image:
   - osism.services.traefik
@@ -20626,6 +22951,7 @@ traefik_tag:
   - osism.services.traefik
 trivy_configure_repository:
   - osism.commons.trivy
+  - osism.defaults.all
 trivy_debian_repository:
   - osism.commons.trivy
 trivy_debian_repository_key:
@@ -20660,6 +22986,12 @@ trove_api_image:
   - kolla.trove
 trove_api_image_full:
   - kolla.trove
+trove_api_listen_port:
+  - kolla.group_vars
+trove_api_port:
+  - kolla.group_vars
+trove_api_public_port:
+  - kolla.group_vars
 trove_api_tag:
   - kolla.trove
 trove_api_workers:
@@ -20716,12 +23048,18 @@ trove_enable_tls_backend:
   - kolla.trove
 trove_enabled_notification_topics:
   - kolla.trove
+trove_external_fqdn:
+  - kolla.group_vars
 trove_extra_volumes:
   - kolla.trove
 trove_git_repository:
   - kolla.trove
+trove_internal_base_endpoint:
+  - kolla.group_vars
 trove_internal_endpoint:
   - kolla.trove
+trove_internal_fqdn:
+  - kolla.group_vars
 trove_keystone_user:
   - kolla.trove
 trove_ks_services:
@@ -20732,6 +23070,8 @@ trove_logging_debug:
   - kolla.trove
 trove_notification_topics:
   - kolla.trove
+trove_public_base_endpoint:
+  - kolla.group_vars
 trove_public_endpoint:
   - kolla.trove
 trove_services:
@@ -20772,6 +23112,14 @@ tuned_profile:
   - osism.services.tuned
 tuned_service_name:
   - osism.services.tuned
+tunnel_address_family:
+  - kolla.group_vars
+  - osism.defaults.all
+tunnel_interface:
+  - kolla.group_vars
+  - osism.defaults.all
+tunnel_interface_address:
+  - kolla.group_vars
 tunnel_interface_cidr:
   - kolla.ovs-dpdk
 tunnel_interface_network:
@@ -20788,6 +23136,1046 @@ tzdata__restart_services:
   - debops.debops.tzdata
 tzdata__timezone:
   - debops.debops.tzdata
+ubtu22cis_aide_cron_day:
+  - ubuntu22_cis
+ubtu22cis_aide_cron_file:
+  - ubuntu22_cis
+ubtu22cis_aide_cron_hour:
+  - ubuntu22_cis
+ubtu22cis_aide_cron_job:
+  - ubuntu22_cis
+ubtu22cis_aide_cron_minute:
+  - ubuntu22_cis
+ubtu22cis_aide_cron_month:
+  - ubuntu22_cis
+ubtu22cis_aide_cron_user:
+  - ubuntu22_cis
+ubtu22cis_aide_cron_weekday:
+  - ubuntu22_cis
+ubtu22cis_aide_db_file:
+  - ubuntu22_cis
+ubtu22cis_aide_db_file_age:
+  - ubuntu22_cis
+ubtu22cis_aide_db_recreate:
+  - ubuntu22_cis
+ubtu22cis_aide_init_async:
+  - ubuntu22_cis
+ubtu22cis_aide_init_poll:
+  - ubuntu22_cis
+ubtu22cis_aide_scan:
+  - ubuntu22_cis
+ubtu22cis_allow_auditd_uid_user_exclusions:
+  - ubuntu22_cis
+ubtu22cis_apache2_mask:
+  - ubuntu22_cis
+ubtu22cis_apache2_server:
+  - ubuntu22_cis
+ubtu22cis_apparmor_disable:
+  - ubuntu22_cis
+ubtu22cis_apparmor_mode:
+  - ubuntu22_cis
+ubtu22cis_apt_lock_timeout:
+  - ubuntu22_cis
+ubtu22cis_ask_passwd_to_boot:
+  - ubuntu22_cis
+ubtu22cis_audit_back_log_limit:
+  - ubuntu22_cis
+ubtu22cis_auditd_admin_space_left_action:
+  - ubuntu22_cis
+ubtu22cis_auditd_disk_error_action:
+  - ubuntu22_cis
+ubtu22cis_auditd_disk_full_action:
+  - ubuntu22_cis
+ubtu22cis_auditd_max_log_file_action:
+  - ubuntu22_cis
+ubtu22cis_auditd_space_left_action:
+  - ubuntu22_cis
+ubtu22cis_auditd_uid_exclude:
+  - ubuntu22_cis
+ubtu22cis_autofs_mask:
+  - ubuntu22_cis
+ubtu22cis_autofs_services:
+  - ubuntu22_cis
+ubtu22cis_avahi_mask:
+  - ubuntu22_cis
+ubtu22cis_avahi_server:
+  - ubuntu22_cis
+ubtu22cis_bash_umask:
+  - ubuntu22_cis
+ubtu22cis_bluetooth_mask:
+  - ubuntu22_cis
+ubtu22cis_bluetooth_service:
+  - ubuntu22_cis
+ubtu22cis_bootloader_password_hash:
+  - ubuntu22_cis
+ubtu22cis_config_aide:
+  - ubuntu22_cis
+ubtu22cis_dconf_db_name:
+  - ubuntu22_cis
+ubtu22cis_debug_mount_data:
+  - ubuntu22_cis
+ubtu22cis_desktop_required:
+  - ubuntu22_cis
+ubtu22cis_dhcp_mask:
+  - ubuntu22_cis
+ubtu22cis_dhcp_server:
+  - ubuntu22_cis
+ubtu22cis_disable_dynamic_motd:
+  - ubuntu22_cis
+ubtu22cis_disruption_high:
+  - ubuntu22_cis
+ubtu22cis_dns_mask:
+  - ubuntu22_cis
+ubtu22cis_dns_server:
+  - ubuntu22_cis
+ubtu22cis_dnsmasq_mask:
+  - ubuntu22_cis
+ubtu22cis_dnsmasq_server:
+  - ubuntu22_cis
+ubtu22cis_dotperm_ansiblemanaged:
+  - ubuntu22_cis
+ubtu22cis_exclude_unowned_filesystem_types:
+  - ubuntu22_cis
+ubtu22cis_exclude_unowned_search_path:
+  - ubuntu22_cis
+ubtu22cis_faillock_deny:
+  - ubuntu22_cis
+ubtu22cis_faillock_unlock_time:
+  - ubuntu22_cis
+ubtu22cis_firewall_package:
+  - ubuntu22_cis
+ubtu22cis_ftp_client:
+  - ubuntu22_cis
+ubtu22cis_ftp_mask:
+  - ubuntu22_cis
+ubtu22cis_ftp_server:
+  - ubuntu22_cis
+ubtu22cis_grub_file:
+  - ubuntu22_cis
+ubtu22cis_grub_user:
+  - ubuntu22_cis
+ubtu22cis_grub_user_file:
+  - ubuntu22_cis
+ubtu22cis_grub_user_passwd:
+  - ubuntu22_cis
+ubtu22cis_gui:
+  - ubuntu22_cis
+ubtu22cis_ignore_apt_update_changed_when:
+  - ubuntu22_cis
+ubtu22cis_ipv4_required:
+  - ubuntu22_cis
+ubtu22cis_ipv6_disable:
+  - ubuntu22_cis
+ubtu22cis_ipv6_required:
+  - ubuntu22_cis
+ubtu22cis_is_mail_server:
+  - ubuntu22_cis
+ubtu22cis_is_router:
+  - ubuntu22_cis
+ubtu22cis_journal_servercertificatefile:
+  - ubuntu22_cis
+ubtu22cis_journal_trustedcertificatefile:
+  - ubuntu22_cis
+ubtu22cis_journal_upload_serverkeyfile:
+  - ubuntu22_cis
+ubtu22cis_journald_maxfilesec:
+  - ubuntu22_cis
+ubtu22cis_journald_runtimekeepfree:
+  - ubuntu22_cis
+ubtu22cis_journald_runtimemaxuse:
+  - ubuntu22_cis
+ubtu22cis_journald_systemkeepfree:
+  - ubuntu22_cis
+ubtu22cis_journald_systemmaxuse:
+  - ubuntu22_cis
+ubtu22cis_ldap_clients_required:
+  - ubuntu22_cis
+ubtu22cis_ldap_mask:
+  - ubuntu22_cis
+ubtu22cis_ldap_server:
+  - ubuntu22_cis
+ubtu22cis_level_1:
+  - ubuntu22_cis
+ubtu22cis_level_2:
+  - ubuntu22_cis
+ubtu22cis_logrotate:
+  - ubuntu22_cis
+ubtu22cis_max_log_file_size:
+  - ubuntu22_cis
+ubtu22cis_message_mask:
+  - ubuntu22_cis
+ubtu22cis_message_server:
+  - ubuntu22_cis
+ubtu22cis_nfs_mask:
+  - ubuntu22_cis
+ubtu22cis_nfs_server:
+  - ubuntu22_cis
+ubtu22cis_nginx_mask:
+  - ubuntu22_cis
+ubtu22cis_nginx_server:
+  - ubuntu22_cis
+ubtu22cis_nis_client_required:
+  - ubuntu22_cis
+ubtu22cis_nis_mask:
+  - ubuntu22_cis
+ubtu22cis_nis_server:
+  - ubuntu22_cis
+ubtu22cis_no_world_write_adjust:
+  - ubuntu22_cis
+ubtu22cis_ownership_adjust:
+  - ubuntu22_cis
+ubtu22cis_pam_auth_faillock:
+  - ubuntu22_cis
+ubtu22cis_pam_auth_unix:
+  - ubuntu22_cis
+ubtu22cis_pam_confd_dir:
+  - ubuntu22_cis
+ubtu22cis_pam_create_faillock_files:
+  - ubuntu22_cis
+ubtu22cis_pam_create_pamunix_file:
+  - ubuntu22_cis
+ubtu22cis_pam_create_pwhistory_files:
+  - ubuntu22_cis
+ubtu22cis_pam_create_pwquality_files:
+  - ubuntu22_cis
+ubtu22cis_pam_faillock_file:
+  - ubuntu22_cis
+ubtu22cis_pam_faillock_notify_file:
+  - ubuntu22_cis
+ubtu22cis_pam_pwhistory_file:
+  - ubuntu22_cis
+ubtu22cis_pam_pwquality_file:
+  - ubuntu22_cis
+ubtu22cis_pam_pwunix_file:
+  - ubuntu22_cis
+ubtu22cis_pamd_pwhistory_remember:
+  - ubuntu22_cis
+ubtu22cis_pamroot_lock_option:
+  - ubuntu22_cis
+ubtu22cis_pamroot_lock_string:
+  - ubuntu22_cis
+ubtu22cis_pass_inactive:
+  - ubuntu22_cis
+ubtu22cis_pass_max_days:
+  - ubuntu22_cis
+ubtu22cis_pass_min_days:
+  - ubuntu22_cis
+ubtu22cis_pass_warn_age:
+  - ubuntu22_cis
+ubtu22cis_passwd_complex_file:
+  - ubuntu22_cis
+ubtu22cis_passwd_dcredit:
+  - ubuntu22_cis
+ubtu22cis_passwd_dictcheck_file:
+  - ubuntu22_cis
+ubtu22cis_passwd_dictcheck_value:
+  - ubuntu22_cis
+ubtu22cis_passwd_difok_file:
+  - ubuntu22_cis
+ubtu22cis_passwd_difok_value:
+  - ubuntu22_cis
+ubtu22cis_passwd_hash_algo:
+  - ubuntu22_cis
+ubtu22cis_passwd_lcredit:
+  - ubuntu22_cis
+ubtu22cis_passwd_maxrepeat_file:
+  - ubuntu22_cis
+ubtu22cis_passwd_maxrepeat_value:
+  - ubuntu22_cis
+ubtu22cis_passwd_maxsequence_file:
+  - ubuntu22_cis
+ubtu22cis_passwd_maxsequence_value:
+  - ubuntu22_cis
+ubtu22cis_passwd_minclass:
+  - ubuntu22_cis
+ubtu22cis_passwd_minlen_file:
+  - ubuntu22_cis
+ubtu22cis_passwd_minlen_value:
+  - ubuntu22_cis
+ubtu22cis_passwd_ocredit:
+  - ubuntu22_cis
+ubtu22cis_passwd_quality_enforce_file:
+  - ubuntu22_cis
+ubtu22cis_passwd_quality_enforce_root_file:
+  - ubuntu22_cis
+ubtu22cis_passwd_quality_enforce_root_value:
+  - ubuntu22_cis
+ubtu22cis_passwd_quality_enforce_value:
+  - ubuntu22_cis
+ubtu22cis_passwd_ucredit:
+  - ubuntu22_cis
+ubtu22cis_print_mask:
+  - ubuntu22_cis
+ubtu22cis_print_server:
+  - ubuntu22_cis
+ubtu22cis_ptrace_scope:
+  - ubuntu22_cis
+ubtu22cis_purge_apt:
+  - ubuntu22_cis
+ubtu22cis_remote_log_host:
+  - ubuntu22_cis
+ubtu22cis_remote_log_port:
+  - ubuntu22_cis
+ubtu22cis_remote_log_protocol:
+  - ubuntu22_cis
+ubtu22cis_remote_log_server:
+  - ubuntu22_cis
+ubtu22cis_root_umask:
+  - ubuntu22_cis
+ubtu22cis_rpc_mask:
+  - ubuntu22_cis
+ubtu22cis_rpc_server:
+  - ubuntu22_cis
+ubtu22cis_rsh_client:
+  - ubuntu22_cis
+ubtu22cis_rsync_mask:
+  - ubuntu22_cis
+ubtu22cis_rsync_server:
+  - ubuntu22_cis
+ubtu22cis_rsyslog_ansible_managed:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_1_1:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_1_10:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_1_11:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_1_2:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_1_3:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_1_4:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_1_5:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_1_6:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_1_7:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_1_8:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_1_9:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_1_1:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_1_2:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_1_3:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_1_4:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_2_1:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_2_2:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_2_3:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_2_4:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_3_1:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_3_2:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_3_3:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_4_1:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_4_2:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_4_3:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_5_1:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_5_2:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_5_3:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_5_4:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_6_1:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_6_2:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_6_3:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_6_4:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_7_1:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_7_2:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_7_3:
+  - ubuntu22_cis
+ubtu22cis_rule_1_1_2_7_4:
+  - ubuntu22_cis
+ubtu22cis_rule_1_2_1_1:
+  - ubuntu22_cis
+ubtu22cis_rule_1_2_1_2:
+  - ubuntu22_cis
+ubtu22cis_rule_1_2_2_1:
+  - ubuntu22_cis
+ubtu22cis_rule_1_3_1_1:
+  - ubuntu22_cis
+ubtu22cis_rule_1_3_1_2:
+  - ubuntu22_cis
+ubtu22cis_rule_1_3_1_3:
+  - ubuntu22_cis
+ubtu22cis_rule_1_3_1_4:
+  - ubuntu22_cis
+ubtu22cis_rule_1_4_1:
+  - ubuntu22_cis
+ubtu22cis_rule_1_4_2:
+  - ubuntu22_cis
+ubtu22cis_rule_1_5_1:
+  - ubuntu22_cis
+ubtu22cis_rule_1_5_2:
+  - ubuntu22_cis
+ubtu22cis_rule_1_5_3:
+  - ubuntu22_cis
+ubtu22cis_rule_1_5_4:
+  - ubuntu22_cis
+ubtu22cis_rule_1_5_5:
+  - ubuntu22_cis
+ubtu22cis_rule_1_5_6:
+  - ubuntu22_cis
+ubtu22cis_rule_1_6_1:
+  - ubuntu22_cis
+ubtu22cis_rule_1_6_2:
+  - ubuntu22_cis
+ubtu22cis_rule_1_6_3:
+  - ubuntu22_cis
+ubtu22cis_rule_1_6_4:
+  - ubuntu22_cis
+ubtu22cis_rule_1_6_5:
+  - ubuntu22_cis
+ubtu22cis_rule_1_6_6:
+  - ubuntu22_cis
+ubtu22cis_rule_1_7_1:
+  - ubuntu22_cis
+ubtu22cis_rule_1_7_10:
+  - ubuntu22_cis
+ubtu22cis_rule_1_7_11:
+  - ubuntu22_cis
+ubtu22cis_rule_1_7_2:
+  - ubuntu22_cis
+ubtu22cis_rule_1_7_3:
+  - ubuntu22_cis
+ubtu22cis_rule_1_7_4:
+  - ubuntu22_cis
+ubtu22cis_rule_1_7_5:
+  - ubuntu22_cis
+ubtu22cis_rule_1_7_6:
+  - ubuntu22_cis
+ubtu22cis_rule_1_7_7:
+  - ubuntu22_cis
+ubtu22cis_rule_1_7_8:
+  - ubuntu22_cis
+ubtu22cis_rule_1_7_9:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_1:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_10:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_11:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_12:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_13:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_14:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_15:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_16:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_17:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_18:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_19:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_2:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_20:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_21:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_22:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_3:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_4:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_5:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_6:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_7:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_8:
+  - ubuntu22_cis
+ubtu22cis_rule_2_1_9:
+  - ubuntu22_cis
+ubtu22cis_rule_2_2_1:
+  - ubuntu22_cis
+ubtu22cis_rule_2_2_2:
+  - ubuntu22_cis
+ubtu22cis_rule_2_2_3:
+  - ubuntu22_cis
+ubtu22cis_rule_2_2_4:
+  - ubuntu22_cis
+ubtu22cis_rule_2_2_5:
+  - ubuntu22_cis
+ubtu22cis_rule_2_2_6:
+  - ubuntu22_cis
+ubtu22cis_rule_2_3_1_1:
+  - ubuntu22_cis
+ubtu22cis_rule_2_3_2_1:
+  - ubuntu22_cis
+ubtu22cis_rule_2_3_2_2:
+  - ubuntu22_cis
+ubtu22cis_rule_2_3_3_1:
+  - ubuntu22_cis
+ubtu22cis_rule_2_3_3_2:
+  - ubuntu22_cis
+ubtu22cis_rule_2_3_3_3:
+  - ubuntu22_cis
+ubtu22cis_rule_2_4_1_1:
+  - ubuntu22_cis
+ubtu22cis_rule_2_4_1_2:
+  - ubuntu22_cis
+ubtu22cis_rule_2_4_1_3:
+  - ubuntu22_cis
+ubtu22cis_rule_2_4_1_4:
+  - ubuntu22_cis
+ubtu22cis_rule_2_4_1_5:
+  - ubuntu22_cis
+ubtu22cis_rule_2_4_1_6:
+  - ubuntu22_cis
+ubtu22cis_rule_2_4_1_7:
+  - ubuntu22_cis
+ubtu22cis_rule_2_4_1_8:
+  - ubuntu22_cis
+ubtu22cis_rule_2_4_1_9:
+  - ubuntu22_cis
+ubtu22cis_rule_2_4_2_1:
+  - ubuntu22_cis
+ubtu22cis_rule_3_1_1:
+  - ubuntu22_cis
+ubtu22cis_rule_3_1_2:
+  - ubuntu22_cis
+ubtu22cis_rule_3_1_3:
+  - ubuntu22_cis
+ubtu22cis_rule_3_2_1:
+  - ubuntu22_cis
+ubtu22cis_rule_3_2_2:
+  - ubuntu22_cis
+ubtu22cis_rule_3_2_3:
+  - ubuntu22_cis
+ubtu22cis_rule_3_2_4:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_1:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_10:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_11:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_12:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_13:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_14:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_15:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_16:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_17:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_18:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_2:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_3:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_4:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_5:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_6:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_7:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_8:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_1_9:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_2_1:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_2_2:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_2_3:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_2_4:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_2_5:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_2_6:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_2_7:
+  - ubuntu22_cis
+ubtu22cis_rule_3_3_2_8:
+  - ubuntu22_cis
+ubtu22cis_rule_4_1_1:
+  - ubuntu22_cis
+ubtu22cis_rule_4_1_2:
+  - ubuntu22_cis
+ubtu22cis_rule_4_1_3:
+  - ubuntu22_cis
+ubtu22cis_rule_4_1_4:
+  - ubuntu22_cis
+ubtu22cis_rule_4_1_5:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_1:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_10:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_11:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_12:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_13:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_14:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_15:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_16:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_17:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_18:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_19:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_2:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_20:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_21:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_22:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_3:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_4:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_5:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_6:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_7:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_8:
+  - ubuntu22_cis
+ubtu22cis_rule_5_1_9:
+  - ubuntu22_cis
+ubtu22cis_rule_5_2_1:
+  - ubuntu22_cis
+ubtu22cis_rule_5_2_2:
+  - ubuntu22_cis
+ubtu22cis_rule_5_2_3:
+  - ubuntu22_cis
+ubtu22cis_rule_5_2_4:
+  - ubuntu22_cis
+ubtu22cis_rule_5_2_5:
+  - ubuntu22_cis
+ubtu22cis_rule_5_2_6:
+  - ubuntu22_cis
+ubtu22cis_rule_5_2_7:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_1_1:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_1_2:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_1_3:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_2_1:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_2_2:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_2_3:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_2_4:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_1_1:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_1_2:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_1_3:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_2_1:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_2_2:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_2_3:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_2_4:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_2_5:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_2_6:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_2_7:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_2_8:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_3_1:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_3_2:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_3_3:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_4_1:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_4_2:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_4_3:
+  - ubuntu22_cis
+ubtu22cis_rule_5_3_3_4_4:
+  - ubuntu22_cis
+ubtu22cis_rule_5_4_1_1:
+  - ubuntu22_cis
+ubtu22cis_rule_5_4_1_2:
+  - ubuntu22_cis
+ubtu22cis_rule_5_4_1_3:
+  - ubuntu22_cis
+ubtu22cis_rule_5_4_1_4:
+  - ubuntu22_cis
+ubtu22cis_rule_5_4_1_5:
+  - ubuntu22_cis
+ubtu22cis_rule_5_4_1_6:
+  - ubuntu22_cis
+ubtu22cis_rule_5_4_2_1:
+  - ubuntu22_cis
+ubtu22cis_rule_5_4_2_2:
+  - ubuntu22_cis
+ubtu22cis_rule_5_4_2_3:
+  - ubuntu22_cis
+ubtu22cis_rule_5_4_2_4:
+  - ubuntu22_cis
+ubtu22cis_rule_5_4_2_5:
+  - ubuntu22_cis
+ubtu22cis_rule_5_4_2_6:
+  - ubuntu22_cis
+ubtu22cis_rule_5_4_2_7:
+  - ubuntu22_cis
+ubtu22cis_rule_5_4_2_8:
+  - ubuntu22_cis
+ubtu22cis_rule_5_4_3_1:
+  - ubuntu22_cis
+ubtu22cis_rule_5_4_3_2:
+  - ubuntu22_cis
+ubtu22cis_rule_5_4_3_3:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_1_1_1:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_1_1_2:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_1_1_3:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_1_1_4:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_1_1_5:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_1_1_6:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_1_2_1:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_1_2_2:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_1_2_3:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_1_2_4:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_2_1:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_2_2:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_2_3:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_2_4:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_2_5:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_2_6:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_2_7:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_2_8:
+  - ubuntu22_cis
+ubtu22cis_rule_6_1_3_1:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_1_1:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_1_2:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_1_3:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_1_4:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_2_1:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_2_2:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_2_3:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_2_4:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_1:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_10:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_11:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_12:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_13:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_14:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_15:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_16:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_17:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_18:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_19:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_2:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_20:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_21:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_3:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_4:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_5:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_6:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_7:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_8:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_3_9:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_4_1:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_4_10:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_4_2:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_4_3:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_4_4:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_4_5:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_4_6:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_4_7:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_4_8:
+  - ubuntu22_cis
+ubtu22cis_rule_6_2_4_9:
+  - ubuntu22_cis
+ubtu22cis_rule_6_3_1:
+  - ubuntu22_cis
+ubtu22cis_rule_6_3_2:
+  - ubuntu22_cis
+ubtu22cis_rule_6_3_3:
+  - ubuntu22_cis
+ubtu22cis_rule_7_1_1:
+  - ubuntu22_cis
+ubtu22cis_rule_7_1_10:
+  - ubuntu22_cis
+ubtu22cis_rule_7_1_11:
+  - ubuntu22_cis
+ubtu22cis_rule_7_1_12:
+  - ubuntu22_cis
+ubtu22cis_rule_7_1_13:
+  - ubuntu22_cis
+ubtu22cis_rule_7_1_2:
+  - ubuntu22_cis
+ubtu22cis_rule_7_1_3:
+  - ubuntu22_cis
+ubtu22cis_rule_7_1_4:
+  - ubuntu22_cis
+ubtu22cis_rule_7_1_5:
+  - ubuntu22_cis
+ubtu22cis_rule_7_1_6:
+  - ubuntu22_cis
+ubtu22cis_rule_7_1_7:
+  - ubuntu22_cis
+ubtu22cis_rule_7_1_8:
+  - ubuntu22_cis
+ubtu22cis_rule_7_1_9:
+  - ubuntu22_cis
+ubtu22cis_rule_7_2_1:
+  - ubuntu22_cis
+ubtu22cis_rule_7_2_10:
+  - ubuntu22_cis
+ubtu22cis_rule_7_2_2:
+  - ubuntu22_cis
+ubtu22cis_rule_7_2_3:
+  - ubuntu22_cis
+ubtu22cis_rule_7_2_4:
+  - ubuntu22_cis
+ubtu22cis_rule_7_2_5:
+  - ubuntu22_cis
+ubtu22cis_rule_7_2_6:
+  - ubuntu22_cis
+ubtu22cis_rule_7_2_7:
+  - ubuntu22_cis
+ubtu22cis_rule_7_2_8:
+  - ubuntu22_cis
+ubtu22cis_rule_7_2_9:
+  - ubuntu22_cis
+ubtu22cis_samba_mask:
+  - ubuntu22_cis
+ubtu22cis_samba_server:
+  - ubuntu22_cis
+ubtu22cis_screensaver_idle_delay:
+  - ubuntu22_cis
+ubtu22cis_screensaver_lock_delay:
+  - ubuntu22_cis
+ubtu22cis_section1:
+  - ubuntu22_cis
+ubtu22cis_section2:
+  - ubuntu22_cis
+ubtu22cis_section3:
+  - ubuntu22_cis
+ubtu22cis_section4:
+  - ubuntu22_cis
+ubtu22cis_section5:
+  - ubuntu22_cis
+ubtu22cis_section6:
+  - ubuntu22_cis
+ubtu22cis_section7:
+  - ubuntu22_cis
+ubtu22cis_set_boot_pass:
+  - ubuntu22_cis
+ubtu22cis_set_grub_user_pass:
+  - ubuntu22_cis
+ubtu22cis_shell_session_file:
+  - ubuntu22_cis
+ubtu22cis_shell_session_timeout:
+  - ubuntu22_cis
+ubtu22cis_skip_for_test:
+  - ubuntu22_cis
+ubtu22cis_snmp_mask:
+  - ubuntu22_cis
+ubtu22cis_snmp_server:
+  - ubuntu22_cis
+ubtu22cis_squid_mask:
+  - ubuntu22_cis
+ubtu22cis_squid_server:
+  - ubuntu22_cis
+ubtu22cis_sshd_allowgroups:
+  - ubuntu22_cis
+ubtu22cis_sshd_allowusers:
+  - ubuntu22_cis
+ubtu22cis_sshd_ciphers:
+  - ubuntu22_cis
+ubtu22cis_sshd_clientalivecountmax:
+  - ubuntu22_cis
+ubtu22cis_sshd_clientaliveinterval:
+  - ubuntu22_cis
+ubtu22cis_sshd_config_file:
+  - ubuntu22_cis
+ubtu22cis_sshd_denygroups:
+  - ubuntu22_cis
+ubtu22cis_sshd_denyusers:
+  - ubuntu22_cis
+ubtu22cis_sshd_kex_algorithms:
+  - ubuntu22_cis
+ubtu22cis_sshd_limited:
+  - ubuntu22_cis
+ubtu22cis_sshd_logingracetime:
+  - ubuntu22_cis
+ubtu22cis_sshd_loglevel:
+  - ubuntu22_cis
+ubtu22cis_sshd_macs:
+  - ubuntu22_cis
+ubtu22cis_sshd_maxauthtries:
+  - ubuntu22_cis
+ubtu22cis_sshd_maxsessions:
+  - ubuntu22_cis
+ubtu22cis_sshd_maxstartups:
+  - ubuntu22_cis
+ubtu22cis_sudo_logfile:
+  - ubuntu22_cis
+ubtu22cis_sudo_package:
+  - ubuntu22_cis
+ubtu22cis_sudo_timestamp_timeout:
+  - ubuntu22_cis
+ubtu22cis_sugroup:
+  - ubuntu22_cis
+ubtu22cis_suid_sgid_adjust:
+  - ubuntu22_cis
+ubtu22cis_sysctl_kernel_conf:
+  - ubuntu22_cis
+ubtu22cis_sysctl_network_conf:
+  - ubuntu22_cis
+ubtu22cis_syslog_service:
+  - ubuntu22_cis
+ubtu22cis_system_is_log_server:
+  - ubuntu22_cis
+ubtu22cis_talk_client:
+  - ubuntu22_cis
+ubtu22cis_telnet_mask:
+  - ubuntu22_cis
+ubtu22cis_telnet_required:
+  - ubuntu22_cis
+ubtu22cis_telnet_server:
+  - ubuntu22_cis
+ubtu22cis_tftp_mask:
+  - ubuntu22_cis
+ubtu22cis_tftp_server:
+  - ubuntu22_cis
+ubtu22cis_time_pool:
+  - ubuntu22_cis
+ubtu22cis_time_servers:
+  - ubuntu22_cis
+ubtu22cis_time_sync_tool:
+  - ubuntu22_cis
+ubtu22cis_tmp_partition_mount_options:
+  - ubuntu22_cis
+ubtu22cis_tmp_svc:
+  - ubuntu22_cis
+ubtu22cis_ufw_allow_out_ports:
+  - ubuntu22_cis
+ubtu22cis_ufw_use_sysctl:
+  - ubuntu22_cis
+ubtu22cis_ungrouped_group:
+  - ubuntu22_cis
+ubtu22cis_unowned_owner:
+  - ubuntu22_cis
+ubtu22cis_uses_root:
+  - ubuntu22_cis
+ubtu22cis_warning_banner:
+  - ubuntu22_cis
+ubtu22cis_xinetd_mask:
+  - ubuntu22_cis
+ubtu22cis_xinetd_server:
+  - ubuntu22_cis
+ubtu22cis_xwindow_server:
+  - ubuntu22_cis
 ufw_service_name:
   - osism.commons.firewall
 ulimits_nofiles_min:
@@ -20894,14 +24282,23 @@ unbound__server:
   - debops.debops.unbound
 unbound__zones:
   - debops.debops.unbound
+update_audit_template:
+  - ubuntu22_cis
+update_keystone_service_user_passwords:
+  - kolla.group_vars
 upgrade_ceph_packages:
   - ceph.ceph-defaults
 upgrade_packages:
   - osism.commons.packages
+use_common_mariadb_user:
+  - kolla.group_vars
+use_preconfigured_databases:
+  - kolla.group_vars
 user_config:
   - ceph.ceph-client
 user_delete:
   - osism.commons.user
+  - osism.defaults.all
 user_fetch_keys_allowed_hosts:
   - osism.commons.user
 user_fetch_keys_delegate_to:
@@ -20970,6 +24367,10 @@ valid_ceph_repository:
   - ceph.ceph-defaults
 valkey_conf_path:
   - kolla.valkey
+valkey_connection_string:
+  - kolla.group_vars
+valkey_connection_string_extras:
+  - kolla.group_vars
 valkey_default_volumes:
   - kolla.valkey
 valkey_dimensions:
@@ -21020,8 +24421,16 @@ valkey_sentinel_image:
   - kolla.valkey
 valkey_sentinel_image_full:
   - kolla.valkey
+valkey_sentinel_monitor_name:
+  - kolla.group_vars
+valkey_sentinel_port:
+  - kolla.group_vars
+valkey_sentinel_quorum:
+  - kolla.group_vars
 valkey_sentinel_tag:
   - kolla.valkey
+valkey_server_port:
+  - kolla.group_vars
 valkey_services:
   - kolla.valkey
 valkey_tag:
@@ -21029,6 +24438,7 @@ valkey_tag:
 vault_container_name:
   - osism.services.manager
 vault_host:
+  - osism.defaults.manager
   - osism.services.manager
 vault_image:
   - osism.services.manager
@@ -21068,6 +24478,12 @@ watcher_api_image:
   - kolla.watcher
 watcher_api_image_full:
   - kolla.watcher
+watcher_api_listen_port:
+  - kolla.group_vars
+watcher_api_port:
+  - kolla.group_vars
+watcher_api_public_port:
+  - kolla.group_vars
 watcher_api_tag:
   - kolla.watcher
 watcher_api_workers:
@@ -21148,10 +24564,16 @@ watcher_engine_image_full:
   - kolla.watcher
 watcher_engine_tag:
   - kolla.watcher
+watcher_external_fqdn:
+  - kolla.group_vars
 watcher_extra_volumes:
   - kolla.watcher
 watcher_git_repository:
   - kolla.watcher
+watcher_internal_endpoint:
+  - kolla.group_vars
+watcher_internal_fqdn:
+  - kolla.group_vars
 watcher_keystone_user:
   - kolla.watcher
 watcher_ks_services:
@@ -21162,6 +24584,8 @@ watcher_logging_debug:
   - kolla.watcher
 watcher_notification_topics:
   - kolla.watcher
+watcher_public_endpoint:
+  - kolla.group_vars
 watcher_services:
   - kolla.watcher
 watcher_source_version:
@@ -21389,6 +24813,7 @@ zabbix_agent_conf_mode:
 zabbix_agent_configuration_file:
   - osism.services.zabbix_agent
 zabbix_agent_configure_repository:
+  - osism.defaults.all
   - osism.services.zabbix_agent
 zabbix_agent_controlsocket:
   - community.zabbix.zabbix_agent
