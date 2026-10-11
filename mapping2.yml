@@ -1346,7 +1346,6 @@ bifrost_deploy_verbosity:
   - kolla.bifrost
 bifrost_network_address_family:
   - kolla.group_vars
-  - osism.defaults.all
 bifrost_network_interface:
   - kolla.group_vars
   - osism.defaults.all
@@ -1640,10 +1639,6 @@ block_db_size:
   - ceph.ceph-defaults
 bluestore_wal_devices:
   - ceph.ceph-osd
-bootstrap_dirs_group:
-  - osism.defaults.all
-bootstrap_dirs_owner:
-  - osism.defaults.all
 bpf_lb_algorithm:
   - kubernetes.k3s_server_post
 bpf_lb_mode:
@@ -1886,8 +1881,6 @@ ceph_docker_registry:
 ceph_docker_registry_auth:
   - ceph.ceph-defaults
   - osism.defaults.all
-ceph_docker_tag:
-  - osism.defaults.all
 ceph_ec_profiles:
   - ceph.ceph-osd
 ceph_exporter_addr:
@@ -2097,8 +2090,6 @@ ceph_rgw_swift_compatibility:
   - kolla.ceph-rgw
 ceph_rgwloadbalancer_firewall_zone:
   - ceph.ceph-defaults
-ceph_share_directory:
-  - osism.defaults.all
 ceph_ssh_private_key:
   - osism.services.manager
 ceph_stable_key:
@@ -2132,8 +2123,6 @@ cephadm_ssh_pub_key_path:
   - ceph.ceph-defaults
 cephadm_ssh_user:
   - ceph.ceph-defaults
-cephclient_cluster_fsid:
-  - osism.defaults.all
 cephclient_configuration_directory:
   - osism.services.cephclient
 cephclient_configure_repository:
@@ -2351,8 +2340,6 @@ cilium_bgp_peer_address:
   - osism.defaults.all
 cilium_bgp_peer_asn:
   - kubernetes.k3s_server_post
-  - osism.defaults.all
-cilium_cli:
   - osism.defaults.all
 cilium_exportPodCIDR:
   - kubernetes.k3s_server_post
@@ -2865,16 +2852,8 @@ configuration_no_log:
   - osism.commons.configuration
 configuration_type:
   - osism.commons.configuration
-configure_adminer:
-  - osism.defaults.all
 configure_firewall:
   - ceph.ceph-defaults
-  - osism.defaults.all
-configure_phpmyadmin:
-  - osism.defaults.all
-configure_rally:
-  - osism.defaults.all
-configure_sshconfig:
   - osism.defaults.all
 console_base_packages:
   - debops.debops.console
@@ -4217,8 +4196,6 @@ docker_configure_repository:
   - osism.services.docker
 docker_configure_storage_block_device:
   - osism.services.docker
-docker_configure_storage_driver:
-  - osism.defaults.all
 docker_configure_storage_zram_device:
   - osism.services.docker
 docker_debian_repository:
@@ -6408,8 +6385,6 @@ fluentd_enabled_input_openstack_services:
   - kolla.fluentd
 fluentd_extra_volumes:
   - kolla.fluentd
-fluentd_host:
-  - osism.defaults.all
 fluentd_image:
   - kolla.fluentd
 fluentd_image_full:
@@ -7489,8 +7464,6 @@ grub__timeout_virtual:
   - debops.debops.grub
 grub__users:
   - debops.debops.grub
-grub_hidden_timeout:
-  - osism.defaults.all
 gunicorn__applications:
   - debops.debops.gunicorn
 gunicorn__binary:
@@ -9532,10 +9505,10 @@ k3s_add_labels__k3s_node:
   - osism.defaults.k3s_node
 k3s_add_labels__manager:
   - osism.defaults.manager
+k3s_add_labels__monitoring:
+  - osism.defaults.monitoring
 k3s_add_labels__network:
   - osism.defaults.network
-k3s_add_labels_monitoring:
-  - osism.defaults.monitoring
 k3s_create_crictl_symlink:
   - osism.defaults.all
 k3s_create_kubectl_symlink:
@@ -16259,8 +16232,6 @@ opentelemetry_collector_tag:
   - osism.services.opentelemetry_collector
 opentelemetry_collector_version:
   - osism.services.opentelemetry_collector
-opentstackclient_groupname:
-  - osism.defaults.all
 openvswitch_db_default_volumes:
   - kolla.openvswitch
 openvswitch_db_dimensions:
@@ -16440,8 +16411,6 @@ osd_mount_options_xfs:
   - ceph.ceph-defaults
 osd_objectstore:
   - ceph.ceph-defaults
-  - osism.defaults.all
-osd_scenario:
   - osism.defaults.all
 osds_per_device:
   - ceph.ceph-osd
@@ -22179,8 +22148,6 @@ sysctl_extra:
   - osism.commons.sysctl
 sysctl_path:
   - kolla.sysctl
-sysdig_configure_repository:
-  - osism.defaults.all
 sysfs__attributes:
   - debops.debops.sysfs
 sysfs__base_packages:
