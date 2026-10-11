@@ -11380,17 +11380,13 @@ osism.defaults.all:
   - api_interface
   - apiserver_endpoint
   - apt__enabled
-  - bifrost_network_address_family
   - bifrost_network_interface
-  - bootstrap_dirs_group
-  - bootstrap_dirs_owner
   - ceph_dashboard_standby_behaviour
   - ceph_dashboard_standby_error_status_code
   - ceph_docker_image
   - ceph_docker_image_tag
   - ceph_docker_registry
   - ceph_docker_registry_auth
-  - ceph_docker_tag
   - ceph_group_name
   - ceph_image_version
   - ceph_mgr_modules
@@ -11400,9 +11396,7 @@ osism.defaults.all:
   - ceph_origin
   - ceph_repository
   - ceph_require_min_compat_client
-  - ceph_share_directory
   - ceph_uid
-  - cephclient_cluster_fsid
   - cephclient_groupname
   - cephclient_keyring
   - cephclient_keyring_name
@@ -11423,7 +11417,6 @@ osism.defaults.all:
   - cilium_bgp_my_asn
   - cilium_bgp_peer_address
   - cilium_bgp_peer_asn
-  - cilium_cli
   - cilium_hubble
   - cilium_hubble_ui_lb
   - cilium_iface
@@ -11432,11 +11425,7 @@ osism.defaults.all:
   - client_group_name
   - cluster_cidr
   - configuration_directory
-  - configure_adminer
   - configure_firewall
-  - configure_phpmyadmin
-  - configure_rally
-  - configure_sshconfig
   - console_interface
   - containerized_deployment
   - dashboard_admin_password
@@ -11448,7 +11437,6 @@ osism.defaults.all:
   - dnsmasq_docker_registry
   - docker_compose_install_type
   - docker_configure_repository
-  - docker_configure_storage_driver
   - docker_registry
   - docker_registry_ansible
   - docker_registry_cephclient
@@ -11480,13 +11468,11 @@ osism.defaults.all:
   - extra_server_args
   - falco_configure_repository
   - fetch_directory
-  - fluentd_host
   - generate_fsid
   - gnmic_docker_registry
   - grafana_admin_password
   - grafana_server_group_name
   - group_name_master
-  - grub_hidden_timeout
   - hosts_chrony
   - hosts_gather_facts
   - hosts_interface
@@ -11570,12 +11556,10 @@ osism.defaults.all:
   - openstack_pools_defaults
   - openstack_pools_extra
   - openstackclient_configuration_directory
-  - opentstackclient_groupname
   - operator_group
   - operator_user
   - osd_group_name
   - osd_objectstore
-  - osd_scenario
   - osism_serial
   - osism_serial_default
   - osism_strategy
@@ -11612,7 +11596,6 @@ osism.defaults.all:
   - swift_replication_interface
   - swift_storage_address_family
   - swift_storage_interface
-  - sysdig_configure_repository
   - systemd_dir
   - timezone_name
   - traefik_host
@@ -11638,7 +11621,7 @@ osism.defaults.manager:
   - netbox_url
   - vault_host
 osism.defaults.monitoring:
-  - k3s_add_labels_monitoring
+  - k3s_add_labels__monitoring
 osism.defaults.network:
   - k3s_add_labels__network
 osism.services.adminer:
