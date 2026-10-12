@@ -11443,7 +11443,6 @@ osism.defaults.all:
   - docker_registry_cgit
   - docker_registry_dnsdist
   - docker_registry_homer
-  - docker_registry_memcached
   - docker_registry_netbox
   - docker_registry_nexus
   - docker_registry_openstackclient
@@ -11453,7 +11452,6 @@ osism.defaults.all:
   - docker_registry_squid
   - docker_registry_traefik
   - docker_registry_vault
-  - docker_registry_zookeeper
   - docker_registry_zuul
   - docker_storage_driver
   - dotfiles_files
