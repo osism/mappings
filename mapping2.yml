@@ -4547,8 +4547,6 @@ docker_registry_kepler:
   - osism.services.kepler
 docker_registry_mariadb:
   - osism.services.manager
-docker_registry_memcached:
-  - osism.defaults.all
 docker_registry_mirrors:
   - osism.services.docker
 docker_registry_netbox:
@@ -4601,8 +4599,6 @@ docker_registry_vault:
   - osism.services.manager
 docker_registry_wazuh_proxy:
   - osism.services.wazuh_proxy
-docker_registry_zookeeper:
-  - osism.defaults.all
 docker_registry_zuul:
   - osism.defaults.all
   - osism.services.zuul
