@@ -7570,6 +7570,10 @@ haproxy_check_timeout:
   - kolla.loadbalancer
 haproxy_client_timeout:
   - kolla.loadbalancer
+haproxy_cloudkitty_api_client_timeout:
+  - kolla.cloudkitty
+haproxy_cloudkitty_api_server_timeout:
+  - kolla.cloudkitty
 haproxy_config_install:
   - kolla.loadbalancer-config
 haproxy_connect_timeout:

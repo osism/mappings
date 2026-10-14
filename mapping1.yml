@@ -7497,6 +7497,8 @@ kolla.cloudkitty:
   - cloudkitty_services
   - cloudkitty_source_version
   - cloudkitty_tag
+  - haproxy_cloudkitty_api_client_timeout
+  - haproxy_cloudkitty_api_server_timeout
   - openstack_cloudkitty_auth
 kolla.collectd:
   - collectd_default_volumes
