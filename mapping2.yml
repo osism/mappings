@@ -13205,8 +13205,6 @@ netbox_init_object_permissions:
   - osism.services.netbox
 netbox_init_users:
   - osism.services.netbox
-netbox_init_users_template:
-  - osism.services.netbox
 netbox_initializers:
   - osism.services.netbox
 netbox_ldap_bind_dn:
