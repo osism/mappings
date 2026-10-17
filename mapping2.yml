@@ -4336,7 +4336,6 @@ docker_network_mtu:
   - osism.services.kepler
   - osism.services.manager
   - osism.services.netbox
-  - osism.services.nexus
   - osism.services.openstackclient
   - osism.services.opentelemetry_collector
   - osism.services.phpmyadmin
@@ -4554,7 +4553,6 @@ docker_registry_netbox:
   - osism.services.netbox
 docker_registry_nexus:
   - osism.defaults.all
-  - osism.services.nexus
 docker_registry_openstackclient:
   - osism.defaults.all
   - osism.services.openstackclient
@@ -14083,74 +14081,10 @@ neutron_tenant_network_types:
   - kolla.group_vars
 neutron_type_drivers:
   - kolla.group_vars
-nexus_admin_password:
-  - osism.services.nexus
-nexus_admin_username:
-  - osism.services.nexus
 nexus_bind_host:
   - osism.defaults.all
-  - osism.services.nexus
-nexus_configuration_directory:
-  - osism.services.nexus
-nexus_container_name:
-  - osism.services.nexus
-nexus_docker_bearer_token_realm:
-  - osism.services.nexus
-nexus_docker_compose_directory:
-  - osism.services.nexus
-nexus_force_init:
-  - osism.services.nexus
 nexus_host:
   - osism.defaults.all
-  - osism.services.nexus
-nexus_http_proxy_host:
-  - osism.services.nexus
-nexus_http_proxy_password:
-  - osism.services.nexus
-nexus_http_proxy_port:
-  - osism.services.nexus
-nexus_http_proxy_username:
-  - osism.services.nexus
-nexus_https_proxy_host:
-  - osism.services.nexus
-nexus_https_proxy_password:
-  - osism.services.nexus
-nexus_https_proxy_port:
-  - osism.services.nexus
-nexus_https_proxy_username:
-  - osism.services.nexus
-nexus_image:
-  - osism.services.nexus
-nexus_network:
-  - osism.services.nexus
-nexus_old_service_name:
-  - osism.services.nexus
-nexus_port:
-  - osism.services.nexus
-nexus_provision_groovy_scripts:
-  - osism.services.nexus
-nexus_provision_scripts:
-  - osism.services.nexus
-nexus_proxy_exclude_hosts:
-  - osism.services.nexus
-nexus_repos_apt_defaults:
-  - osism.services.nexus
-nexus_repos_apt_proxy:
-  - osism.services.nexus
-nexus_repos_docker_defaults:
-  - osism.services.nexus
-nexus_repos_docker_proxy:
-  - osism.services.nexus
-nexus_service_name:
-  - osism.services.nexus
-nexus_tag:
-  - osism.services.nexus
-nexus_traefik:
-  - osism.services.nexus
-nexus_with_http_proxy:
-  - osism.services.nexus
-nexus_with_https_proxy:
-  - osism.services.nexus
 nfs__base_mount_options:
   - debops.debops.nfs
 nfs__base_packages:
@@ -16333,7 +16267,6 @@ operator_group:
   - osism.services.kepler
   - osism.services.manager
   - osism.services.netbox
-  - osism.services.nexus
   - osism.services.openstackclient
   - osism.services.opentelemetry_collector
   - osism.services.phpmyadmin
@@ -16377,7 +16310,6 @@ operator_user:
   - osism.services.kepler
   - osism.services.manager
   - osism.services.netbox
-  - osism.services.nexus
   - osism.services.openstackclient
   - osism.services.opentelemetry_collector
   - osism.services.phpmyadmin
@@ -22880,7 +22812,6 @@ traefik_external_network_cidr:
   - osism.services.homer
   - osism.services.manager
   - osism.services.netbox
-  - osism.services.nexus
   - osism.services.phpmyadmin
   - osism.services.traefik
 traefik_external_network_cidr_ipv6:
@@ -22892,7 +22823,6 @@ traefik_external_network_name:
   - osism.services.homer
   - osism.services.manager
   - osism.services.netbox
-  - osism.services.nexus
   - osism.services.phpmyadmin
   - osism.services.traefik
 traefik_host:
