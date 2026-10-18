@@ -12087,7 +12087,6 @@ osism.services.manager:
   - ceph_ansible_tag
   - ceph_ssh_private_key
   - configuration_directory
-  - deploy_private_key
   - docker_network_mtu
   - docker_registry
   - docker_registry_ansible
