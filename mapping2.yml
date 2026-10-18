@@ -3522,8 +3522,6 @@ default_user_domain_name:
   - kolla.group_vars
 delay_wait_osd_up:
   - ceph.ceph-osd
-deploy_private_key:
-  - osism.services.manager
 deploy_user:
   - osism.defaults.all
 designate_api_default_volumes:
