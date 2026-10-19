@@ -11446,7 +11446,6 @@ osism.defaults.all:
   - docker_registry_dnsdist
   - docker_registry_homer
   - docker_registry_netbox
-  - docker_registry_nexus
   - docker_registry_openstackclient
   - docker_registry_pgautoupgrade
   - docker_registry_phpmyadmin
@@ -11524,8 +11523,6 @@ osism.defaults.all:
   - network_interface
   - network_restart_method
   - neutron_external_interface
-  - nexus_bind_host
-  - nexus_host
   - nfs_group_name
   - ntp_service_enabled
   - octavia_network_address_family
@@ -12171,6 +12168,7 @@ osism.services.manager:
   - manager_redis_image
   - manager_redis_image_namespace
   - manager_redis_tag
+  - manager_requests_ca_bundle
   - manager_secrets_directory
   - manager_service_allow_restart
   - manager_service_manual_start
