@@ -4549,8 +4549,6 @@ docker_registry_mirrors:
 docker_registry_netbox:
   - osism.defaults.all
   - osism.services.netbox
-docker_registry_nexus:
-  - osism.defaults.all
 docker_registry_openstackclient:
   - osism.defaults.all
   - osism.services.openstackclient
@@ -11343,6 +11341,8 @@ manager_redis_image_namespace:
   - osism.services.manager
 manager_redis_tag:
   - osism.services.manager
+manager_requests_ca_bundle:
+  - osism.services.manager
 manager_secrets_directory:
   - osism.services.manager
 manager_service_allow_restart:
@@ -14079,10 +14079,6 @@ neutron_tenant_network_types:
   - kolla.group_vars
 neutron_type_drivers:
   - kolla.group_vars
-nexus_bind_host:
-  - osism.defaults.all
-nexus_host:
-  - osism.defaults.all
 nfs__base_mount_options:
   - debops.debops.nfs
 nfs__base_packages:
