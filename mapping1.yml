@@ -12489,7 +12489,9 @@ osism.services.squid:
   - squid_service_name
   - squid_service_restart
   - squid_tag
-osism.services.sshd: []
+osism.services.sshd:
+  - sshd_allow_users
+  - sshd_deny_users
 osism.services.stepca:
   - configuration_directory
   - docker_network_mtu

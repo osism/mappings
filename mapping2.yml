@@ -21801,6 +21801,10 @@ sshd__version:
   - debops.debops.sshd
 sshd__whitelist:
   - debops.debops.sshd
+sshd_allow_users:
+  - osism.services.sshd
+sshd_deny_users:
+  - osism.services.sshd
 ssl_intermediate_settings:
   - kolla.group_vars
 ssl_legacy_settings:
