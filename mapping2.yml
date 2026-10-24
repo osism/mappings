@@ -4377,6 +4377,54 @@ docker_python_package_name:
   - osism.services.docker
 docker_python_package_names:
   - osism.services.docker
+docker_ready_check_containerd:
+  - osism.validations.docker_ready
+docker_ready_container_timeout:
+  - osism.validations.docker_ready
+docker_ready_containerd_service_name:
+  - osism.validations.docker_ready
+docker_ready_default_runtime:
+  - osism.validations.docker_ready
+docker_ready_default_ulimits:
+  - osism.validations.docker_ready
+docker_ready_dns_check_name:
+  - osism.validations.docker_ready
+docker_ready_docker_service_name:
+  - osism.validations.docker_ready
+docker_ready_image:
+  - osism.validations.docker_ready
+docker_ready_insecure_registries:
+  - osism.validations.docker_ready
+docker_ready_live_restore:
+  - osism.validations.docker_ready
+docker_ready_log_driver:
+  - osism.validations.docker_ready
+docker_ready_log_opts:
+  - osism.validations.docker_ready
+docker_ready_network_check_host:
+  - osism.validations.docker_ready
+docker_ready_network_check_port:
+  - osism.validations.docker_ready
+docker_ready_operator_user:
+  - osism.validations.docker_ready
+docker_ready_proxy_enabled:
+  - osism.validations.docker_ready
+docker_ready_proxy_http:
+  - osism.validations.docker_ready
+docker_ready_proxy_https:
+  - osism.validations.docker_ready
+docker_ready_proxy_no_proxy:
+  - osism.validations.docker_ready
+docker_ready_pull_timeout:
+  - osism.validations.docker_ready
+docker_ready_registry:
+  - osism.validations.docker_ready
+docker_ready_registry_mirrors:
+  - osism.validations.docker_ready
+docker_ready_socket:
+  - osism.validations.docker_ready
+docker_ready_storage_driver:
+  - osism.validations.docker_ready
 docker_redhat_repository:
   - osism.services.docker
 docker_registry:

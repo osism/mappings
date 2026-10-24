@@ -12696,6 +12696,31 @@ osism.validations.chrony:
   - chrony_max_stratum
   - chrony_max_system_clock_deviation
   - chrony_max_upper_clock_error_bound
+osism.validations.docker_ready:
+  - docker_ready_check_containerd
+  - docker_ready_container_timeout
+  - docker_ready_containerd_service_name
+  - docker_ready_default_runtime
+  - docker_ready_default_ulimits
+  - docker_ready_dns_check_name
+  - docker_ready_docker_service_name
+  - docker_ready_image
+  - docker_ready_insecure_registries
+  - docker_ready_live_restore
+  - docker_ready_log_driver
+  - docker_ready_log_opts
+  - docker_ready_network_check_host
+  - docker_ready_network_check_port
+  - docker_ready_operator_user
+  - docker_ready_proxy_enabled
+  - docker_ready_proxy_http
+  - docker_ready_proxy_https
+  - docker_ready_proxy_no_proxy
+  - docker_ready_pull_timeout
+  - docker_ready_registry
+  - docker_ready_registry_mirrors
+  - docker_ready_socket
+  - docker_ready_storage_driver
 osism.validations.docker_version:
   - docker_version_expected
 osism.validations.kernel_version:
