@@ -11848,6 +11848,10 @@ osism.services.falco:
 osism.services.frr:
   - frr_allow_service_restart
   - frr_bfd_profiles
+  - frr_bgp_neighbors
+  - frr_bgp_out_prefix_list4
+  - frr_bgp_out_prefix_list6
+  - frr_bgp_out_prefixes
   - frr_config_file
   - frr_daemons_file
   - frr_dummy_interface

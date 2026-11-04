@@ -6517,6 +6517,14 @@ frr_allow_service_restart:
   - osism.services.frr
 frr_bfd_profiles:
   - osism.services.frr
+frr_bgp_neighbors:
+  - osism.services.frr
+frr_bgp_out_prefix_list4:
+  - osism.services.frr
+frr_bgp_out_prefix_list6:
+  - osism.services.frr
+frr_bgp_out_prefixes:
+  - osism.services.frr
 frr_config_file:
   - osism.services.frr
 frr_daemons_file:
