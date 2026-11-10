@@ -925,6 +925,8 @@ debops.debops.apt:
   - apt__configuration
   - apt__core_packages
   - apt__debian_archived_releases
+  - apt__debian_archived_security_releases
+  - apt__debian_archived_updates_releases
   - apt__debian_sources
   - apt__default_configuration
   - apt__deploy_state
@@ -1320,6 +1322,9 @@ debops.debops.core:
   - core__ansible_controllers
   - core__base_packages
   - core__cache_valid_time
+  - core__cluster_base_group
+  - core__cluster_count
+  - core__cluster_size
   - core__distribution
   - core__distribution_release
   - core__facts
@@ -1583,6 +1588,23 @@ debops.debops.dnsmasq:
   - dnsmasq__public_dns
   - dnsmasq__public_dns_allow
   - dnsmasq__tcpwrappers__dependent_allow
+debops.debops.docker_compose_service:
+  - docker_compose_service__combined_services
+  - docker_compose_service__data_path
+  - docker_compose_service__default_services
+  - docker_compose_service__domain
+  - docker_compose_service__ferm__default_action
+  - docker_compose_service__ferm__default_chain
+  - docker_compose_service__ferm__default_protocol
+  - docker_compose_service__ferm__dependent_rules
+  - docker_compose_service__group_services
+  - docker_compose_service__host_services
+  - docker_compose_service__nginx__dependent_servers
+  - docker_compose_service__nginx__dependent_upstreams
+  - docker_compose_service__pull
+  - docker_compose_service__python__dependent_packages3
+  - docker_compose_service__services
+  - docker_compose_service__templates_path
 debops.debops.docker_gen:
   - docker_gen__config
   - docker_gen__lib
@@ -1693,6 +1715,28 @@ debops.debops.docker_server:
   - docker_server__systemd__dependent_units
   - docker_server__upstream
   - docker_server__version
+debops.debops.docker_service:
+  - docker_service__combined_services
+  - docker_service__create_volume_dirs
+  - docker_service__data_path
+  - docker_service__default_services
+  - docker_service__domain
+  - docker_service__ferm__default_action
+  - docker_service__ferm__default_chain
+  - docker_service__ferm__default_protocol
+  - docker_service__ferm__dependent_rules
+  - docker_service__group_services
+  - docker_service__host_services
+  - docker_service__nginx__dependent_servers
+  - docker_service__nginx__dependent_upstreams
+  - docker_service__postgresql__dependent_databases
+  - docker_service__postgresql__dependent_pgpass
+  - docker_service__postgresql__dependent_roles
+  - docker_service__pull
+  - docker_service__python__dependent_packages3
+  - docker_service__restart_policy
+  - docker_service__services
+  - docker_service__templates_path
 debops.debops.dokuwiki:
   - dokuwiki__base_packages
   - dokuwiki__default_plugins
@@ -7902,6 +7946,7 @@ kolla.gnocchi:
   - openstack_gnocchi_auth
 kolla.grafana:
   - grafana_admin_username
+  - grafana_container_proxy
   - grafana_copy_certs
   - grafana_custom_home_dashboard
   - grafana_data_sources
@@ -11241,6 +11286,7 @@ osism.commons.network:
   - network_interfaces
   - network_interfaces_path
   - network_manage_devices
+  - network_managed_externally
   - network_netplan_file
   - network_netplan_managed_files
   - network_netplan_managed_files_defaults
@@ -11877,6 +11923,7 @@ osism.services.frr:
   - frr_loopback_interface
   - frr_loopback_v4
   - frr_loopback_v6
+  - frr_managed_externally
   - frr_maximum_paths
   - frr_options_bfdd
   - frr_options_bgpd
