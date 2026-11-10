@@ -524,6 +524,10 @@ apt__core_packages:
   - debops.debops.apt
 apt__debian_archived_releases:
   - debops.debops.apt
+apt__debian_archived_security_releases:
+  - debops.debops.apt
+apt__debian_archived_updates_releases:
+  - debops.debops.apt
 apt__debian_sources:
   - debops.debops.apt
 apt__default_configuration:
@@ -2967,6 +2971,12 @@ core__base_packages:
   - debops.debops.core
 core__cache_valid_time:
   - debops.debops.core
+core__cluster_base_group:
+  - debops.debops.core
+core__cluster_count:
+  - debops.debops.core
+core__cluster_size:
+  - debops.debops.core
 core__distribution:
   - debops.debops.core
 core__distribution_release:
@@ -4183,6 +4193,38 @@ docker_compose_plugin_package_name:
   - osism.commons.docker_compose
 docker_compose_pull:
   - osism.commons.docker_compose
+docker_compose_service__combined_services:
+  - debops.debops.docker_compose_service
+docker_compose_service__data_path:
+  - debops.debops.docker_compose_service
+docker_compose_service__default_services:
+  - debops.debops.docker_compose_service
+docker_compose_service__domain:
+  - debops.debops.docker_compose_service
+docker_compose_service__ferm__default_action:
+  - debops.debops.docker_compose_service
+docker_compose_service__ferm__default_chain:
+  - debops.debops.docker_compose_service
+docker_compose_service__ferm__default_protocol:
+  - debops.debops.docker_compose_service
+docker_compose_service__ferm__dependent_rules:
+  - debops.debops.docker_compose_service
+docker_compose_service__group_services:
+  - debops.debops.docker_compose_service
+docker_compose_service__host_services:
+  - debops.debops.docker_compose_service
+docker_compose_service__nginx__dependent_servers:
+  - debops.debops.docker_compose_service
+docker_compose_service__nginx__dependent_upstreams:
+  - debops.debops.docker_compose_service
+docker_compose_service__pull:
+  - debops.debops.docker_compose_service
+docker_compose_service__python__dependent_packages3:
+  - debops.debops.docker_compose_service
+docker_compose_service__services:
+  - debops.debops.docker_compose_service
+docker_compose_service__templates_path:
+  - debops.debops.docker_compose_service
 docker_compose_service_group:
   - osism.commons.docker_compose
 docker_compose_service_user:
@@ -4690,6 +4732,48 @@ docker_server__upstream:
   - debops.debops.docker_server
 docker_server__version:
   - debops.debops.docker_server
+docker_service__combined_services:
+  - debops.debops.docker_service
+docker_service__create_volume_dirs:
+  - debops.debops.docker_service
+docker_service__data_path:
+  - debops.debops.docker_service
+docker_service__default_services:
+  - debops.debops.docker_service
+docker_service__domain:
+  - debops.debops.docker_service
+docker_service__ferm__default_action:
+  - debops.debops.docker_service
+docker_service__ferm__default_chain:
+  - debops.debops.docker_service
+docker_service__ferm__default_protocol:
+  - debops.debops.docker_service
+docker_service__ferm__dependent_rules:
+  - debops.debops.docker_service
+docker_service__group_services:
+  - debops.debops.docker_service
+docker_service__host_services:
+  - debops.debops.docker_service
+docker_service__nginx__dependent_servers:
+  - debops.debops.docker_service
+docker_service__nginx__dependent_upstreams:
+  - debops.debops.docker_service
+docker_service__postgresql__dependent_databases:
+  - debops.debops.docker_service
+docker_service__postgresql__dependent_pgpass:
+  - debops.debops.docker_service
+docker_service__postgresql__dependent_roles:
+  - debops.debops.docker_service
+docker_service__pull:
+  - debops.debops.docker_service
+docker_service__python__dependent_packages3:
+  - debops.debops.docker_service
+docker_service__restart_policy:
+  - debops.debops.docker_service
+docker_service__services:
+  - debops.debops.docker_service
+docker_service__templates_path:
+  - debops.debops.docker_service
 docker_service_name:
   - osism.services.docker
 docker_storage_block_device:
@@ -6575,6 +6659,8 @@ frr_loopback_v4:
   - osism.services.frr
 frr_loopback_v6:
   - osism.services.frr
+frr_managed_externally:
+  - osism.services.frr
 frr_maximum_paths:
   - osism.services.frr
 frr_options_bfdd:
@@ -7351,6 +7437,8 @@ grafana_container_image:
   - ceph.ceph-defaults
 grafana_container_memory:
   - ceph.ceph-defaults
+grafana_container_proxy:
+  - kolla.grafana
 grafana_copy_certs:
   - kolla.grafana
 grafana_crt:
@@ -13490,6 +13578,8 @@ network_interfaces:
 network_interfaces_path:
   - osism.commons.network
 network_manage_devices:
+  - osism.commons.network
+network_managed_externally:
   - osism.commons.network
 network_netplan_file:
   - osism.commons.network
