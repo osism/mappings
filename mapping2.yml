@@ -1687,6 +1687,8 @@ ceilometer_central_image:
   - kolla.ceilometer
 ceilometer_central_image_full:
   - kolla.ceilometer
+ceilometer_central_prometheus_exporter_port:
+  - kolla.group_vars
 ceilometer_central_tag:
   - kolla.ceilometer
 ceilometer_compute_default_volumes:
@@ -1713,6 +1715,8 @@ ceilometer_compute_image:
   - kolla.ceilometer
 ceilometer_compute_image_full:
   - kolla.ceilometer
+ceilometer_compute_prometheus_exporter_port:
+  - kolla.group_vars
 ceilometer_compute_tag:
   - kolla.ceilometer
 ceilometer_config_validation:
@@ -1793,6 +1797,30 @@ ceilometer_notification_image_full:
   - kolla.ceilometer
 ceilometer_notification_tag:
   - kolla.ceilometer
+ceilometer_polling_interval:
+  - kolla.ceilometer
+ceilometer_polling_meters:
+  - kolla.ceilometer
+ceilometer_polling_meters_central:
+  - kolla.ceilometer
+ceilometer_polling_meters_cinder:
+  - kolla.ceilometer
+ceilometer_polling_meters_compute:
+  - kolla.ceilometer
+ceilometer_polling_meters_designate:
+  - kolla.ceilometer
+ceilometer_polling_meters_extra:
+  - kolla.ceilometer
+ceilometer_polling_meters_glance:
+  - kolla.ceilometer
+ceilometer_polling_meters_manila:
+  - kolla.ceilometer
+ceilometer_polling_meters_neutron:
+  - kolla.ceilometer
+ceilometer_polling_meters_octavia:
+  - kolla.ceilometer
+ceilometer_prometheus_exporter_port:
+  - kolla.group_vars
 ceilometer_prometheus_pushgateway_host:
   - kolla.ceilometer
 ceilometer_prometheus_pushgateway_options:
@@ -2310,6 +2338,8 @@ chrony_bindaddresses:
   - osism.services.chrony
 chrony_local_conf_template:
   - osism.services.chrony
+chrony_max_clock_difference:
+  - osism.validations.chrony
 chrony_max_stratum:
   - osism.validations.chrony
 chrony_max_system_clock_deviation:
@@ -2320,6 +2350,10 @@ chrony_minimum_number_of_servers:
   - osism.services.chrony
 chrony_package_name:
   - osism.services.chrony
+chrony_reference_server:
+  - osism.validations.chrony
+chrony_reference_timeout:
+  - osism.validations.chrony
 chrony_server_options:
   - osism.services.chrony
 chrony_servers:
@@ -5425,6 +5459,8 @@ enable_ceilometer_horizon_policy_file:
   - kolla.group_vars
 enable_ceilometer_ipmi:
   - kolla.group_vars
+enable_ceilometer_prometheus_exporter:
+  - kolla.group_vars
 enable_ceilometer_prometheus_pushgateway:
   - kolla.group_vars
 enable_celery:
@@ -6612,8 +6648,6 @@ frr_bgp_out_prefixes:
 frr_config_file:
   - osism.services.frr
 frr_daemons_file:
-  - osism.services.frr
-frr_dummy_interface:
   - osism.services.frr
 frr_enable_bfdd:
   - osism.services.frr
@@ -13545,6 +13579,8 @@ network_bonds:
 network_bridges:
   - osism.commons.network
 network_connectivity_group:
+  - osism.validations.network_connectivity
+network_connectivity_network:
   - osism.validations.network_connectivity
 network_connectivity_network_cidr:
   - osism.validations.network_connectivity

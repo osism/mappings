@@ -7340,6 +7340,17 @@ kolla.ceilometer:
   - ceilometer_notification_image
   - ceilometer_notification_image_full
   - ceilometer_notification_tag
+  - ceilometer_polling_interval
+  - ceilometer_polling_meters
+  - ceilometer_polling_meters_central
+  - ceilometer_polling_meters_cinder
+  - ceilometer_polling_meters_compute
+  - ceilometer_polling_meters_designate
+  - ceilometer_polling_meters_extra
+  - ceilometer_polling_meters_glance
+  - ceilometer_polling_meters_manila
+  - ceilometer_polling_meters_neutron
+  - ceilometer_polling_meters_octavia
   - ceilometer_prometheus_pushgateway_host
   - ceilometer_prometheus_pushgateway_options
   - ceilometer_prometheus_pushgateway_port
@@ -8010,6 +8021,9 @@ kolla.group_vars:
   - blazar_internal_base_endpoint
   - blazar_internal_fqdn
   - blazar_public_base_endpoint
+  - ceilometer_central_prometheus_exporter_port
+  - ceilometer_compute_prometheus_exporter_port
+  - ceilometer_prometheus_exporter_port
   - ceph_cinder_backup_pool_name
   - ceph_cinder_backup_user
   - ceph_cinder_pool_name
@@ -8151,6 +8165,7 @@ kolla.group_vars:
   - enable_ceilometer
   - enable_ceilometer_horizon_policy_file
   - enable_ceilometer_ipmi
+  - enable_ceilometer_prometheus_exporter
   - enable_ceilometer_prometheus_pushgateway
   - enable_cells
   - enable_central_logging
@@ -11900,7 +11915,6 @@ osism.services.frr:
   - frr_bgp_out_prefixes
   - frr_config_file
   - frr_daemons_file
-  - frr_dummy_interface
   - frr_enable_bfdd
   - frr_enable_bgpd
   - frr_enable_ospf6d
@@ -12744,9 +12758,12 @@ osism.services.zuul:
 osism.validations.ansible_version:
   - ansible_core_version
 osism.validations.chrony:
+  - chrony_max_clock_difference
   - chrony_max_stratum
   - chrony_max_system_clock_deviation
   - chrony_max_upper_clock_error_bound
+  - chrony_reference_server
+  - chrony_reference_timeout
 osism.validations.docker_ready:
   - docker_ready_check_containerd
   - docker_ready_container_timeout
@@ -12781,6 +12798,7 @@ osism.validations.mysql_open_files_limit:
   - mysql_open_files_limit_min
 osism.validations.network_connectivity:
   - network_connectivity_group
+  - network_connectivity_network
   - network_connectivity_network_cidr
   - network_connectivity_ping_count
 osism.validations.prometheus_alert_status:
