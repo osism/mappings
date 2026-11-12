@@ -2656,6 +2656,8 @@ cleanup_services_default:
   - osism.commons.cleanup
 cleanup_services_extra:
   - osism.commons.cleanup
+cleanup_unattended_upgrades:
+  - osism.commons.cleanup
 client_admin_ceph_authtool_cap:
   - ceph.ceph-mon
 client_group_name:
@@ -12968,6 +12970,26 @@ multiple_regions_names:
   - kolla.group_vars
 mysql_open_files_limit_min:
   - osism.validations.mysql_open_files_limit
+name_resolution_check_resolved:
+  - osism.validations.name_resolution
+name_resolution_check_reverse:
+  - osism.validations.name_resolution
+name_resolution_dns_over_tls:
+  - osism.validations.name_resolution
+name_resolution_endpoints:
+  - osism.validations.name_resolution
+name_resolution_external_names_extra:
+  - osism.validations.name_resolution
+name_resolution_lookup_deadline:
+  - osism.validations.name_resolution
+name_resolution_nameserver_query:
+  - osism.validations.name_resolution
+name_resolution_nameserver_timeout:
+  - osism.validations.name_resolution
+name_resolution_nameservers:
+  - osism.validations.name_resolution
+name_resolution_resolv_conf:
+  - osism.validations.name_resolution
 nb_retry_wait_osd_up:
   - ceph.ceph-osd
 netbase__aliases:

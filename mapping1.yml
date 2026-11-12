@@ -11191,6 +11191,7 @@ osism.commons.cleanup:
   - cleanup_services
   - cleanup_services_default
   - cleanup_services_extra
+  - cleanup_unattended_upgrades
 osism.commons.configfs: []
 osism.commons.configuration:
   - configuration_directory
@@ -12796,6 +12797,17 @@ osism.validations.kernel_version:
   - kernel_version_expected
 osism.validations.mysql_open_files_limit:
   - mysql_open_files_limit_min
+osism.validations.name_resolution:
+  - name_resolution_check_resolved
+  - name_resolution_check_reverse
+  - name_resolution_dns_over_tls
+  - name_resolution_endpoints
+  - name_resolution_external_names_extra
+  - name_resolution_lookup_deadline
+  - name_resolution_nameserver_query
+  - name_resolution_nameserver_timeout
+  - name_resolution_nameservers
+  - name_resolution_resolv_conf
 osism.validations.network_connectivity:
   - network_connectivity_group
   - network_connectivity_network
