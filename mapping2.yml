@@ -6647,6 +6647,8 @@ frr_bgp_out_prefix_list6:
   - osism.services.frr
 frr_bgp_out_prefixes:
   - osism.services.frr
+frr_check_loopback_interface:
+  - osism.services.frr
 frr_config_file:
   - osism.services.frr
 frr_daemons_file:

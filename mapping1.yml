@@ -11914,6 +11914,7 @@ osism.services.frr:
   - frr_bgp_out_prefix_list4
   - frr_bgp_out_prefix_list6
   - frr_bgp_out_prefixes
+  - frr_check_loopback_interface
   - frr_config_file
   - frr_daemons_file
   - frr_enable_bfdd
