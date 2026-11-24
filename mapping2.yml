@@ -6701,6 +6701,10 @@ frr_managed_externally:
   - osism.services.frr
 frr_maximum_paths:
   - osism.services.frr
+frr_networkd_dropin_file:
+  - osism.services.frr
+frr_networkd_service_dropin_file:
+  - osism.services.frr
 frr_options_bfdd:
   - osism.services.frr
 frr_options_bgpd:
@@ -6712,6 +6716,8 @@ frr_options_ospfd:
 frr_options_vrrpd:
   - osism.services.frr
 frr_package_name:
+  - osism.services.frr
+frr_restart_with_networkd:
   - osism.services.frr
 frr_service_name:
   - osism.services.frr
@@ -13624,6 +13630,8 @@ network_extra_init_commands:
   - osism.commons.network
 network_extra_init_enable:
   - osism.commons.network
+network_frr_service_name:
+  - osism.commons.network
 network_interface:
   - kolla.group_vars
   - osism.defaults.all
@@ -13660,6 +13668,8 @@ network_networkd_managed_files_extra:
 network_networkd_remove_unmanaged_files:
   - osism.commons.network
 network_renderer:
+  - osism.commons.network
+network_restart_frr_after_netplan_apply:
   - osism.commons.network
 network_restart_method:
   - osism.commons.network
@@ -24905,7 +24915,9 @@ zabbix_agent_buffersize:
   - community.zabbix.zabbix_agent
 zabbix_agent_chassis:
   - community.zabbix.zabbix_agent
-zabbix_agent_conf:
+zabbix_agent_conf_dir:
+  - community.zabbix.zabbix_agent
+zabbix_agent_conf_file:
   - community.zabbix.zabbix_agent
 zabbix_agent_conf_mode:
   - community.zabbix.zabbix_agent
@@ -24958,6 +24970,10 @@ zabbix_agent_docker_volumes:
   - community.zabbix.zabbix_agent
 zabbix_agent_download_base_url:
   - community.zabbix.zabbix_agent
+zabbix_agent_download_filename:
+  - community.zabbix.zabbix_agent
+zabbix_agent_download_url:
+  - community.zabbix.zabbix_agent
 zabbix_agent_enablepersistentbuffer:
   - community.zabbix.zabbix_agent
 zabbix_agent_enableremotecommands:
@@ -24999,7 +25015,9 @@ zabbix_agent_listenport:
   - community.zabbix.zabbix_agent
 zabbix_agent_loadmodulepath:
   - community.zabbix.zabbix_agent
-zabbix_agent_logfile:
+zabbix_agent_log_dir:
+  - community.zabbix.zabbix_agent
+zabbix_agent_log_file:
   - community.zabbix.zabbix_agent
 zabbix_agent_logfilesize:
   - community.zabbix.zabbix_agent
@@ -25007,15 +25025,17 @@ zabbix_agent_logremotecommands:
   - community.zabbix.zabbix_agent
 zabbix_agent_logtype:
   - community.zabbix.zabbix_agent
-zabbix_agent_maxlinespersecond:
+zabbix_agent_mac_install_type:
   - community.zabbix.zabbix_agent
-zabbix_agent_package:
+zabbix_agent_maxlinespersecond:
   - community.zabbix.zabbix_agent
 zabbix_agent_package_name:
   - osism.services.zabbix_agent
 zabbix_agent_package_remove:
   - community.zabbix.zabbix_agent
 zabbix_agent_package_state:
+  - community.zabbix.zabbix_agent
+zabbix_agent_packages:
   - community.zabbix.zabbix_agent
 zabbix_agent_persistentbufferperiod:
   - community.zabbix.zabbix_agent
@@ -25059,8 +25079,6 @@ zabbix_agent_statusport:
   - community.zabbix.zabbix_agent
 zabbix_agent_timeout:
   - community.zabbix.zabbix_agent
-zabbix_agent_tls_config:
-  - community.zabbix.zabbix_agent
 zabbix_agent_tls_subject:
   - community.zabbix.zabbix_agent
 zabbix_agent_tlsaccept:
@@ -25085,15 +25103,9 @@ zabbix_agent_version_check:
   - community.zabbix.zabbix_agent
 zabbix_agent_version_minor:
   - community.zabbix.zabbix_agent
-zabbix_agent_win_download_url:
-  - community.zabbix.zabbix_agent
 zabbix_agent_win_exe_path:
   - community.zabbix.zabbix_agent
 zabbix_agent_win_install_dir:
-  - community.zabbix.zabbix_agent
-zabbix_agent_win_install_dir_conf:
-  - community.zabbix.zabbix_agent
-zabbix_agent_win_package:
   - community.zabbix.zabbix_agent
 zabbix_agent_win_service:
   - community.zabbix.zabbix_agent
@@ -25160,10 +25172,6 @@ zabbix_javagateway_startpollers:
   - community.zabbix.zabbix_javagateway
 zabbix_javagateway_version_check:
   - community.zabbix.zabbix_javagateway
-zabbix_mac_download_link:
-  - community.zabbix.zabbix_agent
-zabbix_mac_package:
-  - community.zabbix.zabbix_agent
 zabbix_network:
   - osism.services.zabbix_agent
 zabbix_os_user:
@@ -25172,9 +25180,17 @@ zabbix_os_user:
   - community.zabbix.zabbix_web_service
 zabbix_php_fpm_conf_group:
   - community.zabbix.zabbix_web
-zabbix_php_fpm_conf_listen:
+zabbix_php_fpm_conf_listen_group:
+  - community.zabbix.zabbix_web
+zabbix_php_fpm_conf_listen_owner:
   - community.zabbix.zabbix_web
 zabbix_php_fpm_conf_user:
+  - community.zabbix.zabbix_web
+zabbix_php_fpm_dir:
+  - community.zabbix.zabbix_web
+zabbix_php_fpm_listen:
+  - community.zabbix.zabbix_web
+zabbix_php_fpm_session:
   - community.zabbix.zabbix_web
 zabbix_proxy_allowroot:
   - community.zabbix.zabbix_proxy
@@ -25182,11 +25198,11 @@ zabbix_proxy_allowunsupporteddbversions:
   - community.zabbix.zabbix_proxy
 zabbix_proxy_cachesize:
   - community.zabbix.zabbix_proxy
-zabbix_proxy_cat_cmd:
+zabbix_proxy_conf_dir:
+  - community.zabbix.zabbix_proxy
+zabbix_proxy_conf_file:
   - community.zabbix.zabbix_proxy
 zabbix_proxy_conf_mode:
-  - community.zabbix.zabbix_proxy
-zabbix_proxy_config:
   - community.zabbix.zabbix_proxy
 zabbix_proxy_configfrequency:
   - community.zabbix.zabbix_proxy
@@ -25225,6 +25241,10 @@ zabbix_proxy_debuglevel:
 zabbix_proxy_enableremotecommands:
   - community.zabbix.zabbix_proxy
 zabbix_proxy_externalscripts:
+  - community.zabbix.zabbix_proxy
+zabbix_proxy_fping6location:
+  - community.zabbix.zabbix_proxy
+zabbix_proxy_fpinglocation:
   - community.zabbix.zabbix_proxy
 zabbix_proxy_group_failover_delay:
   - community.zabbix.zabbix_proxy
@@ -25281,6 +25301,10 @@ zabbix_proxy_logtype:
 zabbix_proxy_manage_service:
   - community.zabbix.zabbix_proxy
 zabbix_proxy_maxconcurrentchecksperpoller:
+  - community.zabbix.zabbix_proxy
+zabbix_proxy_mysql_auth_plugin:
+  - community.zabbix.zabbix_proxy
+zabbix_proxy_mysql_auth_salt:
   - community.zabbix.zabbix_proxy
 zabbix_proxy_package_state:
   - community.zabbix.zabbix_proxy
@@ -25354,7 +25378,9 @@ zabbix_proxy_status:
   - community.zabbix.zabbix_proxy
 zabbix_proxy_timeout:
   - community.zabbix.zabbix_proxy
-zabbix_proxy_tls_config:
+zabbix_proxy_tlsaccept:
+  - community.zabbix.zabbix_proxy
+zabbix_proxy_tlsconnect:
   - community.zabbix.zabbix_proxy
 zabbix_proxy_tmpdir:
   - community.zabbix.zabbix_proxy
@@ -25390,10 +25416,8 @@ zabbix_repo_deb_component:
   - community.zabbix.zabbix_repo
 zabbix_repo_deb_gpg_key_url:
   - community.zabbix.zabbix_repo
-  - community.zabbix.zabbix_web
 zabbix_repo_deb_include_deb_src:
   - community.zabbix.zabbix_repo
-  - community.zabbix.zabbix_web
 zabbix_repo_deb_schema:
   - community.zabbix.zabbix_repo
 zabbix_repo_deb_url:
@@ -25428,9 +25452,11 @@ zabbix_server_allowunsupporteddbversions:
   - community.zabbix.zabbix_server
 zabbix_server_cachesize:
   - community.zabbix.zabbix_server
-zabbix_server_conf_mode:
+zabbix_server_conf_dir:
   - community.zabbix.zabbix_server
-zabbix_server_config:
+zabbix_server_conf_file:
+  - community.zabbix.zabbix_server
+zabbix_server_conf_mode:
   - community.zabbix.zabbix_server
 zabbix_server_connectors:
   - community.zabbix.zabbix_server
@@ -25534,6 +25560,10 @@ zabbix_server_maxconcurrentchecksperpoller:
   - community.zabbix.zabbix_server
 zabbix_server_maxhousekeeperdelete:
   - community.zabbix.zabbix_server
+zabbix_server_mysql_auth_plugin:
+  - community.zabbix.zabbix_server
+zabbix_server_mysql_auth_salt:
+  - community.zabbix.zabbix_server
 zabbix_server_name:
   - community.zabbix.zabbix_web
 zabbix_server_package_state:
@@ -25628,6 +25658,8 @@ zabbix_server_valuecachesize:
   - community.zabbix.zabbix_server
 zabbix_server_vaulturl:
   - community.zabbix.zabbix_server
+zabbix_server_version:
+  - community.zabbix.zabbix_web
 zabbix_server_version_check:
   - community.zabbix.zabbix_server
 zabbix_server_version_minor:
@@ -25659,13 +25691,25 @@ zabbix_web_create_php_fpm:
   - community.zabbix.zabbix_web
 zabbix_web_create_vhost:
   - community.zabbix.zabbix_web
+zabbix_web_custom_zabbix_conf_php:
+  - community.zabbix.zabbix_web
 zabbix_web_doubleprecision:
+  - community.zabbix.zabbix_web
+zabbix_web_group:
   - community.zabbix.zabbix_web
 zabbix_web_http_server:
   - community.zabbix.zabbix_web
+zabbix_web_http_service:
+  - community.zabbix.zabbix_web
 zabbix_web_package_state:
   - community.zabbix.zabbix_web
+zabbix_web_packages:
+  - community.zabbix.zabbix_web
+zabbix_web_php_fpm_conf_file:
+  - community.zabbix.zabbix_web
 zabbix_web_php_fpm_max_childs:
+  - community.zabbix.zabbix_web
+zabbix_web_php_fpm_max_requests:
   - community.zabbix.zabbix_web
 zabbix_web_php_fpm_max_spare_servers:
   - community.zabbix.zabbix_web
@@ -25721,11 +25765,17 @@ zabbix_web_ssl_session_cache_timeout:
   - community.zabbix.zabbix_web
 zabbix_web_tls:
   - community.zabbix.zabbix_web
+zabbix_web_tls_http2:
+  - community.zabbix.zabbix_web
+zabbix_web_user:
+  - community.zabbix.zabbix_web
 zabbix_web_version_check:
   - community.zabbix.zabbix_web
 zabbix_web_version_minor:
   - community.zabbix.zabbix_web
 zabbix_web_vhost_listen_ip:
+  - community.zabbix.zabbix_web
+zabbix_web_vhost_location:
   - community.zabbix.zabbix_web
 zabbix_web_vhost_port:
   - community.zabbix.zabbix_web
