@@ -358,7 +358,8 @@ community.zabbix.zabbix_agent:
   - zabbix_agent_buffersend
   - zabbix_agent_buffersize
   - zabbix_agent_chassis
-  - zabbix_agent_conf
+  - zabbix_agent_conf_dir
+  - zabbix_agent_conf_file
   - zabbix_agent_conf_mode
   - zabbix_agent_controlsocket
   - zabbix_agent_debuglevel
@@ -379,6 +380,8 @@ community.zabbix.zabbix_agent:
   - zabbix_agent_docker_state
   - zabbix_agent_docker_volumes
   - zabbix_agent_download_base_url
+  - zabbix_agent_download_filename
+  - zabbix_agent_download_url
   - zabbix_agent_enablepersistentbuffer
   - zabbix_agent_enableremotecommands
   - zabbix_agent_forceactivechecksonstart
@@ -398,14 +401,16 @@ community.zabbix.zabbix_agent:
   - zabbix_agent_listenip
   - zabbix_agent_listenport
   - zabbix_agent_loadmodulepath
-  - zabbix_agent_logfile
+  - zabbix_agent_log_dir
+  - zabbix_agent_log_file
   - zabbix_agent_logfilesize
   - zabbix_agent_logremotecommands
   - zabbix_agent_logtype
+  - zabbix_agent_mac_install_type
   - zabbix_agent_maxlinespersecond
-  - zabbix_agent_package
   - zabbix_agent_package_remove
   - zabbix_agent_package_state
+  - zabbix_agent_packages
   - zabbix_agent_persistentbufferperiod
   - zabbix_agent_pidfile
   - zabbix_agent_pluginsocket
@@ -420,7 +425,6 @@ community.zabbix.zabbix_agent:
   - zabbix_agent_startagents
   - zabbix_agent_statusport
   - zabbix_agent_timeout
-  - zabbix_agent_tls_config
   - zabbix_agent_tls_subject
   - zabbix_agent_tlsaccept
   - zabbix_agent_tlsconnect
@@ -432,11 +436,8 @@ community.zabbix.zabbix_agent:
   - zabbix_agent_userparameters_templates_src
   - zabbix_agent_version_check
   - zabbix_agent_version_minor
-  - zabbix_agent_win_download_url
   - zabbix_agent_win_exe_path
   - zabbix_agent_win_install_dir
-  - zabbix_agent_win_install_dir_conf
-  - zabbix_agent_win_package
   - zabbix_agent_win_service
   - zabbix_api_create_hostgroup
   - zabbix_api_create_hosts
@@ -448,8 +449,6 @@ community.zabbix.zabbix_agent:
   - zabbix_api_validate_certs
   - zabbix_host_groups
   - zabbix_host_status
-  - zabbix_mac_download_link
-  - zabbix_mac_package
   - zabbix_useuip
   - zabbix_win_firewall_management
 community.zabbix.zabbix_javagateway:
@@ -476,9 +475,9 @@ community.zabbix.zabbix_proxy:
   - zabbix_proxy_allowroot
   - zabbix_proxy_allowunsupporteddbversions
   - zabbix_proxy_cachesize
-  - zabbix_proxy_cat_cmd
+  - zabbix_proxy_conf_dir
+  - zabbix_proxy_conf_file
   - zabbix_proxy_conf_mode
-  - zabbix_proxy_config
   - zabbix_proxy_configfrequency
   - zabbix_proxy_database
   - zabbix_proxy_database_creation
@@ -498,6 +497,8 @@ community.zabbix.zabbix_proxy:
   - zabbix_proxy_debuglevel
   - zabbix_proxy_enableremotecommands
   - zabbix_proxy_externalscripts
+  - zabbix_proxy_fping6location
+  - zabbix_proxy_fpinglocation
   - zabbix_proxy_group_failover_delay
   - zabbix_proxy_group_min_online
   - zabbix_proxy_group_name
@@ -526,6 +527,8 @@ community.zabbix.zabbix_proxy:
   - zabbix_proxy_logtype
   - zabbix_proxy_manage_service
   - zabbix_proxy_maxconcurrentchecksperpoller
+  - zabbix_proxy_mysql_auth_plugin
+  - zabbix_proxy_mysql_auth_salt
   - zabbix_proxy_package_state
   - zabbix_proxy_pidfile
   - zabbix_proxy_privileged_host
@@ -562,7 +565,8 @@ community.zabbix.zabbix_proxy:
   - zabbix_proxy_statsallowedip
   - zabbix_proxy_status
   - zabbix_proxy_timeout
-  - zabbix_proxy_tls_config
+  - zabbix_proxy_tlsaccept
+  - zabbix_proxy_tlsconnect
   - zabbix_proxy_tmpdir
   - zabbix_proxy_trappertimeout
   - zabbix_proxy_unavailabledelay
@@ -603,8 +607,9 @@ community.zabbix.zabbix_server:
   - zabbix_server_allowsoftwareupdatecheck
   - zabbix_server_allowunsupporteddbversions
   - zabbix_server_cachesize
+  - zabbix_server_conf_dir
+  - zabbix_server_conf_file
   - zabbix_server_conf_mode
-  - zabbix_server_config
   - zabbix_server_connectors
   - zabbix_server_database
   - zabbix_server_database_creation
@@ -648,6 +653,8 @@ community.zabbix.zabbix_server:
   - zabbix_server_manage_service
   - zabbix_server_maxconcurrentchecksperpoller
   - zabbix_server_maxhousekeeperdelete
+  - zabbix_server_mysql_auth_plugin
+  - zabbix_server_mysql_auth_salt
   - zabbix_server_package_state
   - zabbix_server_packages
   - zabbix_server_pidfile
@@ -708,10 +715,12 @@ community.zabbix.zabbix_web:
   - zabbix_apache_custom_includes
   - zabbix_api_server_url
   - zabbix_php_fpm_conf_group
-  - zabbix_php_fpm_conf_listen
+  - zabbix_php_fpm_conf_listen_group
+  - zabbix_php_fpm_conf_listen_owner
   - zabbix_php_fpm_conf_user
-  - zabbix_repo_deb_gpg_key_url
-  - zabbix_repo_deb_include_deb_src
+  - zabbix_php_fpm_dir
+  - zabbix_php_fpm_listen
+  - zabbix_php_fpm_session
   - zabbix_server_database
   - zabbix_server_dbencryption
   - zabbix_server_dbhost
@@ -725,16 +734,23 @@ community.zabbix.zabbix_web:
   - zabbix_server_hostname
   - zabbix_server_listenport
   - zabbix_server_name
+  - zabbix_server_version
   - zabbix_timezone
   - zabbix_url_aliases
   - zabbix_web_conf_mode
   - zabbix_web_connect_ha_backend
   - zabbix_web_create_php_fpm
   - zabbix_web_create_vhost
+  - zabbix_web_custom_zabbix_conf_php
   - zabbix_web_doubleprecision
+  - zabbix_web_group
   - zabbix_web_http_server
+  - zabbix_web_http_service
   - zabbix_web_package_state
+  - zabbix_web_packages
+  - zabbix_web_php_fpm_conf_file
   - zabbix_web_php_fpm_max_childs
+  - zabbix_web_php_fpm_max_requests
   - zabbix_web_php_fpm_max_spare_servers
   - zabbix_web_php_fpm_min_spare_servers
   - zabbix_web_php_fpm_mode
@@ -742,9 +758,12 @@ community.zabbix.zabbix_web:
   - zabbix_web_ssl_session_cache
   - zabbix_web_ssl_session_cache_timeout
   - zabbix_web_tls
+  - zabbix_web_tls_http2
+  - zabbix_web_user
   - zabbix_web_version_check
   - zabbix_web_version_minor
   - zabbix_web_vhost_listen_ip
+  - zabbix_web_vhost_location
   - zabbix_web_vhost_port
   - zabbix_web_vhost_tls_port
 community.zabbix.zabbix_web_service:
@@ -11191,6 +11210,7 @@ osism.commons.cleanup:
   - cleanup_services
   - cleanup_services_default
   - cleanup_services_extra
+  - cleanup_unattended_upgrades
 osism.commons.configfs: []
 osism.commons.configuration:
   - configuration_directory
@@ -11295,6 +11315,7 @@ osism.commons.network:
   - network_ethernets
   - network_extra_init_commands
   - network_extra_init_enable
+  - network_frr_service_name
   - network_interface_path
   - network_interface_permissions
   - network_interface_restart_commands
@@ -11312,6 +11333,7 @@ osism.commons.network:
   - network_networkd_managed_files_extra
   - network_networkd_remove_unmanaged_files
   - network_renderer
+  - network_restart_frr_after_netplan_apply
   - network_restart_method
   - network_tunnels
   - network_type
@@ -11913,6 +11935,7 @@ osism.services.frr:
   - frr_bgp_out_prefix_list4
   - frr_bgp_out_prefix_list6
   - frr_bgp_out_prefixes
+  - frr_check_loopback_interface
   - frr_config_file
   - frr_daemons_file
   - frr_enable_bfdd
@@ -11939,12 +11962,15 @@ osism.services.frr:
   - frr_loopback_v6
   - frr_managed_externally
   - frr_maximum_paths
+  - frr_networkd_dropin_file
+  - frr_networkd_service_dropin_file
   - frr_options_bfdd
   - frr_options_bgpd
   - frr_options_ospf6d
   - frr_options_ospfd
   - frr_options_vrrpd
   - frr_package_name
+  - frr_restart_with_networkd
   - frr_service_name
   - frr_sysctl
   - frr_sysctl_defaults
@@ -12796,6 +12822,17 @@ osism.validations.kernel_version:
   - kernel_version_expected
 osism.validations.mysql_open_files_limit:
   - mysql_open_files_limit_min
+osism.validations.name_resolution:
+  - name_resolution_check_resolved
+  - name_resolution_check_reverse
+  - name_resolution_dns_over_tls
+  - name_resolution_endpoints
+  - name_resolution_external_names_extra
+  - name_resolution_lookup_deadline
+  - name_resolution_nameserver_query
+  - name_resolution_nameserver_timeout
+  - name_resolution_nameservers
+  - name_resolution_resolv_conf
 osism.validations.network_connectivity:
   - network_connectivity_group
   - network_connectivity_network
